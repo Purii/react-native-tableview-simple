@@ -27,15 +27,15 @@ Currently `TableView` doesn't provide any properties.
 ### Section
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
-| header | '' | `string` | Header value |
-| footer | '' | `string` | Footer value |
+| header | - | `string` | Header value |
+| footer | - | `string` | Footer value |
 
 ### Cell
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
 | cellstyle | Basic | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
-| title | '' | `string` | Title value |
-| detail | '' | `string` | Detail value |
+| title | - | `string` | Title value |
+| detail | - | `string` | Detail value |
 | isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
 | accessory | - | `string` | Predefined accessory: `DisclosureIndicator` |
 | onPress | - | `func` | If set, Cell will be automaticaly initialized with TouchableHighlight |
