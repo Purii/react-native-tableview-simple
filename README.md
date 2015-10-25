@@ -6,6 +6,11 @@ This component is a copy of the iOS-TableView with pure CSS.
 It is not intended to be used for large datasets!
 A use case might be something like a Settingsscreen.
 
+## Installation
+1. `npm i react-native-tableview-simple --save`
+1. Add components `import {TableView, Section, Cell} from 'react-native-tableview-simple'`
+
+
 ## Extensible
 This component provides you with some predefined CSS-styles, known from the native TableView.
 You can always mix the `Cell`-Instances, inside a `Section`, with some Custom-Components.   
