@@ -69,7 +69,7 @@ class Example extends Component {
 					</Text>
 				</View>
 				<TableView>
-					<Section header="Header" footer="Footer">
+					<Section header="HEADER" footer="FOOTER">
 						<Cell cellstyle="Basic" title="Title"/>
 						<Cell cellstyle="Basic" title="Title"/>
 						<Cell cellstyle="RightDetail" title="Title" detail="Detail" />
@@ -80,7 +80,7 @@ class Example extends Component {
 						<Cell cellstyle="Basic" title="Pressable" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
 						<Cell cellstyle="Basic" title="Pressable" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
 					</Section>
-					<Section header="Header">
+					<Section header="HEADER">
 						<Cell cellstyle="Basic" title="Title"/>
 						<Cell cellstyle="Basic" title="Title"/>
 						<Cell cellstyle="RightDetail" title="Title" detail="Detail" />

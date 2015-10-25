@@ -26,9 +26,9 @@ export default class Section extends Component {
     }
     return(
       <View style={styles.section}>
-        <Text style={styles.sectionheader}>{header.toUpperCase()}</Text>
+        <Text style={styles.sectionheader}>{header}</Text>
           {React.Children.map(children, renderChild)}
-        <Text style={styles.sectionfooter}>{footer.toUpperCase()}</Text>
+        <Text style={styles.sectionfooter}>{footer}</Text>
       </View>
     )
   }
