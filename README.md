@@ -1,4 +1,4 @@
-# react-native-csstableview
+# react-native-tableview-simple
 
 **NOTE: This component is WIP!**
 
@@ -41,7 +41,7 @@ Just move your component to the folder `components`. Choose a meaningful name!
 
 
 ## Example
-![](https://raw.githubusercontent.com/Purii/react-native-adbannerview/master/screenshot.png)
+![](https://raw.githubusercontent.com/Purii/react-native-tableview-simple/master/screenshot.png)
 ```javascript
 import React, { AppRegistry, Component, PropTypes, StyleSheet, ScrollView, View, Text } from 'react-native';
 import {TableView, Section, Cell} from 'react-native-tableview-simple';
