@@ -11,6 +11,10 @@ This component provides you with some predefined CSS-styles, known from the nati
 You can always mix the `Cell`-Instances, inside a `Section`, with some Custom-Components.   
 Therefore the `Cell`-Component itself can't be manipulated. If you aren't satisfied with a component, feel free to create a PR or just create and use a custom component. Get inspired by the predefined cellstyles.
 
+### Submit a Cell-Component
+Maybe you want to add your lovely designed Cell-Component to the project.
+Just move your component to the folder `components`. Choose a meaningful name!
+
 ## Props
 ### Tableview
 
