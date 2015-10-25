@@ -1,4 +1,5 @@
 # react-native-tableview-simple
+[![npm version](http://img.shields.io/npm/v/react-native-tableview-simple.svg?style=flat-square)](https://www.npmjs.com/package/react-native-tableview-simple)
 
 **NOTE: This component is WIP. Use it with cation!**
 
