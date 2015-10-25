@@ -12,10 +12,12 @@ export default class Cell extends Component {
 
     let renderAccessory = () => {
       if(!accessory) return;
-      console.log(accessory);
-      return (
-        <View style={styles.cell_DiIn}></View>
-      )
+      switch(accessory) {
+        case "DisclosureIndicator":
+          return (<View style={styles.cell_DiIn}></View>);
+        default:
+         return;
+      }
     }
     /** CellStyle: Basic */
     let CellBasic = () => {
