@@ -4,12 +4,12 @@
 
 This component is a copy of the iOS-TableView with pure CSS.
 It is not intended to be used for large datasets!
-As an example. I use this component, to create a settings-screen.
+A use case might be something like a Settingsscreen.
 
 ## Extensible
 This component provides you with some predefined CSS-styles, known from the native TableView.
 You can always mix the `Cell`-Instances, inside a `Section`, with some Custom-Components.   
-Therefore the `Cell`-Component itself can't be manipulated. Just have a look into the source and copy the needed style.
+Therefore the `Cell`-Component itself can't be manipulated. If you aren't satisfied with a component, feel free to create a PR or just create and use a custom Component. Get inspired by the predefined Cellstyles.
 
 ## Props
 ### Tableview
