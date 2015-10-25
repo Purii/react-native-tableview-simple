@@ -1,7 +1,7 @@
 # react-native-tableview-simple
 [![npm version](http://img.shields.io/npm/v/react-native-tableview-simple.svg?style=flat-square)](https://www.npmjs.com/package/react-native-tableview-simple)
 
-**NOTE: This component is WIP. Use it with cation!**
+**NOTE: This component is WIP. Use it with caution!**
 
 This component is a copy of the iOS-TableView made with pure CSS.
 It is not intended to display large datasets!
@@ -42,7 +42,7 @@ Currently `TableView` doesn't provide any properties.
 
 
 ## Example
-![](https://raw.githubusercontent.com/Purii/react-native-tableview-simple/master/screenshot.png)
+![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshot.png)
 ```javascript
 import React, { AppRegistry, Component, PropTypes, StyleSheet, ScrollView, View, Text } from 'react-native';
 import {TableView, Section, Cell} from 'react-native-tableview-simple';
