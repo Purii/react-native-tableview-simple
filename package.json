@@ -1,7 +1,6 @@
 {
   "name": "react-native-tableview-simple",
-  "private": true,
-  "description": "React Native component for Table View with pure CSS",
+  "description": "React Native component for TableView made with pure CSS",
   "homepage": "https://github.com/Purii/react-native-tableview-simple",
   "version": "0.0.1",
   "author": "Patrick Puritscher <blackout289@gmail.com",
@@ -10,7 +9,6 @@
   "keywords": [
     "react-native",
     "react-component",
-    "ADBannerView",
     "tableview",
     "iOS"
   ],
