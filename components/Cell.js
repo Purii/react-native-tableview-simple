@@ -20,45 +20,38 @@ export default class Cell extends Component {
     /** CellStyle: Basic */
     let CellBasic = () => {
       return(
-        <View style={styles.cellcontainer}>
           <View style={styles.cell}>
             <Text style={isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : styles.cell_title}>{title}</Text>
             {renderAccessory()}
           </View>
-      </View>
       )
     }
 
     /** CellStyle: RightDetail */
     let CellRightDetail = () => {
       return(
-        <View style={styles.cellcontainer}>
           <View style={styles.cell}>
             <Text style={isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : styles.cell_title}>{title}</Text>
             <Text style={isDisabled ? [...{}, styles.cell_detail, styles.cell_text__disabled] : styles.cell_detail}>{detail}</Text>
             {renderAccessory()}
           </View>
-        </View>
       )
     }
 
     /** CellStyle: LeftDetail */
     let CellLeftDetail = () => {
       return(
-        <View style={styles.cellcontainer}>
           <View style={styles.cell}>
             <Text style={isDisabled ? [...{}, styles.cell_leftdetail, styles.cell_text__disabled] : styles.cell_leftdetail}>{detail}</Text>
             <Text style={isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : styles.cell_title}>{title}</Text>
             {renderAccessory()}
           </View>
-        </View>
       )
     }
 
     /** CellStyle: Subtitle */
     let CellSubtitle = () => {
       return(
-        <View style={styles.cellcontainer}>
           <View style={styles.cell__subtitle}>
             <View style={styles.cellinner__subtitle}>
               <Text style={isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : styles.cell_title}>{title}</Text>
@@ -66,7 +59,6 @@ export default class Cell extends Component {
             </View>
             {renderAccessory()}
           </View>
-        </View>
       )
     }
     
@@ -114,15 +106,15 @@ var styles = StyleSheet.create({
     paddingTop: 10,
     paddingBottom: 10,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    height: 44
   },
   'cell__subtitle': {
+    height: 44,
     paddingLeft: 15,
     paddingRight: 20,
-    paddingTop: 10,
-    paddingBottom: 10,
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   'cellinner__subtitle': {
     flexDirection: 'column',
