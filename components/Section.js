@@ -16,7 +16,9 @@ export default class Section extends Component {
         return(
           <View>
             {child}
-            <View style={styles.cellhr}></View>
+            <View style={styles.cellhr}>
+              <View style={styles.cellhr_inner}></View>
+            </View>
           </View>
         )
       }
@@ -53,10 +55,12 @@ var styles = StyleSheet.create({
     paddingBottom: 5,
   },
   'cellhr': {
+    backgroundColor: '#fff',
+  },
+  'cellhr_inner': {
     marginLeft: 15,
     marginRight: 15,
     height: 0.5,
     backgroundColor: '#c8c7cc',
-    flex: 1
   },
 });
