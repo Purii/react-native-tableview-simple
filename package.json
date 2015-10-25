@@ -10,8 +10,11 @@
     "react-native",
     "react-component",
     "tableview",
-    "iOS"
+    "ios"
   ],
+  "peerDependencies": {
+    "react-native": ">=0.13"
+  },
   "bugs": {
     "url": "https://github.com/Purii/react-native-tableview-simple/issues"
   },
