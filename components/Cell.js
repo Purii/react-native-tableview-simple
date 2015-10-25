@@ -115,6 +115,7 @@ var styles = StyleSheet.create({
     paddingRight: 20,
     flexDirection: 'row',
     alignItems: 'center',
+    backgroundColor: '#fff',
   },
   'cellinner__subtitle': {
     flexDirection: 'column',

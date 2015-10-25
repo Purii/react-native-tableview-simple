@@ -2,10 +2,9 @@ import React, { Component, StyleSheet, View, Text } from 'react-native';
 
 export default class Section extends Component {
   render() {
-    const {header, footer, children} = this.props || {
-      header: "",
-      footer: ""
-    };
+    const {children} = this.props;
+    const header = this.props.header || '';
+    const footer = this.props.footer || '';
     /**
      * Render Cell and add Border
      * @param  {Cell} child [description]
@@ -35,7 +34,7 @@ export default class Section extends Component {
 
 var styles = StyleSheet.create({
   'section': {
-    backgroundColor: '#fff'
+    backgroundColor: '#EFEFF4'
   },
   'sectionheader': {
     fontSize: 13,
