@@ -23,7 +23,7 @@ export default class Cell extends Component {
     let CellBasic = () => {
       return(
           <View style={styles.cell}>
-            <Text style={isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : styles.cell_title}>{title}</Text>
+            <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : styles.cell_title}>{title}</Text>
             {renderAccessory()}
           </View>
       )
@@ -33,8 +33,8 @@ export default class Cell extends Component {
     let CellRightDetail = () => {
       return(
           <View style={styles.cell}>
-            <Text style={isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : styles.cell_title}>{title}</Text>
-            <Text style={isDisabled ? [...{}, styles.cell_detail, styles.cell_text__disabled] : styles.cell_detail}>{detail}</Text>
+            <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : styles.cell_title}>{title}</Text>
+            <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_detail, styles.cell_text__disabled] : styles.cell_detail}>{detail}</Text>
             {renderAccessory()}
           </View>
       )
@@ -44,8 +44,8 @@ export default class Cell extends Component {
     let CellLeftDetail = () => {
       return(
           <View style={styles.cell}>
-            <Text style={isDisabled ? [...{}, styles.cell_leftdetail, styles.cell_text__disabled] : styles.cell_leftdetail}>{detail}</Text>
-            <Text style={isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : styles.cell_title}>{title}</Text>
+            <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_leftdetail, styles.cell_text__disabled] : styles.cell_leftdetail}>{detail}</Text>
+            <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : styles.cell_title}>{title}</Text>
             {renderAccessory()}
           </View>
       )
@@ -56,8 +56,8 @@ export default class Cell extends Component {
       return(
           <View style={styles.cell__subtitle}>
             <View style={styles.cellinner__subtitle}>
-              <Text style={isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : styles.cell_title}>{title}</Text>
-              <Text style={isDisabled ? [...{}, styles.cell_subtitle, styles.cell_text__disabled] : styles.cell_subtitle}>{detail}</Text>
+              <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : styles.cell_title}>{title}</Text>
+              <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_subtitle, styles.cell_text__disabled] : styles.cell_subtitle}>{detail}</Text>
             </View>
             {renderAccessory()}
           </View>
@@ -109,7 +109,7 @@ var styles = StyleSheet.create({
     paddingBottom: 10,
     flexDirection: 'row',
     alignItems: 'center',
-    height: 44
+    height: 44,
   },
   'cell__subtitle': {
     height: 44,
