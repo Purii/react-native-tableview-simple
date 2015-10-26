@@ -6,7 +6,7 @@ export default class Cell extends Component {
     const cellstyle = this.props.cellstyle;
     const isDisabled = this.props.isDisabled;
     const detail = this.props.detail;
-    const isPressable = this.props.onPress;
+    const isPressable = this.props.onPress ? true : false;
     const accessory = this.props.accessory;
     const cellTintColor = this.props.cellTintColor;
     const titleTintColor = this.props.titleTintColor;
@@ -26,7 +26,22 @@ export default class Cell extends Component {
       if(!accessory) return;
       switch(accessory) {
         case "DisclosureIndicator":
-          return (<View style={styles.cell_DiIn}></View>);
+          return (<View style={styles.accessory_disclosureIndicator}></View>);
+        case "Detail":
+          return (
+            <View style={styles.accessory_detail}>
+              <Text style={styles.accessory_detailText}>i</Text>
+            </View>);
+        case "DetailDisclosure":
+          return (
+            <View style={styles.accessory_detailDisclosure}>
+              <View style={styles.accessory_detail}>
+                <Text style={styles.accessory_detailText}>i</Text>
+              </View>
+              <View style={styles.accessory_disclosureIndicator}></View>
+            </View>)
+        case "Checkmark":
+          return (<View style={styles.accessory_checkmark}></View>);
         default:
          return;
       }
@@ -169,7 +184,7 @@ var styles = StyleSheet.create({
     textAlign: 'right',
     color: '#007AFF',
     marginRight: 5,
-    width: 50
+    width: 75
   },
   'cell_subtitle': {
     fontSize: 11
@@ -177,17 +192,49 @@ var styles = StyleSheet.create({
   'cell_text__disabled':{
     color: 'gray'
   },
-
-  'cell_DiIn': {
+  'accessory_disclosureIndicator': {
     width: 10,
     height: 10,
-    marginLeft: 5,
+    marginLeft: 7,
     backgroundColor: 'transparent',
     borderTopWidth: 1,
     borderRightWidth: 1,
     borderColor: '#c7c7cc',
     transform: [{
       rotate: '45deg'
+    }]
+  },
+  'accessory_detail': {
+    width: 20,
+    height: 20,
+    marginLeft: 10,
+    backgroundColor: 'transparent',
+    borderWidth: 1,
+    borderColor: '#007AFF',
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  'accessory_detailText': {
+    color: '#007AFF',
+    fontSize: 15,
+    fontWeight: '400',
+    fontFamily: 'Georgia'
+  },
+  'accessory_detailDisclosure': {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  'accessory_checkmark': {
+    width: 13,
+    height: 6,
+    marginLeft: 7,
+    backgroundColor: 'transparent',
+    borderBottomWidth: 2,
+    borderLeftWidth: 2,
+    borderColor: '#007AFF',
+    transform: [{
+      rotate: '-45deg'
     }]
   }
 });
@@ -204,10 +251,7 @@ Cell.propTypes = {
   ]),
   cellTintColor: PropTypes.string,
   titleTintColor: PropTypes.string,
-  onPress: PropTypes.oneOfType([
-      React.PropTypes.bool,
-      React.PropTypes.func
-  ])
+  onPress: PropTypes.func
 }
 
 Cell.defaultProps = {
@@ -217,8 +261,5 @@ Cell.defaultProps = {
   isDisabled: false,
   accessory: false,
   cellTintColor: '#fff',
-  titleTintColor: '#000',
-  onPress: false
+  titleTintColor: '#000'
 }
-
-
