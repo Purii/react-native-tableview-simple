@@ -29,93 +29,76 @@ Currently `TableView` doesn't provide any properties.
 | :------------ | :---------------:| :---------------:| ---------------|
 | header | - | `string` | Header value |
 | footer | - | `string` | Footer value |
+| sectionTintColor | #EFEFF4 | `string` | Background color of section |
+| headerTintColor | #6d6d72 | `string` | Text color of header |
+| footerTintColor | #6d6d72 | `string` | Text color of footer|
 
 ### Cell
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
-| cellstyle | Basic | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
+| cellstyle | `Basic | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
 | title | - | `string` | Title value |
 | detail | - | `string` | Detail value |
 | isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
 | accessory | - | `string` | Predefined accessory: `DisclosureIndicator` |
-| onPress | - | `func` | If set, Cell will be automaticaly initialized with TouchableHighlight |
-
+| onPress | - | `func` | If set, cell will be automaticaly initialized with TouchableHighlight |
+| cellTintColor | #fff | `string` | Background color of cell |
+| titleTintColor | #000 | `string` | Text color of title |
 
 ## Example
+The left screen is build using `react-native-tableview-simple`. The right one is native.
 ![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshot.png)
+![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshotNative.png)
 ```javascript
 import React, { AppRegistry, Component, PropTypes, StyleSheet, ScrollView, View, Text } from 'react-native';
 import {TableView, Section, Cell} from 'react-native-tableview-simple';
 
 /**
-* Sample React Native App
-* https://github.com/facebook/react-native
-*/
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ */
 
-class Example extends Component {
-	render() {
-		return (
-			<ScrollView>
-				<View style={styles.container}>
-					<Text style={styles.welcome}>
-						Welcome to React Native!
-					</Text>
-					<Text style={styles.instructions}>
-						To get started, edit index.ios.js
-					</Text>
-					<Text style={styles.instructions}>
-						Press Cmd+R to reload,{'\n'}
-						Cmd+D or shake for dev menu
-					</Text>
-				</View>
-				<TableView>
-					<Section header="HEADER" footer="FOOTER">
-						<Cell cellstyle="Basic" title="Title"/>
-						<Cell cellstyle="Basic" title="Title"/>
-						<Cell cellstyle="RightDetail" title="Title" detail="Detail" />
-						<Cell cellstyle="LeftDetail" title="Title" detail="Detail"/>
-						<Cell cellstyle="Subtitle" title="Subtitle" detail="Nooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo Linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
-						<Cell cellstyle="Basic" title="Disabled" isDisabled="true"/>
-						<Cell cellstyle="Basic" title="Pressable" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
-						<Cell cellstyle="Basic" title="Pressable" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
-						<Cell cellstyle="Basic" title="Pressable" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
-					</Section>
-					<Section header="HEADER">
-						<Cell cellstyle="Basic" title="Title"/>
-						<Cell cellstyle="Basic" title="Title"/>
-						<Cell cellstyle="RightDetail" title="Title" detail="Detail" />
-						<Cell cellstyle="LeftDetail" title="Title" detail="Detail"/>
-						<Cell cellstyle="Subtitle" title="Subtitle" detail="Nooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo Linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
-						<Cell cellstyle="Basic" title="Disabled" isDisabled="true"/>
-						<Cell cellstyle="Basic" title="Pressable" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
-						<Cell cellstyle="Basic" title="Pressable" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
-						<Cell cellstyle="Basic" title="Pressable" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
-					</Section>
-				</TableView>
-			</ScrollView>
-		);
-	}
+ class Example extends Component {
+ 	render() {
+    return (
+      <ScrollView contentContainerStyle={styles.stage}>
+        <TableView>
+          <Section header="STANDARD" footer="A Footer">
+            <Cell cellstyle="Basic" title="Basic"/>
+            <Cell cellstyle="RightDetail" title="RightDetail" detail="Detail" />
+            <Cell cellstyle="LeftDetail" title="LeftDetail" detail="Detail"/>
+            <Cell cellstyle="Subtitle" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
+            <Cell cellstyle="Basic" title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
+          </Section>
+          <Section header="DISABLED">
+            <Cell cellstyle="Basic" isDisabled="true" title="Basic"/>
+            <Cell cellstyle="RightDetail" isDisabled="true" title="RightDetail" detail="Detail" />
+            <Cell cellstyle="LeftDetail" isDisabled="true" title="LeftDetail" detail="Detail"/>
+            <Cell cellstyle="Subtitle" isDisabled="true" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
+            <Cell cellstyle="Basic" isDisabled="true" title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
+          </Section>
+          <Section header="ACCESSORY">
+            <Cell cellstyle="Basic" accessory="DisclosureIndicator" title="Basic"/>
+            <Cell cellstyle="RightDetail" accessory="DisclosureIndicator" title="RightDetail" detail="Detail" />
+            <Cell cellstyle="LeftDetail" accessory="DisclosureIndicator" title="LeftDetail" detail="Detail"/>
+            <Cell cellstyle="Subtitle" accessory="DisclosureIndicator" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
+            <Cell cellstyle="Basic" accessory="DisclosureIndicator" title="Pressable w/ accessory" onPress={() => {console.log('Heyho!')}}/>
+          </Section>
+        </TableView>
+      </ScrollView>
+    );
+  }
 };
 
 var styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
-		backgroundColor: '#F5FCFF',
-	},
-	welcome: {
-		fontSize: 20,
-		textAlign: 'center',
-		margin: 10,
-	},
-	instructions: {
-		textAlign: 'center',
-		color: '#333333',
-		marginBottom: 5,
-	}
+  stage: {
+    backgroundColor: '#EFEFF4',
+    paddingTop: 20,
+    paddingBottom: 20,
+  },
 });
 
 AppRegistry.registerComponent('example', () => Example);
+
 
 ```

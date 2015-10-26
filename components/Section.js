@@ -25,8 +25,8 @@ export default class Section extends Component {
         return(
           <View>
             {child}
-            <View style={styles.cellhr}>
-              <View style={styles.cellhr_inner}></View>
+            <View style={styles.separator}>
+              <View style={styles.separator_inner}></View>
             </View>
           </View>
         )
@@ -82,10 +82,10 @@ var styles = StyleSheet.create({
     paddingRight: 15,
     paddingTop: 10,
   },
-  'cellhr': {
+  'separator': {
     backgroundColor: '#fff',
   },
-  'cellhr_inner': {
+  'separator_inner': {
     marginLeft: 15,
     height: 0.5,
     backgroundColor: '#c8c7cc',

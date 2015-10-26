@@ -15,6 +15,7 @@ export default class Cell extends Component {
     const styleCell = [...{}, styles.cell, { backgroundColor: cellTintColor}];
     const styleCell__subtitle = [...{}, styles.cell__subtitle, { backgroundColor: cellTintColor}];
     const styleCell_title = isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : [...{}, styles.cell_title, {color: titleTintColor}];
+    const styleCell_leftDetailTitle = isDisabled ? [...{}, styles.cell_leftDetailTitle, styles.cell_text__disabled] : [...{}, styles.cell_leftDetailTitle, {color: titleTintColor}];
 
     /**
      * Render accessory
@@ -66,7 +67,7 @@ export default class Cell extends Component {
       return(
           <View style={styleCell}>
             <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_leftdetail, styles.cell_text__disabled] : styles.cell_leftdetail}>{detail}</Text>
-            <Text numberOfLines={1} style={styleCell_title}>{title}</Text>
+            <Text numberOfLines={1} style={styleCell_leftDetailTitle}>{title}</Text>
             {renderAccessory()}
           </View>
       )
@@ -151,6 +152,10 @@ var styles = StyleSheet.create({
   },
   'cell_title':{
     fontSize: 16,
+    flex: 1,
+  },
+  'cell_leftDetailTitle':{
+    fontSize: 12,
     flex: 1,
   },
   'cell_detail': {
