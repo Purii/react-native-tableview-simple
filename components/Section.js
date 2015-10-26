@@ -58,7 +58,9 @@ export default class Section extends Component {
     return(
       <View style={styleSection}>
         {renderHeader()}
+        <View style={styles.section_inner}>
           {React.Children.map(children, renderChild)}
+        </View>
         {renderFooter()}
       </View>
     )
@@ -69,6 +71,11 @@ var styles = StyleSheet.create({
   'section': {
     paddingTop: 15,
     paddingBottom: 15,
+  },
+  'section_inner': {
+    borderTopWidth: 0.5,
+    borderBottomWidth: 0.5,
+    borderColor: '#c8c7cc',
   },
   'sectionheader': {
     fontSize: 13,
