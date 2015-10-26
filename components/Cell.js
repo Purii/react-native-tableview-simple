@@ -251,7 +251,10 @@ Cell.propTypes = {
   ]),
   cellTintColor: PropTypes.string,
   titleTintColor: PropTypes.string,
-  onPress: PropTypes.func
+  onPress: PropTypes.oneOfType([
+    React.PropTypes.bool,
+    React.PropTypes.func
+  ])
 }
 
 Cell.defaultProps = {

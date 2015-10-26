@@ -41,7 +41,7 @@ Currently `TableView` doesn't provide any properties.
 | detail | - | `string` | Detail value |
 | isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
 | accessory | - | `string` | Predefined accessory: `DisclosureIndicator` |
-| onPress | - | `func` | If set, cell will be automaticaly initialized with TouchableHighlight |
+| onPress | - | `func` or false | If set, cell will be automaticaly initialized with TouchableHighlight |
 | cellTintColor | #fff | `string` | Background color of cell |
 | titleTintColor | #000 | `string` | Text color of title |
 
@@ -52,7 +52,7 @@ This makes it possible to use components like `ActivityIndicatorIOS` or `SwitchI
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
 | isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
-| onPress | - | `func` | If set, cell will be automaticaly initialized with TouchableHighlight |
+| onPress | - | `func` or false | If set, cell will be automaticaly initialized with TouchableHighlight |
 | cellTintColor | #fff | `string` | Background color of cell |
 
 

@@ -36,7 +36,10 @@ var styles = StyleSheet.create({
 CustomCell.propTypes = {
 	cellTintColor: PropTypes.string,
 	isDisabled: PropTypes.bool,
-	onPress: PropTypes.func
+	onPress: PropTypes.oneOfType([
+		React.PropTypes.bool,
+		React.PropTypes.func
+	])
 }
 
 CustomCell.defaultProps = {
