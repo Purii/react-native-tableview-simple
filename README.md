@@ -48,6 +48,7 @@ Currently `TableView` doesn't provide any properties.
 ### CustomCell
 CustomCells allow you to define the whole content on your own.
 This makes it possible to use components like `ActivityIndicatorIOS` or `SwitchIOS` as seen in the example below.
+
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
 | isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
