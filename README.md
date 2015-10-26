@@ -45,6 +45,16 @@ Currently `TableView` doesn't provide any properties.
 | cellTintColor | #fff | `string` | Background color of cell |
 | titleTintColor | #000 | `string` | Text color of title |
 
+### CustomCell
+CustomCells allow you to define the whole content on your own.
+This makes it possible to use components like `ActivityIndicatorIOS` or `SwitchIOS` as seen in the example below.
+| Prop  | Default | Type | Description |
+| :------------ | :---------------:| :---------------:| ---------------|
+| isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
+| onPress | - | `func` | If set, cell will be automaticaly initialized with TouchableHighlight |
+| cellTintColor | #fff | `string` | Background color of cell |
+
+
 ## Example
 The left screen is build using `react-native-tableview-simple`. The right one is native.
 

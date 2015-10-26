@@ -4,13 +4,20 @@ export default class CustomCell extends Component {
 	render() {
 		const {children} = this.props;
 		const cellTintColor = this.props.cellTintColor;
+		const isDisabled = this.props.isDisabled;
 		const isPressable = this.props.onPress ? true : false;
 		/* Set styles */
 		const styleCell = [...{}, styles.cell, { backgroundColor: cellTintColor}];
 		
-		return(<View style={styleCell}>{children}</View>)
-	}
-
+		if(isPressable && !isDisabled) {
+			return(
+				<TouchableHighlight onPress={this.props.onPress}>
+					<View style={styleCell}>{children}</View>
+				</TouchableHighlight>
+			)
+		}  
+      return (<View style={styleCell}>{children}</View>)
+  }
 }
 
 var styles = StyleSheet.create({
@@ -27,12 +34,12 @@ var styles = StyleSheet.create({
 });
 
 CustomCell.propTypes = {
-	isDisabled: PropTypes.bool,
 	cellTintColor: PropTypes.string,
+	isDisabled: PropTypes.bool,
 	onPress: PropTypes.func
 }
 
 CustomCell.defaultProps = {
-	isDisabled: false,
-	cellTintColor: '#fff'
+	cellTintColor: '#fff',
+	isDisabled: false
 }
