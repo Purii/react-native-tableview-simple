@@ -10,40 +10,27 @@ import {TableView, Section, Cell} from 'react-native-tableview-simple';
   render() {
     return (
       <ScrollView>
-        <View style={styles.container}>
-         <Text style={styles.welcome}>
-            Welcome to React Native!
-          </Text>
-          <Text style={styles.instructions}>
-            To get started, edit index.ios.js
-          </Text>
-          <Text style={styles.instructions}>
-            Press Cmd+R to reload,{'\n'}
-            Cmd+D or shake for dev menu
-          </Text>
-        </View>
         <TableView>
-          <Section header="Header" footer="Footer">
-            <Cell cellstyle="Basic" title="Title"/>
-            <Cell cellstyle="Basic" title="Title"/>
-            <Cell cellstyle="RightDetail" title="Title" detail="Detail" />
-            <Cell cellstyle="LeftDetail" title="Title" detail="Detail"/>
-            <Cell cellstyle="Subtitle" title="Subtitle" detail="Nooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo Linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
-            <Cell cellstyle="Basic" title="Disabled" isDisabled="true"/>
-            <Cell cellstyle="Basic" title="Pressable" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
-            <Cell cellstyle="Basic" title="Pressable" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
-            <Cell cellstyle="Basic" title="Pressable" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
+          <Section header="STANDARD" footer="A Footer">
+            <Cell cellstyle="Basic" title="Basic"/>
+            <Cell cellstyle="RightDetail" title="RightDetail" detail="Detail" />
+            <Cell cellstyle="LeftDetail" title="LeftDetail" detail="Detail"/>
+            <Cell cellstyle="Subtitle" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
+            <Cell cellstyle="Basic" title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
           </Section>
-          <Section header="Header">
-            <Cell cellstyle="Basic" title="Title"/>
-            <Cell cellstyle="Basic" title="Title"/>
-            <Cell cellstyle="RightDetail" title="Title" detail="Detail" />
-            <Cell cellstyle="LeftDetail" title="Title" detail="Detail"/>
-            <Cell cellstyle="Subtitle" title="Subtitle" detail="Nooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo Linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
-            <Cell cellstyle="Basic" title="Disabled" isDisabled="true"/>
-            <Cell cellstyle="Basic" title="Pressable" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
-            <Cell cellstyle="Basic" title="Pressable" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
-            <Cell cellstyle="Basic" title="Pressable" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
+          <Section header="DISABLED">
+            <Cell cellstyle="Basic" isDisabled="true" title="Basic"/>
+            <Cell cellstyle="RightDetail" isDisabled="true" title="RightDetail" detail="Detail" />
+            <Cell cellstyle="LeftDetail" isDisabled="true" title="LeftDetail" detail="Detail"/>
+            <Cell cellstyle="Subtitle" isDisabled="true" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
+            <Cell cellstyle="Basic" isDisabled="true" title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
+          </Section>
+          <Section header="ACCESSORY">
+            <Cell cellstyle="Basic" accessory="DisclosureIndicator" title="Basic"/>
+            <Cell cellstyle="RightDetail" accessory="DisclosureIndicator" title="RightDetail" detail="Detail" />
+            <Cell cellstyle="LeftDetail" accessory="DisclosureIndicator" title="LeftDetail" detail="Detail"/>
+            <Cell cellstyle="Subtitle" accessory="DisclosureIndicator" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
+            <Cell cellstyle="Basic" accessory="DisclosureIndicator" title="Pressable w/ accessory" onPress={() => {console.log('Heyho!')}}/>
           </Section>
         </TableView>
       </ScrollView>

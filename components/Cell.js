@@ -1,15 +1,26 @@
-import React, { Component, StyleSheet, View, Text, TouchableHighlight } from 'react-native';
+import React, { Component, PropTypes, StyleSheet, View, Text, TouchableHighlight } from 'react-native';
 
 export default class Cell extends Component {
   render() {
-    const {title, detail, cellstyle, isDisabled} = this.props || {
-      cellstyle: 'Basic',
-      isDisabled: 'false',
-      detail: ''
-    }
-    const isPressable = this.props.onPress ? true : false;
-    const accessory = this.props.accessory || false;
+    const {title} = this.props;
+    const cellstyle = this.props.cellstyle;
+    const isDisabled = this.props.isDisabled;
+    const detail = this.props.detail;
+    const isPressable = this.props.onPress;
+    const accessory = this.props.accessory;
+    const cellTintColor = this.props.cellTintColor;
+    const titleTintColor = this.props.titleTintColor;
 
+    /* Set styles */
+    const styleCell = [...{}, styles.cell, { backgroundColor: cellTintColor}];
+    const styleCell__subtitle = [...{}, styles.cell__subtitle, { backgroundColor: cellTintColor}];
+    const styleCell_title = isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : [...{}, styles.cell_title, {color: titleTintColor}];
+
+    /**
+     * Render accessory
+     * Currently available
+     * @return {View} Viewelement with accessory
+     */
     let renderAccessory = () => {
       if(!accessory) return;
       switch(accessory) {
@@ -19,44 +30,57 @@ export default class Cell extends Component {
          return;
       }
     }
-    /** CellStyle: Basic */
+
+    /**
+     * Render cell of type Basic
+     * @return {View} 
+     */
     let CellBasic = () => {
       return(
-          <View style={styles.cell}>
-            <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : styles.cell_title}>{title}</Text>
+          <View style={styleCell}>
+            <Text numberOfLines={1} style={styleCell_title}>{title}</Text>
             {renderAccessory()}
           </View>
       )
     }
 
-    /** CellStyle: RightDetail */
+    /**
+     * Render cell of type RightDetail
+     * @return {View} 
+     */
     let CellRightDetail = () => {
       return(
-          <View style={styles.cell}>
-            <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : styles.cell_title}>{title}</Text>
+          <View style={styleCell}>
+            <Text numberOfLines={1} style={styleCell_title}>{title}</Text>
             <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_detail, styles.cell_text__disabled] : styles.cell_detail}>{detail}</Text>
             {renderAccessory()}
           </View>
       )
     }
 
-    /** CellStyle: LeftDetail */
+    /**
+     * Render cell of type LeftDetail
+     * @return {View} 
+     */
     let CellLeftDetail = () => {
       return(
-          <View style={styles.cell}>
+          <View style={styleCell}>
             <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_leftdetail, styles.cell_text__disabled] : styles.cell_leftdetail}>{detail}</Text>
-            <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : styles.cell_title}>{title}</Text>
+            <Text numberOfLines={1} style={styleCell_title}>{title}</Text>
             {renderAccessory()}
           </View>
       )
     }
 
-    /** CellStyle: Subtitle */
+    /**
+     * Render cell of type Subtitle
+     * @return {View} 
+     */
     let CellSubtitle = () => {
       return(
-          <View style={styles.cell__subtitle}>
+          <View style={styleCell__subtitle}>
             <View style={styles.cellinner__subtitle}>
-              <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : styles.cell_title}>{title}</Text>
+              <Text numberOfLines={1} style={styleCell_title}>{title}</Text>
               <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_subtitle, styles.cell_text__disabled] : styles.cell_subtitle}>{detail}</Text>
             </View>
             {renderAccessory()}
@@ -64,6 +88,10 @@ export default class Cell extends Component {
       )
     }
     
+    /**
+     * Render cell by type
+     * @return {View}
+     */
     let renderCell = () => {
       let cellToRender = CellBasic;
       switch(cellstyle) {
@@ -101,7 +129,6 @@ export default class Cell extends Component {
 
 var styles = StyleSheet.create({
   'cell': {
-    backgroundColor: '#fff',
     justifyContent: 'center',
     paddingLeft: 15,
     paddingRight: 20,
@@ -117,7 +144,6 @@ var styles = StyleSheet.create({
     paddingRight: 20,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#fff',
   },
   'cellinner__subtitle': {
     flexDirection: 'column',
@@ -152,11 +178,42 @@ var styles = StyleSheet.create({
     height: 10,
     marginLeft: 5,
     backgroundColor: 'transparent',
-    borderTopWidth: 1.5,
-    borderRightWidth: 1.5,
+    borderTopWidth: 1,
+    borderRightWidth: 1,
     borderColor: '#c7c7cc',
     transform: [{
       rotate: '45deg'
     }]
   }
 });
+
+
+Cell.propTypes = {
+  title: PropTypes.string,
+  detail: PropTypes.string,
+  cellstyle: PropTypes.string,
+  isDisabled: PropTypes.bool,
+  accessory: PropTypes.oneOfType([
+      React.PropTypes.bool,
+      React.PropTypes.string
+  ]),
+  cellTintColor: PropTypes.string,
+  titleTintColor: PropTypes.string,
+  onPress: PropTypes.oneOfType([
+      React.PropTypes.bool,
+      React.PropTypes.func
+  ])
+}
+
+Cell.defaultProps = {
+  title: '',
+  detail: '',
+  cellstyle: 'Basic',
+  isDisabled: false,
+  accessory: false,
+  cellTintColor: '#fff',
+  titleTintColor: '#000',
+  onPress: false
+}
+
+

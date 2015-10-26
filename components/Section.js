@@ -1,10 +1,19 @@
-import React, { Component, StyleSheet, View, Text } from 'react-native';
+import React, { Component, PropTypes, StyleSheet, View, Text } from 'react-native';
 
 export default class Section extends Component {
   render() {
     const {children} = this.props;
-    const header = this.props.header || '';
-    const footer = this.props.footer || '';
+    const header = this.props.header ? this.props.header : false;
+    const footer = this.props.footer ? this.props.footer : false;
+    const sectionTintColor = this.props.sectionTintColor;
+    const headerTintColor = this.props.headerTintColor;
+    const footerTintColor = this.props.footerTintColor;
+
+    /* Set styles */
+    const styleSection = [...{}, styles.section, { backgroundColor: sectionTintColor}];
+    const styleSectionHeader = [...{}, styles.sectionheader, { color: headerTintColor}];
+    const styleSectionFooter = [...{}, styles.sectionfooter, { color: footerTintColor}];
+
     /**
      * Render Cell and add Border
      * @param  {Cell} child [description]
@@ -24,11 +33,33 @@ export default class Section extends Component {
       }
       return child;
     }
+
+    /**
+     * Render header if defined
+     * @return {View}
+     */
+    let renderHeader = () => {
+      if(header) {
+        return(<Text style={styleSectionHeader}>{header}</Text>);
+      } 
+      return;
+    }
+
+    /**
+     * Render footer if defined
+     * @return {View}
+     */
+    let renderFooter = () => {
+      if(footer) {
+        return(<Text style={styleSectionFooter}>{footer}</Text>);
+      } 
+      return;
+    }
     return(
-      <View style={styles.section}>
-        <Text style={styles.sectionheader}>{header}</Text>
+      <View style={styleSection}>
+        {renderHeader()}
           {React.Children.map(children, renderChild)}
-        <Text style={styles.sectionfooter}>{footer}</Text>
+        {renderFooter()}
       </View>
     )
   }
@@ -36,31 +67,42 @@ export default class Section extends Component {
 
 var styles = StyleSheet.create({
   'section': {
-    backgroundColor: '#EFEFF4'
+    paddingTop: 15,
+    paddingBottom: 15,
   },
   'sectionheader': {
     fontSize: 13,
-    color: '#6d6d72',
     paddingLeft: 15,
     paddingRight: 15,
-    paddingTop: 25,
     paddingBottom: 5,
   },
   'sectionfooter': {
     fontSize: 13,
-    color: '#6d6d72',
     paddingLeft: 15,
     paddingRight: 15,
     paddingTop: 10,
-    paddingBottom: 5,
   },
   'cellhr': {
     backgroundColor: '#fff',
   },
   'cellhr_inner': {
     marginLeft: 15,
-    marginRight: 15,
     height: 0.5,
     backgroundColor: '#c8c7cc',
   },
 });
+
+
+Section.propTypes = {
+  header: PropTypes.string,
+  footer: PropTypes.string,
+  sectionTintColor: PropTypes.string,
+  headerTintColor: PropTypes.string,
+  footerTintColor: PropTypes.string,
+}
+
+Section.defaultProps = {
+  sectionTintColor: '#EFEFF4',
+  headerTintColor: '#6d6d72',
+  footerTintColor: '#6d6d72',
+}

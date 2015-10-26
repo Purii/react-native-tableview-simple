@@ -1,4 +1,4 @@
-import React, { Component, StyleSheet, View } from 'react-native';
+import React, { Component, PropTypes, StyleSheet, View } from 'react-native';
 
 export default class TableView extends Component {
   render() {
@@ -13,8 +13,6 @@ export default class TableView extends Component {
 var styles = StyleSheet.create({
   'tableView': {
     flexDirection: 'column',
-    paddingBottom: 40,
     flex: 1,
-    backgroundColor: '#EFEFF4'
   }
 });
