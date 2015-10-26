@@ -36,7 +36,7 @@ Currently `TableView` doesn't provide any properties.
 ### Cell
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
-| cellstyle | `Basic | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
+| cellstyle | Basic | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
 | title | - | `string` | Title value |
 | detail | - | `string` | Detail value |
 | isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
@@ -47,8 +47,11 @@ Currently `TableView` doesn't provide any properties.
 
 ## Example
 The left screen is build using `react-native-tableview-simple`. The right one is native.
-![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshot.png)
-![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshotNative.png)
+
+| `react-native-tableview-simple` | Native iOS |
+| :------------: | :---------------: |
+| ![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshot.png) | ![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshotNative.png) |
+
 ```javascript
 import React, { AppRegistry, Component, PropTypes, StyleSheet, ScrollView, View, Text } from 'react-native';
 import {TableView, Section, Cell} from 'react-native-tableview-simple';
