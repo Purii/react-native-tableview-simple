@@ -40,7 +40,7 @@ Currently `TableView` doesn't provide any properties.
 | title | - | `string` | Title value |
 | detail | - | `string` | Detail value |
 | isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
-| accessory | - | `string` | Predefined accessory: `DisclosureIndicator` |
+| accessory | - | `string` | Predefined accessory: `DisclosureIndicator`, `Detail`, `DetailDisclosure`, `Checkmark` |
 | onPress | - | `func` or false | If set, cell will be automaticaly initialized with TouchableHighlight |
 | cellTintColor | #fff | `string` | Background color of cell |
 | titleTintColor | #000 | `string` | Text color of title |
