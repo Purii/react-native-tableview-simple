@@ -3,9 +3,10 @@
 
 **NOTE: This component is WIP. Use it with caution!**
 
-This component is a copy of the iOS-TableView made with pure CSS.
-It is not intended to display large datasets!
-A use case might be something like a settingsscreen, with a few rows.
+This component is a copy of the iOS-TableView made with pure CSS. The intention is to provide **a flexible and lightweight alternative to a bridged component**.
+The focus is set on the presentation. The component is therefore not intended to render large data sets.
+A possible use case might be an about- or a settings-screen with a few rows.   
+Have a look at the [Examples below](https://github.com/Purii/react-native-tableview-simple#example)! :-)
 
 ## Installation
 1. `npm i react-native-tableview-simple --save`
@@ -34,6 +35,8 @@ Currently `TableView` doesn't provide any properties.
 | footerTintColor | #6d6d72 | `string` | Text color of footer|
 
 ### Cell
+The cellstyles are inspired by the native ones. Just like the available accessories.
+
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
 | cellstyle | Basic | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
