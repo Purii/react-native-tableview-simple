@@ -38,7 +38,7 @@ class Example extends Component {
               <Text style={{flex: 1, fontSize: 16}}>Loading</Text>
               <ActivityIndicatorIOS/>
             </CustomCell>
-            <CustomCell onPress={() => console.log('Heyho!')}>
+            <CustomCell>
               <Text style={{flex: 1, fontSize: 16}}>Switch</Text>
               <SwitchIOS/>
             </CustomCell>
