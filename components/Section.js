@@ -8,11 +8,19 @@ export default class Section extends Component {
     const sectionTintColor = this.props.sectionTintColor;
     const headerTintColor = this.props.headerTintColor;
     const footerTintColor = this.props.footerTintColor;
+    const separatorTintColor = this.props.separatorTintColor;
+    const separatorInsetLeft = this.props.separatorInsetLeft;
+    const separatorInsetRight = this.props.separatorInsetRight;
 
     /* Set styles */
     const styleSection = [...{}, styles.section, { backgroundColor: sectionTintColor}];
     const styleSectionHeader = [...{}, styles.sectionheader, { color: headerTintColor}];
     const styleSectionFooter = [...{}, styles.sectionfooter, { color: footerTintColor}];
+    const styleSeparatorInner = [...{}, styles.separator_inner, {
+      backgroundColor: separatorTintColor,
+      marginLeft: separatorInsetLeft,
+      marginRight: separatorInsetRight
+    }];
 
     /**
      * Render Cell and add Border
@@ -22,11 +30,12 @@ export default class Section extends Component {
      */
     let renderChild = (child, index) => {
       if(children.length > 0 && index < children.length - 1) {
+        const styleSeparator = [...{}, styles.separator, {backgroundColor: child.props.cellTintColor}]
         return(
           <View>
             {child}
-            <View style={styles.separator}>
-              <View style={styles.separator_inner}></View>
+            <View style={styleSeparator}>
+              <View style={styleSeparatorInner}></View>
             </View>
           </View>
         )
@@ -90,12 +99,9 @@ var styles = StyleSheet.create({
     paddingTop: 10,
   },
   'separator': {
-    backgroundColor: '#fff',
   },
   'separator_inner': {
-    marginLeft: 15,
     height: 0.5,
-    backgroundColor: '#c8c7cc',
   },
 });
 
@@ -104,6 +110,9 @@ Section.propTypes = {
   header: PropTypes.string,
   footer: PropTypes.string,
   sectionTintColor: PropTypes.string,
+  separatorTintColor: PropTypes.string,
+  separatorInsetLeft: PropTypes.number,
+  separatorInsetRight: PropTypes.number,
   headerTintColor: PropTypes.string,
   footerTintColor: PropTypes.string,
 }
@@ -112,4 +121,7 @@ Section.defaultProps = {
   sectionTintColor: '#EFEFF4',
   headerTintColor: '#6d6d72',
   footerTintColor: '#6d6d72',
+  separatorTintColor: '#c8c7cc',
+  separatorInsetLeft: 15,
+  separatorInsetRight: 0,
 }
