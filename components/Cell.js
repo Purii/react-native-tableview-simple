@@ -270,5 +270,5 @@ Cell.defaultProps = {
   cellTintColor: '#fff',
   titleTintColor: '#000',
   highlightActiveOpacity: 0.8,
-  hightlightUnderlayColor: 'black'
+  highlightUnderlayColor: 'black'
 }

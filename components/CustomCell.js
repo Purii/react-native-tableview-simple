@@ -51,5 +51,5 @@ CustomCell.defaultProps = {
 	cellTintColor: '#fff',
 	isDisabled: false,
 	highlightActiveOpacity: 0.8,
-  	hightlightUnderlayColor: 'black'
+  	highlightUnderlayColor: 'black'
 }
