@@ -7,7 +7,7 @@ import Dimensions from 'Dimensions';
  * https://github.com/facebook/react-native
  */
 
- class Example extends Component {
+class Example extends Component {
   render() {
     return (
       <ScrollView contentContainerStyle={styles.stage}>
@@ -44,9 +44,8 @@ import Dimensions from 'Dimensions';
             </CustomCell>
           </Section>
         </TableView>
-
         <View style={{
-            height: Dimensions.get('window').height
+            height: Dimensions.get('window').height,
           }}
         >
           <View style={{
@@ -60,8 +59,7 @@ import Dimensions from 'Dimensions';
               width: 80,
               height: 80,
               borderRadius: 10
-            }}>
-            </View>
+            }}></View>
           </View>
           <TableView>
             <Section footer="All rights reserved.">
@@ -78,7 +76,7 @@ import Dimensions from 'Dimensions';
 var styles = StyleSheet.create({
   stage: {
     backgroundColor: '#EFEFF4',
-    paddingBottom: 20,
+    paddingBottom: 20
   },
 });
 

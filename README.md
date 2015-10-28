@@ -65,7 +65,67 @@ This makes it possible to use components like `ActivityIndicatorIOS` or `SwitchI
 | cellTintColor | #fff | `string` | Background color of cell |
 
 
-## Example
+## Examples
+The following examples can be found in the folder `example`.   
+To run the example project, follow these steps:
+1. `git clone https://github.com/Purii/react-native-tableview-simple`
+2. `cd example`
+3. `npm i`
+4. run `/example/ios/example.xcodeproj` via Xcode
+
+### Use case: About-screen
+
+![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshotAboutScreen.png)
+
+```javascript
+import React, { AppRegistry, Component, PropTypes, StyleSheet, ScrollView, View, Text, ActivityIndicatorIOS, SwitchIOS } from 'react-native';
+import {TableView, Section, Cell, CustomCell} from 'react-native-tableview-simple';
+
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ */
+
+class Example extends Component {
+  render() {
+    return (
+      <ScrollView contentContainerStyle={styles.stage}>
+          <View style={{
+            backgroundColor: '#37474F',
+            height: 500,
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <View style={{
+              backgroundColor: '#ffc107',
+              width: 80,
+              height: 80,
+              borderRadius: 10
+            }}></View>
+          </View>
+          <TableView>
+            <Section footer="All rights reserved.">
+              <Cell title="Help / FAQ" titleTintColor="#007AFF" onPress={() => console.log('open Help/FAQ')}/>
+              <Cell title="Contact Us" titleTintColor="#007AFF" onPress={() => console.log('open Contact Us')}/>
+            </Section>
+          </TableView>
+      </ScrollView>
+    );
+  }
+};
+
+var styles = StyleSheet.create({
+  stage: {
+    backgroundColor: '#EFEFF4',
+    paddingBottom: 20,
+    flex: 1
+  },
+});
+
+AppRegistry.registerComponent('example', () => Example);
+```
+
+### `react-native-tableview-simple` vs. Native iOS
 The left screen is build using `react-native-tableview-simple`. The right one is native.
 
 | `react-native-tableview-simple` | Native iOS |
@@ -81,7 +141,7 @@ import {TableView, Section, Cell, CustomCell} from 'react-native-tableview-simpl
  * https://github.com/facebook/react-native
  */
 
- class Example extends Component {
+class Example extends Component {
   render() {
     return (
       <ScrollView contentContainerStyle={styles.stage}>
