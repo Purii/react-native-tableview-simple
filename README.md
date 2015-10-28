@@ -68,10 +68,11 @@ This makes it possible to use components like `ActivityIndicatorIOS` or `SwitchI
 ## Examples
 The following examples can be found in the folder `example`.   
 To run the example project, follow these steps:
+
 1. `git clone https://github.com/Purii/react-native-tableview-simple`
-2. `cd example`
-3. `npm i`
-4. run `/example/ios/example.xcodeproj` via Xcode
+1. `cd example`
+1. `npm i`
+1. run `/example/ios/example.xcodeproj` via Xcode
 
 ### Use case: About-screen
 
