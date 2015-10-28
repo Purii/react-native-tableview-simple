@@ -11,7 +11,7 @@ export default class Section extends Component {
     const separatorTintColor = this.props.separatorTintColor;
     const separatorInsetLeft = this.props.separatorInsetLeft;
     const separatorInsetRight = this.props.separatorInsetRight;
-
+    const hideSeparator = this.props.hideSeparator;
     /* Set styles */
     const styleSection = [...{}, styles.section, { backgroundColor: sectionTintColor}];
     const styleSectionHeader = [...{}, styles.sectionheader, { color: headerTintColor}];
@@ -30,13 +30,21 @@ export default class Section extends Component {
      */
     let renderChild = (child, index) => {
       if(children.length > 0 && index < children.length - 1) {
-        const styleSeparator = [...{}, styles.separator, {backgroundColor: child.props.cellTintColor}]
-        return(
-          <View>
-            {child}
+        const styleSeparator = [...{}, styles.separator, {backgroundColor: child.props.cellTintColor}];
+
+        let renderSeparator = () => {
+          if(hideSeparator) return;
+          return (
             <View style={styleSeparator}>
               <View style={styleSeparatorInner}></View>
             </View>
+          )
+        }
+        
+        return(
+          <View>
+            {child}
+            {renderSeparator()}
           </View>
         )
       }
@@ -115,6 +123,7 @@ Section.propTypes = {
   separatorInsetRight: PropTypes.number,
   headerTintColor: PropTypes.string,
   footerTintColor: PropTypes.string,
+  hideSeparator: PropTypes.bool
 }
 
 Section.defaultProps = {
@@ -124,4 +133,5 @@ Section.defaultProps = {
   separatorTintColor: '#c8c7cc',
   separatorInsetLeft: 15,
   separatorInsetRight: 0,
+  hideSeparator: false
 }

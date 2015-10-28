@@ -10,6 +10,8 @@ export default class Cell extends Component {
     const accessory = this.props.accessory;
     const cellTintColor = this.props.cellTintColor;
     const titleTintColor = this.props.titleTintColor;
+    const highlightUnderlayColor = this.props.highlightUnderlayColor;
+    const highlightActiveOpacity = this.props.highlightActiveOpacity;
 
     /* Set styles */
     const styleCell = [...{}, styles.cell, { backgroundColor: cellTintColor}];
@@ -127,7 +129,7 @@ export default class Cell extends Component {
 
       if(isPressable && !isDisabled) {
         return(
-          <TouchableHighlight onPress={this.props.onPress}>
+          <TouchableHighlight onPress={this.props.onPress} underlayColor={highlightUnderlayColor} activeOpacity={highlightActiveOpacity}>
             {cellToRender()}
           </TouchableHighlight>
         )
@@ -251,6 +253,8 @@ Cell.propTypes = {
   ]),
   cellTintColor: PropTypes.string.isRequired,
   titleTintColor: PropTypes.string,
+  highlightActiveOpacity: PropTypes.number,
+  highlightUnderlayColor: PropTypes.string,
   onPress: PropTypes.oneOfType([
     React.PropTypes.bool,
     React.PropTypes.func
@@ -264,5 +268,7 @@ Cell.defaultProps = {
   isDisabled: false,
   accessory: false,
   cellTintColor: '#fff',
-  titleTintColor: '#000'
+  titleTintColor: '#000',
+  highlightActiveOpacity: 0.8,
+  hightlightUnderlayColor: 'black'
 }

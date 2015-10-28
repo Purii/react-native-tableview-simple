@@ -33,6 +33,10 @@ Currently `TableView` doesn't provide any properties.
 | sectionTintColor | #EFEFF4 | `string` | Background color of section |
 | headerTintColor | #6d6d72 | `string` | Text color of header |
 | footerTintColor | #6d6d72 | `string` | Text color of footer|
+| hideSeparator | false | `bool` | Hide separators |
+| separatorTintColor | #c8c7cc | `string` | Color of separator |
+| separatorInsetLeft | 15 | `number` | Left inset of separator |
+| separatorInsetRight | 0 | `number` | Right inset of separator |
 
 ### Cell
 The cellstyles are inspired by the native ones. Just like the available accessories.
@@ -42,11 +46,13 @@ The cellstyles are inspired by the native ones. Just like the available accessor
 | cellstyle | Basic | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
 | title | - | `string` | Title value |
 | detail | - | `string` | Detail value |
+| cellTintColor | #fff | `string` | Background color of cell |
+| titleTintColor | #000 | `string` | Text color of title |
 | isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
 | accessory | - | `string` | Predefined accessory: `DisclosureIndicator`, `Detail`, `DetailDisclosure`, `Checkmark` |
 | onPress | - | `func` or false | If set, cell will be automaticaly initialized with TouchableHighlight |
-| cellTintColor | #fff | `string` | Background color of cell |
-| titleTintColor | #000 | `string` | Text color of title |
+| highlightActiveOpacity | 0.8 | `number` | Opacity of cell when touch is active |
+| hightlightUnderlayColor | 'black' | `string` | Color of underlay that will show through when touch is active |
 
 ### CustomCell
 CustomCells allow you to define the whole content on your own.

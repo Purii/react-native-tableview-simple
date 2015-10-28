@@ -1,5 +1,6 @@
 import React, { AppRegistry, Component, PropTypes, StyleSheet, ScrollView, View, Text, ActivityIndicatorIOS, SwitchIOS } from 'react-native';
 import {TableView, Section, Cell, CustomCell} from 'react-native-tableview-simple';
+import Dimensions from 'Dimensions';
 
 /**
  * Sample React Native App
@@ -43,6 +44,32 @@ import {TableView, Section, Cell, CustomCell} from 'react-native-tableview-simpl
             </CustomCell>
           </Section>
         </TableView>
+
+        <View style={{
+            height: Dimensions.get('window').height
+          }}
+        >
+          <View style={{
+            backgroundColor: '#37474F',
+            height: 500,
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <View style={{
+              backgroundColor: '#ffc107',
+              width: 80,
+              height: 80,
+              borderRadius: 10
+            }}>
+            </View>
+          </View>
+          <TableView>
+            <Section footer="All rights reserved.">
+              <Cell title="Help / FAQ" titleTintColor="#007AFF" onPress={() => console.log('open Help/FAQ')}/>
+              <Cell title="Contact Us" titleTintColor="#007AFF" onPress={() => console.log('open Contact Us')}/>
+            </Section>
+          </TableView>
+        </View>
       </ScrollView>
     );
   }
@@ -51,7 +78,6 @@ import {TableView, Section, Cell, CustomCell} from 'react-native-tableview-simpl
 var styles = StyleSheet.create({
   stage: {
     backgroundColor: '#EFEFF4',
-    paddingTop: 20,
     paddingBottom: 20,
   },
 });
