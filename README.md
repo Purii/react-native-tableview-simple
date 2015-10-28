@@ -23,7 +23,7 @@ Just move your component to the folder `components` and choose a meaningful name
 
 ## Props
 ### TableView
-Currently `TableView` doesn't provide any properties.
+Currently `TableView` doesn't support any properties.
 
 ### Section
 | Prop  | Default | Type | Description |
