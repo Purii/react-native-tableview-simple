@@ -6,12 +6,15 @@ export default class CustomCell extends Component {
 		const cellTintColor = this.props.cellTintColor;
 		const isDisabled = this.props.isDisabled;
 		const isPressable = this.props.onPress ? true : false;
+		const highlightUnderlayColor = this.props.highlightUnderlayColor;
+    	const highlightActiveOpacity = this.props.highlightActiveOpacity;
+    	
 		/* Set styles */
 		const styleCell = [...{}, styles.cell, { backgroundColor: cellTintColor}];
 		
 		if(isPressable && !isDisabled) {
 			return(
-				<TouchableHighlight onPress={this.props.onPress}>
+				<TouchableHighlight onPress={this.props.onPress} underlayColor={highlightUnderlayColor} activeOpacity={highlightActiveOpacity}>
 					<View style={styleCell}>{children}</View>
 				</TouchableHighlight>
 			)
@@ -39,10 +42,14 @@ CustomCell.propTypes = {
 	onPress: PropTypes.oneOfType([
 		React.PropTypes.bool,
 		React.PropTypes.func
-	])
+	]),
+	highlightActiveOpacity: PropTypes.number,
+	highlightUnderlayColor: PropTypes.string,
 }
 
 CustomCell.defaultProps = {
 	cellTintColor: '#fff',
-	isDisabled: false
+	isDisabled: false,
+	highlightActiveOpacity: 0.8,
+  	hightlightUnderlayColor: 'black'
 }

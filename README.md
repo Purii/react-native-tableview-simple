@@ -60,9 +60,11 @@ This makes it possible to use components like `ActivityIndicatorIOS` or `SwitchI
 
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
+| cellTintColor | #fff | `string` | Background color of cell |
 | isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
 | onPress | - | `func` or false | If set, cell will be automaticaly initialized with TouchableHighlight |
-| cellTintColor | #fff | `string` | Background color of cell |
+| highlightActiveOpacity | 0.8 | `number` | Opacity of cell when touch is active |
+| hightlightUnderlayColor | 'black' | `string` | Color of underlay that will show through when touch is active |
 
 
 ## Examples
@@ -152,7 +154,7 @@ class Example extends Component {
             <Cell cellstyle="RightDetail" title="RightDetail" detail="Detail" />
             <Cell cellstyle="LeftDetail" title="LeftDetail" detail="Detail"/>
             <Cell cellstyle="Subtitle" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
-            <Cell cellstyle="Basic" title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
+            <Cell cellstyle="Basic" title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => console.log('Heyho!')}/>
           </Section>
           <Section header="DISABLED">
             <Cell cellstyle="Basic" isDisabled={true} title="Basic"/>
@@ -166,7 +168,7 @@ class Example extends Component {
             <Cell cellstyle="RightDetail" accessory="DetailDisclosure" title="RightDetail" detail="Detail" />
             <Cell cellstyle="LeftDetail" accessory="Detail" title="LeftDetail" detail="Detail"/>
             <Cell cellstyle="Subtitle" accessory="Checkmark" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
-            <Cell cellstyle="Basic" accessory="Detail" title="Pressable w/ accessory" onPress={() => {console.log('Heyho!')}}/>
+            <Cell cellstyle="Basic" accessory="Detail" title="Pressable w/ accessory" onPress={() => console.log('Heyho!')}/>
           </Section>
           <Section header="CUSTOMCELLS">
             <CustomCell>

@@ -17,7 +17,7 @@ class Example extends Component {
             <Cell cellstyle="RightDetail" title="RightDetail" detail="Detail" />
             <Cell cellstyle="LeftDetail" title="LeftDetail" detail="Detail"/>
             <Cell cellstyle="Subtitle" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
-            <Cell cellstyle="Basic" title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
+            <Cell cellstyle="Basic" title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => console.log('Heyho!')}/>
           </Section>
           <Section header="DISABLED">
             <Cell cellstyle="Basic" isDisabled={true} title="Basic"/>
@@ -31,14 +31,14 @@ class Example extends Component {
             <Cell cellstyle="RightDetail" accessory="DetailDisclosure" title="RightDetail" detail="Detail" />
             <Cell cellstyle="LeftDetail" accessory="Detail" title="LeftDetail" detail="Detail"/>
             <Cell cellstyle="Subtitle" accessory="Checkmark" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
-            <Cell cellstyle="Basic" accessory="Detail" title="Pressable w/ accessory" onPress={() => {console.log('Heyho!')}}/>
+            <Cell cellstyle="Basic" accessory="Detail" title="Pressable w/ accessory" onPress={() => console.log('Heyho!')}/>
           </Section>
           <Section header="CUSTOMCELLS">
             <CustomCell>
               <Text style={{flex: 1, fontSize: 16}}>Loading</Text>
               <ActivityIndicatorIOS/>
             </CustomCell>
-            <CustomCell>
+            <CustomCell onPress={() => console.log('Heyho!')}>
               <Text style={{flex: 1, fontSize: 16}}>Switch</Text>
               <SwitchIOS/>
             </CustomCell>
