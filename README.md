@@ -6,7 +6,7 @@
 This component is a copy of the iOS-TableView made with pure CSS. The intention is to provide **a flexible and lightweight alternative to a bridged component**.
 The focus is set on the presentation. The component is therefore not intended to render large data sets.
 A possible use case might be an about- or a settings-screen with a few rows.   
-Have a look at the [Examples below](https://github.com/Purii/react-native-tableview-simple#example)! :-)
+Have a look at the [Examples below](https://github.com/Purii/react-native-tableview-simple#examples)! :-)
 
 ## Installation
 1. `npm i react-native-tableview-simple --save`
