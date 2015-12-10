@@ -1,9 +1,4 @@
-let TableView =  require('./components/TableView');
-let Section = require('./components/Section');
-let Cell = require('./components/Cell');
-let CustomCell = require('./components/CustomCell');
-
-module.exports.TableView = TableView;
-module.exports.Section = Section;
-module.exports.Cell = Cell;
-module.exports.CustomCell = CustomCell;
+export {default as TableView} from './components/TableView';
+export {default as Section} from './components/Section';
+export {default as Cell} from './components/Cell';
+export {default as CustomCell} from './components/CustomCell';
