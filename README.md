@@ -44,13 +44,13 @@ The cellstyles are inspired by the native ones. Just like the available accessor
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
 | cellstyle | Basic | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
-| title | - | `string` || `number` | Title value |
-| detail | - | `string` || `number` | Detail value |
+| title | - | `string` or `number` | Title value |
+| detail | - | `string` or `number` | Detail value |
 | cellTintColor | #fff | `string` | Background color of cell |
 | titleTintColor | #000 | `string` | Text color of title |
 | isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
 | accessory | - | `string` | Predefined accessory: `DisclosureIndicator`, `Detail`, `DetailDisclosure`, `Checkmark` |
-| onPress | - | `func` or false | If set, cell will be automaticaly initialized with TouchableHighlight |
+| onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 | highlightActiveOpacity | 0.8 | `number` | Opacity of cell when touch is active |
 | highlightUnderlayColor | 'black' | `string` | Color of underlay that will show through when touch is active |
 
@@ -62,7 +62,7 @@ This makes it possible to use components like `ActivityIndicatorIOS` or `SwitchI
 | :------------ | :---------------:| :---------------:| ---------------|
 | cellTintColor | #fff | `string` | Background color of cell |
 | isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
-| onPress | - | `func` or false | If set, cell will be automaticaly initialized with TouchableHighlight |
+| onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 | highlightActiveOpacity | 0.8 | `number` | Opacity of cell when touch is active |
 | highlightUnderlayColor | 'black' | `string` | Color of underlay that will show through when touch is active |
 
