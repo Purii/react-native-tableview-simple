@@ -44,8 +44,8 @@ The cellstyles are inspired by the native ones. Just like the available accessor
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
 | cellstyle | Basic | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
-| title | - | `string` | Title value |
-| detail | - | `string` | Detail value |
+| title | - | `string` || `number` | Title value |
+| detail | - | `string` || `number` | Detail value |
 | cellTintColor | #fff | `string` | Background color of cell |
 | titleTintColor | #000 | `string` | Text color of title |
 | isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
