@@ -243,8 +243,14 @@ var styles = StyleSheet.create({
 
 
 Cell.propTypes = {
-  title: PropTypes.string,
-  detail: PropTypes.string,
+  title: PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.number
+  ]),
+  detail: PropTypes.oneOfType([
+    React.PropTypes.string,
+    React.PropTypes.number
+  ]),
   cellstyle: PropTypes.string,
   isDisabled: PropTypes.bool,
   accessory: PropTypes.oneOfType([
