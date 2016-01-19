@@ -65,6 +65,7 @@ This makes it possible to use components like `ActivityIndicatorIOS` or `SwitchI
 | onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 | highlightActiveOpacity | 0.8 | `number` | Opacity of cell when touch is active |
 | highlightUnderlayColor | 'black' | `string` | Color of underlay that will show through when touch is active |
+| cellHeight | 44 | `number` | Set cell height |
 
 
 ## Examples
