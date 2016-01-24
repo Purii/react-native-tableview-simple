@@ -52,7 +52,7 @@ The cellstyles are inspired by the native ones. Just like the available accessor
 | accessory | - | `string` | Predefined accessory: `DisclosureIndicator`, `Detail`, `DetailDisclosure`, `Checkmark` |
 | onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 | highlightActiveOpacity | 0.8 | `number` | Opacity of cell when touch is active |
-| highlightUnderlayColor | 'black' | `string` | Color of underlay that will show through when touch is active |
+| highlightUnderlayColor | black | `string` | Color of underlay that will show through when touch is active |
 
 ### CustomCell
 CustomCells allow you to define the whole content on your own.
@@ -64,7 +64,7 @@ This makes it possible to use components like `ActivityIndicatorIOS` or `SwitchI
 | isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
 | onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 | highlightActiveOpacity | 0.8 | `number` | Opacity of cell when touch is active |
-| highlightUnderlayColor | 'black' | `string` | Color of underlay that will show through when touch is active |
+| highlightUnderlayColor | black | `string` | Color of underlay that will show through when touch is active |
 | cellHeight | 44 | `number` | Set cell height |
 
 
