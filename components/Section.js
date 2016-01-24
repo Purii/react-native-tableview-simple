@@ -1,4 +1,10 @@
-import React, { Component, PropTypes, StyleSheet, View, Text } from 'react-native';
+import React, {
+  Component,
+  PropTypes,
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
 
 export default class Section extends Component {
   render() {
@@ -29,50 +35,50 @@ export default class Section extends Component {
      * @return {View}       [description]
      */
     let renderChild = (child, index) => {
-      if(children.length > 0 && index < children.length - 1) {
+      if (children.length > 0 && index < children.length - 1) {
         const styleSeparator = [...{}, styles.separator, {backgroundColor: child.props.cellTintColor}];
 
         let renderSeparator = () => {
-          if(hideSeparator) return;
+          if (hideSeparator) { return; }
           return (
             <View style={styleSeparator}>
               <View style={styleSeparatorInner}></View>
             </View>
-          )
-        }
-        
-        return(
+          );
+        };
+
+        return (
           <View>
             {child}
             {renderSeparator()}
           </View>
-        )
+        );
       }
       return child;
-    }
+    };
 
     /**
      * Render header if defined
      * @return {View}
      */
     let renderHeader = () => {
-      if(header) {
-        return(<Text style={styleSectionHeader}>{header}</Text>);
-      } 
+      if (header) {
+        return (<Text style={styleSectionHeader}>{header}</Text>);
+      }
       return;
-    }
+    };
 
     /**
      * Render footer if defined
      * @return {View}
      */
     let renderFooter = () => {
-      if(footer) {
-        return(<Text style={styleSectionFooter}>{footer}</Text>);
-      } 
+      if (footer) {
+        return (<Text style={styleSectionFooter}>{footer}</Text>);
+      }
       return;
-    }
-    return(
+    };
+    return (
       <View style={styleSection}>
         {renderHeader()}
         <View style={styles.section_inner}>
@@ -80,11 +86,11 @@ export default class Section extends Component {
         </View>
         {renderFooter()}
       </View>
-    )
+    );
   }
 }
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   'section': {
     paddingTop: 15,
     paddingBottom: 15,
@@ -124,7 +130,7 @@ Section.propTypes = {
   headerTintColor: PropTypes.string,
   footerTintColor: PropTypes.string,
   hideSeparator: PropTypes.bool
-}
+};
 
 Section.defaultProps = {
   sectionTintColor: '#EFEFF4',
@@ -134,4 +140,4 @@ Section.defaultProps = {
   separatorInsetLeft: 15,
   separatorInsetRight: 0,
   hideSeparator: false
-}
+};

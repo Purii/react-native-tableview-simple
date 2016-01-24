@@ -1,4 +1,11 @@
-import React, { Component, PropTypes, StyleSheet, View, Text, TouchableHighlight } from 'react-native';
+import React, {
+  Component,
+  PropTypes,
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  View
+} from 'react-native';
 
 export default class Cell extends Component {
   render() {
@@ -25,77 +32,77 @@ export default class Cell extends Component {
      * @return {View} Viewelement with accessory
      */
     let renderAccessory = () => {
-      if(!accessory) return;
-      switch(accessory) {
-        case "DisclosureIndicator":
+      if (!accessory) { return; }
+      switch (accessory) {
+        case 'DisclosureIndicator':
           return (<View style={styles.accessory_disclosureIndicator}></View>);
-        case "Detail":
+        case 'Detail':
           return (
             <View style={styles.accessory_detail}>
               <Text style={styles.accessory_detailText}>i</Text>
             </View>);
-        case "DetailDisclosure":
+        case 'DetailDisclosure':
           return (
             <View style={styles.accessory_detailDisclosure}>
               <View style={styles.accessory_detail}>
                 <Text style={styles.accessory_detailText}>i</Text>
               </View>
               <View style={styles.accessory_disclosureIndicator}></View>
-            </View>)
-        case "Checkmark":
+            </View>);
+        case 'Checkmark':
           return (<View style={styles.accessory_checkmark}></View>);
         default:
          return;
       }
-    }
+    };
 
     /**
      * Render cell of type Basic
-     * @return {View} 
+     * @return {View}
      */
     let CellBasic = () => {
-      return(
+      return (
           <View style={styleCell}>
             <Text numberOfLines={1} style={styleCell_title}>{title}</Text>
             {renderAccessory()}
           </View>
-      )
-    }
+      );
+    };
 
     /**
      * Render cell of type RightDetail
-     * @return {View} 
+     * @return {View}
      */
     let CellRightDetail = () => {
-      return(
+      return (
           <View style={styleCell}>
             <Text numberOfLines={1} style={styleCell_title}>{title}</Text>
             <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_detail, styles.cell_text__disabled] : styles.cell_detail}>{detail}</Text>
             {renderAccessory()}
           </View>
-      )
-    }
+      );
+    };
 
     /**
      * Render cell of type LeftDetail
-     * @return {View} 
+     * @return {View}
      */
     let CellLeftDetail = () => {
-      return(
+      return (
           <View style={styleCell}>
             <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_leftdetail, styles.cell_text__disabled] : styles.cell_leftdetail}>{detail}</Text>
             <Text numberOfLines={1} style={styleCell_leftDetailTitle}>{title}</Text>
             {renderAccessory()}
           </View>
-      )
-    }
+      );
+    };
 
     /**
      * Render cell of type Subtitle
-     * @return {View} 
+     * @return {View}
      */
     let CellSubtitle = () => {
-      return(
+      return (
           <View style={styleCell__subtitle}>
             <View style={styles.cellinner__subtitle}>
               <Text numberOfLines={1} style={styleCell_title}>{title}</Text>
@@ -103,16 +110,16 @@ export default class Cell extends Component {
             </View>
             {renderAccessory()}
           </View>
-      )
-    }
-    
+      );
+    };
+
     /**
      * Render cell by type
      * @return {View}
      */
     let renderCell = () => {
       let cellToRender = CellBasic;
-      switch(cellstyle) {
+      switch (cellstyle) {
         case 'Basic':
           cellToRender = CellBasic;
           break;
@@ -127,25 +134,25 @@ export default class Cell extends Component {
           break;
       }
 
-      if(isPressable && !isDisabled) {
-        return(
+      if (isPressable && !isDisabled) {
+        return (
           <TouchableHighlight onPress={this.props.onPress} underlayColor={highlightUnderlayColor} activeOpacity={highlightActiveOpacity}>
             {cellToRender()}
           </TouchableHighlight>
-        )
-      }  
-      return (<View>{cellToRender()}</View>)
-    }
-    
-    return(
+        );
+      }
+      return (<View>{cellToRender()}</View>);
+    };
+
+    return (
       <View>
         {renderCell()}
       </View>
-    )
+    );
   }
 }
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   'cell': {
     justifyContent: 'center',
     paddingLeft: 15,
@@ -265,7 +272,7 @@ Cell.propTypes = {
     React.PropTypes.bool,
     React.PropTypes.func
   ])
-}
+};
 
 Cell.defaultProps = {
   title: '',
@@ -277,4 +284,4 @@ Cell.defaultProps = {
   titleTintColor: '#000',
   highlightActiveOpacity: 0.8,
   highlightUnderlayColor: 'black'
-}
+};

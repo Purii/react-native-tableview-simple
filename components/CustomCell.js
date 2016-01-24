@@ -1,4 +1,10 @@
-import React, { Component, PropTypes, StyleSheet, View, Text, TouchableHighlight } from 'react-native';
+import React, {
+  Component,
+  PropTypes,
+  StyleSheet,
+  TouchableHighlight,
+  View
+} from 'react-native';
 
 export default class CustomCell extends Component {
 	render() {
@@ -13,18 +19,18 @@ export default class CustomCell extends Component {
 		/* Set styles */
 		const styleCell = [...{}, styles.cell, { backgroundColor: cellTintColor, height: cellHeight}];
 
-		if(isPressable && !isDisabled) {
-			return(
+		if (isPressable && !isDisabled) {
+			return (
 				<TouchableHighlight onPress={this.props.onPress} underlayColor={highlightUnderlayColor} activeOpacity={highlightActiveOpacity}>
 					<View style={styleCell}>{children}</View>
 				</TouchableHighlight>
-			)
+			);
 		}
-      return (<View style={styleCell}>{children}</View>)
+    return (<View style={styleCell}>{children}</View>);
   }
 }
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   'cell': {
     justifyContent: 'center',
     paddingLeft: 15,
@@ -46,12 +52,12 @@ CustomCell.propTypes = {
 	]),
 	highlightActiveOpacity: PropTypes.number,
 	highlightUnderlayColor: PropTypes.string,
-}
+};
 
 CustomCell.defaultProps = {
 	cellTintColor: '#fff',
 	isDisabled: false,
 	cellHeight: 44,
 	highlightActiveOpacity: 0.8,
-  	highlightUnderlayColor: 'black'
-}
+  highlightUnderlayColor: 'black'
+};
