@@ -7,18 +7,19 @@ export default class CustomCell extends Component {
 		const isDisabled = this.props.isDisabled;
 		const isPressable = this.props.onPress ? true : false;
 		const highlightUnderlayColor = this.props.highlightUnderlayColor;
-    	const highlightActiveOpacity = this.props.highlightActiveOpacity;
-    	
+		const highlightActiveOpacity = this.props.highlightActiveOpacity;
+		const cellHeight = this.props.cellHeight;
+
 		/* Set styles */
-		const styleCell = [...{}, styles.cell, { backgroundColor: cellTintColor}];
-		
+		const styleCell = [...{}, styles.cell, { backgroundColor: cellTintColor, height: cellHeight}];
+
 		if(isPressable && !isDisabled) {
 			return(
 				<TouchableHighlight onPress={this.props.onPress} underlayColor={highlightUnderlayColor} activeOpacity={highlightActiveOpacity}>
 					<View style={styleCell}>{children}</View>
 				</TouchableHighlight>
 			)
-		}  
+		}
       return (<View style={styleCell}>{children}</View>)
   }
 }
@@ -32,13 +33,13 @@ var styles = StyleSheet.create({
     paddingBottom: 10,
     flexDirection: 'row',
     alignItems: 'center',
-    height: 44,
   }
 });
 
 CustomCell.propTypes = {
 	cellTintColor: PropTypes.string,
 	isDisabled: PropTypes.bool,
+	cellHeight: PropTypes.number,
 	onPress: PropTypes.oneOfType([
 		React.PropTypes.bool,
 		React.PropTypes.func
@@ -50,6 +51,7 @@ CustomCell.propTypes = {
 CustomCell.defaultProps = {
 	cellTintColor: '#fff',
 	isDisabled: false,
+	cellHeight: 44,
 	highlightActiveOpacity: 0.8,
   	highlightUnderlayColor: 'black'
 }
