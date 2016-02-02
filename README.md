@@ -82,8 +82,22 @@ To run the example project, follow these steps:
 ![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshotAboutScreen.png)
 
 ```javascript
-import React, { AppRegistry, Component, PropTypes, StyleSheet, ScrollView, View, Text, ActivityIndicatorIOS, SwitchIOS } from 'react-native';
-import {TableView, Section, Cell, CustomCell} from 'react-native-tableview-simple';
+import React, {
+  ActivityIndicatorIOS,
+  AppRegistry,
+  Component,
+  StyleSheet,
+  ScrollView,
+  SwitchIOS,
+  Text,
+  View
+} from 'react-native';
+import {
+  Cell,
+  CustomCell,
+  Section,
+  TableView
+} from 'react-native-tableview-simple';
 
 /**
  * Sample React Native App
@@ -118,7 +132,7 @@ class Example extends Component {
   }
 };
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   stage: {
     backgroundColor: '#EFEFF4',
     paddingBottom: 20,
@@ -137,8 +151,22 @@ The left screen is build using `react-native-tableview-simple`. The right one is
 | ![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshot.png) | ![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshotNative.png) |
 
 ```javascript
-import React, { AppRegistry, Component, PropTypes, StyleSheet, ScrollView, View, Text, ActivityIndicatorIOS, SwitchIOS } from 'react-native';
-import {TableView, Section, Cell, CustomCell} from 'react-native-tableview-simple';
+import React, {
+  ActivityIndicatorIOS,
+  AppRegistry,
+  Component,
+  StyleSheet,
+  ScrollView,
+  SwitchIOS,
+  Text,
+  View
+} from 'react-native';
+import {
+  Cell,
+  CustomCell,
+  Section,
+  TableView
+} from 'react-native-tableview-simple';
 
 /**
  * Sample React Native App
@@ -187,7 +215,7 @@ class Example extends Component {
   }
 };
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   stage: {
     backgroundColor: '#EFEFF4',
     paddingTop: 20,
