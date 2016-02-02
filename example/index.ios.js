@@ -1,5 +1,19 @@
-import React, { AppRegistry, Component, PropTypes, StyleSheet, ScrollView, View, Text, ActivityIndicatorIOS, SwitchIOS } from 'react-native';
-import {TableView, Section, Cell, CustomCell} from 'react-native-tableview-simple';
+import React, {
+  ActivityIndicatorIOS,
+  AppRegistry,
+  Component,
+  StyleSheet,
+  ScrollView,
+  SwitchIOS,
+  Text,
+  View
+} from 'react-native';
+import {
+  Cell,
+  CustomCell,
+  Section,
+  TableView
+} from 'react-native-tableview-simple';
 import Dimensions from 'Dimensions';
 
 /**
@@ -73,9 +87,10 @@ class Example extends Component {
   }
 };
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   stage: {
     backgroundColor: '#EFEFF4',
+    paddingTop: 20,
     paddingBottom: 20
   },
 });
