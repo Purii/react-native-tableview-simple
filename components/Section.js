@@ -20,8 +20,8 @@ export default class Section extends Component {
     const hideSeparator = this.props.hideSeparator;
     /* Set styles */
     const styleSection = [...{}, styles.section, { backgroundColor: sectionTintColor}];
-    const styleSectionHeader = [...{}, styles.sectionheader, { color: headerTintColor}];
-    const styleSectionFooter = [...{}, styles.sectionfooter, { color: footerTintColor}];
+    const styleSectionHeader__text = [...{}, styles.sectionheader__text, { color: headerTintColor}];
+    const styleSectionFooter__text = [...{}, styles.sectionfooter__text, { color: footerTintColor}];
     const styleSeparatorInner = [...{}, styles.separator_inner, {
       backgroundColor: separatorTintColor,
       marginLeft: separatorInsetLeft,
@@ -63,7 +63,7 @@ export default class Section extends Component {
      */
     let renderHeader = () => {
       if (header) {
-        return (<Text style={styleSectionHeader}>{header}</Text>);
+        return (<View style={styles.sectionheader}><Text style={styleSectionHeader__text}>{header}</Text></View>);
       }
       return;
     };
@@ -74,7 +74,7 @@ export default class Section extends Component {
      */
     let renderFooter = () => {
       if (footer) {
-        return (<Text style={styleSectionFooter}>{footer}</Text>);
+        return (<View style={styles.sectionfooter}><Text style={styleSectionFooter__text}>{footer}</Text></View>);
       }
       return;
     };
@@ -101,16 +101,20 @@ const styles = StyleSheet.create({
     borderColor: '#c8c7cc',
   },
   'sectionheader': {
-    fontSize: 13,
     paddingLeft: 15,
     paddingRight: 15,
-    paddingBottom: 5,
+    paddingBottom: 5
+  },
+  'sectionheader__text': {
+    fontSize: 13,
   },
   'sectionfooter': {
-    fontSize: 13,
     paddingLeft: 15,
     paddingRight: 15,
-    paddingTop: 10,
+    paddingTop: 10
+  },
+  'sectionfooter__text': {
+    fontSize: 13,
   },
   'separator': {
   },
