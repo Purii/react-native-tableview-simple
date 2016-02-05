@@ -2,8 +2,8 @@ import React, {
   ActivityIndicatorIOS,
   AppRegistry,
   Component,
-  StyleSheet,
   ScrollView,
+  StyleSheet,
   SwitchIOS,
   Text,
   View
