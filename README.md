@@ -1,6 +1,7 @@
 # react-native-tableview-simple
-[![npm version](http://img.shields.io/npm/v/react-native-tableview-simple.svg?style=flat)](https://www.npmjs.com/package/react-native-tableview-simple)
 [![Build Status](https://travis-ci.org/Purii/react-native-tableview-simple.svg?branch=master)](https://travis-ci.org/Purii/react-native-tableview-simple)
+[![npm version](http://img.shields.io/npm/v/react-native-tableview-simple.svg?style=flat)](https://www.npmjs.com/package/react-native-tableview-simple)
+[![npm](https://img.shields.io/npm/dm/react-native-tableview-simple.svg)]()
 
 **NOTE: This component is WIP. Use it with caution!**
 
