@@ -3,9 +3,7 @@
 [![npm version](http://img.shields.io/npm/v/react-native-tableview-simple.svg?style=flat)](https://www.npmjs.com/package/react-native-tableview-simple)
 [![npm](https://img.shields.io/npm/dm/react-native-tableview-simple.svg)]()
 
-**NOTE: This component is WIP. Use it with caution!**
-
-This component is a copy of the iOS-TableView made with pure CSS. The intention is to provide **a flexible and lightweight alternative to a bridged component**.
+This cross-platform component is a copy of the iOS-TableView made with pure CSS. The intention is to provide **a flexible and lightweight alternative to a bridged component**.
 The focus is set on the presentation. The component is therefore not intended to render large data sets.
 A possible use case might be an about- or a settings-screen with a few rows.   
 Have a look at the [Examples below](https://github.com/Purii/react-native-tableview-simple#examples)! :-)
