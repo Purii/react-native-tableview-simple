@@ -13,7 +13,8 @@
     "react-native",
     "react-component",
     "tableview",
-    "ios"
+    "ios",
+    "android"
   ],
   "peerDependencies": {
     "react-native": ">=0.16 || 0.20.0-rc"
