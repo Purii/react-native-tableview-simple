@@ -19,6 +19,7 @@ export default class Cell extends Component {
     const titleTintColor = this.props.titleTintColor;
     const highlightUnderlayColor = this.props.highlightUnderlayColor;
     const highlightActiveOpacity = this.props.highlightActiveOpacity;
+    const checkmarkColor = this.props.checkmarkColor
 
     /* Set styles */
     const styleCell = [...{}, styles.cell, { backgroundColor: cellTintColor}];
@@ -50,7 +51,7 @@ export default class Cell extends Component {
               <View style={styles.accessory_disclosureIndicator}></View>
             </View>);
         case 'Checkmark':
-          return (<View style={styles.accessory_checkmark}></View>);
+          return (<View style={[styles.accessory_checkmark, {borderColor: checkmarkColor}]}></View>);
         default:
          return;
       }
