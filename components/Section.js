@@ -1,131 +1,139 @@
+/* eslint-disable consistent-return */
 import React, {
-  Component,
   PropTypes,
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
 
-export default class Section extends Component {
-  render() {
-    const {children} = this.props;
-    const header = this.props.header ? this.props.header : false;
-    const footer = this.props.footer ? this.props.footer : false;
-    const sectionTintColor = this.props.sectionTintColor;
-    const headerTintColor = this.props.headerTintColor;
-    const footerTintColor = this.props.footerTintColor;
-    const separatorTintColor = this.props.separatorTintColor;
-    const separatorInsetLeft = this.props.separatorInsetLeft;
-    const separatorInsetRight = this.props.separatorInsetRight;
-    const hideSeparator = this.props.hideSeparator;
-  
-    /* Declare and merge styles with props */
-    const styleSection = [...{}, styles.section, { backgroundColor: sectionTintColor}];
-    const styleSectionHeader__text = [...{}, styles.sectionheader__text, { color: headerTintColor}];
-    const styleSectionFooter__text = [...{}, styles.sectionfooter__text, { color: footerTintColor}];
-    const styleSeparatorInner = [...{}, styles.separator_inner, {
-      backgroundColor: separatorTintColor,
-      marginLeft: separatorInsetLeft,
-      marginRight: separatorInsetRight
-    }];
+const Section = (props) => {
+  const {
+    children,
+    headerTintColor,
+    hideSeparator,
+    footerTintColor,
+    sectionTintColor,
+    separatorInsetLeft,
+    separatorInsetRight,
+    separatorTintColor,
+  } = props;
+  const header = props.header ? props.header : false;
+  const footer = props.footer ? props.footer : false;
 
-    /**
-     * Render Cell and add Border
-     * @param  {Cell} child [description]
-     * @param  {Int} index [description]
-     * @return {View}       [description]
-     */
-    let renderChild = (child, index) => {
-      if (children.length > 0 && index < children.length - 1) {
-        const styleSeparator = [...{}, styles.separator, {backgroundColor: child.props.cellTintColor}];
+  /* Declare and merge styles with props */
+  const styleSection = [...{}, styles.section, { backgroundColor: sectionTintColor }];
+  const styleSectionHeader__text = [...{}, styles.sectionheader__text, { color: headerTintColor }];
+  const styleSectionFooter__text = [...{}, styles.sectionfooter__text, { color: footerTintColor }];
+  const styleSeparatorInner = [...{}, styles.separator_inner, {
+    backgroundColor: separatorTintColor,
+    marginLeft: separatorInsetLeft,
+    marginRight: separatorInsetRight,
+  }];
 
-        let renderSeparator = () => {
-          if (hideSeparator) { return; }
-          return (
-            <View style={styleSeparator}>
-              <View style={styleSeparatorInner}></View>
-            </View>
-          );
-        };
-
+  /**
+   * Render Cell and add Border
+   * @param  {Cell} child [description]
+   * @param  {Int} index [description]
+   * @return {View}       [description]
+   */
+  const renderChild = (child, index) => {
+    if (children.length > 0 && index < children.length - 1) {
+      const styleSeparator = [...{}, styles.separator, { backgroundColor: child.props.cellTintColor }];
+      const renderSeparator = () => {
+        if (hideSeparator) { return; }
         return (
-          <View>
-            {child}
-            {renderSeparator()}
+          <View style={styleSeparator}>
+            <View style={styleSeparatorInner} />
           </View>
-        );
-      }
-      return child;
-    };
+          );
+      };
 
-    /**
-     * Render header if defined
-     * @return {View}
-     */
-    let renderHeader = () => {
-      if (header) {
-        return (<View style={styles.sectionheader}><Text style={styleSectionHeader__text}>{header}</Text></View>);
-      }
-      return;
-    };
-
-    /**
-     * Render footer if defined
-     * @return {View}
-     */
-    let renderFooter = () => {
-      if (footer) {
-        return (<View style={styles.sectionfooter}><Text style={styleSectionFooter__text}>{footer}</Text></View>);
-      }
-      return;
-    };
-    return (
-      <View style={styleSection}>
-        {renderHeader()}
-        <View style={styles.section_inner}>
-          {React.Children.map(children, renderChild)}
+      return (
+        <View>
+          {child}
+          {renderSeparator()}
         </View>
-        {renderFooter()}
+      );
+    }
+    return child;
+  };
+
+  /**
+   * Render header if defined
+   * @return {View}
+   */
+  const renderHeader = () => {
+    if (header) {
+      return (
+        <View style={styles.sectionheader}>
+          <Text style={styleSectionHeader__text}>{header}</Text>
+        </View>
+      );
+    }
+    return;
+  };
+
+  /**
+   * Render footer if defined
+   * @return {View}
+   */
+  const renderFooter = () => {
+    if (footer) {
+      return (
+        <View style={styles.sectionfooter}>
+          <Text style={styleSectionFooter__text}>{footer}</Text>
+        </View>
+      );
+    }
+    return;
+  };
+  return (
+    <View style={styleSection}>
+      {renderHeader()}
+      <View style={styles.section_inner}>
+        {React.Children.map(children, renderChild)}
       </View>
-    );
-  }
-}
+      {renderFooter()}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
-  'section': {
+  section: {
     paddingTop: 15,
     paddingBottom: 15,
   },
-  'section_inner': {
+  section_inner: {
     borderTopWidth: 0.5,
     borderBottomWidth: 0.5,
     borderColor: '#c8c7cc',
   },
-  'sectionheader': {
+  sectionheader: {
     paddingLeft: 15,
     paddingRight: 15,
-    paddingBottom: 5
+    paddingBottom: 5,
   },
-  'sectionheader__text': {
+  sectionheader__text: {
     fontSize: 13,
   },
-  'sectionfooter': {
+  sectionfooter: {
     paddingLeft: 15,
     paddingRight: 15,
-    paddingTop: 10
+    paddingTop: 10,
   },
-  'sectionfooter__text': {
+  sectionfooter__text: {
     fontSize: 13,
   },
-  'separator': {
+  separator: {
   },
-  'separator_inner': {
+  separator_inner: {
     height: 0.5,
   },
 });
 
 
 Section.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.element),
   footer: PropTypes.string,
   footerTintColor: PropTypes.string,
   header: PropTypes.string,
@@ -134,15 +142,17 @@ Section.propTypes = {
   sectionTintColor: PropTypes.string,
   separatorInsetLeft: PropTypes.number,
   separatorInsetRight: PropTypes.number,
-  separatorTintColor: PropTypes.string
+  separatorTintColor: PropTypes.string,
 };
 
 Section.defaultProps = {
-  footerTintColor: '#6d6d72',
   headerTintColor: '#6d6d72',
   hideSeparator: false,
   sectionTintColor: '#EFEFF4',
+  footerTintColor: '#6d6d72',
   separatorInsetLeft: 15,
   separatorInsetRight: 0,
-  separatorTintColor: '#c8c7cc'
+  separatorTintColor: '#c8c7cc',
 };
+
+export default Section;

@@ -1,170 +1,169 @@
+/* eslint-disable consistent-return */
 import React, {
-  Component,
   PropTypes,
   StyleSheet,
   Text,
   TouchableHighlight,
-  View
+  View,
 } from 'react-native';
 
-export default class Cell extends Component {
-  render() {
-    const {
-      accessory,
-      accessoryColor,
-      cellstyle,
-      cellTintColor,
-      detail,
-      highlightActiveOpacity,
-      highlightUnderlayColor,
-      isDisabled,
-      leftDetailColor,
-      title,
-      titleTintColor
-    } = this.props;
+const Cell = () => {
+  const {
+    accessory,
+    accessoryColor,
+    cellstyle,
+    cellTintColor,
+    detail,
+    highlightActiveOpacity,
+    highlightUnderlayColor,
+    isDisabled,
+    leftDetailColor,
+    title,
+    titleTintColor,
+  } = this.props;
 
-    const isPressable = this.props.onPress ? true : false;
+    // eslint-disable-next-line no-unneeded-ternary
+  const isPressable = this.props.onPress ? true : false;
 
-    /* Declare and merge styles with props */
-    const styleCell = [...{}, styles.cell, { backgroundColor: cellTintColor}];
-    const styleCell__subtitle = [...{}, styles.cell__subtitle, { backgroundColor: cellTintColor}];
-    const styleCell_title = isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : [...{}, styles.cell_title, {color: titleTintColor}];
-    const styleCell_leftDetailTitle = isDisabled ? [...{}, styles.cell_leftDetailTitle, styles.cell_text__disabled] : [...{}, styles.cell_leftDetailTitle, {color: titleTintColor}];
+  /* Declare and merge styles with props */
+  const styleCell = [...{}, styles.cell, { backgroundColor: cellTintColor }];
+  const styleCell__subtitle = [...{}, styles.cell__subtitle, { backgroundColor: cellTintColor }];
+  const styleCell_title = isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : [...{}, styles.cell_title, { color: titleTintColor }];
+  const styleCell_leftDetailTitle = isDisabled ? [...{}, styles.cell_leftDetailTitle, styles.cell_text__disabled] : [...{}, styles.cell_leftDetailTitle, { color: titleTintColor }];
 
-    /* Apply color prop to accessories */
-    const styleAccessory_checkmark = [...{}, styles.accessory_checkmark, { borderColor: accessoryColor }];
-    const styleAccessory_detail = [...{}, styles.accessory_detail, { borderColor: accessoryColor }];
-    const styleAccessory_detailText = [...{}, styles.accessory_detailText, { color: accessoryColor }];
-    const styleCell_leftDetail = [...{}, styles.cell_leftdetail, { color: leftDetailColor }];
+  /* Apply color prop to accessories */
+  const styleAccessory_checkmark = [...{}, styles.accessory_checkmark, { borderColor: accessoryColor }];
+  const styleAccessory_detail = [...{}, styles.accessory_detail, { borderColor: accessoryColor }];
+  const styleAccessory_detailText = [...{}, styles.accessory_detailText, { color: accessoryColor }];
+  const styleCell_leftDetail = [...{}, styles.cell_leftdetail, { color: leftDetailColor }];
 
-    /**
-     * Render accessory
-     * Currently available
-     * @return {View} Viewelement with accessory
-     */
-    let renderAccessory = () => {
-      if (!accessory) { return; }
-      switch (accessory) {
-        case 'DisclosureIndicator':
-          return (<View style={styles.accessory_disclosureIndicator}></View>);
-        case 'Detail':
-          return (
+  /**
+   * Render accessory
+   * Currently available
+   * @return {View} Viewelement with accessory
+   */
+  const renderAccessory = () => {
+    if (!accessory) { return; }
+    switch (accessory) {
+      case 'DisclosureIndicator':
+        return (<View style={styles.accessory_disclosureIndicator} />);
+      case 'Detail':
+        return (
+          <View style={styleAccessory_detail}>
+            <Text style={styleAccessory_detailText}>i</Text>
+          </View>
+        );
+      case 'DetailDisclosure':
+        return (
+          <View style={styles.accessory_detailDisclosure}>
             <View style={styleAccessory_detail}>
               <Text style={styleAccessory_detailText}>i</Text>
-            </View>);
-        case 'DetailDisclosure':
-          return (
-            <View style={styles.accessory_detailDisclosure}>
-              <View style={styleAccessory_detail}>
-                <Text style={styleAccessory_detailText}>i</Text>
-              </View>
-              <View style={styles.accessory_disclosureIndicator}></View>
-            </View>);
-        case 'Checkmark':
-          return (<View style={styleAccessory_checkmark}></View>);
-        default:
-         return;
-      }
-    };
-
-    /**
-     * Render cell of type Basic
-     * @return {View}
-     */
-    let CellBasic = () => {
-      return (
-          <View style={styleCell}>
-            <Text numberOfLines={1} style={styleCell_title}>{title}</Text>
-            {renderAccessory()}
-          </View>
-      );
-    };
-
-    /**
-     * Render cell of type RightDetail
-     * @return {View}
-     */
-    let CellRightDetail = () => {
-      return (
-          <View style={styleCell}>
-            <Text numberOfLines={1} style={styleCell_title}>{title}</Text>
-            <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_detail, styles.cell_text__disabled] : styles.cell_detail}>{detail}</Text>
-            {renderAccessory()}
-          </View>
-      );
-    };
-
-    /**
-     * Render cell of type LeftDetail
-     * @return {View}
-     */
-    let CellLeftDetail = () => {
-      return (
-          <View style={styleCell}>
-            <Text numberOfLines={1} style={isDisabled ? [...{}, styleCell_leftDetail, styles.cell_text__disabled] : styleCell_leftDetail}>{detail}</Text>
-            <Text numberOfLines={1} style={styleCell_leftDetailTitle}>{title}</Text>
-            {renderAccessory()}
-          </View>
-      );
-    };
-
-    /**
-     * Render cell of type Subtitle
-     * @return {View}
-     */
-    let CellSubtitle = () => {
-      return (
-          <View style={styleCell__subtitle}>
-            <View style={styles.cellinner__subtitle}>
-              <Text numberOfLines={1} style={styleCell_title}>{title}</Text>
-              <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_subtitle, styles.cell_text__disabled] : styles.cell_subtitle}>{detail}</Text>
             </View>
-            {renderAccessory()}
+            <View style={styles.accessory_disclosureIndicator} />
           </View>
-      );
-    };
-
-    /**
-     * Render cell by type
-     * @return {View}
-     */
-    let renderCell = () => {
-      let cellToRender = CellBasic;
-      switch (cellstyle) {
-        case 'Basic':
-          cellToRender = CellBasic;
-          break;
-        case 'RightDetail':
-          cellToRender = CellRightDetail;
-          break;
-        case 'LeftDetail':
-          cellToRender = CellLeftDetail;
-          break;
-        case 'Subtitle':
-          cellToRender = CellSubtitle;
-          break;
-      }
-
-      if (isPressable && !isDisabled) {
-        return (
-          <TouchableHighlight onPress={this.props.onPress} underlayColor={highlightUnderlayColor} activeOpacity={highlightActiveOpacity}>
-            {cellToRender()}
-          </TouchableHighlight>
         );
-      }
-      return (<View>{cellToRender()}</View>);
-    };
+      case 'Checkmark':
+        return (<View style={styleAccessory_checkmark} />);
+      default:
+        return;
+    }
+  };
 
-    return (
-      <View>
-        {renderCell()}
+  /**
+   * Render cell of type Basic
+   * @return {View}
+   */
+  const CellBasic = () => (
+    <View style={styleCell}>
+      <Text numberOfLines={1} style={styleCell_title}>{title}</Text>
+        {renderAccessory()}
       </View>
     );
-  }
-}
+
+  /**
+   * Render cell of type RightDetail
+   * @return {View}
+   */
+  const CellRightDetail = () => (
+    <View style={styleCell}>
+      <Text numberOfLines={1} style={styleCell_title}>{title}</Text>
+      <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_detail, styles.cell_text__disabled] : styles.cell_detail}>{detail}</Text>
+        {renderAccessory()}
+    </View>
+  );
+
+  /**
+   * Render cell of type LeftDetail
+   * @return {View}
+   */
+  const CellLeftDetail = () => (
+    <View style={styleCell}>
+      <Text numberOfLines={1} style={isDisabled ? [...{}, styleCell_leftDetail, styles.cell_text__disabled] : styleCell_leftDetail}>{detail}</Text>
+      <Text numberOfLines={1} style={styleCell_leftDetailTitle}>{title}</Text>
+        {renderAccessory()}
+    </View>
+  );
+
+  /**
+   * Render cell of type Subtitle
+   * @return {View}
+   */
+  const CellSubtitle = () => (
+    <View style={styleCell__subtitle}>
+      <View style={styles.cellinner__subtitle}>
+        <Text numberOfLines={1} style={styleCell_title}>{title}</Text>
+        <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_subtitle, styles.cell_text__disabled] : styles.cell_subtitle}>{detail}</Text>
+      </View>
+      {renderAccessory()}
+    </View>
+  );
+
+  /**
+   * Render cell by type
+   * @return {View}
+   */
+  const renderCell = () => {
+    let cellToRender = CellBasic;
+    switch (cellstyle) {
+      case 'Basic':
+        cellToRender = CellBasic;
+        break;
+      case 'RightDetail':
+        cellToRender = CellRightDetail;
+        break;
+      case 'LeftDetail':
+        cellToRender = CellLeftDetail;
+        break;
+      case 'Subtitle':
+        cellToRender = CellSubtitle;
+        break;
+      default:
+        cellToRender = CellBasic;
+    }
+
+    if (isPressable && !isDisabled) {
+      return (
+        <TouchableHighlight
+          activeOpacity={highlightActiveOpacity}
+          onPress={this.props.onPress}
+          underlayColor={highlightUnderlayColor}
+        >
+          {cellToRender()}
+        </TouchableHighlight>
+      );
+    }
+    return (<View>{cellToRender()}</View>);
+  };
+
+  return (
+    <View>
+      {renderCell()}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
-  'cell': {
+  cell: {
     justifyContent: 'center',
     paddingLeft: 15,
     paddingRight: 20,
@@ -174,44 +173,44 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: 44,
   },
-  'cell__subtitle': {
+  cell__subtitle: {
     height: 44,
     paddingLeft: 15,
     paddingRight: 20,
     flexDirection: 'row',
     alignItems: 'center',
   },
-  'cellinner__subtitle': {
+  cellinner__subtitle: {
     flexDirection: 'column',
-    flex: 1
+    flex: 1,
   },
-  'cell_title':{
+  cell_title: {
     fontSize: 16,
     flex: 1,
   },
-  'cell_leftDetailTitle':{
+  cell_leftDetailTitle: {
     fontSize: 12,
     flex: 1,
   },
-  'cell_detail': {
+  cell_detail: {
     fontSize: 16,
     alignSelf: 'center',
-    color: '#8E8E93'
+    color: '#8E8E93',
   },
-  'cell_leftdetail': {
+  cell_leftdetail: {
     fontSize: 12,
     alignSelf: 'center',
     textAlign: 'right',
     marginRight: 5,
-    width: 75
+    width: 75,
   },
-  'cell_subtitle': {
-    fontSize: 11
+  cell_subtitle: {
+    fontSize: 11,
   },
-  'cell_text__disabled':{
-    color: 'gray'
+  cell_text__disabled: {
+    color: 'gray',
   },
-  'accessory_disclosureIndicator': {
+  accessory_disclosureIndicator: {
     width: 10,
     height: 10,
     marginLeft: 7,
@@ -220,10 +219,10 @@ const styles = StyleSheet.create({
     borderRightWidth: 1,
     borderColor: '#c7c7cc',
     transform: [{
-      rotate: '45deg'
-    }]
+      rotate: '45deg',
+    }],
   },
-  'accessory_detail': {
+  accessory_detail: {
     width: 20,
     height: 20,
     marginLeft: 10,
@@ -231,18 +230,18 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
-  'accessory_detailText': {
+  accessory_detailText: {
     fontSize: 15,
     fontWeight: '400',
-    fontFamily: 'Georgia'
+    fontFamily: 'Georgia',
   },
-  'accessory_detailDisclosure': {
+  accessory_detailDisclosure: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
-  'accessory_checkmark': {
+  accessory_checkmark: {
     width: 13,
     height: 6,
     marginLeft: 7,
@@ -251,23 +250,22 @@ const styles = StyleSheet.create({
     borderLeftWidth: 2,
     borderColor: '#007AFF',
     transform: [{
-      rotate: '-45deg'
-    }]
-  }
+      rotate: '-45deg',
+    }],
+  },
 });
-
 
 Cell.propTypes = {
   accessory: PropTypes.oneOfType([
-      PropTypes.bool,
-      PropTypes.string
+    PropTypes.bool,
+    PropTypes.string,
   ]),
   accessoryColor: PropTypes.string.isRequired,
   cellstyle: PropTypes.string,
   cellTintColor: PropTypes.string.isRequired,
   detail: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.number
+    PropTypes.number,
   ]),
   highlightActiveOpacity: PropTypes.number,
   highlightUnderlayColor: PropTypes.string,
@@ -275,13 +273,13 @@ Cell.propTypes = {
   leftDetailColor: PropTypes.string,
   title: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.number
+    PropTypes.number,
   ]),
   titleTintColor: PropTypes.string,
   onPress: PropTypes.oneOfType([
     PropTypes.bool,
-    PropTypes.func
-  ])
+    PropTypes.func,
+  ]),
 };
 
 Cell.defaultProps = {
@@ -295,5 +293,7 @@ Cell.defaultProps = {
   isDisabled: false,
   leftDetailColor: '#007AFF',
   title: '',
-  titleTintColor: '#000'
+  titleTintColor: '#000',
 };
+
+export default Cell;
