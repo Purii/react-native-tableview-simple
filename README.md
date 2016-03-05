@@ -10,7 +10,7 @@ Have a look at the [Examples below](https://github.com/Purii/react-native-tablev
 
 ## Installation
 1. `npm i react-native-tableview-simple --save`
-1. Add components `import {TableView, Section, Cell} from 'react-native-tableview-simple'`
+1. Add components `import {Cell, Section, TableView} from 'react-native-tableview-simple'`
 
 ## Extensible
 This component provides you with some predefined CSS-styles, inspired by the native TableView.
