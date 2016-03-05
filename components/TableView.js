@@ -1,11 +1,12 @@
 import React, {
+  PropTypes,
   StyleSheet,
   View,
 } from 'react-native';
 
-const TableView = () => (
+const TableView = (props) => (
   <View style={styles.tableView}>
-    {this.props.children}
+    {props.children}
   </View>
 );
 
@@ -15,5 +16,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
+
+TableView.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.element),
+};
 
 export default TableView;

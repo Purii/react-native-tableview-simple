@@ -7,7 +7,7 @@ import React, {
   View,
 } from 'react-native';
 
-const Cell = () => {
+const Cell = (props) => {
   const {
     accessory,
     accessoryColor,
@@ -20,10 +20,10 @@ const Cell = () => {
     leftDetailColor,
     title,
     titleTintColor,
-  } = this.props;
+  } = props;
 
     // eslint-disable-next-line no-unneeded-ternary
-  const isPressable = this.props.onPress ? true : false;
+  const isPressable = props.onPress ? true : false;
 
   /* Declare and merge styles with props */
   const styleCell = [...{}, styles.cell, { backgroundColor: cellTintColor }];
@@ -145,7 +145,7 @@ const Cell = () => {
       return (
         <TouchableHighlight
           activeOpacity={highlightActiveOpacity}
-          onPress={this.props.onPress}
+          onPress={props.onPress}
           underlayColor={highlightUnderlayColor}
         >
           {cellToRender()}
