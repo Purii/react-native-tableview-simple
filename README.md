@@ -28,31 +28,33 @@ Currently `TableView` doesn't support any properties.
 ### Section
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
-| header | - | `string` | Header value |
 | footer | - | `string` | Footer value |
-| sectionTintColor | #EFEFF4 | `string` | Background color of section |
-| headerTintColor | #6d6d72 | `string` | Text color of header |
 | footerTintColor | #6d6d72 | `string` | Text color of footer|
+| header | - | `string` | Header value |
+| headerTintColor | #6d6d72 | `string` | Text color of header |
 | hideSeparator | false | `bool` | Hide separators |
-| separatorTintColor | #c8c7cc | `string` | Color of separator |
+| sectionTintColor | #EFEFF4 | `string` | Background color of section |
 | separatorInsetLeft | 15 | `number` | Left inset of separator |
 | separatorInsetRight | 0 | `number` | Right inset of separator |
+| separatorTintColor | #c8c7cc | `string` | Color of separator |
 
 ### Cell
 The cellstyles are inspired by the native ones. Just like the available accessories.
 
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
-| cellstyle | Basic | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
-| title | - | `string` or `number` | Title value |
-| detail | - | `string` or `number` | Detail value |
-| cellTintColor | #fff | `string` | Background color of cell |
-| titleTintColor | #000 | `string` | Text color of title |
-| isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
 | accessory | - | `string` | Predefined accessory: `DisclosureIndicator`, `Detail`, `DetailDisclosure`, `Checkmark` |
-| onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
+| accessoryColor | #007AFF | `string` | Color of accessory |
+| cellstyle | Basic | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
+| cellTintColor | #fff | `string` | Background color of cell |
+| detail | - | `string` or `number` | Detail value |
 | highlightActiveOpacity | 0.8 | `number` | Opacity of cell when touch is active |
 | highlightUnderlayColor | black | `string` | Color of underlay that will show through when touch is active |
+| isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
+| leftDetailColor | #007AFF | `string` | Text color of left detail |
+| title | - | `string` or `number` | Title value |
+| titleTintColor | #000 | `string` | Text color of title |
+| onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 
 ### CustomCell
 CustomCells allow you to define the whole content on your own.
@@ -60,13 +62,12 @@ This makes it possible to use components like `ActivityIndicatorIOS` or `SwitchI
 
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
+| cellHeight | 44 | `number` | Set cell height |
 | cellTintColor | #fff | `string` | Background color of cell |
-| isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
-| onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 | highlightActiveOpacity | 0.8 | `number` | Opacity of cell when touch is active |
 | highlightUnderlayColor | black | `string` | Color of underlay that will show through when touch is active |
-| cellHeight | 44 | `number` | Set cell height |
-
+| isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
+| onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 
 ## Examples
 The following examples can be found in the folder `example`.   

@@ -17,7 +17,7 @@
     "android"
   ],
   "peerDependencies": {
-    "react-native": ">=0.16 || 0.20.0-rc"
+    "react-native": ">=0.16 || 0.22.0-rc"
   },
   "bugs": {
     "url": "https://github.com/Purii/react-native-tableview-simple/issues"
@@ -27,8 +27,8 @@
     "url": "git@github.com:Purii/react-native-tableview-simple.git"
   },
   "devDependencies": {
-    "babel-eslint": "^5.0.0-beta6",
-    "eslint": "^1.10.3",
-    "eslint-plugin-react": "^3.16.1"
+    "babel-eslint": "^5.0.0",
+    "eslint": "^2.3.0",
+    "eslint-plugin-react": "^4.1.0"
   }
 }

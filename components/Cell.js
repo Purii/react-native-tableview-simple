@@ -9,22 +9,33 @@ import React, {
 
 export default class Cell extends Component {
   render() {
-    const {title} = this.props;
-    const cellstyle = this.props.cellstyle;
-    const isDisabled = this.props.isDisabled;
-    const detail = this.props.detail;
-    const isPressable = this.props.onPress ? true : false;
-    const accessory = this.props.accessory;
-    const cellTintColor = this.props.cellTintColor;
-    const titleTintColor = this.props.titleTintColor;
-    const highlightUnderlayColor = this.props.highlightUnderlayColor;
-    const highlightActiveOpacity = this.props.highlightActiveOpacity;
+    const {
+      accessory,
+      accessoryColor,
+      cellstyle,
+      cellTintColor,
+      detail,
+      highlightActiveOpacity,
+      highlightUnderlayColor,
+      isDisabled,
+      leftDetailColor,
+      title,
+      titleTintColor
+    } = this.props;
 
-    /* Set styles */
+    const isPressable = this.props.onPress ? true : false;
+
+    /* Declare and merge styles with props */
     const styleCell = [...{}, styles.cell, { backgroundColor: cellTintColor}];
     const styleCell__subtitle = [...{}, styles.cell__subtitle, { backgroundColor: cellTintColor}];
     const styleCell_title = isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : [...{}, styles.cell_title, {color: titleTintColor}];
     const styleCell_leftDetailTitle = isDisabled ? [...{}, styles.cell_leftDetailTitle, styles.cell_text__disabled] : [...{}, styles.cell_leftDetailTitle, {color: titleTintColor}];
+
+    /* Apply color prop to accessories */
+    const styleAccessory_checkmark = [...{}, styles.accessory_checkmark, { borderColor: accessoryColor }];
+    const styleAccessory_detail = [...{}, styles.accessory_detail, { borderColor: accessoryColor }];
+    const styleAccessory_detailText = [...{}, styles.accessory_detailText, { color: accessoryColor }];
+    const styleCell_leftDetail = [...{}, styles.cell_leftdetail, { color: leftDetailColor }];
 
     /**
      * Render accessory
@@ -38,19 +49,19 @@ export default class Cell extends Component {
           return (<View style={styles.accessory_disclosureIndicator}></View>);
         case 'Detail':
           return (
-            <View style={styles.accessory_detail}>
-              <Text style={styles.accessory_detailText}>i</Text>
+            <View style={styleAccessory_detail}>
+              <Text style={styleAccessory_detailText}>i</Text>
             </View>);
         case 'DetailDisclosure':
           return (
             <View style={styles.accessory_detailDisclosure}>
-              <View style={styles.accessory_detail}>
-                <Text style={styles.accessory_detailText}>i</Text>
+              <View style={styleAccessory_detail}>
+                <Text style={styleAccessory_detailText}>i</Text>
               </View>
               <View style={styles.accessory_disclosureIndicator}></View>
             </View>);
         case 'Checkmark':
-          return (<View style={styles.accessory_checkmark}></View>);
+          return (<View style={styleAccessory_checkmark}></View>);
         default:
          return;
       }
@@ -90,7 +101,7 @@ export default class Cell extends Component {
     let CellLeftDetail = () => {
       return (
           <View style={styleCell}>
-            <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_leftdetail, styles.cell_text__disabled] : styles.cell_leftdetail}>{detail}</Text>
+            <Text numberOfLines={1} style={isDisabled ? [...{}, styleCell_leftDetail, styles.cell_text__disabled] : styleCell_leftDetail}>{detail}</Text>
             <Text numberOfLines={1} style={styleCell_leftDetailTitle}>{title}</Text>
             {renderAccessory()}
           </View>
@@ -191,7 +202,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     alignSelf: 'center',
     textAlign: 'right',
-    color: '#007AFF',
     marginRight: 5,
     width: 75
   },
@@ -219,13 +229,11 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     backgroundColor: 'transparent',
     borderWidth: 1,
-    borderColor: '#007AFF',
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center'
   },
   'accessory_detailText': {
-    color: '#007AFF',
     fontSize: 15,
     fontWeight: '400',
     fontFamily: 'Georgia'
@@ -250,38 +258,42 @@ const styles = StyleSheet.create({
 
 
 Cell.propTypes = {
-  title: PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number
-  ]),
-  detail: PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number
-  ]),
-  cellstyle: PropTypes.string,
-  isDisabled: PropTypes.bool,
   accessory: PropTypes.oneOfType([
-      React.PropTypes.bool,
-      React.PropTypes.string
+      PropTypes.bool,
+      PropTypes.string
   ]),
+  accessoryColor: PropTypes.string.isRequired,
+  cellstyle: PropTypes.string,
   cellTintColor: PropTypes.string.isRequired,
-  titleTintColor: PropTypes.string,
+  detail: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
   highlightActiveOpacity: PropTypes.number,
   highlightUnderlayColor: PropTypes.string,
+  isDisabled: PropTypes.bool,
+  leftDetailColor: PropTypes.string,
+  title: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
+  titleTintColor: PropTypes.string,
   onPress: PropTypes.oneOfType([
-    React.PropTypes.bool,
-    React.PropTypes.func
+    PropTypes.bool,
+    PropTypes.func
   ])
 };
 
 Cell.defaultProps = {
-  title: '',
-  detail: '',
-  cellstyle: 'Basic',
-  isDisabled: false,
   accessory: false,
+  accessoryColor: '#007AFF',
+  cellstyle: 'Basic',
   cellTintColor: '#fff',
-  titleTintColor: '#000',
+  detail: '',
   highlightActiveOpacity: 0.8,
-  highlightUnderlayColor: 'black'
+  highlightUnderlayColor: 'black',
+  isDisabled: false,
+  leftDetailColor: '#007AFF',
+  title: '',
+  titleTintColor: '#000'
 };

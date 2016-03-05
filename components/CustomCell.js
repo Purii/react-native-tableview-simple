@@ -16,7 +16,7 @@ export default class CustomCell extends Component {
 		const highlightActiveOpacity = this.props.highlightActiveOpacity;
 		const cellHeight = this.props.cellHeight;
 
-		/* Set styles */
+		/* Declare and merge styles with props */
 		const styleCell = [...{}, styles.cell, { backgroundColor: cellTintColor, height: cellHeight}];
 
 		if (isPressable && !isDisabled) {
@@ -47,8 +47,8 @@ CustomCell.propTypes = {
 	isDisabled: PropTypes.bool,
 	cellHeight: PropTypes.number,
 	onPress: PropTypes.oneOfType([
-		React.PropTypes.bool,
-		React.PropTypes.func
+		PropTypes.bool,
+		PropTypes.func
 	]),
 	highlightActiveOpacity: PropTypes.number,
 	highlightUnderlayColor: PropTypes.string,

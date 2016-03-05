@@ -18,7 +18,8 @@ export default class Section extends Component {
     const separatorInsetLeft = this.props.separatorInsetLeft;
     const separatorInsetRight = this.props.separatorInsetRight;
     const hideSeparator = this.props.hideSeparator;
-    /* Set styles */
+  
+    /* Declare and merge styles with props */
     const styleSection = [...{}, styles.section, { backgroundColor: sectionTintColor}];
     const styleSectionHeader__text = [...{}, styles.sectionheader__text, { color: headerTintColor}];
     const styleSectionFooter__text = [...{}, styles.sectionfooter__text, { color: footerTintColor}];
@@ -125,23 +126,23 @@ const styles = StyleSheet.create({
 
 
 Section.propTypes = {
-  header: PropTypes.string,
   footer: PropTypes.string,
+  footerTintColor: PropTypes.string,
+  header: PropTypes.string,
+  headerTintColor: PropTypes.string,
+  hideSeparator: PropTypes.bool,
   sectionTintColor: PropTypes.string,
-  separatorTintColor: PropTypes.string,
   separatorInsetLeft: PropTypes.number,
   separatorInsetRight: PropTypes.number,
-  headerTintColor: PropTypes.string,
-  footerTintColor: PropTypes.string,
-  hideSeparator: PropTypes.bool
+  separatorTintColor: PropTypes.string
 };
 
 Section.defaultProps = {
-  sectionTintColor: '#EFEFF4',
-  headerTintColor: '#6d6d72',
   footerTintColor: '#6d6d72',
-  separatorTintColor: '#c8c7cc',
+  headerTintColor: '#6d6d72',
+  hideSeparator: false,
+  sectionTintColor: '#EFEFF4',
   separatorInsetLeft: 15,
   separatorInsetRight: 0,
-  hideSeparator: false
+  separatorTintColor: '#c8c7cc'
 };
