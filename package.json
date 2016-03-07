@@ -2,7 +2,7 @@
   "name": "react-native-tableview-simple",
   "description": "React Native component for TableView made with pure CSS",
   "homepage": "https://github.com/Purii/react-native-tableview-simple",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "author": "Patrick Puritscher <hello@patrickpuritscher.com>",
   "scripts": {
     "lint": "eslint index.js components/",
@@ -30,7 +30,7 @@
   "devDependencies": {
     "babel-eslint": "^5.0.0",
     "eslint": "^2.3.0",
-    "eslint-config-airbnb": "^6.0.2",
-    "eslint-plugin-react": "^4.1.0"
+    "eslint-config-airbnb": "^6.1.0",
+    "eslint-plugin-react": "^4.2.0"
   }
 }
