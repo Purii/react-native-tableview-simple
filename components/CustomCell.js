@@ -25,7 +25,7 @@ const CustomCell = (props) => {
     return (
       <TouchableHighlight
         activeOpacity={highlightActiveOpacity}
-        onPress={this.props.onPress}
+        onPress={props.onPress}
         underlayColor={highlightUnderlayColor}
       >
         <View style={styleCell}>{children}</View>
