@@ -133,7 +133,10 @@ const styles = StyleSheet.create({
 
 
 Section.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element),
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.element,
+  ]),
   footer: PropTypes.string,
   footerTintColor: PropTypes.string,
   header: PropTypes.string,
