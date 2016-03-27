@@ -31,3 +31,7 @@ example/
 screenshot.png
 screenshotNative.png
 screenshotAboutScreen.png
+
+.editorconfig
+.eslintrc
+.travis.yml
