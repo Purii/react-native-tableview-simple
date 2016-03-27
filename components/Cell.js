@@ -168,9 +168,9 @@ class Cell extends Component {
             allowFontScaling={this.props.allowFontScaling}
             numberOfLines={1}
             style={isDisabled ? [...{}, styles.cell_subtitle, styles.cell_text__disabled] : styles.cell_subtitle}
-            >
-              {detail}
-            </Text>
+          >
+            {detail}
+          </Text>
         </View>
         {renderAccessory()}
       </View>
