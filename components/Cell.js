@@ -1,5 +1,8 @@
 /* eslint-disable consistent-return */
 import React, {
+  Component,
+  NativeModules,
+  Platform,
   PropTypes,
   StyleSheet,
   Text,
@@ -7,160 +10,216 @@ import React, {
   View,
 } from 'react-native';
 
-const Cell = (props) => {
-  const {
-    accessory,
-    accessoryColor,
-    cellstyle,
-    cellTintColor,
-    detail,
-    highlightActiveOpacity,
-    highlightUnderlayColor,
-    isDisabled,
-    leftDetailColor,
-    title,
-    titleTintColor,
-  } = props;
+class Cell extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      fontSizeMultiplier: 1,
+    };
+  }
+
+  componentWillMount() {
+    /**
+     * Need AccessibilityManager to access the current font size multiplier
+     */
+    if (Platform.OS !== 'ios' || !this.props.allowFontScaling) return;
+    NativeModules.AccessibilityManager.getMultiplier(value => {
+      this.setState({
+        fontSizeMultiplier: value,
+      });
+    });
+  }
+  render() {
+    const {
+      accessory,
+      accessoryColor,
+      cellstyle,
+      cellTintColor,
+      detail,
+      highlightActiveOpacity,
+      highlightUnderlayColor,
+      isDisabled,
+      leftDetailColor,
+      title,
+      titleTintColor,
+    } = this.props;
 
     // eslint-disable-next-line no-unneeded-ternary
-  const isPressable = props.onPress ? true : false;
+    const isPressable = this.props.onPress ? true : false;
 
-  /* Declare and merge styles with props */
-  const styleCell = [...{}, styles.cell, { backgroundColor: cellTintColor }];
-  const styleCell__subtitle = [...{}, styles.cell__subtitle, { backgroundColor: cellTintColor }];
-  const styleCell_title = isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : [...{}, styles.cell_title, { color: titleTintColor }];
-  const styleCell_leftDetailTitle = isDisabled ? [...{}, styles.cell_leftDetailTitle, styles.cell_text__disabled] : [...{}, styles.cell_leftDetailTitle, { color: titleTintColor }];
+    /* Declare and merge styles with props */
+    const styleCell = [...{}, styles.cell, { backgroundColor: cellTintColor, height: 44 * this.state.fontSizeMultiplier }];
+    const styleCell__subtitle = [...{}, styles.cell__subtitle, { backgroundColor: cellTintColor, height: 44 * this.state.fontSizeMultiplier }];
+    const styleCell_title = isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : [...{}, styles.cell_title, { color: titleTintColor }];
+    const styleCell_leftDetailTitle = isDisabled ? [...{}, styles.cell_leftDetailTitle, styles.cell_text__disabled] : [...{}, styles.cell_leftDetailTitle, { color: titleTintColor }];
 
-  /* Apply color prop to accessories */
-  const styleAccessory_checkmark = [...{}, styles.accessory_checkmark, { borderColor: accessoryColor }];
-  const styleAccessory_detail = [...{}, styles.accessory_detail, { borderColor: accessoryColor }];
-  const styleAccessory_detailText = [...{}, styles.accessory_detailText, { color: accessoryColor }];
-  const styleCell_leftDetail = [...{}, styles.cell_leftdetail, { color: leftDetailColor }];
+    /* Apply color prop to accessories */
+    const styleAccessory_checkmark = [...{}, styles.accessory_checkmark, { borderColor: accessoryColor }];
+    const styleAccessory_detail = [...{}, styles.accessory_detail, { borderColor: accessoryColor }];
+    const styleAccessory_detailText = [...{}, styles.accessory_detailText, { color: accessoryColor }];
+    const styleCell_leftDetail = [...{}, styles.cell_leftdetail, { color: leftDetailColor }];
 
-  /**
-   * Render accessory
-   * Currently available
-   * @return {View} Viewelement with accessory
-   */
-  const renderAccessory = () => {
-    if (!accessory) { return; }
-    switch (accessory) {
-      case 'DisclosureIndicator':
-        return (<View style={styles.accessory_disclosureIndicator} />);
-      case 'Detail':
-        return (
-          <View style={styleAccessory_detail}>
-            <Text style={styleAccessory_detailText}>i</Text>
-          </View>
-        );
-      case 'DetailDisclosure':
-        return (
-          <View style={styles.accessory_detailDisclosure}>
+    /**
+     * Render accessory
+     * Currently available
+     * @return {View} Viewelement with accessory
+     */
+    const renderAccessory = () => {
+      if (!accessory) { return; }
+      switch (accessory) {
+        case 'DisclosureIndicator':
+          return (<View style={styles.accessory_disclosureIndicator} />);
+        case 'Detail':
+          return (
             <View style={styleAccessory_detail}>
               <Text style={styleAccessory_detailText}>i</Text>
             </View>
-            <View style={styles.accessory_disclosureIndicator} />
-          </View>
-        );
-      case 'Checkmark':
-        return (<View style={styleAccessory_checkmark} />);
-      default:
-        return;
-    }
-  };
+          );
+        case 'DetailDisclosure':
+          return (
+            <View style={styles.accessory_detailDisclosure}>
+              <View style={styleAccessory_detail}>
+                <Text style={styleAccessory_detailText}>i</Text>
+              </View>
+              <View style={styles.accessory_disclosureIndicator} />
+            </View>
+          );
+        case 'Checkmark':
+          return (<View style={styleAccessory_checkmark} />);
+        default:
+          return;
+      }
+    };
 
-  /**
-   * Render cell of type Basic
-   * @return {View}
-   */
-  const CellBasic = () => (
-    <View style={styleCell}>
-      <Text numberOfLines={1} style={styleCell_title}>{title}</Text>
+    /**
+     * Render cell of type Basic
+     * @return {View}
+     */
+    const CellBasic = () => (
+      <View style={styleCell}>
+        <Text
+          allowFontScaling={this.props.allowFontScaling}
+          numberOfLines={1}
+          style={styleCell_title}
+        >
+          {title}
+        </Text>
+          {renderAccessory()}
+        </View>
+      );
+
+   /**
+    * Render cell of type RightDetail
+    * @return {View}
+    */
+    const CellRightDetail = () => (
+      <View style={styleCell}>
+        <Text
+          allowFontScaling={this.props.allowFontScaling}
+          numberOfLines={1}
+          style={styleCell_title}
+        >
+          {title}
+        </Text>
+        <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_detail, styles.cell_text__disabled] : styles.cell_detail}>{detail}</Text>
+          {renderAccessory()}
+      </View>
+    );
+
+    /**
+    * Render cell of type LeftDetail
+    * @return {View}
+    */
+    const CellLeftDetail = () => (
+      <View style={styleCell}>
+        <Text
+          allowFontScaling={this.props.allowFontScaling}
+          numberOfLines={1}
+          style={isDisabled ? [...{}, styleCell_leftDetail, styles.cell_text__disabled] : styleCell_leftDetail}
+        >
+          {detail}
+        </Text>
+        <Text
+          allowFontScaling={this.props.allowFontScaling}
+          numberOfLines={1}
+          style={styleCell_leftDetailTitle}
+        >
+          {title}
+        </Text>
         {renderAccessory()}
       </View>
     );
 
-  /**
-   * Render cell of type RightDetail
-   * @return {View}
-   */
-  const CellRightDetail = () => (
-    <View style={styleCell}>
-      <Text numberOfLines={1} style={styleCell_title}>{title}</Text>
-      <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_detail, styles.cell_text__disabled] : styles.cell_detail}>{detail}</Text>
+    /**
+     * Render cell of type Subtitle
+     * @return {View}
+     */
+    const CellSubtitle = () => (
+      <View style={styleCell__subtitle}>
+        <View style={styles.cellinner__subtitle}>
+          <Text
+            allowFontScaling={this.props.allowFontScaling}
+            numberOfLines={1}
+            style={styleCell_title}
+          >
+            {title}
+          </Text>
+          <Text
+            allowFontScaling={this.props.allowFontScaling}
+            numberOfLines={1}
+            style={isDisabled ? [...{}, styles.cell_subtitle, styles.cell_text__disabled] : styles.cell_subtitle}
+            >
+              {detail}
+            </Text>
+        </View>
         {renderAccessory()}
-    </View>
-  );
-
-  /**
-   * Render cell of type LeftDetail
-   * @return {View}
-   */
-  const CellLeftDetail = () => (
-    <View style={styleCell}>
-      <Text numberOfLines={1} style={isDisabled ? [...{}, styleCell_leftDetail, styles.cell_text__disabled] : styleCell_leftDetail}>{detail}</Text>
-      <Text numberOfLines={1} style={styleCell_leftDetailTitle}>{title}</Text>
-        {renderAccessory()}
-    </View>
-  );
-
-  /**
-   * Render cell of type Subtitle
-   * @return {View}
-   */
-  const CellSubtitle = () => (
-    <View style={styleCell__subtitle}>
-      <View style={styles.cellinner__subtitle}>
-        <Text numberOfLines={1} style={styleCell_title}>{title}</Text>
-        <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_subtitle, styles.cell_text__disabled] : styles.cell_subtitle}>{detail}</Text>
       </View>
-      {renderAccessory()}
-    </View>
-  );
+    );
 
-  /**
-   * Render cell by type
-   * @return {View}
-   */
-  const renderCell = () => {
-    let cellToRender = CellBasic;
-    switch (cellstyle) {
-      case 'Basic':
-        cellToRender = CellBasic;
-        break;
-      case 'RightDetail':
-        cellToRender = CellRightDetail;
-        break;
-      case 'LeftDetail':
-        cellToRender = CellLeftDetail;
-        break;
-      case 'Subtitle':
-        cellToRender = CellSubtitle;
-        break;
-      default:
-        cellToRender = CellBasic;
-    }
+    /**
+     * Render cell by type
+     * @return {View}
+     */
+    const renderCell = () => {
+      let cellToRender = CellBasic;
+      switch (cellstyle) {
+        case 'Basic':
+          cellToRender = CellBasic;
+          break;
+        case 'RightDetail':
+          cellToRender = CellRightDetail;
+          break;
+        case 'LeftDetail':
+          cellToRender = CellLeftDetail;
+          break;
+        case 'Subtitle':
+          cellToRender = CellSubtitle;
+          break;
+        default:
+          cellToRender = CellBasic;
+      }
 
-    if (isPressable && !isDisabled) {
-      return (
-        <TouchableHighlight
-          activeOpacity={highlightActiveOpacity}
-          onPress={props.onPress}
-          underlayColor={highlightUnderlayColor}
-        >
-          {cellToRender()}
-        </TouchableHighlight>
-      );
-    }
-    return (<View>{cellToRender()}</View>);
-  };
+      if (isPressable && !isDisabled) {
+        return (
+          <TouchableHighlight
+            activeOpacity={highlightActiveOpacity}
+            onPress={this.props.onPress}
+            underlayColor={highlightUnderlayColor}
+          >
+            {cellToRender()}
+          </TouchableHighlight>
+        );
+      }
+      return (<View>{cellToRender()}</View>);
+    };
 
-  return (
-    <View>
-      {renderCell()}
-    </View>
-  );
-};
+    return (
+      <View>
+        {renderCell()}
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   cell: {
@@ -261,6 +320,7 @@ Cell.propTypes = {
     PropTypes.string,
   ]),
   accessoryColor: PropTypes.string.isRequired,
+  allowFontScaling: PropTypes.bool,
   cellstyle: PropTypes.string,
   cellTintColor: PropTypes.string.isRequired,
   detail: PropTypes.oneOfType([
@@ -285,6 +345,7 @@ Cell.propTypes = {
 Cell.defaultProps = {
   accessory: false,
   accessoryColor: '#007AFF',
+  allowFontScaling: true,
   cellstyle: 'Basic',
   cellTintColor: '#fff',
   detail: '',

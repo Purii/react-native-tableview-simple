@@ -104,8 +104,8 @@ const styles = StyleSheet.create({
     paddingBottom: 15,
   },
   section_inner: {
-    borderTopWidth: 0.5,
-    borderBottomWidth: 0.5,
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: '#c8c7cc',
   },
   sectionheader: {

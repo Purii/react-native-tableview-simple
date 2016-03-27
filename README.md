@@ -45,6 +45,7 @@ The cellstyles are inspired by the native ones. Just like the available accessor
 | :------------ | :---------------:| :---------------:| ---------------|
 | accessory | - | `string` | Predefined accessory: `DisclosureIndicator`, `Detail`, `DetailDisclosure`, `Checkmark` |
 | accessoryColor | #007AFF | `string` | Color of accessory |
+| allowFontScaling | true | `bool` | Respect Text Size accessibility setting on iOS |
 | cellstyle | Basic | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
 | cellTintColor | #fff | `string` | Background color of cell |
 | detail | - | `string` or `number` | Detail value |
