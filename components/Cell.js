@@ -8,6 +8,7 @@ import React, {
   Text,
   TouchableHighlight,
   View,
+  Switch,
 } from 'react-native';
 
 class Cell extends Component {
@@ -33,6 +34,11 @@ class Cell extends Component {
     const {
       accessory,
       accessoryColor,
+      switchOnTintColor,
+      switchThumbTintColor,
+      switchTintColor,
+      onSwitchValueChange,
+      switchValue,
       cellstyle,
       cellTintColor,
       detail,
@@ -86,6 +92,8 @@ class Cell extends Component {
           );
         case 'Checkmark':
           return (<View style={styleAccessory_checkmark} />);
+        case 'Switch':
+          return (<Switch onTintColor={switchOnTintColor} thumbTintColor={switchThumbTintColor} tintColor={switchTintColor} value={switchValue} onValueChange={onSwitchValueChange} disabled={isDisabled} />);
         default:
           return;
       }
@@ -320,6 +328,11 @@ Cell.propTypes = {
     PropTypes.string,
   ]),
   accessoryColor: PropTypes.string.isRequired,
+  switchOnTintColor: PropTypes.string,
+  switchThumbTintColor: PropTypes.string,
+  switchTintColor: PropTypes.string,
+  onSwitchValueChange: PropTypes.func,
+  switchValue: PropTypes.bool,
   allowFontScaling: PropTypes.bool,
   cellstyle: PropTypes.string,
   cellTintColor: PropTypes.string.isRequired,
