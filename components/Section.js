@@ -123,6 +123,7 @@ const styles = StyleSheet.create({
   },
   sectionfooter__text: {
     fontSize: 13,
+    lineHeight: 16
   },
   separator: {
   },
