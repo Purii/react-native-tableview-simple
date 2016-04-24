@@ -21,7 +21,8 @@ const Section = (props) => {
   const footer = props.footer ? props.footer : false;
 
   /* Declare and merge styles with props */
-  const styleSection = [...{}, styles.section, { backgroundColor: sectionTintColor }];
+  const styleSection = [...{}, styles.section, !children && styles.section__nocontent, { backgroundColor: sectionTintColor }];
+  const styleSectionInner = [...{}, styles.section_inner, !children && styles.section_inner__nocontent];
   const styleSectionHeader__text = [...{}, styles.sectionheader__text, { color: headerTintColor }];
   const styleSectionFooter__text = [...{}, styles.sectionfooter__text, { color: footerTintColor }];
   const styleSeparatorInner = [...{}, styles.separator_inner, {
@@ -90,7 +91,7 @@ const Section = (props) => {
   return (
     <View style={styleSection}>
       {renderHeader()}
-      <View style={styles.section_inner}>
+      <View style={styleSectionInner}>
         {React.Children.map(children, renderChild)}
       </View>
       {renderFooter()}
@@ -107,6 +108,14 @@ const styles = StyleSheet.create({
     borderTopWidth: StyleSheet.hairlineWidth,
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: '#c8c7cc',
+  },
+  section__nocontent: {
+    marginTop: -7,
+    paddingTop: 0,
+  },
+  section_inner__nocontent: {
+    borderTopWidth: 0,
+    borderBottomWidth: 0,
   },
   sectionheader: {
     paddingLeft: 15,
