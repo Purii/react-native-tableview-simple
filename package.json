@@ -18,7 +18,7 @@
     "android"
   ],
   "peerDependencies": {
-    "react-native": ">=0.19 || 0.22.0-rc"
+    "react-native": ">=0.25 || 0.27.0-rc"
   },
   "bugs": {
     "url": "https://github.com/Purii/react-native-tableview-simple/issues"
