@@ -1,20 +1,20 @@
 {
+  "parser": "babel-eslint",
   "extends": "airbnb",
   "rules": {
-    "react/no-did-mount-set-state": 0,
     "valid-jsdoc": 1,
-    "react/jsx-no-bind": 1,
-    "camelcase": 1,
-    "max-len": 1,
-    "no-var": 1,
+    "camelcase": 0,
     "no-use-before-define": 0,
-    "react/jsx-uses-react": 1,
-    "react/jsx-no-undef": 2,
-    "react/wrap-multilines": 2,
     "no-unused-vars": 1,
-    "no-console": 1
+    "no-console": 1,
+    "global-require": 0,
+    "max-len": 1,
+    "import/no-unresolved": 1,
   },
   "plugins": [
     "react"
-  ]
+  ],
+  "globals": {
+    "__DEV__": true,
+  }
 }
