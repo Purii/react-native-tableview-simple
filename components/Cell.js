@@ -108,8 +108,8 @@ class Cell extends Component {
           {title}
         </Text>
           {renderAccessory()}
-        </View>
-      );
+      </View>
+    );
 
    /**
     * Render cell of type RightDetail
