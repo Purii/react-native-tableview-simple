@@ -1,6 +1,9 @@
 /* eslint-disable consistent-return */
 import React, {
   PropTypes,
+} from 'react';
+
+import {
   StyleSheet,
   Text,
   View,
