@@ -1,9 +1,12 @@
 /* eslint-disable consistent-return */
 import React, {
   Component,
+  PropTypes,
+} from 'react';
+
+import {
   NativeModules,
   Platform,
-  PropTypes,
   StyleSheet,
   Text,
   TouchableHighlight,
@@ -113,8 +116,8 @@ class Cell extends Component {
           {title}
         </Text>
           {renderAccessory()}
-        </View>
-      );
+      </View>
+    );
 
    /**
     * Render cell of type RightDetail
