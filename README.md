@@ -37,6 +37,31 @@ Currently `TableView` doesn't support any properties.
 | separatorInsetLeft | 15 | `number` | Left inset of separator |
 | separatorInsetRight | 0 | `number` | Right inset of separator |
 | separatorTintColor | #c8c7cc | `string` | Color of separator |
+| headerTextStyle | - | {key: value} | Header text style |
+| footerTextStyle | - | {key: value} | Footer text style |
+
+Example of a headerTextStyle/footerTextStyle
+```
+var styles = StyleSheet.create({
+  // Can have other styles
+  sectionTextStyle: {
+    fontSize: 40,
+    color: 'green',
+  }
+});
+
+render() {
+  return (
+    <TableView>
+      <Section header="Header text" 
+        footer="Footer text" headerTextStyle={[styles.sectionTextStyle]}
+        footerTextStyle={[styles.sectionTextStyle]}>
+        //render the cells/custom cells
+      </Section>
+    </TableView>
+  );
+}
+```
 
 ### Cell
 The cellstyles are inspired by the native ones. Just like the available accessories.
