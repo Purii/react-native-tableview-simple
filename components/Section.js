@@ -22,6 +22,8 @@ const Section = (props) => {
   } = props;
   const header = props.header ? props.header : false;
   const footer = props.footer ? props.footer : false;
+  const headerTextStyle = props.headerTextStyle ? props.headerTextStyle : {};
+  const footerTextStyle = props.footerTextStyle ? props.footerTextStyle : {};
 
   /* Declare and merge styles with props */
   const styleSection = [...{}, styles.section, { backgroundColor: sectionTintColor }];
@@ -69,7 +71,7 @@ const Section = (props) => {
     if (header) {
       return (
         <View style={styles.sectionheader}>
-          <Text style={styleSectionHeader__text}>{header}</Text>
+          <Text style={[styleSectionHeader__text, headerTextStyle]}>{header}</Text>
         </View>
       );
     }
@@ -84,7 +86,7 @@ const Section = (props) => {
     if (footer) {
       return (
         <View style={styles.sectionfooter}>
-          <Text style={styleSectionFooter__text}>{footer}</Text>
+          <Text style={[styleSectionFooter__text, footerTextStyle]}>{footer}</Text>
         </View>
       );
     }
