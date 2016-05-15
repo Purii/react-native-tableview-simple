@@ -22,6 +22,7 @@ const Section = (props) => {
 
 
   const {
+    allowFontScaling,
     children,
     headerTextColor,
     hideSeparator,
@@ -84,7 +85,12 @@ const Section = (props) => {
     if (header) {
       return (
         <View style={styles.sectionheader}>
-          <Text style={styleSectionHeader__text}>{header}</Text>
+          <Text
+            allowFontScaling={allowFontScaling}
+            style={styleSectionHeader__text}
+          >
+            {header}
+          </Text>
         </View>
       );
     }
@@ -99,7 +105,12 @@ const Section = (props) => {
     if (footer) {
       return (
         <View style={styles.sectionfooter}>
-          <Text style={styleSectionFooter__text}>{footer}</Text>
+          <Text
+            allowFontScaling={allowFontScaling}
+            style={styleSectionFooter__text}
+          >
+            {footer}
+          </Text>
         </View>
       );
     }
@@ -151,6 +162,7 @@ const styles = StyleSheet.create({
 
 
 Section.propTypes = {
+  allowFontScaling: PropTypes.bool,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.element,
@@ -167,6 +179,7 @@ Section.propTypes = {
 };
 
 Section.defaultProps = {
+  allowFontScaling: true,
   headerTextColor: '#6d6d72',
   hideSeparator: false,
   sectionTintColor: '#EFEFF4',

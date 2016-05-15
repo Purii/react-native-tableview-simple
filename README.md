@@ -28,6 +28,7 @@ Currently `TableView` doesn't support any properties.
 ### Section
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
+| allowFontScaling | true | `bool` | Respect Text Size accessibility setting on iOS |
 | footer | - | `string` | Footer value |
 | footerTextColor | #6d6d72 | `string` | Text color of footer|
 | header | - | `string` | Header value |
