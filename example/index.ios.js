@@ -86,8 +86,8 @@ class Example extends Component {
           </View>
           <TableView>
             <Section footer="All rights reserved.">
-              <Cell title="Help / FAQ" titleTintColor="#007AFF" onPress={() => console.log('open Help/FAQ')} />
-              <Cell title="Contact Us" titleTintColor="#007AFF" onPress={() => console.log('open Contact Us')} />
+              <Cell title="Help / FAQ" titleTextColor="#007AFF" onPress={() => console.log('open Help/FAQ')} />
+              <Cell title="Contact Us" titleTextColor="#007AFF" onPress={() => console.log('open Contact Us')} />
             </Section>
           </TableView>
         </View>
