@@ -67,7 +67,7 @@ const Section = (props) => {
 
   /**
    * Render header if defined
-   * @return {View}
+   * @return {View} View with Text
    */
   const renderHeader = () => {
     if (header) {
@@ -82,7 +82,7 @@ const Section = (props) => {
 
   /**
    * Render footer if defined
-   * @return {View}
+   * @return {View} View with Text
    */
   const renderFooter = () => {
     if (footer) {

@@ -93,7 +93,7 @@ class Cell extends Component {
     /**
      * Render accessory
      * Currently available
-     * @return {View} Viewelement with accessory
+     * @return {View} View with accessory
      */
     const renderAccessory = () => {
       if (!accessory) { return; }
@@ -124,7 +124,7 @@ class Cell extends Component {
 
     /**
      * Render cell of type Basic
-     * @return {View}
+     * @return {View} View with Text and Accessory
      */
     const CellBasic = () => (
       <View style={styleCell}>
@@ -141,7 +141,7 @@ class Cell extends Component {
 
    /**
     * Render cell of type RightDetail
-    * @return {View}
+    * @return {View} View with Text, Text and Accessory
     */
     const CellRightDetail = () => (
       <View style={styleCell}>
@@ -164,7 +164,7 @@ class Cell extends Component {
 
     /**
     * Render cell of type LeftDetail
-    * @return {View}
+    * @return {View} View with Text, Text and Accessory
     */
     const CellLeftDetail = () => (
       <View style={styleCell}>
@@ -188,7 +188,7 @@ class Cell extends Component {
 
     /**
      * Render cell of type Subtitle
-     * @return {View}
+     * @return {View} View with View, Text, Text and Accessory
      */
     const CellSubtitle = () => (
       <View style={styleCell__subtitle}>
@@ -214,7 +214,7 @@ class Cell extends Component {
 
     /**
      * Render cell by type
-     * @return {View}
+     * @return {View} Returns the correct function to call
      */
     const renderCell = () => {
       let cellToRender = CellBasic;
