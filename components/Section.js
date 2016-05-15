@@ -10,11 +10,22 @@ import {
 } from 'react-native';
 
 const Section = (props) => {
+  /** Deprecation messages */
+  // eslint-disable-next-line
+  if (props.footerTintColor) {
+    console.warn('`<Section footerTintColor="..."/>` is deprecated. Use `<Section footerTextColor="..."/>` instead.');
+  }
+  // eslint-disable-next-line
+  if (props.headerTintColor) {
+    console.warn('`<Section headerTintColor="..."/>` is deprecated. Use `<Section headerTextColor="..."/>` instead.');
+  }
+
+
   const {
     children,
-    headerTintColor,
+    headerTextColor,
     hideSeparator,
-    footerTintColor,
+    footerTextColor,
     sectionTintColor,
     separatorInsetLeft,
     separatorInsetRight,
@@ -25,8 +36,8 @@ const Section = (props) => {
 
   /* Declare and merge styles with props */
   const styleSection = [...{}, styles.section, { backgroundColor: sectionTintColor }];
-  const styleSectionHeader__text = [...{}, styles.sectionheader__text, { color: headerTintColor }];
-  const styleSectionFooter__text = [...{}, styles.sectionfooter__text, { color: footerTintColor }];
+  const styleSectionHeader__text = [...{}, styles.sectionheader__text, { color: headerTextColor }];
+  const styleSectionFooter__text = [...{}, styles.sectionfooter__text, { color: footerTextColor }];
   const styleSeparatorInner = [...{}, styles.separator_inner, {
     backgroundColor: separatorTintColor,
     marginLeft: separatorInsetLeft,
@@ -145,9 +156,9 @@ Section.propTypes = {
     PropTypes.element,
   ]),
   footer: PropTypes.string,
-  footerTintColor: PropTypes.string,
+  footerTextColor: PropTypes.string,
   header: PropTypes.string,
-  headerTintColor: PropTypes.string,
+  headerTextColor: PropTypes.string,
   hideSeparator: PropTypes.bool,
   sectionTintColor: PropTypes.string,
   separatorInsetLeft: PropTypes.number,
@@ -156,10 +167,10 @@ Section.propTypes = {
 };
 
 Section.defaultProps = {
-  headerTintColor: '#6d6d72',
+  headerTextColor: '#6d6d72',
   hideSeparator: false,
   sectionTintColor: '#EFEFF4',
-  footerTintColor: '#6d6d72',
+  footerTextColor: '#6d6d72',
   separatorInsetLeft: 15,
   separatorInsetRight: 0,
   separatorTintColor: '#c8c7cc',

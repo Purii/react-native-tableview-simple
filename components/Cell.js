@@ -19,6 +19,16 @@ class Cell extends Component {
     this.state = {
       fontSizeMultiplier: 1,
     };
+
+    /** Deprecation messages */
+    // eslint-disable-next-line
+    if (props.cellTintColor) {
+      console.warn('`<Cell cellTintColor="..."/>` is deprecated. Use `<Cell cellTextColor="..."/>` instead.');
+    }
+    // eslint-disable-next-line
+    if (props.titleTintColor) {
+      console.warn('`<Cell titleTintColor="..."/>` is deprecated. Use `<Cell titleTextColor="..."/>` instead.');
+    }
   }
 
   componentWillMount() {
@@ -37,14 +47,14 @@ class Cell extends Component {
       accessory,
       accessoryColor,
       cellstyle,
-      cellTintColor,
+      cellTextColor,
       detail,
       highlightActiveOpacity,
       highlightUnderlayColor,
       isDisabled,
       leftDetailColor,
       title,
-      titleTintColor,
+      titleTextColor,
     } = this.props;
 
     // eslint-disable-next-line no-unneeded-ternary
@@ -54,19 +64,19 @@ class Cell extends Component {
     const styleCell = [
       ...{},
       styles.cell,
-      { backgroundColor: cellTintColor, height: 44 * this.state.fontSizeMultiplier },
+      { backgroundColor: cellTextColor, height: 44 * this.state.fontSizeMultiplier },
     ];
     const styleCell__subtitle = [
       ...{},
       styles.cell__subtitle,
-      { backgroundColor: cellTintColor, height: 44 * this.state.fontSizeMultiplier },
+      { backgroundColor: cellTextColor, height: 44 * this.state.fontSizeMultiplier },
     ];
     const styleCell_title = isDisabled
       ? [...{}, styles.cell_title, styles.cell_text__disabled]
-      : [...{}, styles.cell_title, { color: titleTintColor }];
+      : [...{}, styles.cell_title, { color: titleTextColor }];
     const styleCell_leftDetailTitle = isDisabled ?
       [...{}, styles.cell_leftDetailTitle, styles.cell_text__disabled]
-      : [...{}, styles.cell_leftDetailTitle, { color: titleTintColor }];
+      : [...{}, styles.cell_leftDetailTitle, { color: titleTextColor }];
 
     /* Apply color prop to accessories */
     const styleAccessory_checkmark = [
@@ -358,7 +368,7 @@ Cell.propTypes = {
   accessoryColor: PropTypes.string.isRequired,
   allowFontScaling: PropTypes.bool,
   cellstyle: PropTypes.string,
-  cellTintColor: PropTypes.string.isRequired,
+  cellTextColor: PropTypes.string.isRequired,
   detail: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
@@ -371,7 +381,7 @@ Cell.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]),
-  titleTintColor: PropTypes.string,
+  titleTextColor: PropTypes.string,
   onPress: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.func,
@@ -383,14 +393,14 @@ Cell.defaultProps = {
   accessoryColor: '#007AFF',
   allowFontScaling: true,
   cellstyle: 'Basic',
-  cellTintColor: '#fff',
+  cellTextColor: '#fff',
   detail: '',
   highlightActiveOpacity: 0.8,
   highlightUnderlayColor: 'black',
   isDisabled: false,
   leftDetailColor: '#007AFF',
   title: '',
-  titleTintColor: '#000',
+  titleTextColor: '#000',
 };
 
 export default Cell;

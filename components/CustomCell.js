@@ -9,9 +9,16 @@ import {
 } from 'react-native';
 
 const CustomCell = (props) => {
+  /** Deprecation messages */
+  // eslint-disable-next-line
+  if (props.cellTintColor) {
+    console.warn('`<CustomCell cellTintColor="..."/>` is deprecated. Use `<CustomCell cellTextColor="..."/>` instead.');
+  }
+
+
   const {
     cellHeight,
-    cellTintColor,
+    cellTextColor,
     children,
     highlightActiveOpacity,
     highlightUnderlayColor,
@@ -23,7 +30,7 @@ const CustomCell = (props) => {
   const isPressable = onPress ? true : false;
 
   /* Declare and merge styles with props */
-  const styleCell = [...{}, styles.cell, { backgroundColor: cellTintColor, height: cellHeight }];
+  const styleCell = [...{}, styles.cell, { backgroundColor: cellTextColor, height: cellHeight }];
 
   if (isPressable && !isDisabled) {
     return (
@@ -53,7 +60,7 @@ const styles = StyleSheet.create({
 
 CustomCell.propTypes = {
   cellHeight: PropTypes.number,
-  cellTintColor: PropTypes.string,
+  cellTextColor: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.element,
@@ -69,7 +76,7 @@ CustomCell.propTypes = {
 
 CustomCell.defaultProps = {
   cellHeight: 44,
-  cellTintColor: '#fff',
+  cellTextColor: '#fff',
   highlightActiveOpacity: 0.8,
   highlightUnderlayColor: 'black',
   isDisabled: false,

@@ -29,9 +29,9 @@ Currently `TableView` doesn't support any properties.
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
 | footer | - | `string` | Footer value |
-| footerTintColor | #6d6d72 | `string` | Text color of footer|
+| footerTextColor | #6d6d72 | `string` | Text color of footer|
 | header | - | `string` | Header value |
-| headerTintColor | #6d6d72 | `string` | Text color of header |
+| headerTextColor | #6d6d72 | `string` | Text color of header |
 | hideSeparator | false | `bool` | Hide separators |
 | sectionTintColor | #EFEFF4 | `string` | Background color of section |
 | separatorInsetLeft | 15 | `number` | Left inset of separator |
@@ -47,14 +47,14 @@ The cellstyles are inspired by the native ones. Just like the available accessor
 | accessoryColor | #007AFF | `string` | Color of accessory |
 | allowFontScaling | true | `bool` | Respect Text Size accessibility setting on iOS |
 | cellstyle | Basic | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
-| cellTintColor | #fff | `string` | Background color of cell |
+| cellTextColor | #fff | `string` | Background color of cell |
 | detail | - | `string` or `number` | Detail value |
 | highlightActiveOpacity | 0.8 | `number` | Opacity of cell when touch is active |
 | highlightUnderlayColor | black | `string` | Color of underlay that will show through when touch is active |
 | isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
 | leftDetailColor | #007AFF | `string` | Text color of left detail |
 | title | - | `string` or `number` | Title value |
-| titleTintColor | #000 | `string` | Text color of title |
+| titleTextColor | #000 | `string` | Text color of title |
 | onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 
 ### CustomCell
@@ -64,7 +64,7 @@ This makes it possible to use components like `ActivityIndicatorIOS` or `SwitchI
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
 | cellHeight | 44 | `number` | Set cell height |
-| cellTintColor | #fff | `string` | Background color of cell |
+| cellTextColor | #fff | `string` | Background color of cell |
 | highlightActiveOpacity | 0.8 | `number` | Opacity of cell when touch is active |
 | highlightUnderlayColor | black | `string` | Color of underlay that will show through when touch is active |
 | isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
@@ -125,8 +125,8 @@ class Example extends Component {
           </View>
           <TableView>
             <Section footer="All rights reserved.">
-              <Cell title="Help / FAQ" titleTintColor="#007AFF" onPress={() => console.log('open Help/FAQ')}/>
-              <Cell title="Contact Us" titleTintColor="#007AFF" onPress={() => console.log('open Contact Us')}/>
+              <Cell title="Help / FAQ" titleTextColor="#007AFF" onPress={() => console.log('open Help/FAQ')}/>
+              <Cell title="Contact Us" titleTextColor="#007AFF" onPress={() => console.log('open Contact Us')}/>
             </Section>
           </TableView>
       </ScrollView>
