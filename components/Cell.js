@@ -51,16 +51,44 @@ class Cell extends Component {
     const isPressable = this.props.onPress ? true : false;
 
     /* Declare and merge styles with props */
-    const styleCell = [...{}, styles.cell, { backgroundColor: cellTintColor, height: 44 * this.state.fontSizeMultiplier }];
-    const styleCell__subtitle = [...{}, styles.cell__subtitle, { backgroundColor: cellTintColor, height: 44 * this.state.fontSizeMultiplier }];
-    const styleCell_title = isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : [...{}, styles.cell_title, { color: titleTintColor }];
-    const styleCell_leftDetailTitle = isDisabled ? [...{}, styles.cell_leftDetailTitle, styles.cell_text__disabled] : [...{}, styles.cell_leftDetailTitle, { color: titleTintColor }];
+    const styleCell = [
+      ...{},
+      styles.cell,
+      { backgroundColor: cellTintColor, height: 44 * this.state.fontSizeMultiplier },
+    ];
+    const styleCell__subtitle = [
+      ...{},
+      styles.cell__subtitle,
+      { backgroundColor: cellTintColor, height: 44 * this.state.fontSizeMultiplier },
+    ];
+    const styleCell_title = isDisabled
+      ? [...{}, styles.cell_title, styles.cell_text__disabled]
+      : [...{}, styles.cell_title, { color: titleTintColor }];
+    const styleCell_leftDetailTitle = isDisabled ?
+      [...{}, styles.cell_leftDetailTitle, styles.cell_text__disabled]
+      : [...{}, styles.cell_leftDetailTitle, { color: titleTintColor }];
 
     /* Apply color prop to accessories */
-    const styleAccessory_checkmark = [...{}, styles.accessory_checkmark, { borderColor: accessoryColor }];
-    const styleAccessory_detail = [...{}, styles.accessory_detail, { borderColor: accessoryColor }];
-    const styleAccessory_detailText = [...{}, styles.accessory_detailText, { color: accessoryColor }];
-    const styleCell_leftDetail = [...{}, styles.cell_leftdetail, { color: leftDetailColor }];
+    const styleAccessory_checkmark = [
+      ...{},
+      styles.accessory_checkmark,
+      { borderColor: accessoryColor },
+    ];
+    const styleAccessory_detail = [
+      ...{},
+      styles.accessory_detail,
+      { borderColor: accessoryColor },
+    ];
+    const styleAccessory_detailText = [
+      ...{},
+      styles.accessory_detailText,
+      { color: accessoryColor },
+    ];
+    const styleCell_leftDetail = [
+      ...{},
+      styles.cell_leftdetail,
+      { color: leftDetailColor },
+    ];
 
     /**
      * Render accessory
@@ -124,7 +152,12 @@ class Cell extends Component {
         >
           {title}
         </Text>
-        <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_detail, styles.cell_text__disabled] : styles.cell_detail}>{detail}</Text>
+        <Text
+          numberOfLines={1}
+          style={isDisabled ? [...{}, styles.cell_detail, styles.cell_text__disabled] : styles.cell_detail}
+        >
+          {detail}
+        </Text>
           {renderAccessory()}
       </View>
     );
