@@ -23,7 +23,14 @@ import Dimensions from 'Dimensions';
  * https://github.com/facebook/react-native
  */
 
-// Demonstration
+// Example component for section:headerComponent
+const CustomSectionHeader = () => (
+  <View>
+    <Text>Custom header!</Text>
+  </View>
+);
+
+// Demonstration (Better use functional component)
 // eslint-disable-next-line
 class Example extends Component {
   render() {
@@ -60,6 +67,9 @@ class Example extends Component {
               <Text style={{ flex: 1, fontSize: 16 }}>Switch</Text>
               <SwitchIOS />
             </CustomCell>
+          </Section>
+          <Section headerComponent={<CustomSectionHeader />}>
+            <Cell cellstyle="Basic" title="Section uses prop headerComponent" />
           </Section>
         </TableView>
         <View
