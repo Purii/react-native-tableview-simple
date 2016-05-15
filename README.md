@@ -29,6 +29,8 @@ Currently `TableView` doesn't support any properties.
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
 | allowFontScaling | true | `bool` | Respect Text Size accessibility setting on iOS |
+| footerComponent | - | `React.Component` | Inject any component to replace original footer |
+| headerComponent | - | `React.Component` | Inject any component to replace original header |
 | footer | - | `string` | Footer value |
 | footerTextColor | #6d6d72 | `string` | Text color of footer|
 | header | - | `string` | Header value |
