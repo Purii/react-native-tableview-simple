@@ -117,11 +117,11 @@ const Section = (props) => {
   };
   return (
     <View style={styleSection}>
-      {renderHeader()}
+      {props.headerComponent || renderHeader()}
       <View style={styles.section_inner}>
         {React.Children.map(children, renderChild)}
       </View>
-      {renderFooter()}
+      {props.footerComponent || renderFooter()}
     </View>
   );
 };
@@ -166,6 +166,8 @@ Section.propTypes = {
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.element,
   ]),
+  footerComponent: PropTypes.element,
+  headerComponent: PropTypes.element,
   footer: PropTypes.string,
   footerTextColor: PropTypes.string,
   header: PropTypes.string,
