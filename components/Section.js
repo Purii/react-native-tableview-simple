@@ -20,7 +20,6 @@ const Section = (props) => {
     console.warn('`<Section headerTintColor="..."/>` is deprecated. Use `<Section headerTextColor="..."/>` instead.');
   }
 
-
   const {
     allowFontScaling,
     children,
