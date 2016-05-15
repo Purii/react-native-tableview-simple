@@ -58,8 +58,8 @@ The cellstyles are inspired by the native ones. Just like the available accessor
 | onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 
 ### CustomCell
-CustomCells allow you to define the whole content on your own.
-This makes it possible to use components like `ActivityIndicatorIOS` or `SwitchIOS` as seen in the example below.
+While the `Cell` component is intended as reproduction of the original cell known from the `UITableView`, the `CustomCell` could be customized at the most.
+Use a `CustomCell` to define the whole content and its structure on your own. With this component it is possible to add other components like `ActivityIndicatorIOS` or `SwitchIOS` as seen in the example below.
 
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
@@ -85,9 +85,11 @@ To run the example project, follow these steps:
 
 ```javascript
 import React, {
+  Component
+} from 'react';
+import {
   ActivityIndicatorIOS,
   AppRegistry,
-  Component,
   ScrollView,
   StyleSheet,
   SwitchIOS,
@@ -154,9 +156,11 @@ The left screen is build using `react-native-tableview-simple`. The right one is
 
 ```javascript
 import React, {
+  Component
+} from 'react';
+import {
   ActivityIndicatorIOS,
   AppRegistry,
-  Component,
   ScrollView,
   StyleSheet,
   SwitchIOS,
