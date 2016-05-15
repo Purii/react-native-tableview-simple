@@ -60,7 +60,7 @@ The cellstyles are inspired by the native ones. Just like the available accessor
 
 ### CustomCell
 While the `Cell` component is intended as reproduction of the original cell known from the `UITableView`, the `CustomCell` could be customized at the most.
-Use a `CustomCell` to define the whole content and its structure on your own. Pass any component as childrens to a `CustomCell`. Have a look at the example below, which uses `ActivityIndicatorIOS` and `SwitchIOS`.
+Use a `CustomCell` to define the whole content and its structure on your own. Pass any component as a children to a `CustomCell`. Have a look at the example below, which uses `ActivityIndicatorIOS` and `SwitchIOS`.
 
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
