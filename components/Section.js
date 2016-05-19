@@ -162,10 +162,7 @@ const styles = StyleSheet.create({
 
 Section.propTypes = {
   allowFontScaling: PropTypes.bool,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
-  ]),
+  children: React.PropTypes.node,
   footerComponent: PropTypes.element,
   headerComponent: PropTypes.element,
   footer: PropTypes.string,
