@@ -7,8 +7,8 @@
     "start": "react-native start"
   },
   "dependencies": {
-    "react": "^0.14.8",
-    "react-native": "^0.25.1",
-    "react-native-tableview-simple": "^0.9.0"
+    "react": "^15.0.2",
+    "react-native": "^0.26.0",
+    "react-native-tableview-simple": "^0.10.1"
   }
 }
