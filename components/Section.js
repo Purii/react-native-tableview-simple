@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
   separator: {
   },
   separator_inner: {
-    height: 0.5,
+    height: StyleSheet.hairlineWidth,
   },
 });
 
