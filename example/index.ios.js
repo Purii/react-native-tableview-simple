@@ -4,6 +4,7 @@ import React, {
 import {
   ActivityIndicatorIOS,
   AppRegistry,
+  Dimensions,
   ScrollView,
   StyleSheet,
   SwitchIOS,
@@ -16,7 +17,6 @@ import {
   Section,
   TableView,
 } from 'react-native-tableview-simple';
-import Dimensions from 'Dimensions';
 
 /**
  * Sample React Native App
