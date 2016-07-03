@@ -35,7 +35,7 @@ const CustomCell = (props) => {
   const isPressable = !!onPress;
 
   /* Declare and merge styles with props */
-  const styleCell = [...{}, styles.cell, props.contentContainerStyle];
+  const styleCell = [...{}, styles.cell, contentContainerStyle];
 
   if (isPressable && !isDisabled) {
     return (
