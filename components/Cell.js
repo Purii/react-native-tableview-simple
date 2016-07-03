@@ -23,11 +23,11 @@ class Cell extends Component {
     /** Deprecation messages */
     // eslint-disable-next-line
     if (props.cellTintColor) {
-      console.warn('`<Cell cellTintColor="..."/>` is deprecated. Use `<Cell cellTextColor="..."/>` instead.');
+      console.warn('`<Cell cellTintColor="..." />` is deprecated. Use `<Cell cellTextColor="..." />` instead.');
     }
     // eslint-disable-next-line
     if (props.titleTintColor) {
-      console.warn('`<Cell titleTintColor="..."/>` is deprecated. Use `<Cell titleTextColor="..."/>` instead.');
+      console.warn('`<Cell titleTintColor="..." />` is deprecated. Use `<Cell titleTextColor="..." />` instead.');
     }
   }
 
@@ -57,8 +57,7 @@ class Cell extends Component {
       titleTextColor,
     } = this.props;
 
-    // eslint-disable-next-line no-unneeded-ternary
-    const isPressable = this.props.onPress ? true : false;
+    const isPressable = !!this.props.onPress;
 
     /* Declare and merge styles with props */
     const styleCell = [
