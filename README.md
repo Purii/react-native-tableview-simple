@@ -66,8 +66,7 @@ Use a `CustomCell` to define the whole content and its structure on your own. Pa
 
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
-| cellHeight | 44 | `number` | Set cell height |
-| cellTextColor | #fff | `string` | Background color of cell |
+| contentContainerStyle | {} | `View.propTypes.style` | These styles will be applied to the content container which wraps all of the child views |
 | highlightActiveOpacity | 0.8 | `number` | Opacity of cell when touch is active |
 | highlightUnderlayColor | black | `string` | Color of underlay that will show through when touch is active |
 | isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |

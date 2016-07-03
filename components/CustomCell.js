@@ -12,25 +12,30 @@ const CustomCell = (props) => {
   /** Deprecation messages */
   // eslint-disable-next-line
   if (props.cellTintColor) {
-    console.warn('`<CustomCell cellTintColor="..."/>` is deprecated. Use `<CustomCell cellTextColor="..."/>` instead.');
+    console.warn('`<CustomCell cellTintColor="..." />` is deprecated. Use `<CustomCell contentContainerStyle={{ backgroundColor: \'#fff\' }} />` instead.');
+  }
+  // eslint-disable-next-line
+  if (props.cellTextColor) {
+    console.warn('`<CustomCell cellTextColor="..." />` is deprecated. Use `<CustomCell contentContainerStyle={{ backgroundColor: \'#fff\' }} />` instead.');
+  }
+  // eslint-disable-next-line
+  if (props.cellHeight) {
+    console.warn('`<CustomCell cellHeight="..." />` is deprecated. Use `<CustomCell contentContainerStyle={{ height: 44 }} />` instead.');
   }
 
-
   const {
-    cellHeight,
-    cellTextColor,
     children,
+    contentContainerStyle,
     highlightActiveOpacity,
     highlightUnderlayColor,
     isDisabled,
     onPress,
   } = props;
 
-   // eslint-disable-next-line no-unneeded-ternary
-  const isPressable = onPress ? true : false;
+  const isPressable = !!onPress;
 
   /* Declare and merge styles with props */
-  const styleCell = [...{}, styles.cell, { backgroundColor: cellTextColor, height: cellHeight }];
+  const styleCell = [...{}, styles.cell, props.contentContainerStyle];
 
   if (isPressable && !isDisabled) {
     return (
@@ -48,6 +53,8 @@ const CustomCell = (props) => {
 
 const styles = StyleSheet.create({
   cell: {
+    backgroundColor: '#fff',
+    height: 44,
     justifyContent: 'center',
     paddingLeft: 15,
     paddingRight: 20,
@@ -59,12 +66,11 @@ const styles = StyleSheet.create({
 });
 
 CustomCell.propTypes = {
-  cellHeight: PropTypes.number,
-  cellTextColor: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.element,
   ]),
+  contentContainerStyle: View.propTypes.style,
   highlightActiveOpacity: PropTypes.number,
   highlightUnderlayColor: PropTypes.string,
   isDisabled: PropTypes.bool,
@@ -75,8 +81,6 @@ CustomCell.propTypes = {
 };
 
 CustomCell.defaultProps = {
-  cellHeight: 44,
-  cellTextColor: '#fff',
   highlightActiveOpacity: 0.8,
   highlightUnderlayColor: 'black',
   isDisabled: false,
