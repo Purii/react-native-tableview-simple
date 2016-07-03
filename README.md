@@ -216,6 +216,9 @@ class Example extends Component {
               <Text style={{flex: 1, fontSize: 16}}>Switch</Text>
               <SwitchIOS/>
             </CustomCell>
+            <CustomCell contentContainerStyle={{ height: 60 }}>
+              <Text style={{ flex: 1, fontSize: 16 }}>Custom height</Text>
+            </CustomCell>
           </Section>
         </TableView>
       </ScrollView>
