@@ -22,8 +22,8 @@ class Cell extends Component {
 
     /** Deprecation messages */
     // eslint-disable-next-line
-    if (props.cellTintColor) {
-      console.warn('`<Cell cellTintColor="..." />` is deprecated. Use `<Cell cellTextColor="..." />` instead.');
+    if (props.cellTextColor) {
+      console.warn('`<Cell cellTextColor="..." />` is deprecated. Use `<Cell backgroundColor="..." />` instead.');
     }
     // eslint-disable-next-line
     if (props.titleTintColor) {
@@ -46,8 +46,8 @@ class Cell extends Component {
     const {
       accessory,
       accessoryColor,
+      backgroundColor,
       cellstyle,
-      cellTextColor,
       detail,
       highlightActiveOpacity,
       highlightUnderlayColor,
@@ -63,12 +63,12 @@ class Cell extends Component {
     const styleCell = [
       ...{},
       styles.cell,
-      { backgroundColor: cellTextColor, height: 44 * this.state.fontSizeMultiplier },
+      { backgroundColor, height: 44 * this.state.fontSizeMultiplier },
     ];
     const styleCell__subtitle = [
       ...{},
       styles.cell__subtitle,
-      { backgroundColor: cellTextColor, height: 44 * this.state.fontSizeMultiplier },
+      { backgroundColor, height: 44 * this.state.fontSizeMultiplier },
     ];
     const styleCell_title = isDisabled
       ? [...{}, styles.cell_title, styles.cell_text__disabled]
@@ -367,7 +367,7 @@ Cell.propTypes = {
   accessoryColor: PropTypes.string.isRequired,
   allowFontScaling: PropTypes.bool,
   cellstyle: PropTypes.string,
-  cellTextColor: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
   detail: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
@@ -392,7 +392,7 @@ Cell.defaultProps = {
   accessoryColor: '#007AFF',
   allowFontScaling: true,
   cellstyle: 'Basic',
-  cellTextColor: '#fff',
+  backgroundColor: '#fff',
   detail: '',
   highlightActiveOpacity: 0.8,
   highlightUnderlayColor: 'black',
