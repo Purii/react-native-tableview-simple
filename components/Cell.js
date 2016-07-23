@@ -283,6 +283,7 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     flexDirection: 'row',
     alignItems: 'center',
+    paddingVertical: 5,
   },
   cellinner__subtitle: {
     flexDirection: 'column',
