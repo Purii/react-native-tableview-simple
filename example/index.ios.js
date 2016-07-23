@@ -1,6 +1,10 @@
-import React, {
-  Component,
-} from 'react';
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
+
+import React, { Component } from 'react';
 import {
   ActivityIndicator,
   AppRegistry,
@@ -11,6 +15,7 @@ import {
   Text,
   View,
 } from 'react-native';
+
 import {
   Cell,
   CustomCell,
@@ -18,10 +23,6 @@ import {
   TableView,
 } from 'react-native-tableview-simple';
 
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
 
 // Example component for section:headerComponent
 const CustomSectionHeader = () => (
@@ -30,8 +31,7 @@ const CustomSectionHeader = () => (
   </View>
 );
 
-// Demonstration (Better use functional component)
-// eslint-disable-next-line
+// eslint-disable-next-line react/prefer-stateless-function
 class Example extends Component {
   render() {
     return (

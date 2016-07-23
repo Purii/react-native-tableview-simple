@@ -7,8 +7,8 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
-    "react": "15.2.0",
-    "react-native": "0.28.0",
-    "react-native-tableview-simple": "^0.11.0"
+    "react": "15.2.1",
+    "react-native": "0.30.0",
+    "react-native-tableview-simple": "^0.12.0"
   }
 }
