@@ -2,7 +2,7 @@ import React, {
   Component,
 } from 'react';
 import {
-  ActivityIndicatorIOS,
+  ActivityIndicator,
   AppRegistry,
   Dimensions,
   ScrollView,
@@ -61,7 +61,7 @@ class Example extends Component {
           <Section header="CUSTOMCELLS">
             <CustomCell>
               <Text style={{ flex: 1, fontSize: 16 }}>Loading</Text>
-              <ActivityIndicatorIOS />
+              <ActivityIndicator />
             </CustomCell>
             <CustomCell>
               <Text style={{ flex: 1, fontSize: 16 }}>Switch</Text>
