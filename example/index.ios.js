@@ -38,25 +38,25 @@ class Example extends Component {
       <ScrollView contentContainerStyle={styles.stage}>
         <TableView>
           <Section header="STANDARD" footer="A Footer">
-            <Cell cellstyle="Basic" title="Basic" />
-            <Cell cellstyle="RightDetail" title="RightDetail" detail="Detail" />
-            <Cell cellstyle="LeftDetail" title="LeftDetail" detail="Detail" />
-            <Cell cellstyle="Subtitle" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk" />
-            <Cell cellstyle="Basic" title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => console.log('Heyho!')} />
+            <Cell cellStyle="Basic" title="Basic" />
+            <Cell cellStyle="RightDetail" title="RightDetail" detail="Detail" />
+            <Cell cellStyle="LeftDetail" title="LeftDetail" detail="Detail" />
+            <Cell cellStyle="Subtitle" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk" />
+            <Cell cellStyle="Basic" title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => console.log('Heyho!')} />
           </Section>
           <Section header="DISABLED">
-            <Cell cellstyle="Basic" isDisabled title="Basic" />
-            <Cell cellstyle="RightDetail" isDisabled title="RightDetail" detail="Detail" />
-            <Cell cellstyle="LeftDetail" isDisabled title="LeftDetail" detail="Detail" />
-            <Cell cellstyle="Subtitle" isDisabled title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk" />
-            <Cell cellstyle="Basic" isDisabled title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => console.log('Heyho!')} />
+            <Cell cellStyle="Basic" isDisabled title="Basic" />
+            <Cell cellStyle="RightDetail" isDisabled title="RightDetail" detail="Detail" />
+            <Cell cellStyle="LeftDetail" isDisabled title="LeftDetail" detail="Detail" />
+            <Cell cellStyle="Subtitle" isDisabled title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk" />
+            <Cell cellStyle="Basic" isDisabled title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => console.log('Heyho!')} />
           </Section>
           <Section header="ACCESSORY">
-            <Cell cellstyle="Basic" accessory="DisclosureIndicator" title="Basic" />
-            <Cell cellstyle="RightDetail" accessory="DetailDisclosure" title="RightDetail" detail="Detail" />
-            <Cell cellstyle="LeftDetail" accessory="Detail" title="LeftDetail" detail="Detail" />
-            <Cell cellstyle="Subtitle" accessory="Checkmark" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk" />
-            <Cell cellstyle="Basic" accessory="Detail" title="Pressable w/ accessory" onPress={() => console.log('Heyho!')} />
+            <Cell cellStyle="Basic" accessory="DisclosureIndicator" title="Basic" />
+            <Cell cellStyle="RightDetail" accessory="DetailDisclosure" title="RightDetail" detail="Detail" />
+            <Cell cellStyle="LeftDetail" accessory="Detail" title="LeftDetail" detail="Detail" />
+            <Cell cellStyle="Subtitle" accessory="Checkmark" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk" />
+            <Cell cellStyle="Basic" accessory="Detail" title="Pressable w/ accessory" onPress={() => console.log('Heyho!')} />
           </Section>
           <Section header="CUSTOMCELLS">
             <CustomCell>
@@ -72,7 +72,7 @@ class Example extends Component {
             </CustomCell>
           </Section>
           <Section headerComponent={<CustomSectionHeader />}>
-            <Cell cellstyle="Basic" title="Section uses prop headerComponent" />
+            <Cell cellStyle="Basic" title="Section uses prop headerComponent" />
           </Section>
         </TableView>
         <View

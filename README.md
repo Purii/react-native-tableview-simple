@@ -49,8 +49,8 @@ The cellstyles are inspired by the native ones. Just like the available accessor
 | accessory | - | `string` | Predefined accessory: `DisclosureIndicator`, `Detail`, `DetailDisclosure`, `Checkmark` |
 | accessoryColor | #007AFF | `string` | Color of accessory |
 | allowFontScaling | true | `bool` | Respect Text Size accessibility setting on iOS |
-| cellstyle | Basic | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
-| cellTextColor | #fff | `string` | Background color of cell |
+| backgroundColor | #fff | `string` | Background color of cell |
+| cellStyle | Basic | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
 | detail | - | `string` or `number` | Detail value |
 | highlightActiveOpacity | 0.8 | `number` | Opacity of cell when touch is active |
 | highlightUnderlayColor | black | `string` | Color of underlay that will show through when touch is active |
@@ -187,25 +187,25 @@ class Example extends Component {
       <ScrollView contentContainerStyle={styles.stage}>
         <TableView>
           <Section header="STANDARD" footer="A Footer">
-            <Cell cellstyle="Basic" title="Basic"/>
-            <Cell cellstyle="RightDetail" title="RightDetail" detail="Detail" />
-            <Cell cellstyle="LeftDetail" title="LeftDetail" detail="Detail"/>
-            <Cell cellstyle="Subtitle" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
-            <Cell cellstyle="Basic" title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => console.log('Heyho!')}/>
+            <Cell cellStyle="Basic" title="Basic"/>
+            <Cell cellStyle="RightDetail" title="RightDetail" detail="Detail" />
+            <Cell cellStyle="LeftDetail" title="LeftDetail" detail="Detail"/>
+            <Cell cellStyle="Subtitle" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
+            <Cell cellStyle="Basic" title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => console.log('Heyho!')}/>
           </Section>
           <Section header="DISABLED">
-            <Cell cellstyle="Basic" isDisabled={true} title="Basic"/>
-            <Cell cellstyle="RightDetail" isDisabled={true} title="RightDetail" detail="Detail" />
-            <Cell cellstyle="LeftDetail" isDisabled={true} title="LeftDetail" detail="Detail"/>
-            <Cell cellstyle="Subtitle" isDisabled={true} title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
+            <Cell cellStyle="Basic" isDisabled={true} title="Basic"/>
+            <Cell cellStyle="RightDetail" isDisabled={true} title="RightDetail" detail="Detail" />
+            <Cell cellStyle="LeftDetail" isDisabled={true} title="LeftDetail" detail="Detail"/>
+            <Cell cellStyle="Subtitle" isDisabled={true} title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
             <Cell cellstyle="Basic" isDisabled={true} title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
           </Section>
           <Section header="ACCESSORY">
-            <Cell cellstyle="Basic" accessory="DisclosureIndicator" title="Basic"/>
-            <Cell cellstyle="RightDetail" accessory="DetailDisclosure" title="RightDetail" detail="Detail" />
-            <Cell cellstyle="LeftDetail" accessory="Detail" title="LeftDetail" detail="Detail"/>
-            <Cell cellstyle="Subtitle" accessory="Checkmark" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
-            <Cell cellstyle="Basic" accessory="Detail" title="Pressable w/ accessory" onPress={() => console.log('Heyho!')}/>
+            <Cell cellStyle="Basic" accessory="DisclosureIndicator" title="Basic"/>
+            <Cell cellStyle="RightDetail" accessory="DetailDisclosure" title="RightDetail" detail="Detail" />
+            <Cell cellStyle="LeftDetail" accessory="Detail" title="LeftDetail" detail="Detail"/>
+            <Cell cellStyle="Subtitle" accessory="Checkmark" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
+            <Cell cellStyle="Basic" accessory="Detail" title="Pressable w/ accessory" onPress={() => console.log('Heyho!')}/>
           </Section>
           <Section header="CUSTOMCELLS">
             <CustomCell>
