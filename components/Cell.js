@@ -29,6 +29,10 @@ class Cell extends Component {
     if (props.titleTintColor) {
       console.warn('`<Cell titleTintColor="..." />` is deprecated. Use `<Cell titleTextColor="..." />` instead.');
     }
+    // eslint-disable-next-line
+    if (props.cellstyle) {
+      console.warn('`<Cell cellstyle="..." />` is deprecated. Use `<Cell cellStyle="..." />` instead.');
+    }
   }
 
   componentWillMount() {
@@ -47,7 +51,6 @@ class Cell extends Component {
       accessory,
       accessoryColor,
       backgroundColor,
-      cellstyle,
       detail,
       highlightActiveOpacity,
       highlightUnderlayColor,
@@ -56,6 +59,11 @@ class Cell extends Component {
       title,
       titleTextColor,
     } = this.props;
+
+    let { cellStyle } = this.props;
+    /** Deprecation */
+    // eslint-disable-next-line
+    if (this.props.cellstyle) cellStyle = this.props.cellstyle;
 
     const isPressable = !!this.props.onPress;
 
@@ -227,7 +235,7 @@ class Cell extends Component {
      */
     const renderCell = () => {
       let cellToRender = CellBasic;
-      switch (cellstyle) {
+      switch (cellStyle) {
         case 'Basic':
           cellToRender = CellBasic;
           break;
@@ -367,7 +375,7 @@ Cell.propTypes = {
   ]),
   accessoryColor: PropTypes.string.isRequired,
   allowFontScaling: PropTypes.bool,
-  cellstyle: PropTypes.string,
+  cellStyle: PropTypes.string,
   backgroundColor: PropTypes.string.isRequired,
   detail: PropTypes.oneOfType([
     PropTypes.string,
@@ -392,7 +400,7 @@ Cell.defaultProps = {
   accessory: false,
   accessoryColor: '#007AFF',
   allowFontScaling: true,
-  cellstyle: 'Basic',
+  cellStyle: 'Basic',
   backgroundColor: '#fff',
   detail: '',
   highlightActiveOpacity: 0.8,
