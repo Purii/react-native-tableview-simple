@@ -237,3 +237,6 @@ const styles = StyleSheet.create({
 AppRegistry.registerComponent('example', () => Example);
 
 ```
+
+## Todo
+* Support an `image`-Prop
