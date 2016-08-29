@@ -20,6 +20,20 @@ class Cell extends Component {
     this.state = {
       fontSizeMultiplier: 1,
     };
+
+    /** Deprecation messages */
+    // eslint-disable-next-line
+    if (props.cellTextColor) {
+      console.warn('`<Cell cellTextColor="..." />` is deprecated. Use `<Cell backgroundColor="..." />` instead.');
+    }
+    // eslint-disable-next-line
+    if (props.titleTintColor) {
+      console.warn('`<Cell titleTintColor="..." />` is deprecated. Use `<Cell titleTextColor="..." />` instead.');
+    }
+    // eslint-disable-next-line
+    if (props.cellstyle) {
+      console.warn('`<Cell cellstyle="..." />` is deprecated. Use `<Cell cellStyle="..." />` instead.');
+    }
   }
 
   componentWillMount() {
@@ -37,11 +51,7 @@ class Cell extends Component {
     const {
       accessory,
       accessoryColor,
-      switchOnTintColor,
-      switchThumbTintColor,
-      switchTintColor,
-      onSwitchValueChange,
-      switchValue,
+      backgroundColor,
       cellstyle,
       cellTintColor,
       detail,
@@ -49,29 +59,67 @@ class Cell extends Component {
       highlightUnderlayColor,
       isDisabled,
       leftDetailColor,
+      onSwitchValueChange,
+      switchOnTintColor,
+      switchThumbTintColor,
+      switchTintColor,
+      switchValue,
       title,
-      titleTintColor,
+      titleTextColor,
+
     } = this.props;
 
-    // eslint-disable-next-line no-unneeded-ternary
-    const isPressable = this.props.onPress ? true : false;
+    let { cellStyle } = this.props;
+    /** Deprecation */
+    // eslint-disable-next-line
+    if (this.props.cellstyle) cellStyle = this.props.cellstyle;
+
+    const isPressable = !!this.props.onPress;
 
     /* Declare and merge styles with props */
-    const styleCell = [...{}, styles.cell, { backgroundColor: cellTintColor, height: 44 * this.state.fontSizeMultiplier }];
-    const styleCell__subtitle = [...{}, styles.cell__subtitle, { backgroundColor: cellTintColor, height: 44 * this.state.fontSizeMultiplier }];
-    const styleCell_title = isDisabled ? [...{}, styles.cell_title, styles.cell_text__disabled] : [...{}, styles.cell_title, { color: titleTintColor }];
-    const styleCell_leftDetailTitle = isDisabled ? [...{}, styles.cell_leftDetailTitle, styles.cell_text__disabled] : [...{}, styles.cell_leftDetailTitle, { color: titleTintColor }];
+    const styleCell = [
+      ...{},
+      styles.cell,
+      { backgroundColor, height: 44 * this.state.fontSizeMultiplier },
+    ];
+    const styleCell__subtitle = [
+      ...{},
+      styles.cell__subtitle,
+      { backgroundColor, height: 44 * this.state.fontSizeMultiplier },
+    ];
+    const styleCell_title = isDisabled
+      ? [...{}, styles.cell_title, styles.cell_text__disabled]
+      : [...{}, styles.cell_title, { color: titleTextColor }];
+    const styleCell_leftDetailTitle = isDisabled ?
+      [...{}, styles.cell_leftDetailTitle, styles.cell_text__disabled]
+      : [...{}, styles.cell_leftDetailTitle, { color: titleTextColor }];
 
     /* Apply color prop to accessories */
-    const styleAccessory_checkmark = [...{}, styles.accessory_checkmark, { borderColor: accessoryColor }];
-    const styleAccessory_detail = [...{}, styles.accessory_detail, { borderColor: accessoryColor }];
-    const styleAccessory_detailText = [...{}, styles.accessory_detailText, { color: accessoryColor }];
-    const styleCell_leftDetail = [...{}, styles.cell_leftdetail, { color: leftDetailColor }];
+    const styleAccessory_checkmark = [
+      ...{},
+      styles.accessory_checkmark,
+      { borderColor: accessoryColor },
+    ];
+    const styleAccessory_detail = [
+      ...{},
+      styles.accessory_detail,
+      { borderColor: accessoryColor },
+    ];
+    const styleAccessory_detailText = [
+      ...{},
+      styles.accessory_detailText,
+      { color: accessoryColor },
+    ];
+    const styleCell_leftDetail = [
+      ...{},
+      styles.cell_leftdetail,
+      { color: leftDetailColor },
+    ];
 
     /**
      * Render accessory
      * Currently available
-     * @return {View} Viewelement with accessory
+     * @return {View} View with accessory
      */
     const renderAccessory = () => {
       if (!accessory) { return; }
@@ -104,7 +152,7 @@ class Cell extends Component {
 
     /**
      * Render cell of type Basic
-     * @return {View}
+     * @return {View} View with Text and Accessory
      */
     const CellBasic = () => (
       <View style={styleCell}>
@@ -121,7 +169,7 @@ class Cell extends Component {
 
    /**
     * Render cell of type RightDetail
-    * @return {View}
+    * @return {View} View with Text, Text and Accessory
     */
     const CellRightDetail = () => (
       <View style={styleCell}>
@@ -132,14 +180,19 @@ class Cell extends Component {
         >
           {title}
         </Text>
-        <Text numberOfLines={1} style={isDisabled ? [...{}, styles.cell_detail, styles.cell_text__disabled] : styles.cell_detail}>{detail}</Text>
+        <Text
+          numberOfLines={1}
+          style={isDisabled ? [...{}, styles.cell_detail, styles.cell_text__disabled] : styles.cell_detail}
+        >
+          {detail}
+        </Text>
           {renderAccessory()}
       </View>
     );
 
     /**
     * Render cell of type LeftDetail
-    * @return {View}
+    * @return {View} View with Text, Text and Accessory
     */
     const CellLeftDetail = () => (
       <View style={styleCell}>
@@ -163,7 +216,7 @@ class Cell extends Component {
 
     /**
      * Render cell of type Subtitle
-     * @return {View}
+     * @return {View} View with View, Text, Text and Accessory
      */
     const CellSubtitle = () => (
       <View style={styleCell__subtitle}>
@@ -189,11 +242,11 @@ class Cell extends Component {
 
     /**
      * Render cell by type
-     * @return {View}
+     * @return {View} Returns the correct function to call
      */
     const renderCell = () => {
       let cellToRender = CellBasic;
-      switch (cellstyle) {
+      switch (cellStyle) {
         case 'Basic':
           cellToRender = CellBasic;
           break;
@@ -249,6 +302,7 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     flexDirection: 'row',
     alignItems: 'center',
+    paddingVertical: 5,
   },
   cellinner__subtitle: {
     flexDirection: 'column',
@@ -337,8 +391,8 @@ Cell.propTypes = {
   onSwitchValueChange: PropTypes.func,
   switchValue: PropTypes.bool,
   allowFontScaling: PropTypes.bool,
-  cellstyle: PropTypes.string,
-  cellTintColor: PropTypes.string.isRequired,
+  cellStyle: PropTypes.string,
+  backgroundColor: PropTypes.string.isRequired,
   detail: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
@@ -351,7 +405,7 @@ Cell.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]),
-  titleTintColor: PropTypes.string,
+  titleTextColor: PropTypes.string,
   onPress: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.func,
@@ -362,15 +416,15 @@ Cell.defaultProps = {
   accessory: false,
   accessoryColor: '#007AFF',
   allowFontScaling: true,
-  cellstyle: 'Basic',
-  cellTintColor: '#fff',
+  cellStyle: 'Basic',
+  backgroundColor: '#fff',
   detail: '',
   highlightActiveOpacity: 0.8,
   highlightUnderlayColor: 'black',
   isDisabled: false,
   leftDetailColor: '#007AFF',
   title: '',
-  titleTintColor: '#000',
+  titleTextColor: '#000',
 };
 
 export default Cell;

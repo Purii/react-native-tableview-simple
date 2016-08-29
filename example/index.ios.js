@@ -1,97 +1,119 @@
-import React, {
-  ActivityIndicatorIOS,
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
+
+import React, { Component } from 'react';
+import {
+  ActivityIndicator,
   AppRegistry,
-  Component,
+  Dimensions,
   ScrollView,
   StyleSheet,
   SwitchIOS,
   Text,
-  View
+  View,
 } from 'react-native';
+
 import {
   Cell,
   CustomCell,
   Section,
-  TableView
+  TableView,
 } from 'react-native-tableview-simple';
-import Dimensions from 'Dimensions';
 
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
 
+// Example component for section:headerComponent
+const CustomSectionHeader = () => (
+  <View>
+    <Text>Custom header!</Text>
+  </View>
+);
+
+// eslint-disable-next-line react/prefer-stateless-function
 class Example extends Component {
   render() {
     return (
       <ScrollView contentContainerStyle={styles.stage}>
         <TableView>
           <Section header="STANDARD" footer="A Footer">
-            <Cell cellstyle="Basic" title="Basic"/>
-            <Cell cellstyle="RightDetail" title="RightDetail" detail="Detail" />
-            <Cell cellstyle="LeftDetail" title="LeftDetail" detail="Detail"/>
-            <Cell cellstyle="Subtitle" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
-            <Cell cellstyle="Basic" title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => console.log('Heyho!')}/>
+            <Cell cellStyle="Basic" title="Basic" />
+            <Cell cellStyle="RightDetail" title="RightDetail" detail="Detail" />
+            <Cell cellStyle="LeftDetail" title="LeftDetail" detail="Detail" />
+            <Cell cellStyle="Subtitle" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk" />
+            <Cell cellStyle="Basic" title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => console.log('Heyho!')} />
           </Section>
           <Section header="DISABLED">
-            <Cell cellstyle="Basic" isDisabled={true} title="Basic"/>
-            <Cell cellstyle="RightDetail" isDisabled={true} title="RightDetail" detail="Detail" />
-            <Cell cellstyle="LeftDetail" isDisabled={true} title="LeftDetail" detail="Detail"/>
-            <Cell cellstyle="Subtitle" isDisabled={true} title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
-            <Cell cellstyle="Basic" isDisabled={true} title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
+            <Cell cellStyle="Basic" isDisabled title="Basic" />
+            <Cell cellStyle="RightDetail" isDisabled title="RightDetail" detail="Detail" />
+            <Cell cellStyle="LeftDetail" isDisabled title="LeftDetail" detail="Detail" />
+            <Cell cellStyle="Subtitle" isDisabled title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk" />
+            <Cell cellStyle="Basic" isDisabled title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => console.log('Heyho!')} />
           </Section>
           <Section header="ACCESSORY">
-            <Cell cellstyle="Basic" accessory="DisclosureIndicator" title="Basic"/>
-            <Cell cellstyle="RightDetail" accessory="DetailDisclosure" title="RightDetail" detail="Detail" />
-            <Cell cellstyle="LeftDetail" accessory="Detail" title="LeftDetail" detail="Detail"/>
-            <Cell cellstyle="Subtitle" accessory="Checkmark" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
-            <Cell cellstyle="Basic" accessory="Detail" title="Pressable w/ accessory" onPress={() => console.log('Heyho!')}/>
+            <Cell cellStyle="Basic" accessory="DisclosureIndicator" title="Basic" />
+            <Cell cellStyle="RightDetail" accessory="DetailDisclosure" title="RightDetail" detail="Detail" />
+            <Cell cellStyle="LeftDetail" accessory="Detail" title="LeftDetail" detail="Detail" />
+            <Cell cellStyle="Subtitle" accessory="Checkmark" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk" />
+            <Cell cellStyle="Basic" accessory="Detail" title="Pressable w/ accessory" onPress={() => console.log('Heyho!')} />
           </Section>
           <Section header="CUSTOMCELLS">
             <CustomCell>
-              <Text style={{flex: 1, fontSize: 16}}>Loading</Text>
-              <ActivityIndicatorIOS/>
+              <Text style={{ flex: 1, fontSize: 16 }}>Loading</Text>
+              <ActivityIndicator />
             </CustomCell>
             <CustomCell>
-              <Text style={{flex: 1, fontSize: 16}}>Switch</Text>
-              <SwitchIOS/>
+              <Text style={{ flex: 1, fontSize: 16 }}>Switch</Text>
+              <SwitchIOS />
+            </CustomCell>
+            <CustomCell contentContainerStyle={{ height: 60 }}>
+              <Text style={{ flex: 1, fontSize: 16 }}>Custom height</Text>
             </CustomCell>
           </Section>
+          <Section headerComponent={<CustomSectionHeader />}>
+            <Cell cellStyle="Basic" title="Section uses prop headerComponent" />
+          </Section>
         </TableView>
-        <View style={{
+        <View
+          style={{
             height: Dimensions.get('window').height,
           }}
         >
-          <View style={{
-            backgroundColor: '#37474F',
-            height: 500,
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}>
-            <View style={{
-              backgroundColor: '#ffc107',
-              width: 80,
-              height: 80,
-              borderRadius: 10
-            }}></View>
+          <View
+            style={{
+              backgroundColor: '#37474F',
+              height: 500,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <View
+              style={{
+                backgroundColor: '#ffc107',
+                width: 80,
+                height: 80,
+                borderRadius: 10,
+              }}
+            />
           </View>
           <TableView>
             <Section footer="All rights reserved.">
-              <Cell title="Help / FAQ" titleTintColor="#007AFF" onPress={() => console.log('open Help/FAQ')}/>
-              <Cell title="Contact Us" titleTintColor="#007AFF" onPress={() => console.log('open Contact Us')}/>
+              <Cell title="Help / FAQ" titleTextColor="#007AFF" onPress={() => console.log('open Help/FAQ')} />
+              <Cell title="Contact Us" titleTextColor="#007AFF" onPress={() => console.log('open Contact Us')} />
             </Section>
           </TableView>
         </View>
       </ScrollView>
     );
   }
-};
+}
 
 const styles = StyleSheet.create({
   stage: {
     backgroundColor: '#EFEFF4',
     paddingTop: 20,
-    paddingBottom: 20
+    paddingBottom: 20,
   },
 });
 

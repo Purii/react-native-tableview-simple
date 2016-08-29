@@ -4,10 +4,11 @@
   "private": true,
   "author": "Patrick Puritscher <hello@patrickpuritscher.com>",
   "scripts": {
-    "start": "react-native start"
+    "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
-    "react-native": "^0.21.0",
-    "react-native-tableview-simple": "^0.7.2"
+    "react": "15.2.1",
+    "react-native": "0.30.0",
+    "react-native-tableview-simple": "^0.12.0"
   }
 }

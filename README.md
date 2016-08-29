@@ -28,10 +28,13 @@ Currently `TableView` doesn't support any properties.
 ### Section
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
+| allowFontScaling | true | `bool` | Respect Text Size accessibility setting on iOS |
+| footerComponent | - | `React.Component` | Inject any component to replace original footer (optional) |
+| headerComponent | - | `React.Component` | Inject any component to replace original header (optional) |
 | footer | - | `string` | Footer value |
-| footerTintColor | #6d6d72 | `string` | Text color of footer|
+| footerTextColor | #6d6d72 | `string` | Text color of footer|
 | header | - | `string` | Header value |
-| headerTintColor | #6d6d72 | `string` | Text color of header |
+| headerTextColor | #6d6d72 | `string` | Text color of header |
 | hideSeparator | false | `bool` | Hide separators |
 | sectionTintColor | #EFEFF4 | `string` | Background color of section |
 | separatorInsetLeft | 15 | `number` | Left inset of separator |
@@ -46,25 +49,24 @@ The cellstyles are inspired by the native ones. Just like the available accessor
 | accessory | - | `string` | Predefined accessory: `DisclosureIndicator`, `Detail`, `DetailDisclosure`, `Checkmark` |
 | accessoryColor | #007AFF | `string` | Color of accessory |
 | allowFontScaling | true | `bool` | Respect Text Size accessibility setting on iOS |
-| cellstyle | Basic | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
-| cellTintColor | #fff | `string` | Background color of cell |
+| backgroundColor | #fff | `string` | Background color of cell |
+| cellStyle | Basic | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
 | detail | - | `string` or `number` | Detail value |
 | highlightActiveOpacity | 0.8 | `number` | Opacity of cell when touch is active |
 | highlightUnderlayColor | black | `string` | Color of underlay that will show through when touch is active |
 | isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
 | leftDetailColor | #007AFF | `string` | Text color of left detail |
 | title | - | `string` or `number` | Title value |
-| titleTintColor | #000 | `string` | Text color of title |
+| titleTextColor | #000 | `string` | Text color of title |
 | onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 
 ### CustomCell
-CustomCells allow you to define the whole content on your own.
-This makes it possible to use components like `ActivityIndicatorIOS` or `SwitchIOS` as seen in the example below.
+While the `Cell` component is intended as reproduction of the original cell known from the `UITableView`, the `CustomCell` could be customized at the most.
+Use a `CustomCell` to define the whole content and its structure on your own. Pass any component as a children to a `CustomCell`. Have a look at the example below, which uses `ActivityIndicatorIOS` and `SwitchIOS`.
 
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
-| cellHeight | 44 | `number` | Set cell height |
-| cellTintColor | #fff | `string` | Background color of cell |
+| contentContainerStyle | {} | `View.propTypes.style` | These styles will be applied to the content container which wraps all of the child views |
 | highlightActiveOpacity | 0.8 | `number` | Opacity of cell when touch is active |
 | highlightUnderlayColor | black | `string` | Color of underlay that will show through when touch is active |
 | isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
@@ -85,9 +87,11 @@ To run the example project, follow these steps:
 
 ```javascript
 import React, {
+  Component
+} from 'react';
+import {
   ActivityIndicatorIOS,
   AppRegistry,
-  Component,
   ScrollView,
   StyleSheet,
   SwitchIOS,
@@ -125,8 +129,8 @@ class Example extends Component {
           </View>
           <TableView>
             <Section footer="All rights reserved.">
-              <Cell title="Help / FAQ" titleTintColor="#007AFF" onPress={() => console.log('open Help/FAQ')}/>
-              <Cell title="Contact Us" titleTintColor="#007AFF" onPress={() => console.log('open Contact Us')}/>
+              <Cell title="Help / FAQ" titleTextColor="#007AFF" onPress={() => console.log('open Help/FAQ')}/>
+              <Cell title="Contact Us" titleTextColor="#007AFF" onPress={() => console.log('open Contact Us')}/>
             </Section>
           </TableView>
       </ScrollView>
@@ -154,9 +158,11 @@ The left screen is build using `react-native-tableview-simple`. The right one is
 
 ```javascript
 import React, {
+  Component
+} from 'react';
+import {
   ActivityIndicatorIOS,
   AppRegistry,
-  Component,
   ScrollView,
   StyleSheet,
   SwitchIOS,
@@ -181,25 +187,25 @@ class Example extends Component {
       <ScrollView contentContainerStyle={styles.stage}>
         <TableView>
           <Section header="STANDARD" footer="A Footer">
-            <Cell cellstyle="Basic" title="Basic"/>
-            <Cell cellstyle="RightDetail" title="RightDetail" detail="Detail" />
-            <Cell cellstyle="LeftDetail" title="LeftDetail" detail="Detail"/>
-            <Cell cellstyle="Subtitle" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
-            <Cell cellstyle="Basic" title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => console.log('Heyho!')}/>
+            <Cell cellStyle="Basic" title="Basic"/>
+            <Cell cellStyle="RightDetail" title="RightDetail" detail="Detail" />
+            <Cell cellStyle="LeftDetail" title="LeftDetail" detail="Detail"/>
+            <Cell cellStyle="Subtitle" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
+            <Cell cellStyle="Basic" title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => console.log('Heyho!')}/>
           </Section>
           <Section header="DISABLED">
-            <Cell cellstyle="Basic" isDisabled={true} title="Basic"/>
-            <Cell cellstyle="RightDetail" isDisabled={true} title="RightDetail" detail="Detail" />
-            <Cell cellstyle="LeftDetail" isDisabled={true} title="LeftDetail" detail="Detail"/>
-            <Cell cellstyle="Subtitle" isDisabled={true} title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
+            <Cell cellStyle="Basic" isDisabled={true} title="Basic"/>
+            <Cell cellStyle="RightDetail" isDisabled={true} title="RightDetail" detail="Detail" />
+            <Cell cellStyle="LeftDetail" isDisabled={true} title="LeftDetail" detail="Detail"/>
+            <Cell cellStyle="Subtitle" isDisabled={true} title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
             <Cell cellstyle="Basic" isDisabled={true} title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
           </Section>
           <Section header="ACCESSORY">
-            <Cell cellstyle="Basic" accessory="DisclosureIndicator" title="Basic"/>
-            <Cell cellstyle="RightDetail" accessory="DetailDisclosure" title="RightDetail" detail="Detail" />
-            <Cell cellstyle="LeftDetail" accessory="Detail" title="LeftDetail" detail="Detail"/>
-            <Cell cellstyle="Subtitle" accessory="Checkmark" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
-            <Cell cellstyle="Basic" accessory="Detail" title="Pressable w/ accessory" onPress={() => console.log('Heyho!')}/>
+            <Cell cellStyle="Basic" accessory="DisclosureIndicator" title="Basic"/>
+            <Cell cellStyle="RightDetail" accessory="DetailDisclosure" title="RightDetail" detail="Detail" />
+            <Cell cellStyle="LeftDetail" accessory="Detail" title="LeftDetail" detail="Detail"/>
+            <Cell cellStyle="Subtitle" accessory="Checkmark" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
+            <Cell cellStyle="Basic" accessory="Detail" title="Pressable w/ accessory" onPress={() => console.log('Heyho!')}/>
           </Section>
           <Section header="CUSTOMCELLS">
             <CustomCell>
@@ -209,6 +215,9 @@ class Example extends Component {
             <CustomCell>
               <Text style={{flex: 1, fontSize: 16}}>Switch</Text>
               <SwitchIOS/>
+            </CustomCell>
+            <CustomCell contentContainerStyle={{ height: 60 }}>
+              <Text style={{ flex: 1, fontSize: 16 }}>Custom height</Text>
             </CustomCell>
           </Section>
         </TableView>
@@ -228,3 +237,6 @@ const styles = StyleSheet.create({
 AppRegistry.registerComponent('example', () => Example);
 
 ```
+
+## Todo
+* Support an `image`-Prop
