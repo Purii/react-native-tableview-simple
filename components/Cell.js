@@ -11,6 +11,7 @@ import {
   Text,
   TouchableHighlight,
   View,
+  Switch,
 } from 'react-native';
 /* eslint-enable import/no-unresolved */
 
@@ -52,13 +53,21 @@ class Cell extends Component {
       accessory,
       accessoryColor,
       backgroundColor,
+      cellstyle,
+      cellTintColor,
       detail,
       highlightActiveOpacity,
       highlightUnderlayColor,
       isDisabled,
       leftDetailColor,
+      onSwitchValueChange,
+      switchOnTintColor,
+      switchThumbTintColor,
+      switchTintColor,
+      switchValue,
       title,
       titleTextColor,
+
     } = this.props;
 
     let { cellStyle } = this.props;
@@ -134,6 +143,8 @@ class Cell extends Component {
           );
         case 'Checkmark':
           return (<View style={styleAccessory_checkmark} />);
+        case 'Switch':
+          return (<Switch onTintColor={switchOnTintColor} thumbTintColor={switchThumbTintColor} tintColor={switchTintColor} value={switchValue} onValueChange={onSwitchValueChange} disabled={isDisabled} />);
         default:
           return null;
       }
@@ -374,6 +385,11 @@ Cell.propTypes = {
     PropTypes.string,
   ]),
   accessoryColor: PropTypes.string.isRequired,
+  switchOnTintColor: PropTypes.string,
+  switchThumbTintColor: PropTypes.string,
+  switchTintColor: PropTypes.string,
+  onSwitchValueChange: PropTypes.func,
+  switchValue: PropTypes.bool,
   allowFontScaling: PropTypes.bool,
   cellStyle: PropTypes.string,
   backgroundColor: PropTypes.string.isRequired,
