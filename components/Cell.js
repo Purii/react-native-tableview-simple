@@ -57,6 +57,7 @@ class Cell extends Component {
       highlightUnderlayColor,
       isDisabled,
       leftDetailColor,
+      rightDetailColor,
       title,
       titleTextColor,
     } = this.props;
@@ -106,6 +107,11 @@ class Cell extends Component {
       ...{},
       styles.cell_leftdetail,
       { color: leftDetailColor },
+    ];
+    const styleCell_rightDetail = [
+      ...{},
+      styles.cell_rightdetail,
+      { color: rightDetailColor },
     ];
 
     /**
@@ -171,7 +177,7 @@ class Cell extends Component {
         </Text>
         <Text
           numberOfLines={1}
-          style={isDisabled ? [...{}, styles.cell_detail, styles.cell_text__disabled] : styles.cell_detail}
+          style={isDisabled ? [...{}, styleCell_rightDetail, styles.cell_text__disabled] : styleCell_rightDetail}
         >
           {detail}
         </Text>
@@ -305,17 +311,17 @@ const styles = StyleSheet.create({
     fontSize: 12,
     flex: 1,
   },
-  cell_detail: {
-    fontSize: 16,
-    alignSelf: 'center',
-    color: '#8E8E93',
-  },
   cell_leftdetail: {
     fontSize: 12,
     alignSelf: 'center',
     textAlign: 'right',
     marginRight: 5,
     width: 75,
+  },
+  cell_rightdetail: {
+    fontSize: 16,
+    alignSelf: 'center',
+    color: '#8E8E93',
   },
   cell_subtitle: {
     fontSize: 11,
@@ -385,6 +391,7 @@ Cell.propTypes = {
   highlightUnderlayColor: PropTypes.string,
   isDisabled: PropTypes.bool,
   leftDetailColor: PropTypes.string,
+  rightDetailColor: PropTypes.string,
   title: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
@@ -407,6 +414,7 @@ Cell.defaultProps = {
   highlightUnderlayColor: 'black',
   isDisabled: false,
   leftDetailColor: '#007AFF',
+  rightDetailColor: '#8E8E93',
   title: '',
   titleTextColor: '#000',
 };

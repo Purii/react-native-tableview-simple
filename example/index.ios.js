@@ -58,6 +58,10 @@ class Example extends Component {
             <Cell cellStyle="Subtitle" accessory="Checkmark" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk" />
             <Cell cellStyle="Basic" accessory="Detail" title="Pressable w/ accessory" onPress={() => console.log('Heyho!')} />
           </Section>
+          <Section header="MISC">
+            <Cell cellStyle="RightDetail" title="RightDetail" detail="Detail" rightDetailColor="#6cc644" />
+            <Cell cellStyle="LeftDetail" title="LeftDetail" detail="Detail" leftDetailColor="#6cc644" />
+          </Section>
           <Section header="CUSTOMCELLS">
             <CustomCell>
               <Text style={{ flex: 1, fontSize: 16 }}>Loading</Text>

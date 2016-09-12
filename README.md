@@ -56,6 +56,7 @@ The cellstyles are inspired by the native ones. Just like the available accessor
 | highlightUnderlayColor | black | `string` | Color of underlay that will show through when touch is active |
 | isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
 | leftDetailColor | #007AFF | `string` | Text color of left detail |
+| rightDetailColor | #8E8E93 | `string` | Text color of right detail |
 | title | - | `string` or `number` | Title value |
 | titleTextColor | #000 | `string` | Text color of title |
 | onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
