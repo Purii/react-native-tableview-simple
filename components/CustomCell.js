@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import React, {
   PropTypes,
 } from 'react';
@@ -7,6 +8,7 @@ import {
   TouchableHighlight,
   View,
 } from 'react-native';
+/* eslint-enable import/no-unresolved */
 
 const CustomCell = (props) => {
   /** Deprecation messages */

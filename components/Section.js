@@ -1,4 +1,4 @@
-/* eslint-disable consistent-return */
+/* eslint-disable import/no-unresolved */
 import React, {
   PropTypes,
 } from 'react';
@@ -8,6 +8,7 @@ import {
   Text,
   View,
 } from 'react-native';
+/* eslint-enable import/no-unresolved */
 
 const Section = (props) => {
   /** Deprecation messages */
@@ -58,7 +59,7 @@ const Section = (props) => {
         { backgroundColor: child.props.backgroundColor },
       ];
       const renderSeparator = () => {
-        if (hideSeparator) { return; }
+        if (hideSeparator) { return null; }
         return (
           <View style={styleSeparator}>
             <View style={styleSeparatorInner} />
@@ -93,7 +94,7 @@ const Section = (props) => {
         </View>
       );
     }
-    return;
+    return null;
   };
 
   /**
@@ -113,7 +114,7 @@ const Section = (props) => {
         </View>
       );
     }
-    return;
+    return null;
   };
   return (
     <View style={styleSection}>

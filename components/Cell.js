@@ -1,4 +1,4 @@
-/* eslint-disable consistent-return */
+/* eslint-disable import/no-unresolved */
 import React, {
   Component,
   PropTypes,
@@ -12,6 +12,7 @@ import {
   TouchableHighlight,
   View,
 } from 'react-native';
+/* eslint-enable import/no-unresolved */
 
 class Cell extends Component {
   constructor(props) {
@@ -40,7 +41,7 @@ class Cell extends Component {
      * Need AccessibilityManager to access the current font size multiplier
      */
     if (Platform.OS !== 'ios' || !this.props.allowFontScaling) return;
-    NativeModules.AccessibilityManager.getMultiplier(value => {
+    NativeModules.AccessibilityManager.getMultiplier((value) => {
       this.setState({
         fontSizeMultiplier: value,
       });
@@ -113,7 +114,6 @@ class Cell extends Component {
      * @return {View} View with accessory
      */
     const renderAccessory = () => {
-      if (!accessory) { return; }
       switch (accessory) {
         case 'DisclosureIndicator':
           return (<View style={styles.accessory_disclosureIndicator} />);
@@ -135,7 +135,7 @@ class Cell extends Component {
         case 'Checkmark':
           return (<View style={styleAccessory_checkmark} />);
         default:
-          return;
+          return null;
       }
     };
 

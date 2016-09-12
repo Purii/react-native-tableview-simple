@@ -2,14 +2,10 @@
   "parser": "babel-eslint",
   "extends": "airbnb",
   "rules": {
-    "valid-jsdoc": 1,
     "camelcase": 0,
-    "no-use-before-define": 0,
-    "no-unused-vars": 1,
-    "no-console": 1,
-    "global-require": 0,
     "max-len": 1,
-    "import/no-unresolved": 1,
+    "no-use-before-define": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
   },
   "plugins": [
     "react"
