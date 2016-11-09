@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "react": "15.3.2",
-    "react-native": "0.34.1",
+    "react-native": "0.37.0",
     "react-native-tableview-simple": "^0.13.0"
   }
 }

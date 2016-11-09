@@ -11,7 +11,7 @@ import {
   Dimensions,
   ScrollView,
   StyleSheet,
-  SwitchIOS,
+  Switch,
   Text,
   View,
 } from 'react-native';
@@ -33,6 +33,7 @@ const CustomSectionHeader = () => (
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Example extends Component {
+  // eslint-disable-next-line class-methods-use-this
   render() {
     return (
       <ScrollView contentContainerStyle={styles.stage}>
@@ -69,7 +70,7 @@ class Example extends Component {
             </CustomCell>
             <CustomCell>
               <Text style={{ flex: 1, fontSize: 16 }}>Switch</Text>
-              <SwitchIOS />
+              <Switch />
             </CustomCell>
             <CustomCell contentContainerStyle={{ height: 60 }}>
               <Text style={{ flex: 1, fontSize: 16 }}>Custom height</Text>
