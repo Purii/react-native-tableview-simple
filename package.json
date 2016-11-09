@@ -18,7 +18,7 @@
     "android"
   ],
   "peerDependencies": {
-    "react-native": ">=0.25 || 0.34.0-rc",
+    "react-native": ">=0.25 || 0.38.0-rc",
     "react": "*"
   },
   "bugs": {
@@ -29,11 +29,11 @@
     "url": "git@github.com:Purii/react-native-tableview-simple.git"
   },
   "devDependencies": {
-    "babel-eslint": "^6.1.2",
-    "eslint": "^3.5.0",
-    "eslint-config-airbnb": "^11.1.0",
-    "eslint-plugin-import": "^1.14.0",
-    "eslint-plugin-jsx-a11y": "^2.2.1",
-    "eslint-plugin-react": "^6.2.0"
+    "babel-eslint": "^7.1.0",
+    "eslint": "^3.9.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.6.0"
   }
 }

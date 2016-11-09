@@ -158,7 +158,7 @@ class Cell extends Component {
         >
           {title}
         </Text>
-          {renderAccessory()}
+        {renderAccessory()}
       </View>
     );
 
@@ -181,7 +181,7 @@ class Cell extends Component {
         >
           {detail}
         </Text>
-          {renderAccessory()}
+        {renderAccessory()}
       </View>
     );
 

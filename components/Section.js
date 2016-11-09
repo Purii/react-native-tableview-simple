@@ -64,7 +64,7 @@ const Section = (props) => {
           <View style={styleSeparator}>
             <View style={styleSeparatorInner} />
           </View>
-          );
+        );
       };
 
       return (
