@@ -11,6 +11,7 @@ import {
   Text,
   TouchableHighlight,
   View,
+Image
 } from 'react-native';
 /* eslint-enable import/no-unresolved */
 
@@ -60,29 +61,42 @@ class Cell extends Component {
       rightDetailColor,
       title,
       titleTextColor,
+      iconImg,
+
     } = this.props;
 
     let { cellStyle } = this.props;
-    /** Deprecation */
+
     // eslint-disable-next-line
     if (this.props.cellstyle) cellStyle = this.props.cellstyle;
 
     const isPressable = !!this.props.onPress;
 
-    /* Declare and merge styles with props */
+    const styleCell_img = [
+      ...{},
+      styles.cell_image,
+      {backgroundColor,height:44*this.state.fontSizeMultiplier },
+    ];
+
     const styleCell = [
       ...{},
       styles.cell,
       { backgroundColor, height: 44 * this.state.fontSizeMultiplier },
     ];
+
+
     const styleCell__subtitle = [
       ...{},
       styles.cell__subtitle,
       { backgroundColor, height: 44 * this.state.fontSizeMultiplier },
     ];
+
+
     const styleCell_title = isDisabled
       ? [...{}, styles.cell_title, styles.cell_text__disabled]
       : [...{}, styles.cell_title, { color: titleTextColor }];
+    
+
     const styleCell_leftDetailTitle = isDisabled ?
       [...{}, styles.cell_leftDetailTitle, styles.cell_text__disabled]
       : [...{}, styles.cell_leftDetailTitle, { color: titleTextColor }];
@@ -93,21 +107,29 @@ class Cell extends Component {
       styles.accessory_checkmark,
       { borderColor: accessoryColor },
     ];
+
+
     const styleAccessory_detail = [
       ...{},
       styles.accessory_detail,
       { borderColor: accessoryColor },
     ];
+
+    
     const styleAccessory_detailText = [
       ...{},
       styles.accessory_detailText,
       { color: accessoryColor },
     ];
+    
+
     const styleCell_leftDetail = [
       ...{},
       styles.cell_leftdetail,
       { color: leftDetailColor },
     ];
+
+    
     const styleCell_rightDetail = [
       ...{},
       styles.cell_rightdetail,
@@ -144,6 +166,29 @@ class Cell extends Component {
           return null;
       }
     };
+
+    /**
+     *   HasImage == iOS(tableview.image)
+     * */
+    const ImgCell = () =>(
+      <View style={styleCell_img}>
+
+        <Image
+          source={iconImg}
+          style={styles.cell_leftImage}
+        >
+        </Image>
+
+        <Text
+          allowFontScaling={this.props.allowFontScaling}
+          numberOfLines={1}
+          style={styleCell_title}
+        >
+          {title}
+        </Text>
+        {renderAccessory()}
+      </View>
+    );
 
     /**
      * Render cell of type Basic
@@ -241,7 +286,13 @@ class Cell extends Component {
      */
     const renderCell = () => {
       let cellToRender = CellBasic;
+
       switch (cellStyle) {
+
+        case 'imgCell':
+          cellToRender = ImgCell;
+          break;
+
         case 'Basic':
           cellToRender = CellBasic;
           break;
@@ -281,6 +332,29 @@ class Cell extends Component {
 }
 
 const styles = StyleSheet.create({
+
+
+
+  // cell左图片
+  cell_leftImage: {
+    resizeMode:'contain',
+    marginRight:6,
+    width:26,
+    height:26,
+
+  },
+
+  cell_image:{
+    justifyContent: 'center',
+    paddingLeft: 15,
+    paddingRight: 20,
+    paddingTop: 10,
+    paddingBottom: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    height: 44,
+  },
+
   cell: {
     justifyContent: 'center',
     paddingLeft: 15,
@@ -401,6 +475,12 @@ Cell.propTypes = {
     PropTypes.bool,
     PropTypes.func,
   ]),
+  //icon
+  iconImg:PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+
 };
 
 Cell.defaultProps = {
@@ -417,6 +497,7 @@ Cell.defaultProps = {
   rightDetailColor: '#8E8E93',
   title: '',
   titleTextColor: '#000',
-};
+  iconImg:'',
 
+};
 export default Cell;
