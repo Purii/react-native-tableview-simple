@@ -129,8 +129,8 @@ const Section = (props) => {
 
 const styles = StyleSheet.create({
   section: {
-    paddingTop: 15,
-    paddingBottom: 15,
+    paddingTop: 12,
+    paddingBottom: 0,
   },
   section_inner: {
     borderTopWidth: StyleSheet.hairlineWidth,

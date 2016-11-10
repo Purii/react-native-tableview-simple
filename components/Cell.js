@@ -11,6 +11,7 @@ import {
   Text,
   TouchableHighlight,
   View,
+  Image
 } from 'react-native';
 /* eslint-enable import/no-unresolved */
 
@@ -60,29 +61,42 @@ class Cell extends Component {
       rightDetailColor,
       title,
       titleTextColor,
+      iconImg,
+
     } = this.props;
 
     let { cellStyle } = this.props;
-    /** Deprecation */
+
     // eslint-disable-next-line
     if (this.props.cellstyle) cellStyle = this.props.cellstyle;
 
     const isPressable = !!this.props.onPress;
 
-    /* Declare and merge styles with props */
+    // const styleCell_img = [
+    //   ...{},
+    //   styles.cell_image,
+    //   {backgroundColor,height:44*this.state.fontSizeMultiplier },
+    // ];
+
     const styleCell = [
       ...{},
       styles.cell,
       { backgroundColor, height: 44 * this.state.fontSizeMultiplier },
     ];
+
+
     const styleCell__subtitle = [
       ...{},
       styles.cell__subtitle,
       { backgroundColor, height: 44 * this.state.fontSizeMultiplier },
     ];
+
+
     const styleCell_title = isDisabled
       ? [...{}, styles.cell_title, styles.cell_text__disabled]
       : [...{}, styles.cell_title, { color: titleTextColor }];
+
+
     const styleCell_leftDetailTitle = isDisabled ?
       [...{}, styles.cell_leftDetailTitle, styles.cell_text__disabled]
       : [...{}, styles.cell_leftDetailTitle, { color: titleTextColor }];
@@ -93,21 +107,29 @@ class Cell extends Component {
       styles.accessory_checkmark,
       { borderColor: accessoryColor },
     ];
+
+
     const styleAccessory_detail = [
       ...{},
       styles.accessory_detail,
       { borderColor: accessoryColor },
     ];
+
+
     const styleAccessory_detailText = [
       ...{},
       styles.accessory_detailText,
       { color: accessoryColor },
     ];
+
+
     const styleCell_leftDetail = [
       ...{},
       styles.cell_leftdetail,
       { color: leftDetailColor },
     ];
+
+
     const styleCell_rightDetail = [
       ...{},
       styles.cell_rightdetail,
@@ -145,12 +167,19 @@ class Cell extends Component {
       }
     };
 
+
+
     /**
      * Render cell of type Basic
      * @return {View} View with Text and Accessory
      */
     const CellBasic = () => (
       <View style={styleCell}>
+        {
+
+          this.props.iconImg  ? <Image source={this.props.iconImg} style={styles.cell_leftImage} /> : null
+
+        }
         <Text
           allowFontScaling={this.props.allowFontScaling}
           numberOfLines={1}
@@ -162,10 +191,10 @@ class Cell extends Component {
       </View>
     );
 
-   /**
-    * Render cell of type RightDetail
-    * @return {View} View with Text, Text and Accessory
-    */
+    /**
+     * Render cell of type RightDetail
+     * @return {View} View with Text, Text and Accessory
+     */
     const CellRightDetail = () => (
       <View style={styleCell}>
         <Text
@@ -186,9 +215,9 @@ class Cell extends Component {
     );
 
     /**
-    * Render cell of type LeftDetail
-    * @return {View} View with Text, Text and Accessory
-    */
+     * Render cell of type LeftDetail
+     * @return {View} View with Text, Text and Accessory
+     */
     const CellLeftDetail = () => (
       <View style={styleCell}>
         <Text
@@ -241,7 +270,13 @@ class Cell extends Component {
      */
     const renderCell = () => {
       let cellToRender = CellBasic;
+
       switch (cellStyle) {
+        //
+        // case 'imgCell':
+        //   cellToRender = ImgCell;
+        //   break;
+
         case 'Basic':
           cellToRender = CellBasic;
           break;
@@ -281,6 +316,15 @@ class Cell extends Component {
 }
 
 const styles = StyleSheet.create({
+
+  cell_leftImage: {
+    resizeMode:'contain',
+    marginRight:6,
+    width:26,
+    height:26,
+
+  },
+
   cell: {
     justifyContent: 'center',
     paddingLeft: 15,
@@ -401,6 +445,12 @@ Cell.propTypes = {
     PropTypes.bool,
     PropTypes.func,
   ]),
+  //icon
+  iconImg:PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+
 };
 
 Cell.defaultProps = {
@@ -417,6 +467,9 @@ Cell.defaultProps = {
   rightDetailColor: '#8E8E93',
   title: '',
   titleTextColor: '#000',
+  iconImg:'',
+
 };
+
 
 export default Cell;
