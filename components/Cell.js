@@ -21,19 +21,6 @@ class Cell extends Component {
       fontSizeMultiplier: 1,
     };
 
-    /** Deprecation messages */
-    // eslint-disable-next-line
-    if (props.cellTextColor) {
-      console.warn('`<Cell cellTextColor="..." />` is deprecated. Use `<Cell backgroundColor="..." />` instead.');
-    }
-    // eslint-disable-next-line
-    if (props.titleTintColor) {
-      console.warn('`<Cell titleTintColor="..." />` is deprecated. Use `<Cell titleTextColor="..." />` instead.');
-    }
-    // eslint-disable-next-line
-    if (props.cellstyle) {
-      console.warn('`<Cell cellstyle="..." />` is deprecated. Use `<Cell cellStyle="..." />` instead.');
-    }
   }
 
   componentWillMount() {
@@ -62,10 +49,7 @@ class Cell extends Component {
       titleTextColor,
     } = this.props;
 
-    let { cellStyle } = this.props;
-    /** Deprecation */
-    // eslint-disable-next-line
-    if (this.props.cellstyle) cellStyle = this.props.cellstyle;
+    const { cellStyle } = this.props;
 
     const isPressable = !!this.props.onPress;
 
