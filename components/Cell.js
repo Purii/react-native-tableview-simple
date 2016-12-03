@@ -80,6 +80,7 @@ class Cell extends Component {
       styles.cell__subtitle,
       { backgroundColor, height: 44 * this.state.fontSizeMultiplier },
     ];
+
     const styleCell_title = isDisabled
       ? [...{}, styles.cell_title, styles.cell_text__disabled]
       : [...{}, styles.cell_title, { color: titleTextColor }];
