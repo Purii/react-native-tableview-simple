@@ -18,6 +18,7 @@ const Cell = (props) => {
     allowFontScaling,
     backgroundColor,
     cellStyle,
+    contentContainerStyle,
     detail,
     highlightActiveOpacity,
     highlightUnderlayColor,
@@ -39,6 +40,7 @@ const Cell = (props) => {
       ...{},
       styles.cell,
       { backgroundColor },
+      contentContainerStyle,
     ],
     cell__type_subtitle: [
       ...{},
@@ -345,6 +347,7 @@ Cell.propTypes = {
   accessoryColor: PropTypes.string.isRequired,
   allowFontScaling: PropTypes.bool,
   cellStyle: PropTypes.string,
+  contentContainerStyle: View.propTypes.style,
   backgroundColor: PropTypes.string.isRequired,
   detail: PropTypes.oneOfType([
     PropTypes.string,

@@ -43,6 +43,7 @@ Currently `TableView` doesn't support any properties.
 
 ### Cell
 The cellstyles are inspired by the native ones. Just like the available accessories.
+To set a fixed height you could use `contentContainerStyle`.
 
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
@@ -51,6 +52,7 @@ The cellstyles are inspired by the native ones. Just like the available accessor
 | allowFontScaling | true | `bool` | Respect Text Size accessibility setting on iOS |
 | backgroundColor | #fff | `string` | Background color of cell |
 | cellStyle | Basic | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
+| contentContainerStyle | {} | `View.propTypes.style` | These styles will be applied to the content container which wraps all of the child views. Overrides `cellStyle` |
 | detail | - | `string` or `number` | Detail value |
 | highlightActiveOpacity | 0.8 | `number` | Opacity of cell when touch is active |
 | highlightUnderlayColor | black | `string` | Color of underlay that will show through when touch is active |
