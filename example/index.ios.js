@@ -64,11 +64,11 @@ class Example extends Component {
             <Cell cellStyle="LeftDetail" title="LeftDetail" detail="Detail" leftDetailColor="#6cc644" />
           </Section>
           <Section header="CUSTOMCELLS">
-            <CustomCell>
+            <CustomCell contentContainerStyle={{ height: 44 }}>
               <Text style={{ flex: 1, fontSize: 16 }}>Loading</Text>
               <ActivityIndicator />
             </CustomCell>
-            <CustomCell>
+            <CustomCell contentContainerStyle={{ height: 44 }}>
               <Text style={{ flex: 1, fontSize: 16 }}>Switch</Text>
               <Switch />
             </CustomCell>

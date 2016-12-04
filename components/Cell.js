@@ -1,12 +1,9 @@
 /* eslint-disable import/no-unresolved */
 import React, {
-  Component,
   PropTypes,
 } from 'react';
 
 import {
-  NativeModules,
-  Platform,
   StyleSheet,
   Text,
   TouchableHighlight,
@@ -14,275 +11,254 @@ import {
 } from 'react-native';
 /* eslint-enable import/no-unresolved */
 
-class Cell extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      fontSizeMultiplier: 1,
-    };
+const Cell = (props) => {
+  const {
+    accessory,
+    accessoryColor,
+    allowFontScaling,
+    backgroundColor,
+    cellStyle,
+    detail,
+    highlightActiveOpacity,
+    highlightUnderlayColor,
+    isDisabled,
+    leftDetailColor,
+    rightDetailColor,
+    title,
+    titleTextColor,
+  } = props;
 
-  }
+  const isPressable = !!props.onPress;
 
-  componentWillMount() {
-    /**
-     * Need AccessibilityManager to access the current font size multiplier
-     */
-    if (Platform.OS !== 'ios' || !this.props.allowFontScaling) return;
-    NativeModules.AccessibilityManager.getMultiplier((value) => {
-      this.setState({
-        fontSizeMultiplier: value,
-      });
-    });
-  }
-  render() {
-    const {
-      accessory,
-      accessoryColor,
-      backgroundColor,
-      detail,
-      highlightActiveOpacity,
-      highlightUnderlayColor,
-      isDisabled,
-      leftDetailColor,
-      rightDetailColor,
-      title,
-      titleTextColor,
-    } = this.props;
-
-    const { cellStyle } = this.props;
-
-    const isPressable = !!this.props.onPress;
-
-    /* Declare and merge styles with props */
-    const styleCell = [
+  /**
+    * Merge styles with props
+    */
+  // eslint-disable-next-line no-underscore-dangle
+  const _styles = {
+    cell: [
       ...{},
       styles.cell,
-      { backgroundColor, height: 44 * this.state.fontSizeMultiplier },
-    ];
-    const styleCell__subtitle = [
+      { backgroundColor },
+    ],
+    cell__type_subtitle: [
       ...{},
-      styles.cell__subtitle,
-      { backgroundColor, height: 44 * this.state.fontSizeMultiplier },
-    ];
-
-    const styleCell_title = isDisabled
+      styles.cell__type_subtitle,
+      { backgroundColor },
+    ],
+    cell_title: isDisabled
       ? [...{}, styles.cell_title, styles.cell_text__disabled]
-      : [...{}, styles.cell_title, { color: titleTextColor }];
-    const styleCell_leftDetailTitle = isDisabled ?
-      [...{}, styles.cell_leftDetailTitle, styles.cell_text__disabled]
-      : [...{}, styles.cell_leftDetailTitle, { color: titleTextColor }];
-
-    /* Apply color prop to accessories */
-    const styleAccessory_checkmark = [
+      : [...{}, styles.cell_title, { color: titleTextColor }],
+    cell_leftDetail: [
+      ...{},
+      styles.cell_leftDetail,
+      { color: leftDetailColor },
+    ],
+    cell_leftDetailTitle: isDisabled
+      ? [...{}, styles.cell_leftDetailTitle, styles.cell_text__disabled]
+      : [...{}, styles.cell_leftDetailTitle, { color: titleTextColor }],
+    cell_rightDetail: [
+      ...{},
+      styles.cell_rightDetail,
+      { color: rightDetailColor },
+    ],
+    accessory_checkmark: [
       ...{},
       styles.accessory_checkmark,
       { borderColor: accessoryColor },
-    ];
-    const styleAccessory_detail = [
+    ],
+    accessory_detail: [
       ...{},
       styles.accessory_detail,
       { borderColor: accessoryColor },
-    ];
-    const styleAccessory_detailText = [
+    ],
+    accessory_detailText: [
       ...{},
       styles.accessory_detailText,
       { color: accessoryColor },
-    ];
-    const styleCell_leftDetail = [
-      ...{},
-      styles.cell_leftdetail,
-      { color: leftDetailColor },
-    ];
-    const styleCell_rightDetail = [
-      ...{},
-      styles.cell_rightdetail,
-      { color: rightDetailColor },
-    ];
+    ],
+  };
 
-    /**
-     * Render accessory
-     * Currently available
-     * @return {View} View with accessory
-     */
-    const renderAccessory = () => {
-      switch (accessory) {
-        case 'DisclosureIndicator':
-          return (<View style={styles.accessory_disclosureIndicator} />);
-        case 'Detail':
-          return (
-            <View style={styleAccessory_detail}>
-              <Text style={styleAccessory_detailText}>i</Text>
-            </View>
-          );
-        case 'DetailDisclosure':
-          return (
-            <View style={styles.accessory_detailDisclosure}>
-              <View style={styleAccessory_detail}>
-                <Text style={styleAccessory_detailText}>i</Text>
-              </View>
-              <View style={styles.accessory_disclosureIndicator} />
-            </View>
-          );
-        case 'Checkmark':
-          return (<View style={styleAccessory_checkmark} />);
-        default:
-          return null;
-      }
-    };
-
-    /**
-     * Render cell of type Basic
-     * @return {View} View with Text and Accessory
-     */
-    const CellBasic = () => (
-      <View style={styleCell}>
-        <Text
-          allowFontScaling={this.props.allowFontScaling}
-          numberOfLines={1}
-          style={styleCell_title}
-        >
-          {title}
-        </Text>
-        {renderAccessory()}
-      </View>
-    );
-
-   /**
-    * Render cell of type RightDetail
-    * @return {View} View with Text, Text and Accessory
+  /**
+    * Render accessory
+    * Currently available
+    * @return {View} View with accessory
     */
-    const CellRightDetail = () => (
-      <View style={styleCell}>
-        <Text
-          allowFontScaling={this.props.allowFontScaling}
-          numberOfLines={1}
-          style={styleCell_title}
-        >
-          {title}
-        </Text>
-        <Text
-          numberOfLines={1}
-          style={isDisabled ? [...{}, styleCell_rightDetail, styles.cell_text__disabled] : styleCell_rightDetail}
-        >
-          {detail}
-        </Text>
-        {renderAccessory()}
-      </View>
-    );
-
-    /**
-    * Render cell of type LeftDetail
-    * @return {View} View with Text, Text and Accessory
-    */
-    const CellLeftDetail = () => (
-      <View style={styleCell}>
-        <Text
-          allowFontScaling={this.props.allowFontScaling}
-          numberOfLines={1}
-          style={isDisabled ? [...{}, styleCell_leftDetail, styles.cell_text__disabled] : styleCell_leftDetail}
-        >
-          {detail}
-        </Text>
-        <Text
-          allowFontScaling={this.props.allowFontScaling}
-          numberOfLines={1}
-          style={styleCell_leftDetailTitle}
-        >
-          {title}
-        </Text>
-        {renderAccessory()}
-      </View>
-    );
-
-    /**
-     * Render cell of type Subtitle
-     * @return {View} View with View, Text, Text and Accessory
-     */
-    const CellSubtitle = () => (
-      <View style={styleCell__subtitle}>
-        <View style={styles.cellinner__subtitle}>
-          <Text
-            allowFontScaling={this.props.allowFontScaling}
-            numberOfLines={1}
-            style={styleCell_title}
-          >
-            {title}
-          </Text>
-          <Text
-            allowFontScaling={this.props.allowFontScaling}
-            numberOfLines={1}
-            style={isDisabled ? [...{}, styles.cell_subtitle, styles.cell_text__disabled] : styles.cell_subtitle}
-          >
-            {detail}
-          </Text>
-        </View>
-        {renderAccessory()}
-      </View>
-    );
-
-    /**
-     * Render cell by type
-     * @return {View} Returns the correct function to call
-     */
-    const renderCell = () => {
-      let cellToRender = CellBasic;
-      switch (cellStyle) {
-        case 'Basic':
-          cellToRender = CellBasic;
-          break;
-        case 'RightDetail':
-          cellToRender = CellRightDetail;
-          break;
-        case 'LeftDetail':
-          cellToRender = CellLeftDetail;
-          break;
-        case 'Subtitle':
-          cellToRender = CellSubtitle;
-          break;
-        default:
-          cellToRender = CellBasic;
-      }
-
-      if (isPressable && !isDisabled) {
+  const renderAccessory = () => {
+    switch (accessory) {
+      case 'DisclosureIndicator':
+        return (<View style={styles.accessory_disclosureIndicator} />);
+      case 'Detail':
         return (
-          <TouchableHighlight
-            activeOpacity={highlightActiveOpacity}
-            onPress={this.props.onPress}
-            underlayColor={highlightUnderlayColor}
-          >
-            {cellToRender()}
-          </TouchableHighlight>
+          <View style={_styles.accessory_detail}>
+            <Text style={_styles.accessory_detailText}>i</Text>
+          </View>
         );
-      }
-      return (<View>{cellToRender()}</View>);
-    };
+      case 'DetailDisclosure':
+        return (
+          <View style={styles.accessory_detailDisclosure}>
+            <View style={_styles.accessory_detail}>
+              <Text style={_styles.accessory_detailText}>i</Text>
+            </View>
+            <View style={styles.accessory_disclosureIndicator} />
+          </View>
+        );
+      case 'Checkmark':
+        return (<View style={_styles.accessory_checkmark} />);
+      default:
+        return null;
+    }
+  };
 
-    return (
-      <View>
-        {renderCell()}
+  /**
+    * Render cell of type Basic
+    * @return {View} View with Text and Accessory
+    */
+  const CellBasic = () => (
+    <View style={_styles.cell}>
+      <Text
+        allowFontScaling={allowFontScaling}
+        numberOfLines={1}
+        style={_styles.cell_title}
+      >
+        {title}
+      </Text>
+      {renderAccessory()}
+    </View>
+  );
+
+  /**
+   * Render cell of type RightDetail
+   * @return {View} View with Text, Text and Accessory
+   */
+  const CellRightDetail = () => (
+    <View style={_styles.cell}>
+      <Text
+        allowFontScaling={allowFontScaling}
+        numberOfLines={1}
+        style={_styles.cell_title}
+      >
+        {title}
+      </Text>
+      <Text
+        allowFontScaling={allowFontScaling}
+        numberOfLines={1}
+        style={isDisabled ? [...{}, _styles.cell_rightDetail, styles.cell_text__disabled] : _styles.cell_rightDetail}
+      >
+        {detail}
+      </Text>
+      {renderAccessory()}
+    </View>
+  );
+
+  /**
+   * Render cell of type LeftDetail
+   * @return {View} View with Text, Text and Accessory
+   */
+  const CellLeftDetail = () => (
+    <View style={_styles.cell}>
+      <Text
+        allowFontScaling={allowFontScaling}
+        numberOfLines={1}
+        style={isDisabled ? [...{}, _styles.cell_leftDetail, styles.cell_text__disabled] : _styles.cell_leftDetail}
+      >
+        {detail}
+      </Text>
+      <Text
+        allowFontScaling={allowFontScaling}
+        numberOfLines={1}
+        style={_styles.cell_leftDetailTitle}
+      >
+        {title}
+      </Text>
+      {renderAccessory()}
+    </View>
+  );
+
+  /**
+    * Render cell of type Subtitle
+    * @return {View} View with View, Text, Text and Accessory
+    */
+  const CellSubtitle = () => (
+    <View style={_styles.cell__type_subtitle}>
+      <View style={styles.cellinner__subtitle}>
+        <Text
+          allowFontScaling={allowFontScaling}
+          numberOfLines={1}
+          style={_styles.cell_title}
+        >
+          {title}
+        </Text>
+        <Text
+          allowFontScaling={allowFontScaling}
+          numberOfLines={1}
+          style={isDisabled ? [...{}, styles.cell_subtitle, styles.cell_text__disabled] : styles.cell_subtitle}
+        >
+          {detail}
+        </Text>
       </View>
-    );
-  }
-}
+      {renderAccessory()}
+    </View>
+  );
+
+  /**
+    * Render cell by type
+    * @return {View} Returns the correct function to call
+    */
+  const renderCell = () => {
+    let cellToRender = CellBasic;
+    switch (cellStyle) {
+      case 'Basic':
+        cellToRender = CellBasic;
+        break;
+      case 'RightDetail':
+        cellToRender = CellRightDetail;
+        break;
+      case 'LeftDetail':
+        cellToRender = CellLeftDetail;
+        break;
+      case 'Subtitle':
+        cellToRender = CellSubtitle;
+        break;
+      default:
+        cellToRender = CellBasic;
+    }
+
+    if (isPressable && !isDisabled) {
+      return (
+        <TouchableHighlight
+          activeOpacity={highlightActiveOpacity}
+          onPress={props.onPress}
+          underlayColor={highlightUnderlayColor}
+        >
+          {cellToRender()}
+        </TouchableHighlight>
+      );
+    }
+    return (<View>{cellToRender()}</View>);
+  };
+
+  return (
+    <View>
+      {renderCell()}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   cell: {
     justifyContent: 'center',
     paddingLeft: 15,
     paddingRight: 20,
-    paddingTop: 10,
-    paddingBottom: 10,
+    paddingVertical: 10,
     flexDirection: 'row',
     alignItems: 'center',
-    height: 44,
   },
-  cell__subtitle: {
-    height: 44,
+  cell__type_subtitle: {
     paddingLeft: 15,
     paddingRight: 20,
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 5,
+    paddingVertical: 4,
   },
   cellinner__subtitle: {
     flexDirection: 'column',
@@ -295,15 +271,17 @@ const styles = StyleSheet.create({
   cell_leftDetailTitle: {
     fontSize: 12,
     flex: 1,
+    /* Padding should be added to content instead of cell, because an accessory could be bigger --> Cell height > 44 */
+    paddingVertical: 3,
   },
-  cell_leftdetail: {
+  cell_leftDetail: {
     fontSize: 12,
     alignSelf: 'center',
     textAlign: 'right',
     marginRight: 5,
     width: 75,
   },
-  cell_rightdetail: {
+  cell_rightDetail: {
     fontSize: 16,
     alignSelf: 'center',
     color: '#8E8E93',

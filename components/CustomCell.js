@@ -11,20 +11,6 @@ import {
 /* eslint-enable import/no-unresolved */
 
 const CustomCell = (props) => {
-  /** Deprecation messages */
-  // eslint-disable-next-line
-  if (props.cellTintColor) {
-    console.warn('`<CustomCell cellTintColor="..." />` is deprecated. Use `<CustomCell contentContainerStyle={{ backgroundColor: \'#fff\' }} />` instead.');
-  }
-  // eslint-disable-next-line
-  if (props.cellTextColor) {
-    console.warn('`<CustomCell cellTextColor="..." />` is deprecated. Use `<CustomCell contentContainerStyle={{ backgroundColor: \'#fff\' }} />` instead.');
-  }
-  // eslint-disable-next-line
-  if (props.cellHeight) {
-    console.warn('`<CustomCell cellHeight="..." />` is deprecated. Use `<CustomCell contentContainerStyle={{ height: 44 }} />` instead.');
-  }
-
   const {
     children,
     contentContainerStyle,
@@ -36,8 +22,17 @@ const CustomCell = (props) => {
 
   const isPressable = !!onPress;
 
-  /* Declare and merge styles with props */
-  const styleCell = [...{}, styles.cell, contentContainerStyle];
+  /**
+    * Merge styles with props
+    */
+  // eslint-disable-next-line no-underscore-dangle
+  const _styles = {
+    cell: [
+      ...{},
+      styles.cell,
+      contentContainerStyle,
+    ],
+  };
 
   if (isPressable && !isDisabled) {
     return (
@@ -46,17 +41,16 @@ const CustomCell = (props) => {
         onPress={onPress}
         underlayColor={highlightUnderlayColor}
       >
-        <View style={styleCell}>{children}</View>
+        <View style={_styles.cell}>{children}</View>
       </TouchableHighlight>
     );
   }
-  return (<View style={styleCell}>{children}</View>);
+  return (<View style={_styles.cell}>{children}</View>);
 };
 
 const styles = StyleSheet.create({
   cell: {
     backgroundColor: '#fff',
-    height: 44,
     justifyContent: 'center',
     paddingLeft: 15,
     paddingRight: 20,
