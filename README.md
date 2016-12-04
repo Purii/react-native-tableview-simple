@@ -43,7 +43,7 @@ Currently `TableView` doesn't support any properties.
 
 ### Cell
 The cellstyles are inspired by the native ones. Just like the available accessories.
-To set a fixed height you could use `contentContainerStyle={{ height: 44 }}`.
+To set a fixed height use `contentContainerStyle={{ height: 44 }}`.
 
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
