@@ -31,6 +31,4 @@ project.xcworkspace
 node_modules/
 npm-debug.log
 
-yarn.lock
-
 TODO.md
