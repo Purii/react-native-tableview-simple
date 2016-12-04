@@ -159,7 +159,7 @@ The left screen is build using `react-native-tableview-simple`. The right one is
 
 ```javascript
 import React, {
-  Component
+  Component,
 } from 'react';
 import {
   ActivityIndicatorIOS,
@@ -209,13 +209,13 @@ class Example extends Component {
             <Cell cellStyle="Basic" accessory="Detail" title="Pressable w/ accessory" onPress={() => console.log('Heyho!')}/>
           </Section>
           <Section header="CUSTOMCELLS">
-            <CustomCell>
-              <Text style={{flex: 1, fontSize: 16}}>Loading</Text>
-              <ActivityIndicatorIOS/>
+            <CustomCell contentContainerStyle={{ height: 44 }}>
+              <Text style={{ flex: 1, fontSize: 16 }}>Loading</Text>
+              <ActivityIndicator />
             </CustomCell>
-            <CustomCell>
-              <Text style={{flex: 1, fontSize: 16}}>Switch</Text>
-              <SwitchIOS/>
+            <CustomCell contentContainerStyle={{ height: 44 }}>
+              <Text style={{ flex: 1, fontSize: 16 }}>Switch</Text>
+              <Switch />
             </CustomCell>
             <CustomCell contentContainerStyle={{ height: 60 }}>
               <Text style={{ flex: 1, fontSize: 16 }}>Custom height</Text>
