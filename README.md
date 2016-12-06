@@ -93,17 +93,14 @@ import React, {
   Component
 } from 'react';
 import {
-  ActivityIndicatorIOS,
   AppRegistry,
   ScrollView,
   StyleSheet,
-  SwitchIOS,
   Text,
   View
 } from 'react-native';
 import {
   Cell,
-  CustomCell,
   Section,
   TableView
 } from 'react-native-tableview-simple';
@@ -164,11 +161,11 @@ import React, {
   Component,
 } from 'react';
 import {
-  ActivityIndicatorIOS,
+  ActivityIndicator,
   AppRegistry,
   ScrollView,
   StyleSheet,
-  SwitchIOS,
+  Switch,
   Text,
   View
 } from 'react-native';
