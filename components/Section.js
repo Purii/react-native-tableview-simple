@@ -87,6 +87,7 @@ class Section extends Component {
         return React.cloneElement(child, propsToAdd);
       }
 
+      // eslint-disable-next-line no-underscore-dangle
       const _localstyles = Object.assign({}, _styles);
       _localstyles.separator = [
         ...{},
