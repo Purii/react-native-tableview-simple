@@ -23,7 +23,6 @@ import {
   TableView,
 } from 'react-native-tableview-simple';
 
-
 // Example component for section:headerComponent
 const CustomSectionHeader = () => (
   <View>
@@ -82,7 +81,7 @@ class Example extends Component {
         </TableView>
         <View
           style={{
-            height: Dimensions.get('window').height,
+            minHeight: Dimensions.get('window').height,
           }}
         >
           <View
