@@ -83,7 +83,7 @@ class Section extends Component {
       };
 
       // Skip rendering of separator
-      if (hideSeparator || children.length === 1 || index === children.length - 1) {
+      if (hideSeparator || !Array.isArray(children) || children.length === 1 || index === children.length - 1) {
         return React.cloneElement(child, propsToAdd);
       }
 
