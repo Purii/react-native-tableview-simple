@@ -7,6 +7,7 @@
     "no-use-before-define": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "import/extensions": [2, "never", { "js": "never", "json": "never"}],
+    "import/no-extraneous-dependencies": [0, {"devDependencies": ['**/*.spec.js', '**/*.test.js']}]
   },
   "plugins": [
     "react"

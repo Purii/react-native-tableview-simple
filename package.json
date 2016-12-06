@@ -6,7 +6,12 @@
   "author": "Patrick Puritscher <hello@patrickpuritscher.com>",
   "scripts": {
     "lint": "eslint index.js components/",
-    "test": "npm run lint"
+    "jest": "jest",
+    "test": "npm run lint && npm run jest"
+  },
+  "jest": {
+    "preset": "react-native",
+    "unmockedModulePathPatterns": ["./example/"]
   },
   "main": "index.js",
   "license": "MIT",
@@ -18,8 +23,8 @@
     "android"
   ],
   "peerDependencies": {
-    "react-native": ">=0.25 || 0.41.0-rc",
-    "react": "*"
+    "react": "*",
+    "react-native": ">=0.25 || 0.41.0-rc"
   },
   "bugs": {
     "url": "https://github.com/Purii/react-native-tableview-simple/issues"
@@ -30,10 +35,16 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
+    "babel-jest": "17.0.2",
+    "babel-preset-react-native": "1.9.0",
     "eslint": "^3.11.1",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-react": "^6.7.1"
+    "eslint-plugin-react": "^6.8.0",
+    "jest": "17.0.3",
+    "react": "^15.4.1",
+    "react-native": "^0.38.1",
+    "react-test-renderer": "15.4.1"
   }
 }
