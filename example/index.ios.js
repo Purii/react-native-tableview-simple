@@ -64,20 +64,20 @@ class Example extends Component {
             <Cell cellStyle="LeftDetail" title="LeftDetail" detail="Detail" leftDetailColor="#6cc644" />
           </Section>
           <Section header="CUSTOMCELLS">
-            <CustomCell contentContainerStyle={{ height: 44 }}>
+            <CustomCell onPress={() => console.log('Heyho!')} contentContainerStyle={{ height: 44 }}>
               <Text style={{ flex: 1, fontSize: 16 }}>Loading</Text>
               <ActivityIndicator />
             </CustomCell>
-            <CustomCell contentContainerStyle={{ height: 44 }}>
+            <CustomCell onPress={() => console.log('Heyho!')} contentContainerStyle={{ height: 44 }}>
               <Text style={{ flex: 1, fontSize: 16 }}>Switch</Text>
               <Switch />
             </CustomCell>
-            <CustomCell contentContainerStyle={{ height: 60 }}>
+            <CustomCell onPress={() => console.log('Heyho!')} contentContainerStyle={{ height: 60 }}>
               <Text style={{ flex: 1, fontSize: 16 }}>Custom height</Text>
             </CustomCell>
           </Section>
           <Section headerComponent={<CustomSectionHeader />}>
-            <Cell cellStyle="Basic" title="Section uses prop headerComponent" />
+            <Cell onPress={() => console.log('Heyho!')} cellStyle="Basic" title="Section uses prop headerComponent" />
           </Section>
         </TableView>
         <View
