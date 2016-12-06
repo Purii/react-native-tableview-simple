@@ -10,7 +10,7 @@
   "dependencies": {
     "react": "15.4.1",
     "react-native": "0.38.1",
-    "react-native-tableview-simple": "^0.15.0"
+    "react-native-tableview-simple": "^0.15.1"
   },
   "jest": {
     "preset": "react-native"
