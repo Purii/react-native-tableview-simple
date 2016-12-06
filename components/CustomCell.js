@@ -8,7 +8,6 @@ import {
   TouchableHighlight,
   View,
 } from 'react-native';
-/* eslint-enable import/no-unresolved */
 
 const CustomCell = (props) => {
   const {
@@ -18,6 +17,8 @@ const CustomCell = (props) => {
     highlightUnderlayColor,
     isDisabled,
     onPress,
+    onHighlightRow,
+    onUnHighlightRow,
   } = props;
 
   const isPressable = !!onPress;
@@ -39,6 +40,8 @@ const CustomCell = (props) => {
       <TouchableHighlight
         activeOpacity={highlightActiveOpacity}
         onPress={onPress}
+        onPressIn={onHighlightRow}
+        onPressOut={onUnHighlightRow}
         underlayColor={highlightUnderlayColor}
       >
         <View style={_styles.cell}>{children}</View>
@@ -74,6 +77,8 @@ CustomCell.propTypes = {
     PropTypes.bool,
     PropTypes.func,
   ]),
+  onHighlightRow: PropTypes.func,
+  onUnHighlightRow: PropTypes.func,
 };
 
 CustomCell.defaultProps = {

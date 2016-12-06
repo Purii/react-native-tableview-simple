@@ -1,5 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import React, {
+  Component,
   PropTypes,
 } from 'react';
 
@@ -8,124 +9,165 @@ import {
   Text,
   View,
 } from 'react-native';
-/* eslint-enable import/no-unresolved */
 
-const Section = (props) => {
-  /** Deprecation messages */
-  // eslint-disable-next-line
-  if (props.footerTintColor) {
-    console.warn('`<Section footerTintColor="..."/>` is deprecated. Use `<Section footerTextColor="..."/>` instead.');
+class Section extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      highlightedRowIndex: undefined,
+    };
+
+    this.handleHighlightRow = index => !this.state.highlightedRowIndex && this.setState({ highlightedRowIndex: index });
+    this.handleUnHighlightRow = () => this.setState({ highlightedRowIndex: undefined });
   }
-  // eslint-disable-next-line
-  if (props.headerTintColor) {
-    console.warn('`<Section headerTintColor="..."/>` is deprecated. Use `<Section headerTextColor="..."/>` instead.');
-  }
+  render() {
+    const {
+      allowFontScaling,
+      children,
+      footerComponent,
+      headerComponent,
+      headerTextColor,
+      hideSeparator,
+      footerTextColor,
+      sectionTintColor,
+      separatorInsetLeft,
+      separatorInsetRight,
+      separatorTintColor,
+    } = this.props;
 
-  const {
-    allowFontScaling,
-    children,
-    headerTextColor,
-    hideSeparator,
-    footerTextColor,
-    sectionTintColor,
-    separatorInsetLeft,
-    separatorInsetRight,
-    separatorTintColor,
-  } = props;
-  const header = props.header ? props.header : false;
-  const footer = props.footer ? props.footer : false;
+    const header = this.props.header ? this.props.header : false;
+    const footer = this.props.footer ? this.props.footer : false;
 
-  /* Declare and merge styles with props */
-  const styleSection = [...{}, styles.section, { backgroundColor: sectionTintColor }];
-  const styleSectionHeader__text = [...{}, styles.sectionheader__text, { color: headerTextColor }];
-  const styleSectionFooter__text = [...{}, styles.sectionfooter__text, { color: footerTextColor }];
-  const styleSeparatorInner = [...{}, styles.separator_inner, {
-    backgroundColor: separatorTintColor,
-    marginLeft: separatorInsetLeft,
-    marginRight: separatorInsetRight,
-  }];
+    /**
+     * Merge styles with props
+     */
+    // eslint-disable-next-line no-underscore-dangle
+    const _styles = {
+      section: [
+        ...{},
+        styles.section,
+        { backgroundColor: sectionTintColor },
+      ],
+      sectionheader__text: [
+        ...{},
+        styles.sectionheader__text,
+        { color: headerTextColor },
+      ],
+      sectionfooter__text: [
+        ...{},
+        styles.sectionfooter__text,
+        { color: footerTextColor },
+      ],
+      separator_inner: [
+        ...{},
+        styles.separator_inner,
+        {
+          backgroundColor: separatorTintColor,
+          marginLeft: separatorInsetLeft,
+          marginRight: separatorInsetRight,
+        },
+      ],
+    };
 
-  /**
-   * Render Cell and add Border
-   * @param  {Cell} child [description]
-   * @param  {Int} index [description]
-   * @return {View}       [description]
-   */
-  const renderChild = (child, index) => {
-    if (children.length > 0 && index < children.length - 1) {
-      const styleSeparator = [
+    /**
+     * Render Cell and add Border
+     * @param  {Cell} child [description]
+     * @param  {Int} index [description]
+     * @return {View}       [description]
+     */
+    const renderChild = (child, index) => {
+      const propsToAdd = {
+        onHighlightRow: () => this.handleHighlightRow(index),
+        onUnHighlightRow: this.handleUnHighlightRow,
+      };
+
+      // Skip rendering of separator
+      if (hideSeparator || children.length === 1 || index === children.length - 1) {
+        return React.cloneElement(child, propsToAdd);
+      }
+
+      _styles.separator = [
         ...{},
         styles.separator,
-        { backgroundColor: child.props.backgroundColor },
+        {
+          backgroundColor: child.props.backgroundColor,
+        },
       ];
-      const renderSeparator = () => {
-        if (hideSeparator) { return null; }
-        return (
-          <View style={styleSeparator}>
-            <View style={styleSeparatorInner} />
-          </View>
-        );
-      };
+
+      const invisibleSeparator = this.state.highlightedRowIndex === index || this.state.highlightedRowIndex === index + 1;
+
+      if (invisibleSeparator) {
+        _styles.separator_inner = [
+          ...{},
+          _styles.separator_inner,
+          {
+            backgroundColor: 'transparent',
+          },
+        ];
+      }
 
       return (
         <View>
-          {child}
-          {renderSeparator()}
+          {React.cloneElement(child, propsToAdd)}
+          <View style={_styles.separator}>
+            <View style={_styles.separator_inner} />
+          </View>
         </View>
       );
-    }
-    return child;
-  };
+    };
 
-  /**
-   * Render header if defined
-   * @return {View} View with Text
-   */
-  const renderHeader = () => {
-    if (header) {
-      return (
-        <View style={styles.sectionheader}>
-          <Text
-            allowFontScaling={allowFontScaling}
-            style={styleSectionHeader__text}
-          >
-            {header}
-          </Text>
-        </View>
-      );
-    }
-    return null;
-  };
+    /**
+     * Render header if defined
+     * @return {View} View with Text
+     */
+    const renderHeader = () => {
+      if (header) {
+        return (
+          <View style={styles.sectionheader}>
+            <Text
+              allowFontScaling={allowFontScaling}
+              style={_styles.sectionheader__text}
+            >
+              {header}
+            </Text>
+          </View>
+        );
+      }
+      return undefined;
+    };
 
-  /**
-   * Render footer if defined
-   * @return {View} View with Text
-   */
-  const renderFooter = () => {
-    if (footer) {
-      return (
-        <View style={styles.sectionfooter}>
-          <Text
-            allowFontScaling={allowFontScaling}
-            style={styleSectionFooter__text}
-          >
-            {footer}
-          </Text>
+    /**
+     * Render footer if defined
+     * @return {View} View with Text
+     */
+    const renderFooter = () => {
+      if (footer) {
+        return (
+          <View style={styles.sectionfooter}>
+            <Text
+              allowFontScaling={allowFontScaling}
+              style={_styles.sectionfooter__text}
+            >
+              {footer}
+            </Text>
+          </View>
+        );
+      }
+      return undefined;
+    };
+
+    return (
+      <View style={_styles.section}>
+        {headerComponent || renderHeader()}
+        <View style={styles.section_inner}>
+          {React.Children.map(children, renderChild)}
         </View>
-      );
-    }
-    return null;
-  };
-  return (
-    <View style={styleSection}>
-      {props.headerComponent || renderHeader()}
-      <View style={styles.section_inner}>
-        {React.Children.map(children, renderChild)}
+        {footerComponent || renderFooter()}
       </View>
-      {props.footerComponent || renderFooter()}
-    </View>
-  );
-};
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   section: {

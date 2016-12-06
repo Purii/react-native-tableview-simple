@@ -9,7 +9,6 @@ import {
   TouchableHighlight,
   View,
 } from 'react-native';
-/* eslint-enable import/no-unresolved */
 
 const Cell = (props) => {
   const {
@@ -23,13 +22,16 @@ const Cell = (props) => {
     highlightActiveOpacity,
     highlightUnderlayColor,
     isDisabled,
+    onPress,
+    onHighlightRow,
+    onUnHighlightRow,
     leftDetailColor,
     rightDetailColor,
     title,
     titleTextColor,
   } = props;
 
-  const isPressable = !!props.onPress;
+  const isPressable = !!onPress;
 
   /**
     * Merge styles with props
@@ -229,8 +231,10 @@ const Cell = (props) => {
       return (
         <TouchableHighlight
           activeOpacity={highlightActiveOpacity}
-          onPress={props.onPress}
+          onPress={onPress}
           underlayColor={highlightUnderlayColor}
+          onPressIn={onHighlightRow}
+          onPressOut={onUnHighlightRow}
         >
           {cellToRender()}
         </TouchableHighlight>
@@ -357,6 +361,8 @@ Cell.propTypes = {
   highlightUnderlayColor: PropTypes.string,
   isDisabled: PropTypes.bool,
   leftDetailColor: PropTypes.string,
+  onHighlightRow: PropTypes.func,
+  onUnHighlightRow: PropTypes.func,
   rightDetailColor: PropTypes.string,
   title: PropTypes.oneOfType([
     PropTypes.string,
