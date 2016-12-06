@@ -87,7 +87,8 @@ class Section extends Component {
         return React.cloneElement(child, propsToAdd);
       }
 
-      _styles.separator = [
+      const _localstyles = Object.assign({}, _styles);
+      _localstyles.separator = [
         ...{},
         styles.separator,
         {
@@ -98,7 +99,7 @@ class Section extends Component {
       const invisibleSeparator = this.state.highlightedRowIndex === index || this.state.highlightedRowIndex === index + 1;
 
       if (invisibleSeparator) {
-        _styles.separator_inner = [
+        _localstyles.separator_inner = [
           ...{},
           _styles.separator_inner,
           {
@@ -110,8 +111,8 @@ class Section extends Component {
       return (
         <View>
           {React.cloneElement(child, propsToAdd)}
-          <View style={_styles.separator}>
-            <View style={_styles.separator_inner} />
+          <View style={_localstyles.separator}>
+            <View style={_localstyles.separator_inner} />
           </View>
         </View>
       );
