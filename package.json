@@ -10,8 +10,7 @@
     "test": "npm run lint && npm run jest"
   },
   "jest": {
-    "preset": "react-native",
-    "unmockedModulePathPatterns": ["./example/"]
+    "preset": "react-native"
   },
   "main": "index.js",
   "license": "MIT",
