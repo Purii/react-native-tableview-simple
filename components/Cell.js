@@ -258,6 +258,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     flexDirection: 'row',
     alignItems: 'center',
+    minHeight: 44,
   },
   cell__type_subtitle: {
     paddingLeft: 15,
@@ -265,6 +266,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 4,
+    minHeight: 44,
   },
   cellinner__subtitle: {
     flexDirection: 'column',
