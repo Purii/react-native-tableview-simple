@@ -7,6 +7,7 @@ exports[`test renders with accessory 1`] = `
           Object {
             "alignItems": "center",
             "flexDirection": "row",
+            "minHeight": 44,
             "paddingLeft": 15,
             "paddingRight": 20,
             "paddingVertical": 4,
@@ -85,6 +86,7 @@ exports[`test renders with subtitle 1`] = `
           Object {
             "alignItems": "center",
             "flexDirection": "row",
+            "minHeight": 44,
             "paddingLeft": 15,
             "paddingRight": 20,
             "paddingVertical": 4,

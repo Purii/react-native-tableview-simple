@@ -10,7 +10,8 @@
     "test": "npm run lint && npm run jest"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "testPathIgnorePatterns": ["/node_modules/", "<rootDir>/example/"]
   },
   "main": "index.js",
   "license": "MIT",

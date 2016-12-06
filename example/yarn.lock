@@ -3809,9 +3809,9 @@ react-deep-force-update@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-1.0.1.tgz#f911b5be1d2a6fe387507dd6e9a767aa2924b4c7"
 
-react-native-tableview-simple@^0.15.0:
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/react-native-tableview-simple/-/react-native-tableview-simple-0.15.0.tgz#ab1962007845d5764fd74134b47b76eee9c49f5c"
+react-native-tableview-simple@^0.15.1:
+  version "0.15.1"
+  resolved "https://registry.yarnpkg.com/react-native-tableview-simple/-/react-native-tableview-simple-0.15.1.tgz#b9db691f4ca2c953e7b7f6d726069650c1542f6d"
 
 react-native@0.38.1:
   version "0.38.1"
