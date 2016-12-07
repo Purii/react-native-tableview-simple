@@ -18,7 +18,6 @@ const TableView = props => (
 const styles = StyleSheet.create({
   tableView: {
     flexDirection: 'column',
-    flex: 1,
   },
 });
 
