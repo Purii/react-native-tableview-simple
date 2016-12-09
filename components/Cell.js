@@ -29,6 +29,8 @@ const Cell = (props) => {
     rightDetailColor,
     title,
     titleTextColor,
+    titleStyle,
+    titleStyleDisabled
   } = props;
 
   const isPressable = !!onPress;
@@ -50,8 +52,8 @@ const Cell = (props) => {
       { backgroundColor },
     ],
     cell_title: isDisabled
-      ? [...{}, styles.cell_title, styles.cell_text__disabled]
-      : [...{}, styles.cell_title, { color: titleTextColor }],
+      ? [...{}, styles.cell_title, styles.cell_text__disabled, titleStyleDisabled ]
+      : [...{}, styles.cell_title, { color: titleTextColor }, titleStyle],
     cell_leftDetail: [
       ...{},
       styles.cell_leftDetail,
