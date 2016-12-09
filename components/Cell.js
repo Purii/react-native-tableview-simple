@@ -30,7 +30,8 @@ const Cell = (props) => {
     title,
     titleTextColor,
     titleStyle,
-    titleStyleDisabled
+    titleStyleDisabled,
+    detailStyle,
   } = props;
 
   const isPressable = !!onPress;
@@ -58,6 +59,7 @@ const Cell = (props) => {
       ...{},
       styles.cell_leftDetail,
       { color: leftDetailColor },
+      detailStyle
     ],
     cell_leftDetailTitle: isDisabled
       ? [...{}, styles.cell_leftDetailTitle, styles.cell_text__disabled]
@@ -66,6 +68,7 @@ const Cell = (props) => {
       ...{},
       styles.cell_rightDetail,
       { color: rightDetailColor },
+      detailStyle
     ],
     accessory_checkmark: [
       ...{},
