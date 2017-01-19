@@ -77,6 +77,8 @@ class Section extends Component {
      * @return {View}       [description]
      */
     const renderChild = (child, index) => {
+      if (!child)
+        return;
       const propsToAdd = {
         onHighlightRow: () => this.handleHighlightRow(index),
         onUnHighlightRow: this.handleUnHighlightRow,
