@@ -16,7 +16,7 @@ exports[`test renders basic 1`] = `
           Object {
             "backgroundColor": "#fff",
           },
-          undefined,
+          Object {},
         ]
       }>
       <Text
@@ -60,7 +60,7 @@ exports[`test renders with accessory 1`] = `
           Object {
             "backgroundColor": "#fff",
           },
-          undefined,
+          Object {},
         ]
       }>
       <Text

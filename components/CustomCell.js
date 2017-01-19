@@ -68,7 +68,7 @@ CustomCell.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.element,
-  ]),
+  ]).isRequired,
   contentContainerStyle: View.propTypes.style,
   highlightActiveOpacity: PropTypes.number,
   highlightUnderlayColor: PropTypes.string,
@@ -82,9 +82,13 @@ CustomCell.propTypes = {
 };
 
 CustomCell.defaultProps = {
+  contentContainerStyle: {},
   highlightActiveOpacity: 0.8,
   highlightUnderlayColor: 'black',
   isDisabled: false,
+  onPress: null,
+  onHighlightRow: null,
+  onUnHighlightRow: null,
 };
 
 export default CustomCell;

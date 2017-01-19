@@ -226,6 +226,11 @@ Section.propTypes = {
 
 Section.defaultProps = {
   allowFontScaling: true,
+  children: null,
+  footerComponent: null,
+  headerComponent: null,
+  footer: null,
+  header: null,
   headerTextColor: '#6d6d72',
   hideSeparator: false,
   sectionTintColor: '#EFEFF4',
