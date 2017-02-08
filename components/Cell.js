@@ -369,6 +369,7 @@ Cell.propTypes = {
   title: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
+    PropTypes.element,
   ]),
   titleTextColor: PropTypes.string,
   onPress: PropTypes.oneOfType([

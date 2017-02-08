@@ -59,7 +59,7 @@ To set a fixed height use `contentContainerStyle={{ height: 44 }}`.
 | isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
 | leftDetailColor | #007AFF | `string` | Text color of left detail |
 | rightDetailColor | #8E8E93 | `string` | Text color of right detail |
-| title | - | `string` or `number` | Title value |
+| title | - | `string` or `number` or `PropTypes.element` | Title value |
 | titleTextColor | #000 | `string` | Text color of title |
 | onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 
