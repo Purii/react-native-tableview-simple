@@ -34,7 +34,7 @@ Therefore the `Cell`-Component itself can't be manipulated heavily. If you aren'
 
 ### Submit a Custom Cell-Component
 Maybe you want to add your lovely designed Cell-Component to the project.
-Just move your component to the folder `components` and choose a meaningful name! :-)
+Just move your component to the folder `components` and choose a meaningful name! :-)    
 How about a `SwitchCell`-Component?
 
 ## Props
