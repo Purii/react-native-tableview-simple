@@ -9,17 +9,18 @@ A possible use case might be an about- or a settings-screen with a few rows.
 Have a look at the [Examples below](https://github.com/Purii/react-native-tableview-simple#examples)! :-)
 
 ## Installation
-1. `npm i react-native-tableview-simple --save`
-1. Add components `import {Cell, Section, TableView} from 'react-native-tableview-simple'`
+1. `yarn add react-native-tableview-simple` or `npm i react-native-tableview-simple --S`
+1. Add needed components: `import {Cell, Section, TableView} from 'react-native-tableview-simple'`
 
 ## Extensible
 This component provides you with some predefined CSS-styles, inspired by the native TableView.
 You can always mix the `Cell`-instances inside a `Section`, with some Custom-Components.   
-Therefore the `Cell`-Component itself can't be manipulated. If you aren't satisfied with a component, feel free to create a PR or just create and use a custom component. Get inspired by the predefined cellstyles.
+Therefore the `Cell`-Component itself can't be manipulated heavily. If you aren't satisfied with a component, feel free to create a PR or just create and use a custom component. Get inspired by the predefined cellstyles.
 
-### Submit a Cell-Component
+### Submit a Custom Cell-Component
 Maybe you want to add your lovely designed Cell-Component to the project.
 Just move your component to the folder `components` and choose a meaningful name! :-)
+How about a `SwitchCell-Component?
 
 ## Props
 ### TableView
