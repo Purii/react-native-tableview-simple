@@ -9,7 +9,7 @@ import {
   View,
 } from 'react-native';
 
-import defaultStyle from './_defaultStyle.js';
+import { cell as defaultStyleCell } from './_defaultStyle';
 
 const CustomCell = (props) => {
   const {
@@ -55,7 +55,7 @@ const CustomCell = (props) => {
 
 const styles = StyleSheet.create({
   cell: {
-    ...defaultStyle.cell,
+    ...defaultStyleCell,
     backgroundColor: '#FFF',
   },
 });

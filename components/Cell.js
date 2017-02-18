@@ -10,7 +10,7 @@ import {
   View,
 } from 'react-native';
 
-import defaultStyle from './_defaultStyle.js';
+import { cell as defaultStyleCell } from './_defaultStyle';
 
 const Cell = (props) => {
   const {
@@ -254,14 +254,11 @@ const Cell = (props) => {
 
 const styles = StyleSheet.create({
   cell: {
-    ...defaultStyle.cell,
+    ...defaultStyleCell,
     minHeight: 44,
   },
   cell__type_subtitle: {
-    paddingLeft: 15,
-    paddingRight: 20,
-    flexDirection: 'row',
-    alignItems: 'center',
+    ...defaultStyleCell,
     paddingVertical: 4,
     minHeight: 44,
   },
