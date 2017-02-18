@@ -9,8 +9,23 @@ A possible use case might be an about- or a settings-screen with a few rows.
 Have a look at the [Examples below](https://github.com/Purii/react-native-tableview-simple#examples)! :-)
 
 ## Installation
-1. `yarn add react-native-tableview-simple` or `npm i react-native-tableview-simple --S`
-1. Add needed components: `import {Cell, Section, TableView} from 'react-native-tableview-simple'`
+
+1. *Install as dependency:*
+  ```javascript
+  // yarn
+  yarn add react-native-tableview-simple
+  // or npm
+  npm i react-native-tableview-simple --S
+  ```
+
+1. *Add needed components:*
+  ```javascript
+  import {
+    Cell, 
+    Section,
+    TableView,
+  } from 'react-native-tableview-simple';
+```
 
 ## Extensible
 This component provides you with some predefined CSS-styles, inspired by the native TableView.
