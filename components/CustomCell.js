@@ -9,6 +9,8 @@ import {
   View,
 } from 'react-native';
 
+import defaultStyle from './_defaultStyle.js';
+
 const CustomCell = (props) => {
   const {
     children,
@@ -53,14 +55,8 @@ const CustomCell = (props) => {
 
 const styles = StyleSheet.create({
   cell: {
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    paddingLeft: 15,
-    paddingRight: 20,
-    paddingTop: 10,
-    paddingBottom: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
+    ...defaultStyle.cell,
+    backgroundColor: '#FFF',
   },
 });
 
