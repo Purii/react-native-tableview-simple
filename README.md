@@ -44,18 +44,18 @@ Currently `TableView` doesn't support any properties.
 ### Section
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
-| allowFontScaling | true | `bool` | Respect Text Size accessibility setting on iOS |
+| allowFontScaling | `true` | `bool` | Respect Text Size accessibility setting on iOS |
 | footerComponent | - | `React.Component` | Inject any component to replace original footer (optional) |
 | headerComponent | - | `React.Component` | Inject any component to replace original header (optional) |
 | footer | - | `string` | Footer value |
-| footerTextColor | #6d6d72 | `string` | Text color of footer|
+| footerTextColor | `#6d6d72` | `string` | Text color of footer|
 | header | - | `string` | Header value |
-| headerTextColor | #6d6d72 | `string` | Text color of header |
-| hideSeparator | false | `bool` | Hide separators |
-| sectionTintColor | #EFEFF4 | `string` | Background color of section |
-| separatorInsetLeft | 15 | `number` | Left inset of separator |
-| separatorInsetRight | 0 | `number` | Right inset of separator |
-| separatorTintColor | #c8c7cc | `string` | Color of separator |
+| headerTextColor | `#6d6d72` | `string` | Text color of header |
+| hideSeparator | `false` | `bool` | Hide separators |
+| sectionTintColor | `#EFEFF4` | `string` | Background color of section |
+| separatorInsetLeft | `15` | `number` | Left inset of separator |
+| separatorInsetRight | `0` | `number` | Right inset of separator |
+| separatorTintColor | `#C8C7CC` | `string` | Color of separator |
 
 ### Cell
 The cellstyles are inspired by the native ones. Just like the available accessories.
@@ -64,19 +64,19 @@ To set a fixed height use `contentContainerStyle={{ height: 44 }}`.
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
 | accessory | - | `string` | Predefined accessory: `DisclosureIndicator`, `Detail`, `DetailDisclosure`, `Checkmark` |
-| accessoryColor | #007AFF | `string` | Color of accessory |
-| allowFontScaling | true | `bool` | Respect Text Size accessibility setting on iOS |
-| backgroundColor | #fff | `string` | Background color of cell |
-| cellStyle | Basic | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
-| contentContainerStyle | {} | `View.propTypes.style` | These styles will be applied to the content container which wraps all of the child views. Overrides `cellStyle` |
+| accessoryColor | `#007AFF` | `string` | Color of accessory |
+| allowFontScaling | `true` | `bool` | Respect Text Size accessibility setting on iOS |
+| backgroundColor | `#FFF` | `string` | Background color of cell |
+| cellStyle | `Basic` | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
+| contentContainerStyle | `{}` | `View.propTypes.style` | These styles will be applied to the content container which wraps all of the child views. Overrides `cellStyle` |
 | detail | - | `string` or `number` | Detail value |
-| highlightActiveOpacity | 0.8 | `number` | Opacity of cell when touch is active |
-| highlightUnderlayColor | black | `string` | Color of underlay that will show through when touch is active |
-| isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
-| leftDetailColor | #007AFF | `string` | Text color of left detail |
-| rightDetailColor | #8E8E93 | `string` | Text color of right detail |
+| highlightActiveOpacity | `0.8` | `number` | Opacity of cell when touch is active |
+| highlightUnderlayColor | `black` | `string` | Color of underlay that will show through when touch is active |
+| isDisabled | `false` | `bool` | Cell is disabled. `onPress` will not get triggered |
+| leftDetailColor | `#007AFF` | `string` | Text color of left detail |
+| rightDetailColor | `#8E8E93` | `string` | Text color of right detail |
 | title | - | `string` or `number` or `React.Component` | Title value |
-| titleTextColor | #000 | `string` | Text color of title |
+| titleTextColor | `#000` | `string` | Text color of title |
 | onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 
 ### CustomCell
@@ -85,10 +85,10 @@ Use a `CustomCell` to define the whole content and its structure on your own. Pa
 
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
-| contentContainerStyle | {} | `View.propTypes.style` | These styles will be applied to the content container which wraps all of the child views |
-| highlightActiveOpacity | 0.8 | `number` | Opacity of cell when touch is active |
-| highlightUnderlayColor | black | `string` | Color of underlay that will show through when touch is active |
-| isDisabled | false | `bool` | Cell is disabled. `onPress` will not get triggered |
+| contentContainerStyle | `{}` | `View.propTypes.style` | These styles will be applied to the content container which wraps all of the child views |
+| highlightActiveOpacity | `0.8` | `number` | Opacity of cell when touch is active |
+| highlightUnderlayColor | `black` | `string` | Color of underlay that will show through when touch is active |
+| isDisabled | `false` | `bool` | Cell is disabled. `onPress` will not get triggered |
 | onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 
 ## Examples
@@ -97,7 +97,7 @@ To run the example project, follow these steps:
 
 1. `git clone https://github.com/Purii/react-native-tableview-simple`
 1. `cd example`
-1. `npm i`
+1. `yarn` or `npm i`
 1. run `/example/ios/example.xcodeproj` via Xcode
 
 ### Use case: About-screen
