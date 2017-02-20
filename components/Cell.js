@@ -44,42 +44,40 @@ const Cell = (props) => {
   // eslint-disable-next-line no-underscore-dangle
   const _styles = {
     ...styles,
-    ...{
-      cell: [
-        styles.cell,
-        {
-          backgroundColor,
-        },
-        contentContainerStyle,
-      ],
-      cell_title: isDisabled
-        ? [styles.cell_title, styles.cell_text__disabled]
-        : [styles.cell_title, { color: titleTextColor }],
-      cell_leftDetail: [
-        styles.cell_leftDetail,
-        { color: leftDetailColor },
-      ],
-      cell_leftDetailTitle: isDisabled
-        ? [styles.cell_leftDetailTitle, styles.cell_text__disabled]
-        : [styles.cell_leftDetailTitle, { color: titleTextColor }],
-      cell_rightDetail: [
-        styles.cell_rightDetail,
-        { color: rightDetailColor },
-      ],
+    cell: [
+      styles.cell,
+      {
+        backgroundColor,
+      },
+      contentContainerStyle,
+    ],
+    cell_title: isDisabled
+      ? [styles.cell_title, styles.cell_text__disabled]
+      : [styles.cell_title, { color: titleTextColor }],
+    cell_leftDetail: [
+      styles.cell_leftDetail,
+      { color: leftDetailColor },
+    ],
+    cell_leftDetailTitle: isDisabled
+      ? [styles.cell_leftDetailTitle, styles.cell_text__disabled]
+      : [styles.cell_leftDetailTitle, { color: titleTextColor }],
+    cell_rightDetail: [
+      styles.cell_rightDetail,
+      { color: rightDetailColor },
+    ],
 
-      accessory_checkmark: [
-        styles.accessory_checkmark,
-        { borderColor: accessoryColor },
-      ],
-      accessory_detail: [
-        styles.accessory_detail,
-        { borderColor: accessoryColor },
-      ],
-      accessory_detailText: [
-        styles.accessory_detailText,
-        { color: accessoryColor },
-      ],
-    },
+    accessory_checkmark: [
+      styles.accessory_checkmark,
+      { borderColor: accessoryColor },
+    ],
+    accessory_detail: [
+      styles.accessory_detail,
+      { borderColor: accessoryColor },
+    ],
+    accessory_detailText: [
+      styles.accessory_detailText,
+      { color: accessoryColor },
+    ],
   };
 
   /**
