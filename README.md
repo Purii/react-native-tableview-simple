@@ -11,7 +11,7 @@ Have a look at the [Examples below](https://github.com/Purii/react-native-tablev
 ## Installation
 
 1. *Install as dependency:*
-  ```javascript
+  ```sh
   // yarn
   yarn add react-native-tableview-simple
   // or npm
@@ -59,7 +59,7 @@ Currently `TableView` doesn't support any properties.
 
 ### Cell
 The cellstyles are inspired by the native ones. Just like the available accessories.
-To set a fixed height use `contentContainerStyle={{ height: 44 }}`.
+A cell is separated in three views: `cellImageView` | `cellContentView` | `cellAccessoryView`.
 
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
@@ -68,20 +68,26 @@ To set a fixed height use `contentContainerStyle={{ height: 44 }}`.
 | allowFontScaling | `true` | `bool` | Respect Text Size accessibility setting on iOS |
 | backgroundColor | `#FFF` | `string` | Background color of cell |
 | cellStyle | `Basic` | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
-| contentContainerStyle | `{}` | `View.propTypes.style` | These styles will be applied to the content container which wraps all of the child views. Overrides `cellStyle` |
+| cellAccessoryView | -` | `React.Component` | Replace accessory view component (**e.g.: add Switch or ActivityIndicator**)|
+| cellContentView | -` | `React.Component` | Replace content view component |
+| cellImageView | -` | `React.Component` | Replace image view component |
+| contentContainerStyle | `{}` | `View.propTypes.style` | These styles will be applied to the content container which wraps all of the child views. Overrides `cellStyle` (**e.g.: Override paddingLeft and paddingRight or set fixed height**) |
 | detail | - | `string` or `number` | Detail value |
+| disableImageResize | `false` | `bool` | Disable resizing of image |
 | highlightActiveOpacity | `0.8` | `number` | Opacity of cell when touch is active |
 | highlightUnderlayColor | `black` | `string` | Color of underlay that will show through when touch is active |
 | isDisabled | `false` | `bool` | Cell is disabled. `onPress` will not get triggered |
+| image | - | `React.Component (Image)` | Image component displayed on the left. Will resized automatically |
 | leftDetailColor | `#007AFF` | `string` | Text color of left detail |
 | rightDetailColor | `#8E8E93` | `string` | Text color of right detail |
 | title | - | `string` or `number` or `React.Component` | Title value |
 | titleTextColor | `#000` | `string` | Text color of title |
 | onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 
-### CustomCell
-While the `Cell` component is intended as reproduction of the original cell known from the `UITableView`, the `CustomCell` could be customized at the most.
-Use a `CustomCell` to define the whole content and its structure on your own. Pass any component as a children to a `CustomCell`. Have a look at the example below, which uses `ActivityIndicator` and `Switch`.
+### CustomCell - **deprecated**
+The `CustomCell` is deprecated.
+Use instead the `Cell`-Component with the prop `cellContentView`.
+Feel free to create additional CellComponents and merge them to the project!
 
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
@@ -183,13 +189,12 @@ import {
   StyleSheet,
   Switch,
   Text,
-  View
+  View,
 } from 'react-native';
 import {
   Cell,
-  CustomCell,
   Section,
-  TableView
+  TableView,
 } from 'react-native-tableview-simple';
 
 /**
@@ -203,38 +208,120 @@ class Example extends Component {
       <ScrollView contentContainerStyle={styles.stage}>
         <TableView>
           <Section header="STANDARD" footer="A Footer">
-            <Cell cellStyle="Basic" title="Basic"/>
+            <Cell cellStyle="Basic" title="Basic" />
             <Cell cellStyle="RightDetail" title="RightDetail" detail="Detail" />
-            <Cell cellStyle="LeftDetail" title="LeftDetail" detail="Detail"/>
-            <Cell cellStyle="Subtitle" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
-            <Cell cellStyle="Basic" title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => console.log('Heyho!')}/>
+            <Cell cellStyle="LeftDetail" title="LeftDetail" detail="Detail" />
+            <Cell cellStyle="Subtitle" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk" />
+            <Cell cellStyle="Basic" title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => console.log('Heyho!')} />
           </Section>
           <Section header="DISABLED">
-            <Cell cellStyle="Basic" isDisabled={true} title="Basic"/>
-            <Cell cellStyle="RightDetail" isDisabled={true} title="RightDetail" detail="Detail" />
-            <Cell cellStyle="LeftDetail" isDisabled={true} title="LeftDetail" detail="Detail"/>
-            <Cell cellStyle="Subtitle" isDisabled={true} title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
-            <Cell cellstyle="Basic" isDisabled={true} title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => {console.log('Heyho!')}}/>
+            <Cell cellStyle="Basic" isDisabled title="Basic" />
+            <Cell cellStyle="RightDetail" isDisabled title="RightDetail" detail="Detail" />
+            <Cell cellStyle="LeftDetail" isDisabled title="LeftDetail" detail="Detail" />
+            <Cell cellStyle="Subtitle" isDisabled title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk" />
+            <Cell cellStyle="Basic" isDisabled title="Pressable w/ accessory" accessory="DisclosureIndicator" onPress={() => console.log('Heyho!')} />
           </Section>
           <Section header="ACCESSORY">
-            <Cell cellStyle="Basic" accessory="DisclosureIndicator" title="Basic"/>
+            <Cell cellStyle="Basic" accessory="DisclosureIndicator" title="Basic" />
             <Cell cellStyle="RightDetail" accessory="DetailDisclosure" title="RightDetail" detail="Detail" />
-            <Cell cellStyle="LeftDetail" accessory="Detail" title="LeftDetail" detail="Detail"/>
-            <Cell cellStyle="Subtitle" accessory="Checkmark" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"/>
-            <Cell cellStyle="Basic" accessory="Detail" title="Pressable w/ accessory" onPress={() => console.log('Heyho!')}/>
+            <Cell cellStyle="LeftDetail" accessory="Detail" title="LeftDetail" detail="Detail" />
+            <Cell cellStyle="Subtitle" accessory="Checkmark" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk" />
+            <Cell cellStyle="Basic" accessory="Detail" title="Pressable w/ accessory" onPress={() => console.log('Heyho!')} />
+          </Section>
+          <Section header="Image" footer="A Footer" >
+            <Cell
+              cellStyle="Basic"
+              title="Basic"
+              image={
+                <Image
+                  style={{ borderRadius: 5 }}
+                  source={{ uri: 'https://facebook.github.io/react/img/logo_og.png' }}
+                />
+              }
+            />
+            <Cell
+              cellStyle="RightDetail"
+              title="RightDetail"
+              detail="Detail"
+              image={
+                <Image
+                  style={{ borderRadius: 5 }}
+                  source={{ uri: 'https://facebook.github.io/react/img/logo_og.png' }}
+                />
+              }
+            />
+            <Cell
+              cellStyle="LeftDetail"
+              title="LeftDetail"
+              detail="Detail"
+              image={
+                <Image
+                  style={{ borderRadius: 5 }}
+                  source={{ uri: 'https://facebook.github.io/react/img/logo_og.png' }}
+                />
+              }
+            />
+            <Cell
+              cellStyle="Subtitle"
+              title="Subtitle"
+              detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+              image={
+                <Image
+                  style={{ borderRadius: 5 }}
+                  source={{ uri: 'https://facebook.github.io/react/img/logo_og.png' }}
+                />
+              }
+            />
+            <Cell
+              cellStyle="Basic"
+              title="Pressable w/ accessory"
+              accessory="DisclosureIndicator"
+              onPress={() => console.log('Heyho!')}
+              image={
+                <Image
+                  style={{ borderRadius: 5 }}
+                  source={{ uri: 'https://facebook.github.io/react/img/logo_og.png' }}
+                />
+              }
+            />
+            <Cell
+              cellStyle="Basic"
+              title="Disable image resize"
+              disableImageResize
+              image={
+                <Image
+                  style={{ height: 50, width: 50, borderRadius: 5 }}
+                  source={{ uri: 'https://facebook.github.io/react/img/logo_og.png' }}
+                />
+              }
+            />
+          </Section>
+          <Section header="MISC">
+            <Cell cellStyle="RightDetail" title="RightDetail" detail="Detail" rightDetailColor="#6cc644" />
+            <Cell cellStyle="LeftDetail" title="LeftDetail" detail="Detail" leftDetailColor="#6cc644" />
+            <Cell
+              cellStyle="Basic"
+              title="Switch"
+              cellAccessoryView={<Switch />}
+              contentContainerStyle={{ paddingVertical: 4 }}
+            />
+            <Cell
+              cellStyle="Basic"
+              title="ActivityIndicator"
+              cellAccessoryView={<ActivityIndicator />}
+            />
           </Section>
           <Section header="CUSTOMCELLS">
-            <CustomCell contentContainerStyle={{ height: 44 }}>
-              <Text style={{ flex: 1, fontSize: 16 }}>Loading</Text>
-              <ActivityIndicator />
-            </CustomCell>
-            <CustomCell contentContainerStyle={{ height: 44 }}>
-              <Text style={{ flex: 1, fontSize: 16 }}>Switch</Text>
-              <Switch />
-            </CustomCell>
-            <CustomCell contentContainerStyle={{ height: 60 }}>
-              <Text style={{ flex: 1, fontSize: 16 }}>Custom height</Text>
-            </CustomCell>
+            <Cell
+              onPress={() => console.log('Heyho!')}
+              contentContainerStyle={{ alignItems: 'flex-start', height: 60 }}
+              cellContentView={
+                <Text style={{ flex: 1, fontSize: 16 }}>Custom height with Cell-Component</Text>
+              }
+            />
+          </Section>
+          <Section headerComponent={<CustomSectionHeader />}>
+            <Cell cellStyle="Basic" title="Section uses prop headerComponent" />
           </Section>
         </TableView>
       </ScrollView>

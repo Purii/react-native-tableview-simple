@@ -9,6 +9,7 @@ import {
   ActivityIndicator,
   AppRegistry,
   Dimensions,
+  Image,
   ScrollView,
   StyleSheet,
   Switch,
@@ -18,7 +19,6 @@ import {
 
 import {
   Cell,
-  CustomCell,
   Section,
   TableView,
 } from 'react-native-tableview-simple';
@@ -58,25 +58,100 @@ class Example extends Component {
             <Cell cellStyle="Subtitle" accessory="Checkmark" title="Subtitle" detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk" />
             <Cell cellStyle="Basic" accessory="Detail" title="Pressable w/ accessory" onPress={() => console.log('Heyho!')} />
           </Section>
+          <Section header="Image" footer="A Footer" >
+            <Cell
+              cellStyle="Basic"
+              title="Basic"
+              image={
+                <Image
+                  style={{ borderRadius: 5 }}
+                  source={{ uri: 'https://facebook.github.io/react/img/logo_og.png' }}
+                />
+              }
+            />
+            <Cell
+              cellStyle="RightDetail"
+              title="RightDetail"
+              detail="Detail"
+              image={
+                <Image
+                  style={{ borderRadius: 5 }}
+                  source={{ uri: 'https://facebook.github.io/react/img/logo_og.png' }}
+                />
+              }
+            />
+            <Cell
+              cellStyle="LeftDetail"
+              title="LeftDetail"
+              detail="Detail"
+              image={
+                <Image
+                  style={{ borderRadius: 5 }}
+                  source={{ uri: 'https://facebook.github.io/react/img/logo_og.png' }}
+                />
+              }
+            />
+            <Cell
+              cellStyle="Subtitle"
+              title="Subtitle"
+              detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+              image={
+                <Image
+                  style={{ borderRadius: 5 }}
+                  source={{ uri: 'https://facebook.github.io/react/img/logo_og.png' }}
+                />
+              }
+            />
+            <Cell
+              cellStyle="Basic"
+              title="Pressable w/ accessory"
+              accessory="DisclosureIndicator"
+              onPress={() => console.log('Heyho!')}
+              image={
+                <Image
+                  style={{ borderRadius: 5 }}
+                  source={{ uri: 'https://facebook.github.io/react/img/logo_og.png' }}
+                />
+              }
+            />
+            <Cell
+              cellStyle="Basic"
+              title="Disable image resize"
+              disableImageResize
+              image={
+                <Image
+                  style={{ height: 50, width: 50, borderRadius: 5 }}
+                  source={{ uri: 'https://facebook.github.io/react/img/logo_og.png' }}
+                />
+              }
+            />
+          </Section>
           <Section header="MISC">
             <Cell cellStyle="RightDetail" title="RightDetail" detail="Detail" rightDetailColor="#6cc644" />
             <Cell cellStyle="LeftDetail" title="LeftDetail" detail="Detail" leftDetailColor="#6cc644" />
+            <Cell
+              cellStyle="Basic"
+              title="Switch"
+              cellAccessoryView={<Switch />}
+              contentContainerStyle={{ paddingVertical: 4 }}
+            />
+            <Cell
+              cellStyle="Basic"
+              title="ActivityIndicator"
+              cellAccessoryView={<ActivityIndicator />}
+            />
           </Section>
           <Section header="CUSTOMCELLS">
-            <CustomCell onPress={() => console.log('Heyho!')} contentContainerStyle={{ height: 44 }}>
-              <Text style={{ flex: 1, fontSize: 16 }}>Loading</Text>
-              <ActivityIndicator />
-            </CustomCell>
-            <CustomCell onPress={() => console.log('Heyho!')} contentContainerStyle={{ height: 44 }}>
-              <Text style={{ flex: 1, fontSize: 16 }}>Switch</Text>
-              <Switch />
-            </CustomCell>
-            <CustomCell onPress={() => console.log('Heyho!')} contentContainerStyle={{ height: 60 }}>
-              <Text style={{ flex: 1, fontSize: 16 }}>Custom height</Text>
-            </CustomCell>
+            <Cell
+              onPress={() => console.log('Heyho!')}
+              contentContainerStyle={{ alignItems: 'flex-start', height: 60 }}
+              cellContentView={
+                <Text style={{ flex: 1, fontSize: 16 }}>Custom height with Cell-Component</Text>
+              }
+            />
           </Section>
           <Section headerComponent={<CustomSectionHeader />}>
-            <Cell onPress={() => console.log('Heyho!')} cellStyle="Basic" title="Section uses prop headerComponent" />
+            <Cell cellStyle="Basic" title="Section uses prop headerComponent" />
           </Section>
         </TableView>
         <View

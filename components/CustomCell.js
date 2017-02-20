@@ -9,9 +9,8 @@ import {
   View,
 } from 'react-native';
 
-import { cell as defaultStyleCell } from './_defaultStyle';
-
 const CustomCell = (props) => {
+  console.warn('`CustomCell` is deprecated. Use `<Cell cellContentView={} />` instead.');
   const {
     children,
     contentContainerStyle,
@@ -55,7 +54,12 @@ const CustomCell = (props) => {
 
 const styles = StyleSheet.create({
   cell: {
-    ...defaultStyleCell,
+    justifyContent: 'center',
+    paddingLeft: 15,
+    paddingRight: 20,
+    paddingVertical: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
     backgroundColor: '#FFF',
   },
 });
