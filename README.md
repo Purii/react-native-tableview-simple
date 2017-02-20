@@ -34,8 +34,8 @@ Therefore the `Cell`-Component itself can't be manipulated heavily.
 
 *If you aren't satisfied with a component, feel free to create a PR or just create and use a custom component.*
 
-### Submit a Custom Cell-Component
-Maybe you want to add your lovely designed Cell-Component to the project.
+### Submit a Custom `Cell`-Component
+Maybe you want to add your lovely designed `Cell`-Component to the project.
 Just move your component to the folder `components` and choose a meaningful name! :-)    
 
 ## Props
