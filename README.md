@@ -28,14 +28,15 @@ Have a look at the [Examples below](https://github.com/Purii/react-native-tablev
 ```
 
 ## Extensible
-This component provides you with some predefined CSS-styles, inspired by the native TableView.
-You can always mix the `Cell`-instances inside a `Section`, with some Custom-Components.   
-Therefore the `Cell`-Component itself can't be manipulated heavily. If you aren't satisfied with a component, feel free to create a PR or just create and use a custom component. Get inspired by the predefined cellstyles.
+`react-native-tableview-simple` provides you with some predefined CSS-styles, inspired by the native TableView.
+You can always mix the `Cell`-instances inside a `Section`, with other (React-Native)-Views.   
+Therefore the `Cell`-Component itself can't be manipulated heavily.
+
+**If you aren't satisfied with a component, feel free to create a PR or just create and use a custom component.**
 
 ### Submit a Custom Cell-Component
 Maybe you want to add your lovely designed Cell-Component to the project.
 Just move your component to the folder `components` and choose a meaningful name! :-)    
-How about a `SwitchCell`-Component?
 
 ## Props
 ### TableView
@@ -68,9 +69,9 @@ A cell is separated in three views: `cellImageView` | `cellContentView` | `cellA
 | allowFontScaling | `true` | `bool` | Respect Text Size accessibility setting on iOS |
 | backgroundColor | `#FFF` | `string` | Background color of cell |
 | cellStyle | `Basic` | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
-| cellAccessoryView | -` | `React.Component` | Replace accessory view component (**e.g.: add Switch or ActivityIndicator**)|
-| cellContentView | -` | `React.Component` | Replace content view component |
-| cellImageView | -` | `React.Component` | Replace image view component |
+| cellAccessoryView | - | `React.Component` | Replace accessory view component (**e.g.: add Switch or ActivityIndicator**)|
+| cellContentView | - | `React.Component` | Replace content view component |
+| cellImageView | - | `React.Component` | Replace image view component |
 | contentContainerStyle | `{}` | `View.propTypes.style` | These styles will be applied to the content container which wraps all of the child views. Overrides `cellStyle` (**e.g.: Override paddingLeft and paddingRight or set fixed height**) |
 | detail | - | `string` or `number` | Detail value |
 | disableImageResize | `false` | `bool` | Disable resizing of image |
@@ -87,7 +88,7 @@ A cell is separated in three views: `cellImageView` | `cellContentView` | `cellA
 ### CustomCell - **deprecated**
 The `CustomCell` is deprecated.
 Use instead the `Cell`-Component with the prop `cellContentView`.
-Feel free to create additional CellComponents and merge them to the project!
+Feel free to create additional Cell-Components and merge them to the project!
 
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
@@ -340,6 +341,3 @@ const styles = StyleSheet.create({
 AppRegistry.registerComponent('example', () => Example);
 
 ```
-
-## Todo
-* Support an `image`-Prop
