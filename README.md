@@ -69,10 +69,10 @@ A cell is separated in three views: `cellImageView` | `cellContentView` | `cellA
 | allowFontScaling | `true` | `bool` | Respect Text Size accessibility setting on iOS |
 | backgroundColor | `#FFF` | `string` | Background color of cell |
 | cellStyle | `Basic` | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
-| cellAccessoryView | - | `React.Component` | Replace accessory view component (**e.g.: add Switch or ActivityIndicator**)|
+| cellAccessoryView | - | `React.Component` | Replace accessory view component (*e.g.: add Switch or ActivityIndicator*)|
 | cellContentView | - | `React.Component` | Replace content view component |
 | cellImageView | - | `React.Component` | Replace image view component |
-| contentContainerStyle | `{}` | `View.propTypes.style` | These styles will be applied to the content container which wraps all of the child views. Overrides `cellStyle` (**e.g.: Override paddingLeft and paddingRight or set fixed height**) |
+| contentContainerStyle | `{}` | `View.propTypes.style` | These styles will be applied to the content container which wraps all of the child views. Overrides `cellStyle` (*e.g.: Override paddingLeft and paddingRight or set fixed height*) |
 | detail | - | `string` or `number` | Detail value |
 | disableImageResize | `false` | `bool` | Disable resizing of image |
 | highlightActiveOpacity | `0.8` | `number` | Opacity of cell when touch is active |
@@ -85,7 +85,7 @@ A cell is separated in three views: `cellImageView` | `cellContentView` | `cellA
 | titleTextColor | `#000` | `string` | Text color of title |
 | onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 
-### CustomCell - **deprecated**
+### CustomCell - *deprecated*
 The `CustomCell` is deprecated.
 Use instead the `Cell`-Component with the prop `cellContentView`.
 Feel free to create additional Cell-Components and merge them to the project!
