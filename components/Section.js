@@ -113,7 +113,7 @@ class Section extends Component {
               _localstyles.separator_inner,
               {
                 // Better way to priorize and keep defaultProp?
-                marginLeft: separatorInsetLeft !== 15 ? separatorInsetLeft : 55,
+                marginLeft: separatorInsetLeft !== 15 ? separatorInsetLeft : 60,
               },
             ],
           },
