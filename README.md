@@ -32,7 +32,7 @@ Have a look at the [Examples below](https://github.com/Purii/react-native-tablev
 You can always mix the `Cell`-instances inside a `Section`, with other (React-Native)-Views.   
 Therefore the `Cell`-Component itself can't be manipulated heavily.
 
-**If you aren't satisfied with a component, feel free to create a PR or just create and use a custom component.**
+*If you aren't satisfied with a component, feel free to create a PR or just create and use a custom component.*
 
 ### Submit a Custom Cell-Component
 Maybe you want to add your lovely designed Cell-Component to the project.
