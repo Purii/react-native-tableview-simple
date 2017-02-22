@@ -448,6 +448,9 @@ Cell.defaultProps = {
   onPress: false,
   rightDetailColor: '#8E8E93',
   title: '',
+  titleStyle: {},
+  titleStyleDisabled: {},
+  detailStyle: {},
   titleTextColor: '#000',
 };
 
