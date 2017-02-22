@@ -43,6 +43,7 @@ exports[`test renders with accessory 1`] = `
             Object {
               "color": "#007AFF",
             },
+            Object {},
           ]
         }>
         Detail
