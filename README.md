@@ -6,7 +6,7 @@
 This cross-platform component is a copy of the iOS-TableView made with pure CSS. The intention is to provide **a flexible and lightweight alternative to a bridged component**.
 The focus is set on the presentation. The component is therefore not intended to render large data sets.
 A possible use case might be an about- or a settings-screen with a few rows.   
-Have a look at the [Examples below](https://github.com/Purii/react-native-tableview-simple#examples)! :-)
+Have a look at the [examples below](https://github.com/Purii/react-native-tableview-simple#examples)! :-)
 
 ## Installation
 
@@ -62,6 +62,9 @@ Currently `TableView` doesn't support any properties.
 The cellstyles are inspired by the native ones. Just like the available accessories.
 A cell is separated in three views: `cellImageView` | `cellContentView` | `cellAccessoryView`.
 
+
+Have a look at the [examples below](https://github.com/Purii/react-native-tableview-simple#examples)
+
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
 | accessory | - | `string` | Predefined accessory: `DisclosureIndicator`, `Detail`, `DetailDisclosure`, `Checkmark` |
@@ -69,11 +72,13 @@ A cell is separated in three views: `cellImageView` | `cellContentView` | `cellA
 | allowFontScaling | `true` | `bool` | Respect Text Size accessibility setting on iOS |
 | backgroundColor | `#FFF` | `string` | Background color of cell |
 | cellStyle | `Basic` | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
-| cellAccessoryView | - | `React.Component` | Replace accessory view component (*e.g.: add Switch or ActivityIndicator*)|
+| cellAccessoryView | - | `React.Component` | Replace accessory view component (*e.g.: add Switch or ActivityIndicator*) |
 | cellContentView | - | `React.Component` | Replace content view component |
 | cellImageView | - | `React.Component` | Replace image view component |
 | contentContainerStyle | `{}` | `View.propTypes.style` | These styles will be applied to the content container which wraps all of the child views. Overrides `cellStyle` (*e.g.: Override paddingLeft and paddingRight or set fixed height*) |
 | detail | - | `string` or `number` | Detail value |
+| detailStyle | `{}` | `View.propTypes.style` | These styles will be applied to the detail `Text`-Component. |
+| detailStyleDisabled | `{}` | `View.propTypes.style` | These styles will be applied to the detail `Text`-Component for `disabled` state |
 | disableImageResize | `false` | `bool` | Disable resizing of image |
 | highlightActiveOpacity | `0.8` | `number` | Opacity of cell when touch is active |
 | highlightUnderlayColor | `black` | `string` | Color of underlay that will show through when touch is active |
@@ -83,6 +88,7 @@ A cell is separated in three views: `cellImageView` | `cellContentView` | `cellA
 | rightDetailColor | `#8E8E93` | `string` | Text color of right detail |
 | title | - | `string` or `number` or `React.Component` | Title value |
 | titleTextColor | `#000` | `string` | Text color of title |
+| titleStyle | `{}` | `View.propTypes.style` | These styles will be applied to the title `Text`-Component (*e.g.: update `fontSize` or `fontFamily`*) |
 | onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 
 ### CustomCell - *deprecated*
