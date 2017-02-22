@@ -60,9 +60,9 @@ Currently `TableView` doesn't support any properties.
 
 ### Cell
 The cellstyles are inspired by the native ones from `UITableView`. Just like the available accessories.
-But the `Cell` is also highly flexible.
-To get an idea what you can modify via `props`, have a look at the [examples below](https://github.com/Purii/react-native-tableview-simple#examples)
-A cell is separated in three views: `cellImageView` | `cellContentView` | `cellAccessoryView`.
+But the `Cell` is also highly flexible. It is separated in three views: `cellImageView` | `cellContentView` | `cellAccessoryView`, which can be replaced via `props`.
+
+To get an idea what you can modify via `props`, have a look at the [examples below](https://github.com/Purii/react-native-tableview-simple#examples).
 
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
