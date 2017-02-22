@@ -1,7 +1,7 @@
 # react-native-tableview-simple
 [![Build Status](https://travis-ci.org/Purii/react-native-tableview-simple.svg?branch=master)](https://travis-ci.org/Purii/react-native-tableview-simple)
 [![npm version](http://img.shields.io/npm/v/react-native-tableview-simple.svg?style=flat)](https://www.npmjs.com/package/react-native-tableview-simple)
-[![npm](https://img.shields.io/npm/dm/react-native-tableview-simple.svg)]()
+[![npm](https://img.shields.io/npm/dm/react-native-tableview-simple.svg)](https://www.npmjs.com/package/react-native-tableview-simple)
 
 This cross-platform component is a copy of the iOS-TableView made with pure CSS. The intention is to provide **a flexible and lightweight alternative to a bridged component**.
 The focus is set on the presentation. The component is therefore not intended to render large data sets.
