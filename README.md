@@ -59,11 +59,10 @@ Currently `TableView` doesn't support any properties.
 | separatorTintColor | `#C8C7CC` | `string` | Color of separator |
 
 ### Cell
-The cellstyles are inspired by the native ones. Just like the available accessories.
+The cellstyles are inspired by the native ones from `UITableView`. Just like the available accessories.
+But the `Cell` is also highly flexible.
+To get an idea what you can modify via `props`, have a look at the [examples below](https://github.com/Purii/react-native-tableview-simple#examples)
 A cell is separated in three views: `cellImageView` | `cellContentView` | `cellAccessoryView`.
-
-
-Have a look at the [examples below](https://github.com/Purii/react-native-tableview-simple#examples)
 
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
@@ -90,6 +89,49 @@ Have a look at the [examples below](https://github.com/Purii/react-native-tablev
 | titleStyle | `{}` | `View.propTypes.style` | These styles will be applied to the title `Text`-Component (*e.g.: update `fontSize` or `fontFamily`*) |
 | titleStyleDisabled | `{}` | `View.propTypes.style` | These styles will be applied to the title  `Text`-Component, when the cell is disabled |
 | onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
+
+
+#### Wrap `Cell`
+Instead of writing down multiple complex `Cell` instances, you can just wrap a `Cell` and reuse it.
+
+
+```javascript
+...
+import {
+  Cell,
+  Section,
+  TableView,
+} from 'react-native-tableview-simple';
+
+const CellVariant = (props) => (
+  <Cell
+    {...props}
+    cellContentView={
+      <View
+        style={{ alignItems: 'center', flexDirection: 'row', flex: 1, paddingVertical: 10 }}
+      >
+        <Text
+          allowFontScaling
+          numberOfLines={1}
+          style={{ flex: 1, fontSize: 20 }}
+        >
+          {props.title}
+        </Text>
+      </View>
+    }
+  />
+);
+
+....
+<TableView>
+  <Section>
+    <CellVariant title="Element 1" />
+    <CellVariant title="Element 2" />
+    <CellVariant title="Element 3" />
+    <CellVariant title="Element 4" />
+  </Section>
+</TableView>
+```
 
 ### CustomCell - *deprecated*
 The `CustomCell` is deprecated.
