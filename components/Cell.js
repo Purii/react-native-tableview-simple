@@ -22,7 +22,7 @@ const Cell = (props) => {
     cellAccessoryView,
     contentContainerStyle,
     detail,
-    detailStyle,
+    detailTextStyle,
     disableImageResize,
     highlightActiveOpacity,
     highlightUnderlayColor,
@@ -34,9 +34,9 @@ const Cell = (props) => {
     leftDetailColor,
     rightDetailColor,
     title,
+    titleTextStyle,
+    titleTextStyleDisabled,
     titleTextColor,
-    titleStyle,
-    titleStyleDisabled,
   } = props;
 
   const isPressable = !!onPress;
@@ -55,12 +55,12 @@ const Cell = (props) => {
       contentContainerStyle,
     ],
     cell_title: isDisabled
-      ? [styles.cell_title, styles.cell_text__disabled, titleStyleDisabled]
-      : [styles.cell_title, { color: titleTextColor }, titleStyle],
+      ? [styles.cell_title, styles.cell_text__disabled, titleTextStyleDisabled]
+      : [styles.cell_title, { color: titleTextColor }, titleTextStyle],
     cell_leftDetail: [
       styles.cell_leftDetail,
       { color: leftDetailColor },
-      detailStyle,
+      detailTextStyle,
     ],
     cell_leftDetailTitle: isDisabled
       ? [styles.cell_leftDetailTitle, styles.cell_text__disabled]
@@ -68,7 +68,7 @@ const Cell = (props) => {
     cell_rightDetail: [
       styles.cell_rightDetail,
       { color: rightDetailColor },
-      detailStyle,
+      detailTextStyle,
     ],
 
     accessory_checkmark: [
@@ -402,6 +402,7 @@ Cell.propTypes = {
     PropTypes.string,
     PropTypes.number,
   ]),
+  detailTextStyle: View.propTypes.style,
   disableImageResize: PropTypes.bool,
   highlightActiveOpacity: PropTypes.number,
   highlightUnderlayColor: PropTypes.string,
@@ -416,10 +417,9 @@ Cell.propTypes = {
     PropTypes.number,
     PropTypes.element,
   ]),
-  titleStyle: View.propTypes.style,
-  titleStyleDisabled: View.propTypes.style,
-  detailStyle: View.propTypes.style,
   titleTextColor: PropTypes.string,
+  titleTextStyle: View.propTypes.style,
+  titleTextStyleDisabled: View.propTypes.style,
   onPress: PropTypes.oneOfType([
     PropTypes.bool,
     PropTypes.func,
@@ -437,7 +437,7 @@ Cell.defaultProps = {
   contentContainerStyle: {},
   backgroundColor: '#FFF',
   detail: '',
-  detailStyle: {},
+  detailTextStyle: {},
   disableImageResize: false,
   highlightActiveOpacity: 0.8,
   highlightUnderlayColor: 'black',
@@ -449,9 +449,9 @@ Cell.defaultProps = {
   onPress: false,
   rightDetailColor: '#8E8E93',
   title: '',
-  titleStyle: {},
-  titleStyleDisabled: {},
   titleTextColor: '#000',
+  titleTextStyle: {},
+  titleTextStyleDisabled: {},
 };
 
 export default Cell;
