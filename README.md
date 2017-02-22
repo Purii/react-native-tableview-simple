@@ -133,6 +133,8 @@ const CellVariant = (props) => (
     <CellVariant title="Element 4" />
   </Section>
 </TableView>
+
+...
 ```
 
 ### CustomCell - *deprecated*
