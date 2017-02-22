@@ -43,6 +43,7 @@ exports[`test renders with accessory 1`] = `
             Object {
               "color": "#007AFF",
             },
+            Object {},
           ]
         }>
         Detail
@@ -139,6 +140,7 @@ exports[`test renders with left detail 1`] = `
             Object {
               "color": "#007AFF",
             },
+            Object {},
           ]
         }>
         Detail

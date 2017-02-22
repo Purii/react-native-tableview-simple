@@ -52,6 +52,7 @@ exports[`test renders with accessory 1`] = `
               Object {
                 "color": "#000",
               },
+              Object {},
             ]
           }>
           Subtitle
@@ -152,6 +153,7 @@ exports[`test renders with subtitle 1`] = `
               Object {
                 "color": "#000",
               },
+              Object {},
             ]
           }>
           Subtitle

@@ -40,6 +40,7 @@ exports[`test renders basic 1`] = `
             Object {
               "color": "#000",
             },
+            Object {},
           ]
         }>
         Basic
@@ -91,6 +92,7 @@ exports[`test renders with accessory 1`] = `
             Object {
               "color": "#000",
             },
+            Object {},
           ]
         }>
         Basic

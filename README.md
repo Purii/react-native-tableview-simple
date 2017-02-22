@@ -77,8 +77,7 @@ Have a look at the [examples below](https://github.com/Purii/react-native-tablev
 | cellImageView | - | `React.Component` | Replace image view component |
 | contentContainerStyle | `{}` | `View.propTypes.style` | These styles will be applied to the content container which wraps all of the child views. Overrides `cellStyle` (*e.g.: Override paddingLeft and paddingRight or set fixed height*) |
 | detail | - | `string` or `number` | Detail value |
-| detailStyle | `{}` | `View.propTypes.style` | These styles will be applied to the detail `Text`-Component. |
-| detailStyleDisabled | `{}` | `View.propTypes.style` | These styles will be applied to the detail `Text`-Component for `disabled` state |
+| detailStyle | `{}` | `View.propTypes.style` | These styles will be applied to the (left- / right-) detail `Text`-Component. |
 | disableImageResize | `false` | `bool` | Disable resizing of image |
 | highlightActiveOpacity | `0.8` | `number` | Opacity of cell when touch is active |
 | highlightUnderlayColor | `black` | `string` | Color of underlay that will show through when touch is active |
@@ -89,6 +88,7 @@ Have a look at the [examples below](https://github.com/Purii/react-native-tablev
 | title | - | `string` or `number` or `React.Component` | Title value |
 | titleTextColor | `#000` | `string` | Text color of title |
 | titleStyle | `{}` | `View.propTypes.style` | These styles will be applied to the title `Text`-Component (*e.g.: update `fontSize` or `fontFamily`*) |
+| titleStyleDisabled | `{}` | `View.propTypes.style` | These styles will be applied to the title  `Text`-Component, when the cell is disabled |
 | onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 
 ### CustomCell - *deprecated*

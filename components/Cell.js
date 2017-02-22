@@ -22,6 +22,7 @@ const Cell = (props) => {
     cellAccessoryView,
     contentContainerStyle,
     detail,
+    detailStyle,
     disableImageResize,
     highlightActiveOpacity,
     highlightUnderlayColor,
@@ -34,6 +35,8 @@ const Cell = (props) => {
     rightDetailColor,
     title,
     titleTextColor,
+    titleStyle,
+    titleStyleDisabled,
   } = props;
 
   const isPressable = !!onPress;
@@ -52,11 +55,12 @@ const Cell = (props) => {
       contentContainerStyle,
     ],
     cell_title: isDisabled
-      ? [styles.cell_title, styles.cell_text__disabled]
-      : [styles.cell_title, { color: titleTextColor }],
+      ? [styles.cell_title, styles.cell_text__disabled, titleStyleDisabled]
+      : [styles.cell_title, { color: titleTextColor }, titleStyle],
     cell_leftDetail: [
       styles.cell_leftDetail,
       { color: leftDetailColor },
+      detailStyle,
     ],
     cell_leftDetailTitle: isDisabled
       ? [styles.cell_leftDetailTitle, styles.cell_text__disabled]
@@ -64,6 +68,7 @@ const Cell = (props) => {
     cell_rightDetail: [
       styles.cell_rightDetail,
       { color: rightDetailColor },
+      detailStyle,
     ],
 
     accessory_checkmark: [
@@ -411,6 +416,9 @@ Cell.propTypes = {
     PropTypes.number,
     PropTypes.element,
   ]),
+  titleStyle: View.propTypes.style,
+  titleStyleDisabled: View.propTypes.style,
+  detailStyle: View.propTypes.style,
   titleTextColor: PropTypes.string,
   onPress: PropTypes.oneOfType([
     PropTypes.bool,
@@ -429,6 +437,7 @@ Cell.defaultProps = {
   contentContainerStyle: {},
   backgroundColor: '#FFF',
   detail: '',
+  detailStyle: {},
   disableImageResize: false,
   highlightActiveOpacity: 0.8,
   highlightUnderlayColor: 'black',
@@ -440,6 +449,8 @@ Cell.defaultProps = {
   onPress: false,
   rightDetailColor: '#8E8E93',
   title: '',
+  titleStyle: {},
+  titleStyleDisabled: {},
   titleTextColor: '#000',
 };
 
