@@ -55,12 +55,12 @@ const Cell = (props) => {
       contentContainerStyle,
     ],
     cell_title: isDisabled
-      ? [...{}, styles.cell_title, styles.cell_text__disabled, titleStyleDisabled ]
+      ? [...{}, styles.cell_title, styles.cell_text__disabled, titleStyleDisabled]
       : [...{}, styles.cell_title, { color: titleTextColor }, titleStyle],
     cell_leftDetail: [
       styles.cell_leftDetail,
       { color: leftDetailColor },
-      detailStyle
+      detailStyle,
     ],
     cell_leftDetailTitle: isDisabled
       ? [styles.cell_leftDetailTitle, styles.cell_text__disabled]
@@ -68,7 +68,7 @@ const Cell = (props) => {
     cell_rightDetail: [
       styles.cell_rightDetail,
       { color: rightDetailColor },
-      detailStyle
+      detailStyle,
     ],
 
     accessory_checkmark: [
@@ -416,6 +416,9 @@ Cell.propTypes = {
     PropTypes.number,
     PropTypes.element,
   ]),
+  titleStyle: View.propTypes.style,
+  titleStyleDisabled: View.propTypes.style,
+  detailStyle: View.propTypes.style,
   titleTextColor: PropTypes.string,
   onPress: PropTypes.oneOfType([
     PropTypes.bool,
