@@ -97,6 +97,7 @@ Instead of writing down multiple complex `Cell` instances, you can just wrap a `
 
 ```javascript
 ...
+
 import {
   Cell,
   Section,
@@ -122,7 +123,8 @@ const CellVariant = (props) => (
   />
 );
 
-....
+...
+
 <TableView>
   <Section>
     <CellVariant title="Element 1" />
