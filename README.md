@@ -82,7 +82,10 @@ A cell is separated in three views: `cellImageView` | `cellContentView` | `cellA
 | leftDetailColor | `#007AFF` | `string` | Text color of left detail |
 | rightDetailColor | `#8E8E93` | `string` | Text color of right detail |
 | title | - | `string` or `number` or `React.Component` | Title value |
-| titleTextColor | `#000` | `string` | Text color of title |
+| titleTextColor | #000 | `string` | Text color of title. (Deprecated) You can set the color of text along with font and other styles by setting `titleStyle`. |
+| titleStyle | {} | `View.propTypes.style` | These styles will be applied to the title of the cell. Overrides color set in `titleTextColor` if both are set. |
+| titleStyleDisabled | {} | `View.propTypes.style` | These styles will be applied to the title of the cell when disabled |
+| detailStyle | {} | `View.propTypes.style` | These styles will be applied to the detail text of the cell |
 | onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 
 ### CustomCell - *deprecated*
