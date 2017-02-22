@@ -2,7 +2,7 @@
   "name": "react-native-tableview-simple",
   "description": "React Native component for TableView made with pure CSS",
   "homepage": "https://github.com/Purii/react-native-tableview-simple",
-  "version": "0.15.3",
+  "version": "0.16.1",
   "author": "Patrick Puritscher <hello@patrickpuritscher.com>",
   "scripts": {
     "lint": "eslint index.js components/",
@@ -19,12 +19,13 @@
     "react-native",
     "react-component",
     "tableview",
+    "crossplatform",
     "ios",
     "android"
   ],
   "peerDependencies": {
     "react": "*",
-    "react-native": ">=0.35 || 0.41.0-rc"
+    "react-native": ">=0.35 || 0.43.0-rc"
   },
   "bugs": {
     "url": "https://github.com/Purii/react-native-tableview-simple/issues"
@@ -35,16 +36,16 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",
-    "babel-jest": "17.0.2",
-    "babel-preset-react-native": "1.9.0",
-    "eslint": "^3.11.1",
-    "eslint-config-airbnb": "^13.0.0",
+    "babel-jest": "18.0.0",
+    "babel-preset-react-native": "1.9.1",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-react": "^6.8.0",
-    "jest": "17.0.3",
-    "react": "^15.4.1",
-    "react-native": "^0.38.1",
-    "react-test-renderer": "15.4.1"
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "jest": "18.1.0",
+    "react": "^15.4.2",
+    "react-native": "^0.41.2",
+    "react-test-renderer": "15.4.2"
   }
 }

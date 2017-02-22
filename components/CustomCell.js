@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 const CustomCell = (props) => {
+  console.warn('`CustomCell` is deprecated. Use `<Cell cellContentView={} />` instead.');
   const {
     children,
     contentContainerStyle,
@@ -53,14 +54,13 @@ const CustomCell = (props) => {
 
 const styles = StyleSheet.create({
   cell: {
-    backgroundColor: '#fff',
     justifyContent: 'center',
     paddingLeft: 15,
     paddingRight: 20,
-    paddingTop: 10,
-    paddingBottom: 10,
+    paddingVertical: 10,
     flexDirection: 'row',
     alignItems: 'center',
+    backgroundColor: '#FFF',
   },
 });
 
@@ -68,7 +68,7 @@ CustomCell.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.element,
-  ]),
+  ]).isRequired,
   contentContainerStyle: View.propTypes.style,
   highlightActiveOpacity: PropTypes.number,
   highlightUnderlayColor: PropTypes.string,
@@ -82,9 +82,13 @@ CustomCell.propTypes = {
 };
 
 CustomCell.defaultProps = {
+  contentContainerStyle: {},
   highlightActiveOpacity: 0.8,
   highlightUnderlayColor: 'black',
   isDisabled: false,
+  onPress: null,
+  onHighlightRow: null,
+  onUnHighlightRow: null,
 };
 
 export default CustomCell;

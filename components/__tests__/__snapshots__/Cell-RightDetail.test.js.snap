@@ -1,23 +1,30 @@
 exports[`test renders with accessory 1`] = `
 <View>
-  <View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "minHeight": 44,
+          "paddingLeft": 15,
+          "paddingRight": 20,
+        },
+        Object {
+          "backgroundColor": "#FFF",
+        },
+        Object {},
+      ]
+    }>
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "minHeight": 44,
-            "paddingLeft": 15,
-            "paddingRight": 20,
-            "paddingVertical": 10,
-          },
-          Object {
-            "backgroundColor": "#fff",
-          },
-          undefined,
-        ]
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingVertical": 10,
+        }
       }>
       <Text
         accessible={true}
@@ -56,6 +63,13 @@ exports[`test renders with accessory 1`] = `
         }>
         Detail
       </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "justifyContent": "center",
+        }
+      }>
       <View
         style={
           Object {
@@ -80,24 +94,31 @@ exports[`test renders with accessory 1`] = `
 
 exports[`test renders with right detail 1`] = `
 <View>
-  <View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "minHeight": 44,
+          "paddingLeft": 15,
+          "paddingRight": 20,
+        },
+        Object {
+          "backgroundColor": "#FFF",
+        },
+        Object {},
+      ]
+    }>
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "minHeight": 44,
-            "paddingLeft": 15,
-            "paddingRight": 20,
-            "paddingVertical": 10,
-          },
-          Object {
-            "backgroundColor": "#fff",
-          },
-          undefined,
-        ]
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingVertical": 10,
+        }
       }>
       <Text
         accessible={true}

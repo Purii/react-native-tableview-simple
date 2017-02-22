@@ -1,19 +1,33 @@
 exports[`test renders with accessory 1`] = `
 <View>
-  <View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "minHeight": 44,
+          "paddingLeft": 15,
+          "paddingRight": 20,
+        },
+        Object {
+          "backgroundColor": "#FFF",
+        },
+        Object {},
+      ]
+    }>
     <View
       style={
         Array [
           Object {
             "alignItems": "center",
+            "flex": 1,
             "flexDirection": "row",
-            "minHeight": 44,
-            "paddingLeft": 15,
-            "paddingRight": 20,
-            "paddingVertical": 4,
+            "justifyContent": "center",
+            "paddingVertical": 10,
           },
           Object {
-            "backgroundColor": "#fff",
+            "paddingVertical": 4,
           },
         ]
       }>
@@ -55,6 +69,13 @@ exports[`test renders with accessory 1`] = `
           No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
         </Text>
       </View>
+    </View>
+    <View
+      style={
+        Object {
+          "justifyContent": "center",
+        }
+      }>
       <View
         style={
           Object {
@@ -79,20 +100,34 @@ exports[`test renders with accessory 1`] = `
 
 exports[`test renders with subtitle 1`] = `
 <View>
-  <View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "minHeight": 44,
+          "paddingLeft": 15,
+          "paddingRight": 20,
+        },
+        Object {
+          "backgroundColor": "#FFF",
+        },
+        Object {},
+      ]
+    }>
     <View
       style={
         Array [
           Object {
             "alignItems": "center",
+            "flex": 1,
             "flexDirection": "row",
-            "minHeight": 44,
-            "paddingLeft": 15,
-            "paddingRight": 20,
-            "paddingVertical": 4,
+            "justifyContent": "center",
+            "paddingVertical": 10,
           },
           Object {
-            "backgroundColor": "#fff",
+            "paddingVertical": 4,
           },
         ]
       }>

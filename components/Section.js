@@ -44,23 +44,20 @@ class Section extends Component {
      */
     // eslint-disable-next-line no-underscore-dangle
     const _styles = {
+      ...styles,
       section: [
-        ...{},
         styles.section,
         { backgroundColor: sectionTintColor },
       ],
       sectionheader__text: [
-        ...{},
         styles.sectionheader__text,
         { color: headerTextColor },
       ],
       sectionfooter__text: [
-        ...{},
         styles.sectionfooter__text,
         { color: footerTextColor },
       ],
       separator_inner: [
-        ...{},
         styles.separator_inner,
         {
           backgroundColor: separatorTintColor,
@@ -77,6 +74,9 @@ class Section extends Component {
      * @return {View}       [description]
      */
     const renderChild = (child, index) => {
+      if (!child) {
+        return null;
+      }
       const propsToAdd = {
         onHighlightRow: () => this.handleHighlightRow(index),
         onUnHighlightRow: this.handleUnHighlightRow,
@@ -88,26 +88,48 @@ class Section extends Component {
       }
 
       // eslint-disable-next-line no-underscore-dangle
-      const _localstyles = Object.assign({}, _styles);
-      _localstyles.separator = [
-        ...{},
-        styles.separator,
-        {
-          backgroundColor: child.props.backgroundColor,
-        },
-      ];
+      let _localstyles = { ..._styles };
 
-      const invisibleSeparator = this.state.highlightedRowIndex === index || this.state.highlightedRowIndex === index + 1;
+      _localstyles = {
+        ..._localstyles,
+        separator: [
+          _localstyles.separator,
+          {
+            backgroundColor: child.props.backgroundColor,
+          },
+        ],
+      };
+
+      // Add margin, if Image is provided
+      if (child.props.image) {
+        _localstyles = {
+          ..._localstyles,
+          separator_inner: [
+            _localstyles.separator_inner,
+            {
+              // Better way to priorize and keep defaultProp?
+              marginLeft: separatorInsetLeft !== 15 ? separatorInsetLeft : 60,
+            },
+          ],
+        };
+      }
+
+      const invisibleSeparator =
+        this.state.highlightedRowIndex === index
+        || this.state.highlightedRowIndex === index + 1;
 
       if (invisibleSeparator) {
-        _localstyles.separator_inner = [
-          ...{},
-          _styles.separator_inner,
-          {
-            backgroundColor: 'transparent',
-          },
-        ];
+        _localstyles = {
+          ..._localstyles,
+          separator_inner: [
+            _localstyles.separator_inner,
+            {
+              backgroundColor: 'transparent',
+            },
+          ],
+        };
       }
+
 
       return (
         <View>
@@ -179,7 +201,7 @@ const styles = StyleSheet.create({
   section_inner: {
     borderTopWidth: StyleSheet.hairlineWidth,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderColor: '#c8c7cc',
+    borderColor: '#C8C7CC',
   },
   sectionheader: {
     paddingLeft: 15,
@@ -223,6 +245,11 @@ Section.propTypes = {
 
 Section.defaultProps = {
   allowFontScaling: true,
+  children: null,
+  footerComponent: null,
+  headerComponent: null,
+  footer: null,
+  header: null,
   headerTextColor: '#6d6d72',
   hideSeparator: false,
   sectionTintColor: '#EFEFF4',

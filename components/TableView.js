@@ -28,4 +28,8 @@ TableView.propTypes = {
   ]),
 };
 
+TableView.defaultProps = {
+  children: null,
+};
+
 export default TableView;
