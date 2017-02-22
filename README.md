@@ -139,16 +139,8 @@ const CellVariant = (props) => (
 
 ### CustomCell - *deprecated*
 The `CustomCell` is deprecated.
-Use instead the `Cell`-Component with the prop `cellContentView`.
-Feel free to create additional Cell-Components and merge them to the project!
+Instead you can use the prop `cellContentView` of `Cell`.
 
-| Prop  | Default | Type | Description |
-| :------------ | :---------------:| :---------------:| ---------------|
-| contentContainerStyle | `{}` | `View.propTypes.style` | These styles will be applied to the content container which wraps all of the child views |
-| highlightActiveOpacity | `0.8` | `number` | Opacity of cell when touch is active |
-| highlightUnderlayColor | `black` | `string` | Color of underlay that will show through when touch is active |
-| isDisabled | `false` | `bool` | Cell is disabled. `onPress` will not get triggered |
-| onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 
 ## Examples
 The following examples can be found in the folder `example`.   
