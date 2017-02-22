@@ -85,9 +85,9 @@ A cell is separated in three views: `cellImageView` | `cellContentView` | `cellA
 | leftDetailColor | `#007AFF` | `string` | Text color of left detail |
 | rightDetailColor | `#8E8E93` | `string` | Text color of right detail |
 | title | - | `string` or `number` or `React.Component` | Title value |
+| titleTextColor | `#000` | `string` | Text color of title |
 | titleTextStyle | `{}` | `View.propTypes.style` | These styles will be applied to the title `Text`-Component (*e.g.: update `fontSize` or `fontFamily`*) |
 | titleTextStyleDisabled | `{}` | `View.propTypes.style` | These styles will be applied to the title  `Text`-Component, when the cell is disabled |
-| titleTextColor | `#000` | `string` | Text color of title |
 | onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
 
 
