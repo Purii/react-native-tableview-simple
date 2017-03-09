@@ -1,12 +1,7 @@
 /* eslint-disable import/no-unresolved */
-import React, {
-  PropTypes,
-} from 'react';
+import React, { PropTypes } from 'react';
 
-import {
-  StyleSheet,
-  View,
-} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 /* eslint-enable import/no-unresolved */
 
 const TableView = props => (

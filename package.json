@@ -5,13 +5,17 @@
   "version": "0.16.4",
   "author": "Patrick Puritscher <hello@patrickpuritscher.com>",
   "scripts": {
+    "format": "prettier --trailing-comma es5 --single-quote --write 'components/**/*.js'",
     "lint": "eslint index.js components/",
     "jest": "jest",
     "test": "npm run lint && npm run jest"
   },
   "jest": {
     "preset": "react-native",
-    "testPathIgnorePatterns": ["/node_modules/", "<rootDir>/example/"]
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/example/"
+    ]
   },
   "main": "index.js",
   "license": "MIT",
@@ -45,6 +49,7 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.0",
     "jest": "18.1.0",
+    "prettier": "^0.22.0",
     "react": "^15.4.2",
     "react-native": "^0.41.2",
     "react-test-renderer": "15.4.2"

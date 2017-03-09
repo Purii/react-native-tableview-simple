@@ -1,16 +1,9 @@
 /* eslint-disable import/no-unresolved */
-import React, {
-  PropTypes,
-} from 'react';
+import React, { PropTypes } from 'react';
 
-import {
-  StyleSheet,
-  Text,
-  TouchableHighlight,
-  View,
-} from 'react-native';
+import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 
-const Cell = (props) => {
+const Cell = props => {
   const {
     accessory,
     accessoryColor,
@@ -135,7 +128,9 @@ const Cell = (props) => {
   const renderImageView = () => {
     if (!image) return null;
     const propsToAdd = {
-      style: disableImageResize ? image.props.style : [image.props.style, _styles.image],
+      style: disableImageResize
+        ? image.props.style
+        : [image.props.style, _styles.image],
     };
     return (
       <View style={_styles.cellImageView}>
@@ -176,7 +171,11 @@ const Cell = (props) => {
       <Text
         allowFontScaling={allowFontScaling}
         numberOfLines={1}
-        style={isDisabled ? [_styles.cell_rightDetail, _styles.cell_text__disabled] : _styles.cell_rightDetail}
+        style={
+          isDisabled
+            ? [_styles.cell_rightDetail, _styles.cell_text__disabled]
+            : _styles.cell_rightDetail
+        }
       >
         {detail}
       </Text>
@@ -192,7 +191,11 @@ const Cell = (props) => {
       <Text
         allowFontScaling={allowFontScaling}
         numberOfLines={1}
-        style={isDisabled ? [_styles.cell_leftDetail, _styles.cell_text__disabled] : _styles.cell_leftDetail}
+        style={
+          isDisabled
+            ? [_styles.cell_leftDetail, _styles.cell_text__disabled]
+            : _styles.cell_leftDetail
+        }
       >
         {detail}
       </Text>
@@ -211,7 +214,9 @@ const Cell = (props) => {
     * @return {View} View with View, Text, Text and Accessory
     */
   const renderCellSubtitle = () => (
-    <View style={[_styles.cellContentView, _styles.cellContentView__type_subtitle]}>
+    <View
+      style={[_styles.cellContentView, _styles.cellContentView__type_subtitle]}
+    >
       <View style={_styles.cellinner__subtitle}>
         <Text
           allowFontScaling={allowFontScaling}
@@ -223,14 +228,17 @@ const Cell = (props) => {
         <Text
           allowFontScaling={allowFontScaling}
           numberOfLines={1}
-          style={isDisabled ? [_styles.cell_subtitle, _styles.cell_text__disabled] : _styles.cell_subtitle}
+          style={
+            isDisabled
+              ? [_styles.cell_subtitle, _styles.cell_text__disabled]
+              : _styles.cell_subtitle
+          }
         >
           {detail}
         </Text>
       </View>
     </View>
   );
-
 
   /**
     * Renders correct contentView
@@ -263,7 +271,6 @@ const Cell = (props) => {
     </View>
   );
 
-
   if (isPressable && !isDisabled) {
     return (
       <TouchableHighlight
@@ -277,7 +284,7 @@ const Cell = (props) => {
       </TouchableHighlight>
     );
   }
-  return (<View>{renderCell()}</View>);
+  return <View>{renderCell()}</View>;
 };
 
 const styles = StyleSheet.create({
@@ -348,9 +355,11 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderRightWidth: 1,
     borderColor: '#c7c7cc',
-    transform: [{
-      rotate: '45deg',
-    }],
+    transform: [
+      {
+        rotate: '45deg',
+      },
+    ],
   },
   accessory_detail: {
     width: 20,
@@ -379,17 +388,16 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     borderLeftWidth: 2,
     borderColor: '#007AFF',
-    transform: [{
-      rotate: '-45deg',
-    }],
+    transform: [
+      {
+        rotate: '-45deg',
+      },
+    ],
   },
 });
 
 Cell.propTypes = {
-  accessory: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.string,
-  ]),
+  accessory: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   accessoryColor: PropTypes.string.isRequired,
   allowFontScaling: PropTypes.bool,
   cellStyle: PropTypes.string,
@@ -398,10 +406,7 @@ Cell.propTypes = {
   cellAccessoryView: PropTypes.element,
   contentContainerStyle: View.propTypes.style,
   backgroundColor: PropTypes.string.isRequired,
-  detail: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
+  detail: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   detailTextStyle: Text.propTypes.style,
   disableImageResize: PropTypes.bool,
   highlightActiveOpacity: PropTypes.number,
@@ -420,10 +425,7 @@ Cell.propTypes = {
   titleTextColor: PropTypes.string,
   titleTextStyle: Text.propTypes.style,
   titleTextStyleDisabled: Text.propTypes.style,
-  onPress: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.func,
-  ]),
+  onPress: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
 };
 
 Cell.defaultProps = {

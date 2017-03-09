@@ -1,25 +1,20 @@
 /* eslint-disable import/no-unresolved */
-import React, {
-  Component,
-  PropTypes,
-} from 'react';
+import React, { Component, PropTypes } from 'react';
 
-import {
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 class Section extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
       highlightedRowIndex: undefined,
     };
 
-    this.handleHighlightRow = index => !this.state.highlightedRowIndex && this.setState({ highlightedRowIndex: index });
-    this.handleUnHighlightRow = () => this.setState({ highlightedRowIndex: undefined });
+    this.handleHighlightRow = index =>
+      !this.state.highlightedRowIndex &&
+      this.setState({ highlightedRowIndex: index });
+    this.handleUnHighlightRow = () =>
+      this.setState({ highlightedRowIndex: undefined });
   }
   render() {
     const {
@@ -45,10 +40,7 @@ class Section extends Component {
     // eslint-disable-next-line no-underscore-dangle
     const _styles = {
       ...styles,
-      section: [
-        styles.section,
-        { backgroundColor: sectionTintColor },
-      ],
+      section: [styles.section, { backgroundColor: sectionTintColor }],
       sectionheader__text: [
         styles.sectionheader__text,
         { color: headerTextColor },
@@ -83,7 +75,12 @@ class Section extends Component {
       };
 
       // Skip rendering of separator
-      if (hideSeparator || !Array.isArray(children) || children.length === 1 || index === children.length - 1) {
+      if (
+        hideSeparator ||
+        !Array.isArray(children) ||
+        children.length === 1 ||
+        index === children.length - 1
+      ) {
         return React.cloneElement(child, propsToAdd);
       }
 
@@ -114,9 +111,8 @@ class Section extends Component {
         };
       }
 
-      const invisibleSeparator =
-        this.state.highlightedRowIndex === index
-        || this.state.highlightedRowIndex === index + 1;
+      const invisibleSeparator = this.state.highlightedRowIndex === index ||
+        this.state.highlightedRowIndex === index + 1;
 
       if (invisibleSeparator) {
         _localstyles = {
@@ -129,7 +125,6 @@ class Section extends Component {
           ],
         };
       }
-
 
       return (
         <View>
@@ -219,13 +214,11 @@ const styles = StyleSheet.create({
   sectionfooter__text: {
     fontSize: 13,
   },
-  separator: {
-  },
+  separator: {},
   separator_inner: {
     height: StyleSheet.hairlineWidth,
   },
 });
-
 
 Section.propTypes = {
   allowFontScaling: PropTypes.bool,

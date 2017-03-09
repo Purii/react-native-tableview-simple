@@ -1,16 +1,12 @@
 /* eslint-disable import/no-unresolved */
-import React, {
-  PropTypes,
-} from 'react';
+import React, { PropTypes } from 'react';
 
-import {
-  StyleSheet,
-  TouchableHighlight,
-  View,
-} from 'react-native';
+import { StyleSheet, TouchableHighlight, View } from 'react-native';
 
-const CustomCell = (props) => {
-  console.warn('`CustomCell` is deprecated. Use `<Cell cellContentView={} />` instead.');
+const CustomCell = props => {
+  console.warn(
+    '`CustomCell` is deprecated. Use `<Cell cellContentView={} />` instead.'
+  );
   const {
     children,
     contentContainerStyle,
@@ -29,11 +25,7 @@ const CustomCell = (props) => {
     */
   // eslint-disable-next-line no-underscore-dangle
   const _styles = {
-    cell: [
-      ...{},
-      styles.cell,
-      contentContainerStyle,
-    ],
+    cell: [...{}, styles.cell, contentContainerStyle],
   };
 
   if (isPressable && !isDisabled) {
@@ -49,7 +41,7 @@ const CustomCell = (props) => {
       </TouchableHighlight>
     );
   }
-  return (<View style={_styles.cell}>{children}</View>);
+  return <View style={_styles.cell}>{children}</View>;
 };
 
 const styles = StyleSheet.create({
@@ -73,10 +65,7 @@ CustomCell.propTypes = {
   highlightActiveOpacity: PropTypes.number,
   highlightUnderlayColor: PropTypes.string,
   isDisabled: PropTypes.bool,
-  onPress: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.func,
-  ]),
+  onPress: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
   onHighlightRow: PropTypes.func,
   onUnHighlightRow: PropTypes.func,
 };
