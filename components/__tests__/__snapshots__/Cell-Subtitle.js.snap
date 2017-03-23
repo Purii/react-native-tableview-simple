@@ -1,4 +1,6 @@
-exports[`test renders with accessory 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders with accessory 1`] = `
 <View>
   <View
     style={
@@ -15,7 +17,8 @@ exports[`test renders with accessory 1`] = `
         },
         Object {},
       ]
-    }>
+    }
+  >
     <View
       style={
         Array [
@@ -30,14 +33,16 @@ exports[`test renders with accessory 1`] = `
             "paddingVertical": 4,
           },
         ]
-      }>
+      }
+    >
       <View
         style={
           Object {
             "flex": 1,
             "flexDirection": "column",
           }
-        }>
+        }
+      >
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -54,7 +59,8 @@ exports[`test renders with accessory 1`] = `
               },
               Object {},
             ]
-          }>
+          }
+        >
           Subtitle
         </Text>
         <Text
@@ -66,7 +72,8 @@ exports[`test renders with accessory 1`] = `
             Object {
               "fontSize": 11,
             }
-          }>
+          }
+        >
           No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
         </Text>
       </View>
@@ -76,7 +83,8 @@ exports[`test renders with accessory 1`] = `
         Object {
           "justifyContent": "center",
         }
-      }>
+      }
+    >
       <View
         style={
           Object {
@@ -93,13 +101,14 @@ exports[`test renders with accessory 1`] = `
             ],
             "width": 10,
           }
-        } />
+        }
+      />
     </View>
   </View>
 </View>
 `;
 
-exports[`test renders with subtitle 1`] = `
+exports[`renders with subtitle 1`] = `
 <View>
   <View
     style={
@@ -116,7 +125,8 @@ exports[`test renders with subtitle 1`] = `
         },
         Object {},
       ]
-    }>
+    }
+  >
     <View
       style={
         Array [
@@ -131,14 +141,16 @@ exports[`test renders with subtitle 1`] = `
             "paddingVertical": 4,
           },
         ]
-      }>
+      }
+    >
       <View
         style={
           Object {
             "flex": 1,
             "flexDirection": "column",
           }
-        }>
+        }
+      >
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -155,7 +167,8 @@ exports[`test renders with subtitle 1`] = `
               },
               Object {},
             ]
-          }>
+          }
+        >
           Subtitle
         </Text>
         <Text
@@ -167,7 +180,8 @@ exports[`test renders with subtitle 1`] = `
             Object {
               "fontSize": 11,
             }
-          }>
+          }
+        >
           No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
         </Text>
       </View>

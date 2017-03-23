@@ -1,4 +1,6 @@
-exports[`test renders basic 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders basic 1`] = `
 <View>
   <View
     style={
@@ -15,7 +17,8 @@ exports[`test renders basic 1`] = `
         },
         Object {},
       ]
-    }>
+    }
+  >
     <View
       style={
         Object {
@@ -25,7 +28,8 @@ exports[`test renders basic 1`] = `
           "justifyContent": "center",
           "paddingVertical": 10,
         }
-      }>
+      }
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -42,7 +46,8 @@ exports[`test renders basic 1`] = `
             },
             Object {},
           ]
-        }>
+        }
+      >
         Basic
       </Text>
     </View>
@@ -50,7 +55,7 @@ exports[`test renders basic 1`] = `
 </View>
 `;
 
-exports[`test renders with accessory 1`] = `
+exports[`renders with accessory 1`] = `
 <View>
   <View
     style={
@@ -67,7 +72,8 @@ exports[`test renders with accessory 1`] = `
         },
         Object {},
       ]
-    }>
+    }
+  >
     <View
       style={
         Object {
@@ -77,7 +83,8 @@ exports[`test renders with accessory 1`] = `
           "justifyContent": "center",
           "paddingVertical": 10,
         }
-      }>
+      }
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -94,7 +101,8 @@ exports[`test renders with accessory 1`] = `
             },
             Object {},
           ]
-        }>
+        }
+      >
         Basic
       </Text>
     </View>
@@ -103,7 +111,8 @@ exports[`test renders with accessory 1`] = `
         Object {
           "justifyContent": "center",
         }
-      }>
+      }
+    >
       <View
         style={
           Object {
@@ -120,7 +129,8 @@ exports[`test renders with accessory 1`] = `
             ],
             "width": 10,
           }
-        } />
+        }
+      />
     </View>
   </View>
 </View>
