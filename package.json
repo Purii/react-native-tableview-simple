@@ -47,17 +47,18 @@
     "url": "git@github.com:Purii/react-native-tableview-simple.git"
   },
   "devDependencies": {
-    "babel-jest": "18.0.0",
+    "babel-jest": "19.0.0",
     "babel-preset-react-native": "1.9.1",
-    "eslint": "^3.15.0",
+    "eslint": "^3.18.0",
     "eslint-config-prettier": "^1.5.0",
-    "eslint-plugin-react": "^6.10.0",
+    "eslint-plugin-prettier": "^2.0.1",
+    "eslint-plugin-react": "^6.10.3",
     "husky": "^0.13.2",
-    "jest": "18.1.0",
-    "lint-staged": "^3.3.1",
+    "jest": "19.0.2",
+    "lint-staged": "^3.4.0",
     "prettier": "^0.22.0",
     "react": "^15.4.2",
-    "react-native": "^0.41.2",
+    "react-native": "^0.42.3",
     "react-test-renderer": "15.4.2"
   }
 }
