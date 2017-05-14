@@ -20,6 +20,10 @@ TableView.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.element,
+    // Allow false, null, undefined and true, because they are valid children according docs
+    PropTypes.bool,
+    null,
+    undefined,
   ]),
 };
 
