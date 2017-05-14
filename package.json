@@ -5,7 +5,9 @@
   "version": "0.16.4",
   "author": "Patrick Puritscher <hello@patrickpuritscher.com>",
   "scripts": {
-    "format": "prettier --trailing-comma es5 --single-quote --write 'components/**/*.js'",
+    "format:src": "prettier --trailing-comma es5 --single-quote --write 'components/**/*.js'",
+    "format:example": "prettier --trailing-comma es5 --single-quote --write 'example/*.js'",
+    "format": "npm run format:src && npm run format:example",
     "jest": "jest",
     "lint": "eslint index.js components/",
     "precommit": "lint-staged",
