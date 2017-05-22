@@ -1,24 +1,35 @@
-exports[`test renders with accessory 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders with accessory 1`] = `
 <View>
-  <View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "minHeight": 44,
+          "paddingLeft": 15,
+          "paddingRight": 20,
+        },
+        Object {
+          "backgroundColor": "#FFF",
+        },
+        Object {},
+      ]
+    }
+  >
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "minHeight": 44,
-            "paddingLeft": 15,
-            "paddingRight": 20,
-            "paddingVertical": 10,
-          },
-          Object {
-            "backgroundColor": "#fff",
-          },
-          undefined,
-        ]
-      }>
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingVertical": 10,
+        }
+      }
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -36,8 +47,10 @@ exports[`test renders with accessory 1`] = `
             Object {
               "color": "#007AFF",
             },
+            Object {},
           ]
-        }>
+        }
+      >
         Detail
       </Text>
       <Text
@@ -50,15 +63,23 @@ exports[`test renders with accessory 1`] = `
             Object {
               "flex": 1,
               "fontSize": 12,
-              "paddingVertical": 3,
             },
             Object {
               "color": "#000",
             },
           ]
-        }>
+        }
+      >
         LeftDetail
       </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "justifyContent": "center",
+        }
+      }
+    >
       <View
         style={
           Object {
@@ -75,33 +96,43 @@ exports[`test renders with accessory 1`] = `
             ],
             "width": 10,
           }
-        } />
+        }
+      />
     </View>
   </View>
 </View>
 `;
 
-exports[`test renders with left detail 1`] = `
+exports[`renders with left detail 1`] = `
 <View>
-  <View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "minHeight": 44,
+          "paddingLeft": 15,
+          "paddingRight": 20,
+        },
+        Object {
+          "backgroundColor": "#FFF",
+        },
+        Object {},
+      ]
+    }
+  >
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "minHeight": 44,
-            "paddingLeft": 15,
-            "paddingRight": 20,
-            "paddingVertical": 10,
-          },
-          Object {
-            "backgroundColor": "#fff",
-          },
-          undefined,
-        ]
-      }>
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingVertical": 10,
+        }
+      }
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -119,8 +150,10 @@ exports[`test renders with left detail 1`] = `
             Object {
               "color": "#007AFF",
             },
+            Object {},
           ]
-        }>
+        }
+      >
         Detail
       </Text>
       <Text
@@ -133,13 +166,13 @@ exports[`test renders with left detail 1`] = `
             Object {
               "flex": 1,
               "fontSize": 12,
-              "paddingVertical": 3,
             },
             Object {
               "color": "#000",
             },
           ]
-        }>
+        }
+      >
         LeftDetail
       </Text>
     </View>

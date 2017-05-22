@@ -1,24 +1,35 @@
-exports[`test renders basic 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders basic 1`] = `
 <View>
-  <View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "minHeight": 44,
+          "paddingLeft": 15,
+          "paddingRight": 20,
+        },
+        Object {
+          "backgroundColor": "#FFF",
+        },
+        Object {},
+      ]
+    }
+  >
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "minHeight": 44,
-            "paddingLeft": 15,
-            "paddingRight": 20,
-            "paddingVertical": 10,
-          },
-          Object {
-            "backgroundColor": "#fff",
-          },
-          undefined,
-        ]
-      }>
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingVertical": 10,
+        }
+      }
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -33,8 +44,10 @@ exports[`test renders basic 1`] = `
             Object {
               "color": "#000",
             },
+            Object {},
           ]
-        }>
+        }
+      >
         Basic
       </Text>
     </View>
@@ -42,27 +55,36 @@ exports[`test renders basic 1`] = `
 </View>
 `;
 
-exports[`test renders with accessory 1`] = `
+exports[`renders with accessory 1`] = `
 <View>
-  <View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "minHeight": 44,
+          "paddingLeft": 15,
+          "paddingRight": 20,
+        },
+        Object {
+          "backgroundColor": "#FFF",
+        },
+        Object {},
+      ]
+    }
+  >
     <View
       style={
-        Array [
-          Object {
-            "alignItems": "center",
-            "flexDirection": "row",
-            "justifyContent": "center",
-            "minHeight": 44,
-            "paddingLeft": 15,
-            "paddingRight": 20,
-            "paddingVertical": 10,
-          },
-          Object {
-            "backgroundColor": "#fff",
-          },
-          undefined,
-        ]
-      }>
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "paddingVertical": 10,
+        }
+      }
+    >
       <Text
         accessible={true}
         allowFontScaling={true}
@@ -77,10 +99,20 @@ exports[`test renders with accessory 1`] = `
             Object {
               "color": "#000",
             },
+            Object {},
           ]
-        }>
+        }
+      >
         Basic
       </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "justifyContent": "center",
+        }
+      }
+    >
       <View
         style={
           Object {
@@ -97,7 +129,8 @@ exports[`test renders with accessory 1`] = `
             ],
             "width": 10,
           }
-        } />
+        }
+      />
     </View>
   </View>
 </View>

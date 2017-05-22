@@ -1,15 +1,14 @@
 /* eslint-disable import/no-unresolved */
-import React, {
-  PropTypes,
-} from 'react';
+import React from 'react';
 
-import {
-  StyleSheet,
-  TouchableHighlight,
-  View,
-} from 'react-native';
+import PropTypes from 'prop-types';
 
-const CustomCell = (props) => {
+import { StyleSheet, TouchableHighlight, View } from 'react-native';
+
+const CustomCell = props => {
+  console.warn(
+    '`CustomCell` is deprecated. Use `<Cell cellContentView={} />` instead.'
+  );
   const {
     children,
     contentContainerStyle,
@@ -28,11 +27,7 @@ const CustomCell = (props) => {
     */
   // eslint-disable-next-line no-underscore-dangle
   const _styles = {
-    cell: [
-      ...{},
-      styles.cell,
-      contentContainerStyle,
-    ],
+    cell: [...{}, styles.cell, contentContainerStyle],
   };
 
   if (isPressable && !isDisabled) {
@@ -48,19 +43,18 @@ const CustomCell = (props) => {
       </TouchableHighlight>
     );
   }
-  return (<View style={_styles.cell}>{children}</View>);
+  return <View style={_styles.cell}>{children}</View>;
 };
 
 const styles = StyleSheet.create({
   cell: {
-    backgroundColor: '#fff',
     justifyContent: 'center',
     paddingLeft: 15,
     paddingRight: 20,
-    paddingTop: 10,
-    paddingBottom: 10,
+    paddingVertical: 10,
     flexDirection: 'row',
     alignItems: 'center',
+    backgroundColor: '#FFF',
   },
 });
 
@@ -68,23 +62,24 @@ CustomCell.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.element,
-  ]),
+  ]).isRequired,
   contentContainerStyle: View.propTypes.style,
   highlightActiveOpacity: PropTypes.number,
   highlightUnderlayColor: PropTypes.string,
   isDisabled: PropTypes.bool,
-  onPress: PropTypes.oneOfType([
-    PropTypes.bool,
-    PropTypes.func,
-  ]),
+  onPress: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
   onHighlightRow: PropTypes.func,
   onUnHighlightRow: PropTypes.func,
 };
 
 CustomCell.defaultProps = {
+  contentContainerStyle: {},
   highlightActiveOpacity: 0.8,
   highlightUnderlayColor: 'black',
   isDisabled: false,
+  onPress: null,
+  onHighlightRow: null,
+  onUnHighlightRow: null,
 };
 
 export default CustomCell;

@@ -1,12 +1,9 @@
 /* eslint-disable import/no-unresolved */
-import React, {
-  PropTypes,
-} from 'react';
+import React from 'react';
 
-import {
-  StyleSheet,
-  View,
-} from 'react-native';
+import PropTypes from 'prop-types';
+
+import { StyleSheet, View } from 'react-native';
 /* eslint-enable import/no-unresolved */
 
 const TableView = props => (
@@ -23,9 +20,13 @@ const styles = StyleSheet.create({
 
 TableView.propTypes = {
   children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
   ]),
+};
+
+TableView.defaultProps = {
+  children: null,
 };
 
 export default TableView;

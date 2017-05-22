@@ -1,29 +1,48 @@
-exports[`test renders with accessory 1`] = `
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders with accessory 1`] = `
 <View>
-  <View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "minHeight": 44,
+          "paddingLeft": 15,
+          "paddingRight": 20,
+        },
+        Object {
+          "backgroundColor": "#FFF",
+        },
+        Object {},
+      ]
+    }
+  >
     <View
       style={
         Array [
           Object {
             "alignItems": "center",
+            "flex": 1,
             "flexDirection": "row",
-            "minHeight": 44,
-            "paddingLeft": 15,
-            "paddingRight": 20,
-            "paddingVertical": 4,
+            "justifyContent": "center",
+            "paddingVertical": 10,
           },
           Object {
-            "backgroundColor": "#fff",
+            "paddingVertical": 4,
           },
         ]
-      }>
+      }
+    >
       <View
         style={
           Object {
             "flex": 1,
             "flexDirection": "column",
           }
-        }>
+        }
+      >
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -38,8 +57,10 @@ exports[`test renders with accessory 1`] = `
               Object {
                 "color": "#000",
               },
+              Object {},
             ]
-          }>
+          }
+        >
           Subtitle
         </Text>
         <Text
@@ -51,10 +72,19 @@ exports[`test renders with accessory 1`] = `
             Object {
               "fontSize": 11,
             }
-          }>
+          }
+        >
           No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
         </Text>
       </View>
+    </View>
+    <View
+      style={
+        Object {
+          "justifyContent": "center",
+        }
+      }
+    >
       <View
         style={
           Object {
@@ -71,38 +101,56 @@ exports[`test renders with accessory 1`] = `
             ],
             "width": 10,
           }
-        } />
+        }
+      />
     </View>
   </View>
 </View>
 `;
 
-exports[`test renders with subtitle 1`] = `
+exports[`renders with subtitle 1`] = `
 <View>
-  <View>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "minHeight": 44,
+          "paddingLeft": 15,
+          "paddingRight": 20,
+        },
+        Object {
+          "backgroundColor": "#FFF",
+        },
+        Object {},
+      ]
+    }
+  >
     <View
       style={
         Array [
           Object {
             "alignItems": "center",
+            "flex": 1,
             "flexDirection": "row",
-            "minHeight": 44,
-            "paddingLeft": 15,
-            "paddingRight": 20,
-            "paddingVertical": 4,
+            "justifyContent": "center",
+            "paddingVertical": 10,
           },
           Object {
-            "backgroundColor": "#fff",
+            "paddingVertical": 4,
           },
         ]
-      }>
+      }
+    >
       <View
         style={
           Object {
             "flex": 1,
             "flexDirection": "column",
           }
-        }>
+        }
+      >
         <Text
           accessible={true}
           allowFontScaling={true}
@@ -117,8 +165,10 @@ exports[`test renders with subtitle 1`] = `
               Object {
                 "color": "#000",
               },
+              Object {},
             ]
-          }>
+          }
+        >
           Subtitle
         </Text>
         <Text
@@ -130,7 +180,8 @@ exports[`test renders with subtitle 1`] = `
             Object {
               "fontSize": 11,
             }
-          }>
+          }
+        >
           No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
         </Text>
       </View>

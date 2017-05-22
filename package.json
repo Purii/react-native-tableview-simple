@@ -2,16 +2,29 @@
   "name": "react-native-tableview-simple",
   "description": "React Native component for TableView made with pure CSS",
   "homepage": "https://github.com/Purii/react-native-tableview-simple",
-  "version": "0.15.3",
+  "version": "0.16.5",
   "author": "Patrick Puritscher <hello@patrickpuritscher.com>",
   "scripts": {
-    "lint": "eslint index.js components/",
+    "format:src": "prettier --trailing-comma es5 --single-quote --write 'components/**/*.js'",
+    "format:example": "prettier --trailing-comma es5 --single-quote --write 'example/*.js'",
+    "format": "npm run format:src && npm run format:example",
     "jest": "jest",
+    "lint": "eslint index.js components/",
+    "precommit": "lint-staged",
     "test": "npm run lint && npm run jest"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --trailing-comma es5 --single-quote --write",
+      "git add"
+    ]
   },
   "jest": {
     "preset": "react-native",
-    "testPathIgnorePatterns": ["/node_modules/", "<rootDir>/example/"]
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/example/"
+    ]
   },
   "main": "index.js",
   "license": "MIT",
@@ -19,12 +32,14 @@
     "react-native",
     "react-component",
     "tableview",
+    "UITableView",
+    "crossplatform",
     "ios",
     "android"
   ],
   "peerDependencies": {
     "react": "*",
-    "react-native": ">=0.35 || 0.41.0-rc"
+    "react-native": ">=0.35 || 0.43.0-rc"
   },
   "bugs": {
     "url": "https://github.com/Purii/react-native-tableview-simple/issues"
@@ -34,17 +49,21 @@
     "url": "git@github.com:Purii/react-native-tableview-simple.git"
   },
   "devDependencies": {
-    "babel-eslint": "^7.1.1",
-    "babel-jest": "17.0.2",
-    "babel-preset-react-native": "1.9.0",
-    "eslint": "^3.11.1",
-    "eslint-config-airbnb": "^13.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^2.2.3",
-    "eslint-plugin-react": "^6.8.0",
-    "jest": "17.0.3",
-    "react": "^15.4.1",
-    "react-native": "^0.38.1",
-    "react-test-renderer": "15.4.1"
+    "babel-jest": "19.0.0",
+    "babel-preset-react-native": "1.9.1",
+    "eslint": "^3.18.0",
+    "eslint-config-prettier": "^1.5.0",
+    "eslint-plugin-prettier": "^2.0.1",
+    "eslint-plugin-react": "^6.10.3",
+    "husky": "^0.13.2",
+    "jest": "19.0.2",
+    "lint-staged": "^3.4.0",
+    "prettier": "^0.22.0",
+    "react": "^15.4.2",
+    "react-native": "^0.42.3",
+    "react-test-renderer": "15.4.2"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.10"
   }
 }
