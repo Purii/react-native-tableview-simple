@@ -21,7 +21,7 @@ Have a look at the [examples below](https://github.com/Purii/react-native-tablev
 1. *Add needed components:*
   ```javascript
   import {
-    Cell, 
+    Cell,
     Section,
     TableView,
   } from 'react-native-tableview-simple';
@@ -70,7 +70,7 @@ To get an idea what you can modify via `props`, have a look at the [examples bel
 | accessoryColor | `#007AFF` | `string` | Color of accessory |
 | allowFontScaling | `true` | `bool` | Respect Text Size accessibility setting on iOS |
 | backgroundColor | `#FFF` | `string` | Background color of cell |
-| cellStyle | `Basic` | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
+| cellStyle | `Basic` | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle`, `RightDetailSubtitle` |
 | cellAccessoryView | - | `React.Component` | Replace accessory view component (*e.g.: add Switch or ActivityIndicator*) |
 | cellContentView | - | `React.Component` | Replace content view component |
 | cellImageView | - | `React.Component` | Replace image view component |
@@ -89,6 +89,8 @@ To get an idea what you can modify via `props`, have a look at the [examples bel
 | titleTextStyle | `{}` | `Text.propTypes.style` | These styles will be applied to the title `Text`-Component (*e.g.: update `fontSize` or `fontFamily`*) |
 | titleTextStyleDisabled | `{}` | `Text.propTypes.style` | These styles will be applied to the title  `Text`-Component, when the cell is disabled |
 | onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
+| separator | false | `bool` | Draws separator of a cell. Use case: when using stand-alone cell without wrapping it in Section |
+| separatorStyle | `{}` | `View.propTypes.style` | These styles will be aplied to separator, i.e. borderColor style property would change the color of separator |
 
 
 #### Wrap `Cell`

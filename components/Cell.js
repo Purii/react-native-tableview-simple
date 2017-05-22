@@ -16,7 +16,10 @@ const Cell = props => {
     cellImageView,
     cellAccessoryView,
     contentContainerStyle,
+    separatorStyle,
+    separator,
     detail,
+    subtitle,
     detailTextStyle,
     disableImageResize,
     highlightActiveOpacity,
@@ -49,6 +52,7 @@ const Cell = props => {
       },
       contentContainerStyle,
     ],
+    separator: [styles.separator, separatorStyle],
     cell_title: isDisabled
       ? [styles.cell_title, styles.cell_text__disabled, titleTextStyleDisabled]
       : [styles.cell_title, { color: titleTextColor }, titleTextStyle],
@@ -184,6 +188,44 @@ const Cell = props => {
     </View>
   );
 
+  const renderCellRightDetailSubtitle = () => (
+    <View
+      style={[_styles.cellContentView, _styles.cellContentView__type_subtitle]}
+    >
+      <View style={_styles.cellinner__subtitle}>
+        <Text
+          allowFontScaling={allowFontScaling}
+          numberOfLines={1}
+          style={_styles.cell_title}
+        >
+          {title}
+        </Text>
+        <Text
+          allowFontScaling={allowFontScaling}
+          numberOfLines={1}
+          style={
+            isDisabled
+              ? [_styles.cell_subtitle, _styles.cell_text__disabled]
+              : _styles.cell_subtitle
+          }
+        >
+          {subtitle}
+        </Text>
+      </View>
+      <Text
+        allowFontScaling={allowFontScaling}
+        numberOfLines={1}
+        style={
+          isDisabled
+            ? [_styles.cell_rightDetail, _styles.cell_text__disabled]
+            : _styles.cell_rightDetail
+        }
+      >
+        {detail}
+      </Text>
+    </View>
+  );
+
   /**
    * Render cell of type LeftDetail
    * @return {View} View with Text, Text and Accessory
@@ -256,6 +298,8 @@ const Cell = props => {
         return renderCellLeftDetail();
       case 'Subtitle':
         return renderCellSubtitle();
+      case 'RightDetailSubtitle':
+        return renderCellRightDetailSubtitle();
       default:
         return renderCellBasic();
     }
@@ -273,6 +317,8 @@ const Cell = props => {
     </View>
   );
 
+  const renderSeparator = () => <View style={_styles.separator} />;
+
   if (isPressable && !isDisabled) {
     return (
       <TouchableHighlight
@@ -282,11 +328,19 @@ const Cell = props => {
         onPressIn={onHighlightRow}
         onPressOut={onUnHighlightRow}
       >
-        {renderCell()}
+        <View>
+          {renderCell()}
+          {separator && renderSeparator()}
+        </View>
       </TouchableHighlight>
     );
   }
-  return <View>{renderCell()}</View>;
+  return (
+    <View>
+      {renderCell()}
+      {separator && renderSeparator()}
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
@@ -296,6 +350,14 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     minHeight: 44,
     flexDirection: 'row',
+  },
+  separator: {
+    left: 15,
+    right: 0,
+    bottom: 0,
+    position: 'absolute',
+    borderBottomWidth: 1,
+    borderColor: '#c8c7cc',
   },
   cellContentView: {
     alignItems: 'center',
@@ -407,8 +469,11 @@ Cell.propTypes = {
   cellImageView: PropTypes.element,
   cellAccessoryView: PropTypes.element,
   contentContainerStyle: View.propTypes.style,
+  separatorStyle: View.propTypes.style,
+  separator: PropTypes.bool,
   backgroundColor: PropTypes.string.isRequired,
   detail: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   detailTextStyle: Text.propTypes.style,
   disableImageResize: PropTypes.bool,
   highlightActiveOpacity: PropTypes.number,
@@ -439,8 +504,11 @@ Cell.defaultProps = {
   cellImageView: null,
   cellAccessoryView: null,
   contentContainerStyle: {},
+  separatorStyle: {},
+  separator: false,
   backgroundColor: '#FFF',
   detail: '',
+  subtitle: '',
   detailTextStyle: {},
   disableImageResize: false,
   highlightActiveOpacity: 0.8,
