@@ -32,34 +32,64 @@ class Example extends Component {
   render() {
     return (
       <ScrollView contentContainerStyle={styles.stage}>
+        <View>
+          <Text style={styles.title}>Stand alone cells</Text>
+          <Cell cellStyle="Basic" title="Basic" separator={true} />
+          <Cell
+            cellStyle="RightDetail"
+            title="RightDetail"
+            detail="Detail"
+            separator={true}
+          />
+          <Cell
+            cellStyle="RightDetailSubtitle"
+            subtitle="Subtitle"
+            title="Title"
+            detail="Detail"
+            separator={true}
+          />
+          <Cell
+            cellStyle="LeftDetail"
+            title="LeftDetail"
+            detail="Detail"
+            separator={true}
+          />
+          <Cell
+            cellStyle="Subtitle"
+            title="Subtitle"
+            detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+            separator={true}
+          />
+          <Cell
+            cellStyle="Basic"
+            title="Pressable w/ accessory"
+            accessory="DisclosureIndicator"
+            onPress={() => console.log('Heyho!')}
+            separator={true}
+          />
+        </View>
         <TableView>
           <Section header="STANDARD" footer="A Footer">
-            <View>
-              <Cell cellStyle="Basic" title="Basic" />
-              <Cell
-                cellStyle="RightDetail"
-                title="RightDetail"
-                detail="Detail"
-              />
-              <Cell
-                cellStyle="RightDetailSubtitle"
-                subtitle="Subtitle"
-                title="RightDetailSubtitle"
-                detail="Detail"
-              />
-              <Cell cellStyle="LeftDetail" title="LeftDetail" detail="Detail" />
-              <Cell
-                cellStyle="Subtitle"
-                title="Subtitle"
-                detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
-              />
-              <Cell
-                cellStyle="Basic"
-                title="Pressable w/ accessory"
-                accessory="DisclosureIndicator"
-                onPress={() => console.log('Heyho!')}
-              />
-            </View>
+            <Cell cellStyle="Basic" title="Basic" />
+            <Cell cellStyle="RightDetail" title="RightDetail" detail="Detail" />
+            <Cell
+              cellStyle="RightDetailSubtitle"
+              subtitle="Subtitle"
+              title="Title"
+              detail="Detail"
+            />
+            <Cell cellStyle="LeftDetail" title="LeftDetail" detail="Detail" />
+            <Cell
+              cellStyle="Subtitle"
+              title="Subtitle"
+              detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+            />
+            <Cell
+              cellStyle="Basic"
+              title="Pressable w/ accessory"
+              accessory="DisclosureIndicator"
+              onPress={() => console.log('Heyho!')}
+            />
           </Section>
           <Section header="DISABLED">
             <Cell cellStyle="Basic" isDisabled title="Basic" />
@@ -287,6 +317,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#EFEFF4',
     paddingTop: 20,
     paddingBottom: 20,
+  },
+
+  title: {
+    paddingHorizontal: 15,
+    paddingVertical: 7,
+    color: '#6d6d72',
   },
 });
 

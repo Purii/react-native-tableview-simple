@@ -16,6 +16,8 @@ const Cell = props => {
     cellImageView,
     cellAccessoryView,
     contentContainerStyle,
+    separatorStyle,
+    separator,
     detail,
     subtitle,
     detailTextStyle,
@@ -50,6 +52,7 @@ const Cell = props => {
       },
       contentContainerStyle,
     ],
+    separator: [styles.separator, separatorStyle],
     cell_title: isDisabled
       ? [styles.cell_title, styles.cell_text__disabled, titleTextStyleDisabled]
       : [styles.cell_title, { color: titleTextColor }, titleTextStyle],
@@ -186,7 +189,9 @@ const Cell = props => {
   );
 
   const renderCellRightDetailSubtitle = () => (
-    <View style={_styles.cellContentView}>
+    <View
+      style={[_styles.cellContentView, _styles.cellContentView__type_subtitle]}
+    >
       <View style={_styles.cellinner__subtitle}>
         <Text
           allowFontScaling={allowFontScaling}
@@ -312,6 +317,8 @@ const Cell = props => {
     </View>
   );
 
+  const renderSeparator = () => <View style={_styles.separator} />;
+
   if (isPressable && !isDisabled) {
     return (
       <TouchableHighlight
@@ -321,11 +328,19 @@ const Cell = props => {
         onPressIn={onHighlightRow}
         onPressOut={onUnHighlightRow}
       >
-        {renderCell()}
+        <View>
+          {renderCell()}
+          {separator && renderSeparator()}
+        </View>
       </TouchableHighlight>
     );
   }
-  return <View>{renderCell()}</View>;
+  return (
+    <View>
+      {renderCell()}
+      {separator && renderSeparator()}
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
@@ -335,6 +350,14 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     minHeight: 44,
     flexDirection: 'row',
+  },
+  separator: {
+    left: 15,
+    right: 0,
+    bottom: 0,
+    position: 'absolute',
+    borderBottomWidth: 1,
+    borderColor: '#c8c7cc',
   },
   cellContentView: {
     alignItems: 'center',
@@ -446,6 +469,8 @@ Cell.propTypes = {
   cellImageView: PropTypes.element,
   cellAccessoryView: PropTypes.element,
   contentContainerStyle: View.propTypes.style,
+  separatorStyle: View.propTypes.style,
+  separator: PropTypes.bool,
   backgroundColor: PropTypes.string.isRequired,
   detail: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -479,6 +504,8 @@ Cell.defaultProps = {
   cellImageView: null,
   cellAccessoryView: null,
   contentContainerStyle: {},
+  separatorStyle: {},
+  separator: false,
   backgroundColor: '#FFF',
   detail: '',
   subtitle: '',
