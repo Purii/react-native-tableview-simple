@@ -34,20 +34,32 @@ class Example extends Component {
       <ScrollView contentContainerStyle={styles.stage}>
         <TableView>
           <Section header="STANDARD" footer="A Footer">
-            <Cell cellStyle="Basic" title="Basic" />
-            <Cell cellStyle="RightDetail" title="RightDetail" detail="Detail" />
-            <Cell cellStyle="LeftDetail" title="LeftDetail" detail="Detail" />
-            <Cell
-              cellStyle="Subtitle"
-              title="Subtitle"
-              detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
-            />
-            <Cell
-              cellStyle="Basic"
-              title="Pressable w/ accessory"
-              accessory="DisclosureIndicator"
-              onPress={() => console.log('Heyho!')}
-            />
+            <View>
+              <Cell cellStyle="Basic" title="Basic" />
+              <Cell
+                cellStyle="RightDetail"
+                title="RightDetail"
+                detail="Detail"
+              />
+              <Cell
+                cellStyle="RightDetailSubtitle"
+                subtitle="Subtitle"
+                title="RightDetailSubtitle"
+                detail="Detail"
+              />
+              <Cell cellStyle="LeftDetail" title="LeftDetail" detail="Detail" />
+              <Cell
+                cellStyle="Subtitle"
+                title="Subtitle"
+                detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
+              />
+              <Cell
+                cellStyle="Basic"
+                title="Pressable w/ accessory"
+                accessory="DisclosureIndicator"
+                onPress={() => console.log('Heyho!')}
+              />
+            </View>
           </Section>
           <Section header="DISABLED">
             <Cell cellStyle="Basic" isDisabled title="Basic" />
