@@ -287,7 +287,11 @@ const Cell = props => {
       </TouchableHighlight>
     );
   }
-  return <View>{renderCell()}</View>;
+  return (
+    <View>
+      {renderCell()}
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({

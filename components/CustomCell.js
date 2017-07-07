@@ -39,11 +39,17 @@ const CustomCell = props => {
         onPressOut={onUnHighlightRow}
         underlayColor={highlightUnderlayColor}
       >
-        <View style={_styles.cell}>{children}</View>
+        <View style={_styles.cell}>
+          {children}
+        </View>
       </TouchableHighlight>
     );
   }
-  return <View style={_styles.cell}>{children}</View>;
+  return (
+    <View style={_styles.cell}>
+      {children}
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({

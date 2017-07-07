@@ -20,11 +20,10 @@ import {
 import { Cell, Section, TableView } from 'react-native-tableview-simple';
 
 // Example component for section:headerComponent
-const CustomSectionHeader = () => (
+const CustomSectionHeader = () =>
   <View>
     <Text>Custom header!</Text>
-  </View>
-);
+  </View>;
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Example extends Component {

@@ -42,7 +42,14 @@ class Section extends Component {
     // eslint-disable-next-line no-underscore-dangle
     const _styles = {
       ...styles,
-      section: [styles.section, { backgroundColor: sectionTintColor, paddingBottom: sectionPaddingBottom, paddingTop: sectionPaddingTop }],
+      section: [
+        styles.section,
+        {
+          backgroundColor: sectionTintColor,
+          paddingBottom: sectionPaddingBottom,
+          paddingTop: sectionPaddingTop,
+        },
+      ],
       sectionheader__text: [
         styles.sectionheader__text,
         { color: headerTextColor },
@@ -113,7 +120,8 @@ class Section extends Component {
         };
       }
 
-      const invisibleSeparator = this.state.highlightedRowIndex === index ||
+      const invisibleSeparator =
+        this.state.highlightedRowIndex === index ||
         this.state.highlightedRowIndex === index + 1;
 
       if (invisibleSeparator) {
