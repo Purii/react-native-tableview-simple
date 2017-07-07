@@ -42,7 +42,7 @@ class Section extends Component {
     // eslint-disable-next-line no-underscore-dangle
     const _styles = {
       ...styles,
-      section: [styles.section, { backgroundColor: sectionTintColor }],
+      section: [styles.section, { backgroundColor: sectionTintColor, paddingBottom: sectionPaddingBottom, paddingTop: sectionPaddingTop }],
       sectionheader__text: [
         styles.sectionheader__text,
         { color: headerTextColor },
@@ -191,10 +191,7 @@ class Section extends Component {
 }
 
 const styles = StyleSheet.create({
-  section: {
-    paddingTop: 15,
-    paddingBottom: 15,
-  },
+  section: {},
   section_inner: {
     borderTopWidth: StyleSheet.hairlineWidth,
     borderBottomWidth: StyleSheet.hairlineWidth,
@@ -247,6 +244,8 @@ Section.defaultProps = {
   header: null,
   headerTextColor: '#6d6d72',
   hideSeparator: false,
+  sectionPaddingBottom: 15,
+  sectionPaddingTop: 15,
   sectionTintColor: '#EFEFF4',
   footerTextColor: '#6d6d72',
   separatorInsetLeft: 15,

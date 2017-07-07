@@ -53,6 +53,8 @@ Currently `TableView` doesn't support any properties.
 | header | - | `string` | Header value |
 | headerTextColor | `#6d6d72` | `string` | Text color of header |
 | hideSeparator | `false` | `bool` | Hide separators |
+| sectionPaddingBottom | `15` | `number` | Padding bottom of section |
+| sectionPaddingTop | `15` | `number` | Padding top of section |
 | sectionTintColor | `#EFEFF4` | `string` | Background color of section |
 | separatorInsetLeft | `15` | `number` | Left inset of separator |
 | separatorInsetRight | `0` | `number` | Right inset of separator |
