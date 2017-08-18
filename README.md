@@ -4,8 +4,10 @@
 [![npm](https://img.shields.io/npm/dm/react-native-tableview-simple.svg)](https://www.npmjs.com/package/react-native-tableview-simple)
 
 This cross-platform component is a copy of the iOS-TableView made with pure CSS. The intention is to provide **a flexible and lightweight alternative to a bridged component**.
+
 The focus is set on the presentation. The component is therefore not intended to render large data sets.
-A possible use case might be an about- or a settings-screen with a few rows.   
+A possible use case might be an about- or a settings-screen with a few rows.
+  
 Have a look at the [examples below](https://github.com/Purii/react-native-tableview-simple#examples)! :-)
 
 ## Installation
@@ -153,6 +155,45 @@ To run the example project, follow these steps:
 1. `yarn` or `npm i`
 1. run `/example/ios/example.xcodeproj` via Xcode
 
+* [Quick look](#quick-look)
+* [Use case: About-screen](#use-case-about-screen)
+* [Complete example / vs. native iOS](#)
+
+### Quick look
+
+```javascript
+
+// ActivityIndicator as accessory
+  <Cell
+    title="Switch"
+    cellAccessoryView={<Switch />}
+    contentContainerStyle={{ paddingVertical: 4 }} // Adjust height
+  />
+
+// Switch as accessory
+  <Cell
+    title="ActivityIndicator"
+    cellAccessoryView={<ActivityIndicator />}
+  />
+
+// TextInput
+  <Cell
+    cellContentView={<TextInput style={{fontSize: 16, flex: 1}} placeholder="TextInput"/>}
+  />
+
+// Image
+  <Cell
+    title="Image"
+    image={
+      <Image
+        style={{ borderRadius: 5 }}
+        source={{
+          uri: 'https://facebook.github.io/react/img/logo_og.png',
+        }}
+      />
+    }
+  />
+
 ### Use case: About-screen
 
 ![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshotAboutScreen.png)
@@ -238,6 +279,7 @@ import {
   StyleSheet,
   Switch,
   Text,
+  TextInput,
   View,
 } from 'react-native';
 import {
@@ -434,6 +476,9 @@ class Example extends Component {
               cellStyle="Basic"
               title="ActivityIndicator"
               cellAccessoryView={<ActivityIndicator />}
+            />
+            <Cell
+              cellContentView={<TextInput style={{fontSize: 16, flex: 1}} placeholder="TextInput"/>}
             />
           </Section>
           <Section header="CUSTOMCELLS">

@@ -14,6 +14,7 @@ import {
   StyleSheet,
   Switch,
   Text,
+  TextInput,
   View,
 } from 'react-native';
 
@@ -210,6 +211,14 @@ class Example extends Component {
               cellStyle="Basic"
               title="ActivityIndicator"
               cellAccessoryView={<ActivityIndicator />}
+            />
+            <Cell
+              cellContentView={
+                <TextInput
+                  style={{ fontSize: 16, flex: 1 }}
+                  placeholder="TextInput"
+                />
+              }
             />
           </Section>
           <Section header="CUSTOMCELLS">
