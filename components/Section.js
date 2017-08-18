@@ -89,8 +89,8 @@ class Section extends Component {
       if (
         hideSeparator ||
         !Array.isArray(children) ||
-        children.length === 1 ||
-        index === children.length - 1
+        React.Children.count(children) === 1 ||
+        index === React.Children.count(children) - 1
       ) {
         return React.cloneElement(child, propsToAdd);
       }
