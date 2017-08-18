@@ -7,7 +7,7 @@ This cross-platform component is a copy of the iOS-TableView made with pure CSS.
 
 The focus is set on the presentation. The component is therefore not intended to render large data sets.
 A possible use case might be an about- or a settings-screen with a few rows.
-  
+
 Have a look at the [examples below](https://github.com/Purii/react-native-tableview-simple#examples)! :-)
 
 ## Installation
@@ -157,7 +157,7 @@ To run the example project, follow these steps:
 
 * [Quick look](#quick-look)
 * [Use case: About-screen](#use-case-about-screen)
-* [Complete example / vs. native iOS](#)
+* [Complete example / vs. native iOS](#react-native-tableview-simple-vs-native-ios)
 
 ### Quick look
 
@@ -193,6 +193,7 @@ To run the example project, follow these steps:
       />
     }
   />
+```
 
 ### Use case: About-screen
 
