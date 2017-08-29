@@ -3276,9 +3276,9 @@ react-devtools-core@2.3.1:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
-react-native-tableview-simple@^0.16.10:
-  version "0.16.10"
-  resolved "https://registry.yarnpkg.com/react-native-tableview-simple/-/react-native-tableview-simple-0.16.10.tgz#e73cca9437ce51bab09f8d645408d92ea42e8629"
+react-native-tableview-simple@^0.16.11:
+  version "0.16.11"
+  resolved "https://registry.yarnpkg.com/react-native-tableview-simple/-/react-native-tableview-simple-0.16.11.tgz#ebf0b4bbb36941f6a731fd70210feac0e6695cfe"
   dependencies:
     prop-types "^15.5.10"
 
