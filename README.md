@@ -157,12 +157,6 @@ See the [example below](#render-with-flatlist).
 | isHidden | `false` | `bool` | Hide separator but keeping its height |
 | tintColor | `#C8C7CC` | `string` | Color of separator |
 
-
-### CustomCell - *deprecated*
-The `CustomCell` is deprecated.
-Instead you can use the prop `cellContentView` of `Cell`.
-
-
 ## Examples
 The following examples can be found in the folder `example`.   
 To run the example project, follow these steps:
