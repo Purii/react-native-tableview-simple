@@ -1,8 +1,11 @@
+/* eslint-disable import/no-unresolved */
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+
 import PropTypes from 'prop-types';
 
-export default (Separator = props => {
+import { StyleSheet, View } from 'react-native';
+
+const Separator = props => {
   const localStyles = {
     separator: [styles.separator, { backgroundColor: props.backgroundColor }],
     separator_inner: [
@@ -20,14 +23,6 @@ export default (Separator = props => {
       <View style={localStyles.separator_inner} />
     </View>
   );
-});
-
-Separator.defaultProps = {
-  backgroundColor: '#FFF',
-  insetLeft: 15,
-  insetRight: 0,
-  isHidden: false,
-  tintColor: '#C8C7CC',
 };
 
 Separator.propTypes = {
@@ -38,9 +33,19 @@ Separator.propTypes = {
   tintColor: PropTypes.string.isRequired,
 };
 
+Separator.defaultProps = {
+  backgroundColor: '#FFF',
+  insetLeft: 15,
+  insetRight: 0,
+  isHidden: false,
+  tintColor: '#C8C7CC',
+};
+
 const styles = StyleSheet.create({
   separator: {},
   separator_inner: {
     height: StyleSheet.hairlineWidth,
   },
 });
+
+export default Separator;
