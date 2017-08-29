@@ -49,11 +49,12 @@ Just move your component to the folder `components` and choose a meaningful name
 * [`Section`](#section)
 * [`Separator`](#separator)
 
-### TableView
+### `TableView`
 Currently `TableView` doesn't support any properties.
 
-### Section
-The Section component is needed, to render the separators and hide them, if needed.
+### `Section`
+The `Section` component is needed to render the `Cells` together with `Separators`.
+It's possible to use the `Flatlist` component instead ([Example](#render-with-flatlist)).
 
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
@@ -72,9 +73,10 @@ The Section component is needed, to render the separators and hide them, if need
 | separatorInsetRight | `0` | `number` | Right inset of separator |
 | separatorTintColor | `#C8C7CC` | `string` | Color of separator |
 
-### Cell
-The cellstyles are inspired by the native ones from `UITableView`. Just like the available accessories.
-But the `Cell` is also highly flexible. It is separated in three views: `cellImageView` | `cellContentView` | `cellAccessoryView`, which can be replaced via `props`.
+### `Cell`
+The style of the `Cell` component is inspired by the native `UITableView`.
+Because the `Cell` component is created with CSS only, its highly flexible.
+The content of the cell is separated in three views, which can all be modified via `props`: `cellImageView` | `cellContentView` | `cellAccessoryView`.
 
 To get an idea what you can modify via `props`, have a look at the [examples below](https://github.com/Purii/react-native-tableview-simple#examples).
 
@@ -106,7 +108,8 @@ To get an idea what you can modify via `props`, have a look at the [examples bel
 
 
 #### Wrap `Cell`
-Instead of writing down multiple complex `Cell` instances, you can just wrap a `Cell` and reuse it.
+Sometimes custom `Cell` components are needed.
+By creating new component, which is based on `Cell`, its only necessary to set the props once.
 
 
 ```javascript
@@ -151,9 +154,9 @@ const CellVariant = (props) => (
 ...
 ```
 
-### Separator
-In general the Separator component is used internally by the Section component.
-Additionally this component can be used with FlatList, as the prop `ItemSeparatorComponent`.
+### `Separator`
+In general the `Separator` component is used internally by the `Section` component.
+But additionally this component can be used together with `FlatList`.
 See the [example below](#render-with-flatlist).
 
 | Prop  | Default | Type | Description |
