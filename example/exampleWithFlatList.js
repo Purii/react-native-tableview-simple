@@ -12,7 +12,6 @@ const data = [
 
 export default (ExampleWithFlatList = () =>
   <FlatList
-    extraData={this.state}
     data={data}
     keyExtractor={(item, index) => item.id}
     renderItem={({ item, separators }) =>
