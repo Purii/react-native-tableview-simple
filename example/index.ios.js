@@ -18,7 +18,14 @@ import {
   View,
 } from 'react-native';
 
+/*
 import { Cell, Section, TableView } from 'react-native-tableview-simple';
+*/
+import Cell from './components/Cell';
+import Section from './components/Section';
+import TableView from './components/TableView';
+
+import ExampleWithFlatList from './exampleWithFlatList';
 
 // Example component for section:headerComponent
 const CustomSectionHeader = () =>
@@ -30,6 +37,11 @@ const CustomSectionHeader = () =>
 class Example extends Component {
   // eslint-disable-next-line class-methods-use-this
   render() {
+    /*
+     * Uncomment following line to render example with flatlist
+     */
+    // return <ExampleWithFlatList />;
+
     return (
       <ScrollView contentContainerStyle={styles.stage}>
         <TableView>

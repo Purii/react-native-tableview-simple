@@ -3,10 +3,10 @@
 [![npm version](http://img.shields.io/npm/v/react-native-tableview-simple.svg?style=flat)](https://www.npmjs.com/package/react-native-tableview-simple)
 [![npm](https://img.shields.io/npm/dm/react-native-tableview-simple.svg)](https://www.npmjs.com/package/react-native-tableview-simple)
 
-This cross-platform component is a copy of the iOS-TableView made with pure CSS. The intention is to provide **a flexible and lightweight alternative to a bridged component**.
+This cross-platform component is inspired by the iOS-TableView. Made with pure CSS, the intention is to provide **a flexible and lightweight alternative to a bridged component**.
 
-The focus is set on the presentation. The component is therefore not intended to render large data sets.
 A possible use case might be an about- or a settings-screen with a few rows.
+For displaying long datalists it is recommended to use the `FlatList` Component together with `Cell` and `Separator` Components. ([see example](#compatibility-with-flatlist))
 
 Have a look at the [examples below](https://github.com/Purii/react-native-tableview-simple#examples)! :-)
 
@@ -45,6 +45,8 @@ Just move your component to the folder `components` and choose a meaningful name
 Currently `TableView` doesn't support any properties.
 
 ### Section
+The Section component is needed, to render the separators and hide them, if needed.
+
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
 | allowFontScaling | `true` | `bool` | Respect Text Size accessibility setting on iOS |
@@ -141,6 +143,21 @@ const CellVariant = (props) => (
 ...
 ```
 
+### Separator
+In general the Separator component is used internally by the Section component.
+Additionally this component can be used with FlatList, as the prop `ItemSeparatorComponent`.
+See the [example below](#render-with-flatlist).
+
+| Prop  | Default | Type | Description |
+| :------------ | :---------------:| :---------------:| ---------------|
+
+| backgroundColor | `#EFEFF4` | `string` | Background color |
+| insetLeft | `15` | `number` | Left inset of separator |
+| insetRight | `0` | `number` | Right inset of separator |
+| isHidden | `false` | `bool` | Hide separator but keeping its height |
+| tintColor | `#C8C7CC` | `string` | Color of separator |
+
+
 ### CustomCell - *deprecated*
 The `CustomCell` is deprecated.
 Instead you can use the prop `cellContentView` of `Cell`.
@@ -158,6 +175,7 @@ To run the example project, follow these steps:
 * [Quick look](#quick-look)
 * [Use case: About-screen](#use-case-about-screen)
 * [Complete example / vs. native iOS](#react-native-tableview-simple-vs-native-ios)
+* [Render with `FlatList`](#render-with-flatlist)
 
 ### Quick look
 
@@ -550,3 +568,37 @@ const styles = StyleSheet.create({
 AppRegistry.registerComponent('example', () => Example);
 
 ```
+
+### Render with `FlatList`
+
+```javascript
+import React from 'react';
+import { FlatList } from 'react-native';
+
+import { Cell, Separator, TableView } from 'react-native-tableview-simple';
+
+const data = [
+  { id: 1, title: '1' },
+  { id: 2, title: '2' },
+  { id: 3, title: '3' },
+  { id: 4, title: '4' },
+];
+
+export default (ExampleWithFlatList = () =>
+  <FlatList
+    extraData={this.state}
+    data={data}
+    keyExtractor={(item, index) => item.id}
+    renderItem={({ item, separators }) =>
+      <Cell
+        title={item.title}
+        onPress={console.log}
+        onHighlightRow={separators.highlight}
+        onUnHighlightRow={separators.unhighlight}
+      />}
+    ItemSeparatorComponent={({ highlighted }) =>
+      <Separator isHidden={highlighted} />}
+  />);
+
+
+``

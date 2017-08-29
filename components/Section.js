@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 
 import { StyleSheet, Text, View } from 'react-native';
 
+import Separator from './Separator';
+
 class Section extends Component {
   constructor(props) {
     super(props);
@@ -60,14 +62,6 @@ class Section extends Component {
         styles.sectionfooter__text,
         { color: footerTextColor },
       ],
-      separator_inner: [
-        styles.separator_inner,
-        {
-          backgroundColor: separatorTintColor,
-          marginLeft: separatorInsetLeft,
-          marginRight: separatorInsetRight,
-        },
-      ],
     };
 
     /**
@@ -95,55 +89,26 @@ class Section extends Component {
         return React.cloneElement(child, propsToAdd);
       }
 
-      // eslint-disable-next-line no-underscore-dangle
-      let _localstyles = { ..._styles };
-
-      _localstyles = {
-        ..._localstyles,
-        separator: [
-          _localstyles.separator,
-          {
-            backgroundColor: child.props.backgroundColor,
-          },
-        ],
-      };
-
-      // Add margin, if Image is provided
-      if (child.props.image) {
-        _localstyles = {
-          ..._localstyles,
-          separator_inner: [
-            _localstyles.separator_inner,
-            {
-              // Better way to priorize and keep defaultProp?
-              marginLeft: separatorInsetLeft !== 15 ? separatorInsetLeft : 60,
-            },
-          ],
-        };
-      }
-
       const invisibleSeparator =
         this.state.highlightedRowIndex === index ||
         this.state.highlightedRowIndex === index + 1;
 
-      if (invisibleSeparator) {
-        _localstyles = {
-          ..._localstyles,
-          separator_inner: [
-            _localstyles.separator_inner,
-            {
-              backgroundColor: 'transparent',
-            },
-          ],
-        };
+      // Add margin, if Image is provided
+      if (child.props.image) {
+        // Only update if not manually updated
+        const insetLeft = separatorInsetLeft !== 15 ? separatorInsetLeft : 60;
       }
 
       return (
         <View>
           {React.cloneElement(child, propsToAdd)}
-          <View style={_localstyles.separator}>
-            <View style={_localstyles.separator_inner} />
-          </View>
+          <Separator
+            isHidden={invisibleSeparator}
+            backgroundColor={child.props.backgroundColor}
+            tintColor={separatorTintColor}
+            insetLeft={separatorInsetLeft}
+            insetRight={separatorInsetRight}
+          />
         </View>
       );
     };
@@ -223,10 +188,6 @@ const styles = StyleSheet.create({
   sectionfooter__text: {
     fontSize: 13,
   },
-  separator: {},
-  separator_inner: {
-    height: StyleSheet.hairlineWidth,
-  },
 });
 
 Section.propTypes = {
@@ -254,7 +215,7 @@ Section.defaultProps = {
   headerComponent: null,
   footer: null,
   header: null,
-  headerTextColor: '#6d6d72',
+  headerTextColor: '#6D6D72',
   hideSeparator: false,
   sectionPaddingBottom: 15,
   sectionPaddingTop: 15,
@@ -262,7 +223,7 @@ Section.defaultProps = {
   footerTextColor: '#6d6d72',
   separatorInsetLeft: 15,
   separatorInsetRight: 0,
-  separatorTintColor: '#c8c7cc',
+  separatorTintColor: '#C8C7CC',
 };
 
 export default Section;
