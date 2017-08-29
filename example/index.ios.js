@@ -18,12 +18,7 @@ import {
   View,
 } from 'react-native';
 
-/*
 import { Cell, Section, TableView } from 'react-native-tableview-simple';
-*/
-import Cell from './components/Cell';
-import Section from './components/Section';
-import TableView from './components/TableView';
 
 import ExampleWithFlatList from './exampleWithFlatList';
 
