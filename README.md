@@ -41,6 +41,12 @@ Maybe you want to add your lovely designed `Cell`-Component to the project.
 Just move your component to the folder `components` and choose a meaningful name! :-)    
 
 ## Props
+
+* [`TableView`](#tableview)
+* [`Cell`](#cell)
+* [`Section`](#section)
+* [`Separator`](#separator)
+
 ### TableView
 Currently `TableView` doesn't support any properties.
 
@@ -150,7 +156,6 @@ See the [example below](#render-with-flatlist).
 
 | Prop  | Default | Type | Description |
 | :------------ | :---------------:| :---------------:| ---------------|
-
 | backgroundColor | `#EFEFF4` | `string` | Background color |
 | insetLeft | `15` | `number` | Left inset of separator |
 | insetRight | `0` | `number` | Right inset of separator |
@@ -593,6 +598,4 @@ export default (ExampleWithFlatList = () =>
     ItemSeparatorComponent={({ highlighted }) =>
       <Separator isHidden={highlighted} />}
   />);
-
-
-``
+```
