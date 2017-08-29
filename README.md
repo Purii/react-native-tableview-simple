@@ -22,7 +22,7 @@ Have a look at the [examples below](https://github.com/Purii/react-native-tablev
   npm i react-native-tableview-simple --S
   ```
 
-1. *Add needed components:*
+2. *Add needed components:*
   ```javascript
   import {
     Cell, 
