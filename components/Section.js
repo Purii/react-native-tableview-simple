@@ -156,9 +156,9 @@ class Section extends Component {
     return (
       <View style={_styles.section}>
         {headerComponent || renderHeader()}
-        <View style={styles.section_inner}>
-          {React.Children.map(children, renderChild)}
-        </View>
+        <Separator insetLeft={0} tintColor={separatorTintColor} />
+        {React.Children.map(children, renderChild)}
+        <Separator insetLeft={0} tintColor={separatorTintColor} />
         {footerComponent || renderFooter()}
       </View>
     );
@@ -167,11 +167,6 @@ class Section extends Component {
 
 const styles = StyleSheet.create({
   section: {},
-  section_inner: {
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderColor: '#C8C7CC',
-  },
   sectionheader: {
     paddingLeft: 15,
     paddingRight: 15,
