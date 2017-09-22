@@ -34,6 +34,8 @@ const Cell = props => {
     onUnHighlightRow,
     leftDetailColor,
     rightDetailColor,
+    subtitleColor,
+    subtitleTextStyle,
     title,
     titleTextStyle,
     titleTextStyleDisabled,
@@ -60,7 +62,9 @@ const Cell = props => {
       : [styles.cell_title, { color: titleTextColor }, titleTextStyle],
     cell_leftDetail: [
       styles.cell_leftDetail,
-      { color: leftDetailColor },
+      {
+        color: leftDetailColor,
+      },
       detailTextStyle,
     ],
     cell_leftDetailTitle: isDisabled
@@ -68,10 +72,18 @@ const Cell = props => {
       : [styles.cell_leftDetailTitle, { color: titleTextColor }],
     cell_rightDetail: [
       styles.cell_rightDetail,
-      { color: rightDetailColor },
+      {
+        color: rightDetailColor,
+      },
       detailTextStyle,
     ],
-
+    cell_subtitle: [
+      styles.cell_subtitle,
+      {
+        color: subtitleColor,
+      },
+      subtitleTextStyle,
+    ],
     accessory_checkmark: [
       styles.accessory_checkmark,
       { borderColor: accessoryColor },
@@ -424,6 +436,8 @@ Cell.propTypes = {
   onHighlightRow: PropTypes.func,
   onUnHighlightRow: PropTypes.func,
   rightDetailColor: PropTypes.string,
+  subtitleColor: PropTypes.string,
+  subtitleTextStyle: Text.propTypes.style,
   title: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
@@ -457,6 +471,8 @@ Cell.defaultProps = {
   onUnHighlightRow: null,
   onPress: false,
   rightDetailColor: '#8E8E93',
+  subtitleColor: '#000',
+  subtitleTextStyle: {},
   title: '',
   titleTextColor: '#000',
   titleTextStyle: {},

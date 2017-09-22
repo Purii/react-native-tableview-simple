@@ -100,6 +100,8 @@ To get an idea what you can modify via `props`, have a look at the [examples bel
 | image | - | `React.Component (Image)` | Image component displayed on the left. Will resized automatically |
 | leftDetailColor | `#007AFF` | `string` | Text color of left detail |
 | rightDetailColor | `#8E8E93` | `string` | Text color of right detail |
+| subtitleColor | `#000` | `string` | Text color of subtitle |
+| subtitleTextStyle | `{}` | `Text.propTypes.style` | These styles will be applied to the subtitle `Text`-Component. |
 | title | - | `string` or `number` or `React.Component` | Title value |
 | titleTextColor | `#000` | `string` | Text color of title |
 | titleTextStyle | `{}` | `Text.propTypes.style` | These styles will be applied to the title `Text`-Component (*e.g.: update `fontSize` or `fontFamily`*) |
