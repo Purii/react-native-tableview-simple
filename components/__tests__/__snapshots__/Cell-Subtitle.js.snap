@@ -71,9 +71,15 @@ exports[`renders with accessory 1`] = `
           ellipsizeMode="tail"
           numberOfLines={1}
           style={
-            Object {
-              "fontSize": 11,
-            }
+            Array [
+              Object {
+                "fontSize": 11,
+              },
+              Object {
+                "color": "#000",
+              },
+              Object {},
+            ]
           }
         >
           No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
@@ -181,9 +187,15 @@ exports[`renders with subtitle 1`] = `
           ellipsizeMode="tail"
           numberOfLines={1}
           style={
-            Object {
-              "fontSize": 11,
-            }
+            Array [
+              Object {
+                "fontSize": 11,
+              },
+              Object {
+                "color": "#000",
+              },
+              Object {},
+            ]
           }
         >
           No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
