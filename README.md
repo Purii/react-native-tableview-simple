@@ -6,6 +6,8 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Purii/react-native-tableview-simple/master/LICENSE)
 [![Donate](https://img.shields.io/badge/Donate-Patreon-green.svg)](https://www.patreon.com/purii)
 
+If you like my component and want to buy me a coffee, checkout my [Patreon page](https://www.patreon.com/purii) – Thanks!
+
 This cross-platform component is inspired by the iOS-TableView. Made with pure CSS, the intention is to provide **a flexible and lightweight alternative to a bridged component**.
 
 A possible use case might be an about- or a settings-screen with a few rows.
