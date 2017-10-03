@@ -41,6 +41,7 @@ exports[`renders basic 1`] = `
             Object {
               "flex": 1,
               "fontSize": 16,
+              "letterSpacing": -0.32,
             },
             Object {
               "color": "#000",
@@ -97,6 +98,7 @@ exports[`renders with accessory 1`] = `
             Object {
               "flex": 1,
               "fontSize": 16,
+              "letterSpacing": -0.32,
             },
             Object {
               "color": "#000",

@@ -41,6 +41,7 @@ exports[`renders with accessory 1`] = `
             Object {
               "flex": 1,
               "fontSize": 16,
+              "letterSpacing": -0.32,
             },
             Object {
               "color": "#000",
@@ -63,6 +64,7 @@ exports[`renders with accessory 1`] = `
               "alignSelf": "center",
               "color": "#8E8E93",
               "fontSize": 16,
+              "letterSpacing": -0.32,
             },
             Object {
               "color": "#8E8E93",
@@ -145,6 +147,7 @@ exports[`renders with right detail 1`] = `
             Object {
               "flex": 1,
               "fontSize": 16,
+              "letterSpacing": -0.32,
             },
             Object {
               "color": "#000",
@@ -167,6 +170,7 @@ exports[`renders with right detail 1`] = `
               "alignSelf": "center",
               "color": "#8E8E93",
               "fontSize": 16,
+              "letterSpacing": -0.32,
             },
             Object {
               "color": "#8E8E93",

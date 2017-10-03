@@ -54,6 +54,7 @@ exports[`renders with accessory 1`] = `
               Object {
                 "flex": 1,
                 "fontSize": 16,
+                "letterSpacing": -0.32,
               },
               Object {
                 "color": "#000",
@@ -74,6 +75,7 @@ exports[`renders with accessory 1`] = `
             Array [
               Object {
                 "fontSize": 11,
+                "letterSpacing": 0.066,
               },
               Object {
                 "color": "#000",
@@ -170,6 +172,7 @@ exports[`renders with subtitle 1`] = `
               Object {
                 "flex": 1,
                 "fontSize": 16,
+                "letterSpacing": -0.32,
               },
               Object {
                 "color": "#000",
@@ -190,6 +193,7 @@ exports[`renders with subtitle 1`] = `
             Array [
               Object {
                 "fontSize": 11,
+                "letterSpacing": 0.066,
               },
               Object {
                 "color": "#000",
