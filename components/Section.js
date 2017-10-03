@@ -174,6 +174,7 @@ const styles = StyleSheet.create({
   },
   sectionheader__text: {
     fontSize: 13,
+    letterSpacing: -0.078,
   },
   sectionfooter: {
     paddingLeft: 15,
@@ -182,6 +183,7 @@ const styles = StyleSheet.create({
   },
   sectionfooter__text: {
     fontSize: 13,
+    letterSpacing: -0.078,
   },
 });
 
