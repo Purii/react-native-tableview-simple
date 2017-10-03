@@ -229,6 +229,12 @@ To run the example project, follow these steps:
 ![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshotAboutScreen.png)
 
 ```javascript
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
+
 import React, {
   Component
 } from 'react';
@@ -245,12 +251,7 @@ import {
   TableView
 } from 'react-native-tableview-simple';
 
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
-
-class Example extends Component {
+export default class App extends Component<{}> {
   render() {
     return (
       <ScrollView contentContainerStyle={styles.stage}>
@@ -285,8 +286,6 @@ const styles = StyleSheet.create({
     flex: 1
   },
 });
-
-AppRegistry.registerComponent('example', () => Example);
 ```
 
 ### `react-native-tableview-simple` vs. Native iOS
@@ -297,6 +296,12 @@ The left screen is build using `react-native-tableview-simple`. The right one is
 | ![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshot.png) | ![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshotNative.png) |
 
 ```javascript
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
+
 import React, {
   Component,
 } from 'react';
@@ -318,12 +323,7 @@ import {
   TableView,
 } from 'react-native-tableview-simple';
 
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
-
-class Example extends Component {
+export default class App extends Component<{}> {
   render() {
     return (
       <ScrollView contentContainerStyle={styles.stage}>
@@ -575,9 +575,6 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
 });
-
-AppRegistry.registerComponent('example', () => Example);
-
 ```
 
 ### Render with `FlatList`
