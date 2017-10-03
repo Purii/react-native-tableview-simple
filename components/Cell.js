@@ -331,6 +331,7 @@ const styles = StyleSheet.create({
   },
   cell_title: {
     fontSize: 16,
+    letterSpacing: -0.32,
     flex: 1,
   },
   cell_leftDetailTitle: {
@@ -346,11 +347,13 @@ const styles = StyleSheet.create({
   },
   cell_rightDetail: {
     fontSize: 16,
+    letterSpacing: -0.32,
     alignSelf: 'center',
     color: '#8E8E93',
   },
   cell_subtitle: {
     fontSize: 11,
+    letterSpacing: 0.066,
   },
   cell_text__disabled: {
     color: 'gray',
@@ -394,6 +397,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '400',
     fontFamily: 'Georgia',
+    letterSpacing: -0.24,
   },
   accessory_detailDisclosure: {
     flexDirection: 'row',
