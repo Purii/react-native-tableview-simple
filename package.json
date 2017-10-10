@@ -28,6 +28,7 @@
     "modulePathIgnorePatterns": ["<rootDir>/example/"]
   },
   "main": "index.js",
+  "types": "index.d.ts",
   "license": "MIT",
   "keywords": [
     "react-native",
