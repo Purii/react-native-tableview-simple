@@ -411,7 +411,7 @@ export interface SeparatorProps {
   tintColor?: string;
 }
 
-export class TableView extends React.Component<null> {}
+export class TableView extends React.Component {}
 export class Section extends React.Component<SectionProps> {}
 export class Cell extends React.Component<CellProps> {}
 export class Separator extends React.Component<SeparatorProps> {}
