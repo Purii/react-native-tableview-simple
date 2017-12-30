@@ -25,7 +25,9 @@
       "/node_modules/",
       "<rootDir>/example/"
     ],
-    "modulePathIgnorePatterns": ["<rootDir>/example/"]
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/"
+    ]
   },
   "main": "index.js",
   "types": "index.d.ts",
@@ -41,7 +43,7 @@
   ],
   "peerDependencies": {
     "react": "*",
-    "react-native": ">=0.44 || 0.50.0-rc"
+    "react-native": ">=0.44 || 0.53.0-rc"
   },
   "bugs": {
     "url": "https://github.com/Purii/react-native-tableview-simple/issues"
@@ -51,19 +53,19 @@
     "url": "git@github.com:Purii/react-native-tableview-simple.git"
   },
   "devDependencies": {
-    "babel-jest": "21.2.0",
+    "babel-jest": "22.0.4",
     "babel-preset-react-native": "4.0.0",
-    "eslint": "^4.8.0",
-    "eslint-config-prettier": "^2.6.0",
-    "eslint-plugin-prettier": "^2.3.1",
-    "eslint-plugin-react": "^7.4.0",
+    "eslint": "^4.14.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.4.0",
+    "eslint-plugin-react": "^7.5.1",
     "husky": "^0.14.3",
-    "jest": "21.2.1",
-    "lint-staged": "^4.2.3",
-    "prettier": "^1.7.4",
-    "react": "^16.0.0",
-    "react-native": "^0.49.0",
-    "react-test-renderer": "16.0.0"
+    "jest": "22.0.4",
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.9.2",
+    "react": "^16.2.0",
+    "react-native": "^0.51.0",
+    "react-test-renderer": "16.2.0"
   },
   "dependencies": {
     "prop-types": "^15.6.0"

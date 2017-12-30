@@ -45,8 +45,8 @@ const Cell = props => {
   const isPressable = !!onPress;
 
   /**
-    * Merge styles with props
-    */
+   * Merge styles with props
+   */
   // eslint-disable-next-line no-underscore-dangle
   const _styles = {
     ...styles,
@@ -99,10 +99,10 @@ const Cell = props => {
   };
 
   /**
-    * Render accessoryView
-    * Currently available
-    * @return {View} View with accessory
-    */
+   * Render accessoryView
+   * Currently available
+   * @return {View} View with accessory
+   */
   const renderAccessoryView = () => {
     switch (accessory) {
       case 'DisclosureIndicator':
@@ -160,10 +160,10 @@ const Cell = props => {
   };
 
   /**
-    * Render cell of type Basic
-    * @return {View} View with Text and Accessory
-    */
-  const renderCellBasic = () =>
+   * Render cell of type Basic
+   * @return {View} View with Text and Accessory
+   */
+  const renderCellBasic = () => (
     <View style={_styles.cellContentView}>
       <Text
         allowFontScaling={allowFontScaling}
@@ -172,13 +172,14 @@ const Cell = props => {
       >
         {title}
       </Text>
-    </View>;
+    </View>
+  );
 
   /**
    * Render cell of type RightDetail
    * @return {View} View with Text, Text and Accessory
    */
-  const renderCellRightDetail = () =>
+  const renderCellRightDetail = () => (
     <View style={_styles.cellContentView}>
       <Text
         allowFontScaling={allowFontScaling}
@@ -198,13 +199,14 @@ const Cell = props => {
       >
         {detail}
       </Text>
-    </View>;
+    </View>
+  );
 
   /**
    * Render cell of type LeftDetail
    * @return {View} View with Text, Text and Accessory
    */
-  const renderCellLeftDetail = () =>
+  const renderCellLeftDetail = () => (
     <View style={_styles.cellContentView}>
       <Text
         allowFontScaling={allowFontScaling}
@@ -224,13 +226,14 @@ const Cell = props => {
       >
         {title}
       </Text>
-    </View>;
+    </View>
+  );
 
   /**
-    * Render cell of type Subtitle
-    * @return {View} View with View, Text, Text and Accessory
-    */
-  const renderCellSubtitle = () =>
+   * Render cell of type Subtitle
+   * @return {View} View with View, Text, Text and Accessory
+   */
+  const renderCellSubtitle = () => (
     <View
       style={[_styles.cellContentView, _styles.cellContentView__type_subtitle]}
     >
@@ -254,12 +257,13 @@ const Cell = props => {
           {detail}
         </Text>
       </View>
-    </View>;
+    </View>
+  );
 
   /**
-    * Renders correct contentView
-    * @return {View} ContentView
-    */
+   * Renders correct contentView
+   * @return {View} ContentView
+   */
   const renderCellContentView = () => {
     switch (cellStyle) {
       case 'Basic':
@@ -279,12 +283,13 @@ const Cell = props => {
    * Render content of cell
    * @return {View} Complete View with cell elements
    */
-  const renderCell = () =>
+  const renderCell = () => (
     <View style={_styles.cell}>
       {cellImageView || renderImageView()}
       {cellContentView || renderCellContentView()}
       {cellAccessoryView || renderAccessoryView()}
-    </View>;
+    </View>
+  );
 
   if (isPressable && !isDisabled) {
     return (
@@ -299,11 +304,7 @@ const Cell = props => {
       </TouchableHighlight>
     );
   }
-  return (
-    <View>
-      {renderCell()}
-    </View>
-  );
+  return <View>{renderCell()}</View>;
 };
 
 const styles = StyleSheet.create({
