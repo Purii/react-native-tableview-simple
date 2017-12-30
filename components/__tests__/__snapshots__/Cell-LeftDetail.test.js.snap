@@ -33,7 +33,6 @@ exports[`renders with accessory 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         numberOfLines={1}
         style={
@@ -57,7 +56,6 @@ exports[`renders with accessory 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         numberOfLines={1}
         style={
@@ -138,7 +136,6 @@ exports[`renders with left detail 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         numberOfLines={1}
         style={
@@ -162,7 +159,6 @@ exports[`renders with left detail 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         numberOfLines={1}
         style={

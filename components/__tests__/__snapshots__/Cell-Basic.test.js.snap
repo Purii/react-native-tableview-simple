@@ -33,7 +33,6 @@ exports[`renders basic 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         numberOfLines={1}
         style={
@@ -90,7 +89,6 @@ exports[`renders with accessory 1`] = `
       <Text
         accessible={true}
         allowFontScaling={true}
-        disabled={false}
         ellipsizeMode="tail"
         numberOfLines={1}
         style={
