@@ -17,6 +17,11 @@ For displaying long datalists it is recommended to use the `FlatList` Component 
 
 Have a look at the [examples below](https://github.com/Purii/react-native-tableview-simple#examples)! :-)
 
+* [Installation](#installation)
+* [Extensible](#extensible)
+* [Props](#props): [`TableView`](#tableview) [`Cell`](#cell) [`Section`](#section) [`Separator`](#separator)
+* [Examples](#examples)
+
 ## Installation
 
 1. *Install as dependency:*
