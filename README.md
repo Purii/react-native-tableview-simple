@@ -21,6 +21,7 @@ Have a look at the [examples below](https://github.com/Purii/react-native-tablev
 * [Extensible](#extensible)
 * [Props](#props): [`TableView`](#tableview) [`Cell`](#cell) [`Section`](#section) [`Separator`](#separator)
 * [Examples](#examples)
+* [Try it out](#try-it-out)
 
 ## Installation
 
@@ -292,6 +293,7 @@ const styles = StyleSheet.create({
   },
 });
 ```
+
 
 ### `react-native-tableview-simple` vs. Native iOS
 The left screen is build using `react-native-tableview-simple`. The right one is native.
@@ -612,3 +614,8 @@ export default (ExampleWithFlatList = () =>
       <Separator isHidden={highlighted} />}
   />);
 ```
+
+
+# Try it out
+
+Try it in Expo: [https://snack.expo.io/@purii/react-native-tableview-simple](https://snack.expo.io/@purii/react-native-tableview-simple)

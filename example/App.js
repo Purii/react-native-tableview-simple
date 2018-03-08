@@ -7,7 +7,6 @@
 import React, { Component } from 'react';
 import {
   ActivityIndicator,
-  AppRegistry,
   Dimensions,
   Image,
   ScrollView,
