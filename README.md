@@ -105,6 +105,7 @@ To get an idea what you can modify via `props`, have a look at the [examples bel
 | detail | - | `string` or `number` | Detail value |
 | detailTextStyle | `{}` | `Text.propTypes.style` | These styles will be applied to the (left- / right-) detail `Text`-Component. |
 | disableImageResize | `false` | `bool` | Disable resizing of image |
+| hideSeparator | `false` | `bool` | Hide the following `Separator`-Component |
 | highlightActiveOpacity | `0.8` | `number` | Opacity of cell when touch is active |
 | highlightUnderlayColor | `black` | `string` | Color of underlay that will show through when touch is active |
 | isDisabled | `false` | `bool` | Cell is disabled. `onPress` will not get triggered |
