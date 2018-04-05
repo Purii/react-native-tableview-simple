@@ -64,6 +64,9 @@ class Section extends Component {
       ],
     };
 
+    // Need until .count is fixed: https://github.com/facebook/react/issues/7685
+    const sumOfChildren = React.Children.toArray(children).length;
+
     /**
      * Render Cell and add Border
      * @param  {Cell} child [description]
@@ -81,10 +84,11 @@ class Section extends Component {
 
       // Skip rendering of separator
       if (
-        hideSeparator ||
-        !Array.isArray(children) ||
-        React.Children.count(children) === 1 ||
-        index === React.Children.count(children) - 1
+        hideSeparator
+        || !Array.isArray(children)
+        || sumOfChildren === 1
+        || index === sumOfChildren - 1
+        || child.props.hideSeparator
       ) {
         return React.cloneElement(child, propsToAdd);
       }
@@ -152,7 +156,7 @@ class Section extends Component {
       }
       return undefined;
     };
-
+  
     return (
       <View style={_styles.section}>
         {headerComponent || renderHeader()}
