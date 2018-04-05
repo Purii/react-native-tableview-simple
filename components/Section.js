@@ -84,11 +84,11 @@ class Section extends PureComponent {
 
       // Skip rendering of separator
       if (
-        hideSeparator
-        || !Array.isArray(children)
-        || sumOfChildren === 1
-        || index === sumOfChildren - 1
-        || child.props.hideSeparator
+        hideSeparator ||
+        !Array.isArray(children) ||
+        sumOfChildren === 1 ||
+        index === sumOfChildren - 1 ||
+        child.props.hideSeparator
       ) {
         return React.cloneElement(child, propsToAdd);
       }
@@ -156,7 +156,7 @@ class Section extends PureComponent {
       }
       return undefined;
     };
-  
+
     return (
       <View style={_styles.section}>
         {headerComponent || renderHeader()}
