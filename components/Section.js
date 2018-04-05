@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 import PropTypes from 'prop-types';
 
@@ -7,7 +7,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import Separator from './Separator';
 
-class Section extends Component {
+class Section extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
