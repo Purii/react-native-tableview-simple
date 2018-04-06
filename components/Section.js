@@ -65,7 +65,8 @@ class Section extends PureComponent {
     };
 
     // Need until .count is fixed: https://github.com/facebook/react/issues/7685
-    const sumOfChildren = React.Children.toArray(children).length;
+    const childrenWithoutEmpty = React.Children.toArray(children);
+    const sumOfChildren = childrenWithoutEmpty.length;
 
     /**
      * Render Cell and add Border
@@ -104,7 +105,7 @@ class Section extends PureComponent {
       }
 
       return (
-        <View>
+        <View key={child.key}>
           {React.cloneElement(child, propsToAdd)}
           <Separator
             isHidden={invisibleSeparator}
@@ -161,7 +162,7 @@ class Section extends PureComponent {
       <View style={_styles.section}>
         {headerComponent || renderHeader()}
         <Separator insetLeft={0} tintColor={separatorTintColor} />
-        {React.Children.map(children, renderChild)}
+        {childrenWithoutEmpty.map(renderChild)}
         <Separator insetLeft={0} tintColor={separatorTintColor} />
         {footerComponent || renderFooter()}
       </View>
