@@ -23,6 +23,7 @@ const Cell = props => {
     cellAccessoryView,
     contentContainerStyle,
     detail,
+    subtitle,
     detailTextStyle,
     disableImageResize,
     highlightActiveOpacity,
@@ -202,6 +203,44 @@ const Cell = props => {
     </View>
   );
 
+  const renderCellRightDetailSubtitle = () => (
+    <View
+      style={[_styles.cellContentView, _styles.cellContentView__type_subtitle]}
+    >
+      <View style={_styles.cellinner__subtitle}>
+        <Text
+          allowFontScaling={allowFontScaling}
+          numberOfLines={1}
+          style={_styles.cell_title}
+        >
+          {title}
+        </Text>
+        <Text
+          allowFontScaling={allowFontScaling}
+          numberOfLines={1}
+          style={
+            isDisabled
+              ? [_styles.cell_subtitle, _styles.cell_text__disabled]
+              : _styles.cell_subtitle
+          }
+        >
+          {subtitle}
+        </Text>
+      </View>
+      <Text
+        allowFontScaling={allowFontScaling}
+        numberOfLines={1}
+        style={
+          isDisabled
+            ? [_styles.cell_rightDetail, _styles.cell_text__disabled]
+            : _styles.cell_rightDetail
+        }
+      >
+        {detail}
+      </Text>
+    </View>
+  );
+
   /**
    * Render cell of type LeftDetail
    * @return {View} View with Text, Text and Accessory
@@ -274,6 +313,8 @@ const Cell = props => {
         return renderCellLeftDetail();
       case 'Subtitle':
         return renderCellSubtitle();
+      case 'RightDetailSubtitle':
+        return renderCellRightDetailSubtitle();
       default:
         return renderCellBasic();
     }
@@ -431,6 +472,7 @@ Cell.propTypes = {
   contentContainerStyle: ViewPropTypes.style,
   backgroundColor: PropTypes.string.isRequired,
   detail: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   detailTextStyle: Text.propTypes.style,
   disableImageResize: PropTypes.bool,
   hideSeparator: PropTypes.bool,
@@ -466,6 +508,7 @@ Cell.defaultProps = {
   contentContainerStyle: {},
   backgroundColor: '#FFF',
   detail: '',
+  subtitle: '',
   detailTextStyle: {},
   disableImageResize: false,
   hideSeparator: false,
