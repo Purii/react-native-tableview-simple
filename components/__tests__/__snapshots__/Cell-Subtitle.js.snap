@@ -44,9 +44,7 @@ exports[`renders with accessory 1`] = `
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
@@ -65,9 +63,7 @@ exports[`renders with accessory 1`] = `
           Subtitle
         </Text>
         <Text
-          accessible={true}
           allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
@@ -165,9 +161,7 @@ exports[`renders with subtitle 1`] = `
         }
       >
         <Text
-          accessible={true}
           allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [
@@ -186,9 +180,7 @@ exports[`renders with subtitle 1`] = `
           Subtitle
         </Text>
         <Text
-          accessible={true}
           allowFontScaling={true}
-          ellipsizeMode="tail"
           numberOfLines={1}
           style={
             Array [

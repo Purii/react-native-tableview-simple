@@ -31,9 +31,7 @@ exports[`renders with accessory 1`] = `
       }
     >
       <Text
-        accessible={true}
         allowFontScaling={true}
-        ellipsizeMode="tail"
         numberOfLines={1}
         style={
           Array [
@@ -52,9 +50,7 @@ exports[`renders with accessory 1`] = `
         RightDetail
       </Text>
       <Text
-        accessible={true}
         allowFontScaling={true}
-        ellipsizeMode="tail"
         numberOfLines={1}
         style={
           Array [
@@ -140,9 +136,7 @@ exports[`renders with right detail 1`] = `
       }
     >
       <Text
-        accessible={true}
         allowFontScaling={true}
-        ellipsizeMode="tail"
         numberOfLines={1}
         style={
           Array [
@@ -161,9 +155,7 @@ exports[`renders with right detail 1`] = `
         RightDetail
       </Text>
       <Text
-        accessible={true}
         allowFontScaling={true}
-        ellipsizeMode="tail"
         numberOfLines={1}
         style={
           Array [
