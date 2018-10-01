@@ -1,4 +1,5 @@
 # react-native-tableview-simple
+
 [![Build Status](https://travis-ci.org/Purii/react-native-tableview-simple.svg?branch=master)](https://travis-ci.org/Purii/react-native-tableview-simple)
 [![npm version](http://img.shields.io/npm/v/react-native-tableview-simple.svg?style=flat)](https://www.npmjs.com/package/react-native-tableview-simple)
 [![npm](https://img.shields.io/npm/dm/react-native-tableview-simple.svg)](https://www.npmjs.com/package/react-native-tableview-simple)
@@ -17,114 +18,119 @@ For displaying long datalists it is recommended to use the `FlatList` Component 
 
 Have a look at the [examples below](https://github.com/Purii/react-native-tableview-simple#examples)! :-)
 
-* [Installation](#installation)
-* [Extensible](#extensible)
-* [Props](#props): [`TableView`](#tableview) [`Cell`](#cell) [`Section`](#section) [`Separator`](#separator)
-* [Examples](#examples)
-* [Try it out](#try-it-out)
+- [Installation](#installation)
+- [Extensible](#extensible)
+- [Props](#props): [`TableView`](#tableview) [`Cell`](#cell) [`Section`](#section) [`Separator`](#separator)
+- [Examples](#examples)
+- [Try it out](#try-it-out)
 
 ## Installation
 
-1. *Install as dependency:*
-  ```sh
-  // yarn
-  yarn add react-native-tableview-simple
-  // or npm
-  npm i react-native-tableview-simple --S
-  ```
+1.  _Install as dependency:_
 
-2. *Add needed components:*
-  ```javascript
-  import {
-    Cell, 
-    Section,
-    TableView,
-  } from 'react-native-tableview-simple';
+
+```sh
+// yarn
+yarn add react-native-tableview-simple
+// or npm
+npm i react-native-tableview-simple --S
+```
+
+2.  _Add needed components:_
+
+
+```javascript
+import { Cell, Section, TableView } from "react-native-tableview-simple";
 ```
 
 ## Extensible
+
 `react-native-tableview-simple` provides you with some predefined CSS-styles, inspired by the native TableView.
-You can always mix the `Cell`-instances inside a `Section`, with other (React-Native)-Views.   
+You can always mix the `Cell`-instances inside a `Section`, with other (React-Native)-Views.  
 Therefore the `Cell`-Component itself can't be manipulated heavily.
 
-*If you aren't satisfied with a component, feel free to create a PR or just create and use a custom component.*
+_If you aren't satisfied with a component, feel free to create a PR or just create and use a custom component._
 
 ### Submit a Custom `Cell`-Component
+
 Maybe you want to add your lovely designed `Cell`-Component to the project.
-Just move your component to the folder `components` and choose a meaningful name! :-)    
+Just move your component to the folder `components` and choose a meaningful name! :-)
 
 ## Props
 
-* [`TableView`](#tableview)
-* [`Cell`](#cell)
-* [`Section`](#section)
-* [`Separator`](#separator)
+- [`TableView`](#tableview)
+- [`Cell`](#cell)
+- [`Section`](#section)
+- [`Separator`](#separator)
 
 ### `TableView`
+
 Currently `TableView` doesn't support any properties.
 
 ### `Section`
+
 The `Section` component is needed to render the `Cells` together with `Separators`.
 It's possible to use the `Flatlist` component instead ([Example](#render-with-flatlist)).
 
-| Prop  | Default | Type | Description |
-| :------------ | :---------------:| :---------------:| ---------------|
-| allowFontScaling | `true` | `bool` | Respect Text Size accessibility setting on iOS |
-| footerComponent | - | `React.Component` | Inject any component to replace original footer (optional) |
-| headerComponent | - | `React.Component` | Inject any component to replace original header (optional) |
-| footer | - | `string` | Footer value |
-| footerTextColor | `#6d6d72` | `string` | Text color of footer|
-| header | - | `string` | Header value |
-| headerTextColor | `#6d6d72` | `string` | Text color of header |
-| hideSeparator | `false` | `bool` | Hide separators |
-| sectionPaddingBottom | `15` | `number` | Padding bottom of section |
-| sectionPaddingTop | `15` | `number` | Padding top of section |
-| sectionTintColor | `#EFEFF4` | `string` | Background color of section |
-| separatorInsetLeft | `15` | `number` | Left inset of separator |
-| separatorInsetRight | `0` | `number` | Right inset of separator |
-| separatorTintColor | `#C8C7CC` | `string` | Color of separator |
+| Prop                 |  Default  |       Type        | Description                                                |
+| :------------------- | :-------: | :---------------: | ---------------------------------------------------------- |
+| allowFontScaling     |  `true`   |      `bool`       | Respect Text Size accessibility setting on iOS             |
+| footerComponent      |     -     | `React.Component` | Inject any component to replace original footer (optional) |
+| headerComponent      |     -     | `React.Component` | Inject any component to replace original header (optional) |
+| footer               |     -     |     `string`      | Footer value                                               |
+| footerTextColor      | `#6d6d72` |     `string`      | Text color of footer                                       |
+| header               |     -     |     `string`      | Header value                                               |
+| headerTextColor      | `#6d6d72` |     `string`      | Text color of header                                       |
+| hideSeparator        |  `false`  |      `bool`       | Hide separators                                            |
+| sectionPaddingBottom |   `15`    |     `number`      | Padding bottom of section                                  |
+| sectionPaddingTop    |   `15`    |     `number`      | Padding top of section                                     |
+| sectionTintColor     | `#EFEFF4` |     `string`      | Background color of section                                |
+| separatorInsetLeft   |   `15`    |     `number`      | Left inset of separator                                    |
+| separatorInsetRight  |    `0`    |     `number`      | Right inset of separator                                   |
+| separatorTintColor   | `#C8C7CC` |     `string`      | Color of separator                                         |
 
 ### `Cell`
+
 The style of the `Cell` component is inspired by the native `UITableView`.
 Because the `Cell` component is created with CSS only, its highly flexible.
 The content of the cell is separated in three views, which can all be modified via `props`: `cellImageView` | `cellContentView` | `cellAccessoryView`.
 
 To get an idea what you can modify via `props`, have a look at the [examples below](https://github.com/Purii/react-native-tableview-simple#examples).
 
-| Prop  | Default | Type | Description |
-| :------------ | :---------------:| :---------------:| ---------------|
-| accessory | - | `string` | Predefined accessory: `DisclosureIndicator`, `Detail`, `DetailDisclosure`, `Checkmark` |
-| accessoryColor | `#007AFF` | `string` | Color of accessory |
-| allowFontScaling | `true` | `bool` | Respect Text Size accessibility setting on iOS |
-| backgroundColor | `#FFF` | `string` | Background color of cell |
-| cellStyle | `Basic` | `string` | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle` |
-| cellAccessoryView | - | `React.Component` | Replace accessory view component (*e.g.: add Switch or ActivityIndicator*) |
-| cellContentView | - | `React.Component` | Replace content view component |
-| cellImageView | - | `React.Component` | Replace image view component |
-| contentContainerStyle | `{}` | `View.propTypes.style` | These styles will be applied to the content container which wraps all of the child views. Overrides `cellStyle` (*e.g.: Override paddingLeft and paddingRight or set fixed height*) |
-| detail | - | `string` or `number` | Detail value |
-| detailTextStyle | `{}` | `Text.propTypes.style` | These styles will be applied to the (left- / right-) detail `Text`-Component. |
-| disableImageResize | `false` | `bool` | Disable resizing of image |
-| hideSeparator | `false` | `bool` | Hide the following `Separator`-Component |
-| highlightActiveOpacity | `0.8` | `number` | Opacity of cell when touch is active |
-| highlightUnderlayColor | `black` | `string` | Color of underlay that will show through when touch is active |
-| isDisabled | `false` | `bool` | Cell is disabled. `onPress` will not get triggered |
-| image | - | `React.Component (Image)` | Image component displayed on the left. Will resized automatically |
-| leftDetailColor | `#007AFF` | `string` | Text color of left detail |
-| rightDetailColor | `#8E8E93` | `string` | Text color of right detail |
-| subtitleColor | `#000` | `string` | Text color of subtitle |
-| subtitleTextStyle | `{}` | `Text.propTypes.style` | These styles will be applied to the subtitle `Text`-Component. |
-| title | - | `string` or `number` or `React.Component` | Title value |
-| titleTextColor | `#000` | `string` | Text color of title |
-| titleTextStyle | `{}` | `Text.propTypes.style` | These styles will be applied to the title `Text`-Component (*e.g.: update `fontSize` or `fontFamily`*) |
-| titleTextStyleDisabled | `{}` | `Text.propTypes.style` | These styles will be applied to the title  `Text`-Component, when the cell is disabled |
-| onPress | - | `func` or `false` | If set, cell will be automaticaly initialized with TouchableHighlight |
-
+| Prop                              |  Default  |                   Type                    | Description                                                                                                                                                                         |
+| :-------------------------------- | :-------: | :---------------------------------------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| accessory                         |     -     |                 `string`                  | Predefined accessory: `DisclosureIndicator`, `Detail`, `DetailDisclosure`, `Checkmark`                                                                                              |
+| accessoryColor                    | `#007AFF` |                 `string`                  | Color of accessory                                                                                                                                                                  |
+| accessoryColorDisclosureIndicator | `#C7C7CC` |                 `string`                  | Color of accessory `DisclosureIndicator`                                                                                                                                            |
+| allowFontScaling                  |  `true`   |                  `bool`                   | Respect Text Size accessibility setting on iOS                                                                                                                                      |
+| backgroundColor                   |  `#FFF`   |                 `string`                  | Background color of cell                                                                                                                                                            |
+| cellStyle                         |  `Basic`  |                 `string`                  | Predefined styles: `Basic`, `RightDetail`, `LeftDetail`, `Subtitle`                                                                                                                 |
+| cellAccessoryView                 |     -     |             `React.Component`             | Replace accessory view component (_e.g.: add Switch or ActivityIndicator_)                                                                                                          |
+| cellContentView                   |     -     |             `React.Component`             | Replace content view component                                                                                                                                                      |
+| cellImageView                     |     -     |             `React.Component`             | Replace image view component                                                                                                                                                        |
+| contentContainerStyle             |   `{}`    |          `View.propTypes.style`           | These styles will be applied to the content container which wraps all of the child views. Overrides `cellStyle` (_e.g.: Override paddingLeft and paddingRight or set fixed height_) |
+| detail                            |     -     |           `string` or `number`            | Detail value                                                                                                                                                                        |
+| detailTextStyle                   |   `{}`    |          `Text.propTypes.style`           | These styles will be applied to the (left- / right-) detail `Text`-Component.                                                                                                       |
+| disableImageResize                |  `false`  |                  `bool`                   | Disable resizing of image                                                                                                                                                           |
+| hideSeparator                     |  `false`  |                  `bool`                   | Hide the following `Separator`-Component                                                                                                                                            |
+| highlightActiveOpacity            |   `0.8`   |                 `number`                  | Opacity of cell when touch is active                                                                                                                                                |
+| highlightUnderlayColor            |  `black`  |                 `string`                  | Color of underlay that will show through when touch is active                                                                                                                       |
+| isDisabled                        |  `false`  |                  `bool`                   | Cell is disabled. `onPress` will not get triggered                                                                                                                                  |
+| image                             |     -     |         `React.Component (Image)`         | Image component displayed on the left. Will resized automatically                                                                                                                   |
+| leftDetailColor                   | `#007AFF` |                 `string`                  | Text color of left detail                                                                                                                                                           |
+| rightDetailColor                  | `#8E8E93` |                 `string`                  | Text color of right detail                                                                                                                                                          |
+| subtitleColor                     |  `#000`   |                 `string`                  | Text color of subtitle                                                                                                                                                              |
+| subtitleTextStyle                 |   `{}`    |          `Text.propTypes.style`           | These styles will be applied to the subtitle `Text`-Component.                                                                                                                      |
+| title                             |     -     | `string` or `number` or `React.Component` | Title value                                                                                                                                                                         |
+| titleTextColor                    |  `#000`   |                 `string`                  | Text color of title                                                                                                                                                                 |
+| titleTextStyle                    |   `{}`    |          `Text.propTypes.style`           | These styles will be applied to the title `Text`-Component (_e.g.: update `fontSize` or `fontFamily`_)                                                                              |
+| titleTextStyleDisabled            |   `{}`    |          `Text.propTypes.style`           | These styles will be applied to the title `Text`-Component, when the cell is disabled                                                                                               |
+| onPress                           |     -     |             `func` or `false`             | If set, cell will be automaticaly initialized with TouchableHighlight                                                                                                               |
 
 #### Wrap `Cell`
+
 Sometimes custom `Cell` components are needed.
 By creating new component, which is based on `Cell`, its only necessary to set the props once.
-
 
 ```javascript
 ...
@@ -169,36 +175,37 @@ const CellVariant = (props) => (
 ```
 
 ### `Separator`
+
 In general the `Separator` component is used internally by the `Section` component.
 But additionally this component can be used together with `FlatList`.
 See the [example below](#render-with-flatlist).
 
-| Prop  | Default | Type | Description |
-| :------------ | :---------------:| :---------------:| ---------------|
-| backgroundColor | `#EFEFF4` | `string` | Background color |
-| insetLeft | `15` | `number` | Left inset of separator |
-| insetRight | `0` | `number` | Right inset of separator |
-| isHidden | `false` | `bool` | Hide separator but keeping its height |
-| tintColor | `#C8C7CC` | `string` | Color of separator |
+| Prop            |  Default  |   Type   | Description                           |
+| :-------------- | :-------: | :------: | ------------------------------------- |
+| backgroundColor | `#EFEFF4` | `string` | Background color                      |
+| insetLeft       |   `15`    | `number` | Left inset of separator               |
+| insetRight      |    `0`    | `number` | Right inset of separator              |
+| isHidden        |  `false`  |  `bool`  | Hide separator but keeping its height |
+| tintColor       | `#C8C7CC` | `string` | Color of separator                    |
 
 ## Examples
-The following examples can be found in the folder `example`.   
+
+The following examples can be found in the folder `example`.  
 To run the example project, follow these steps:
 
-1. `git clone https://github.com/Purii/react-native-tableview-simple`
-1. `cd example`
-1. `yarn` or `npm i`
-1. run `/example/ios/example.xcodeproj` via Xcode
+1.  `git clone https://github.com/Purii/react-native-tableview-simple`
+1.  `cd example`
+1.  `yarn` or `npm i`
+1.  run `/example/ios/example.xcodeproj` via Xcode
 
-* [Quick look](#quick-look)
-* [Use case: About-screen](#use-case-about-screen)
-* [Complete example / vs. native iOS](#react-native-tableview-simple-vs-native-ios)
-* [Render with `FlatList`](#render-with-flatlist)
+- [Quick look](#quick-look)
+- [Use case: About-screen](#use-case-about-screen)
+- [Complete example / vs. native iOS](#react-native-tableview-simple-vs-native-ios)
+- [Render with `FlatList`](#render-with-flatlist)
 
 ### Quick look
 
 ```javascript
-
 // ActivityIndicator as accessory
   <Cell
     title="Switch"
@@ -242,65 +249,65 @@ To run the example project, follow these steps:
  * @flow
  */
 
-import React, {
-  Component
-} from 'react';
-import {
-  AppRegistry,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-import {
-  Cell,
-  Section,
-  TableView
-} from 'react-native-tableview-simple';
+import React, { Component } from "react";
+import { AppRegistry, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Cell, Section, TableView } from "react-native-tableview-simple";
 
 export default class App extends Component<{}> {
   render() {
     return (
       <ScrollView contentContainerStyle={styles.stage}>
-          <View style={{
-            backgroundColor: '#37474F',
+        <View
+          style={{
+            backgroundColor: "#37474F",
             height: 500,
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}>
-            <View style={{
-              backgroundColor: '#ffc107',
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
+          <View
+            style={{
+              backgroundColor: "#ffc107",
               width: 80,
               height: 80,
               borderRadius: 10
-            }}></View>
-          </View>
-          <TableView>
-            <Section footer="All rights reserved.">
-              <Cell title="Help / FAQ" titleTextColor="#007AFF" onPress={() => console.log('open Help/FAQ')}/>
-              <Cell title="Contact Us" titleTextColor="#007AFF" onPress={() => console.log('open Contact Us')}/>
-            </Section>
-          </TableView>
+            }}
+          />
+        </View>
+        <TableView>
+          <Section footer="All rights reserved.">
+            <Cell
+              title="Help / FAQ"
+              titleTextColor="#007AFF"
+              onPress={() => console.log("open Help/FAQ")}
+            />
+            <Cell
+              title="Contact Us"
+              titleTextColor="#007AFF"
+              onPress={() => console.log("open Contact Us")}
+            />
+          </Section>
+        </TableView>
       </ScrollView>
     );
   }
-};
+}
 
 const styles = StyleSheet.create({
   stage: {
-    backgroundColor: '#EFEFF4',
+    backgroundColor: "#EFEFF4",
     paddingBottom: 20,
     flex: 1
-  },
+  }
 });
 ```
 
-
 ### `react-native-tableview-simple` vs. Native iOS
+
 The left screen is build using `react-native-tableview-simple`. The right one is native.
 
-| `react-native-tableview-simple` | Native iOS |
-| :------------: | :---------------: |
+|                            `react-native-tableview-simple`                            |                                         Native iOS                                          |
+| :-----------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------: |
 | ![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshot.png) | ![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshotNative.png) |
 
 ```javascript
@@ -310,9 +317,7 @@ The left screen is build using `react-native-tableview-simple`. The right one is
  * @flow
  */
 
-import React, {
-  Component,
-} from 'react';
+import React, { Component } from "react";
 import {
   ActivityIndicator,
   AppRegistry,
@@ -323,13 +328,9 @@ import {
   Switch,
   Text,
   TextInput,
-  View,
-} from 'react-native';
-import {
-  Cell,
-  Section,
-  TableView,
-} from 'react-native-tableview-simple';
+  View
+} from "react-native";
+import { Cell, Section, TableView } from "react-native-tableview-simple";
 
 export default class App extends Component<{}> {
   render() {
@@ -349,7 +350,7 @@ export default class App extends Component<{}> {
               cellStyle="Basic"
               title="Pressable w/ accessory"
               accessory="DisclosureIndicator"
-              onPress={() => console.log('Heyho!')}
+              onPress={() => console.log("Heyho!")}
             />
           </Section>
           <Section header="DISABLED">
@@ -377,7 +378,7 @@ export default class App extends Component<{}> {
               isDisabled
               title="Pressable w/ accessory"
               accessory="DisclosureIndicator"
-              onPress={() => console.log('Heyho!')}
+              onPress={() => console.log("Heyho!")}
             />
           </Section>
           <Section header="ACCESSORY">
@@ -408,7 +409,7 @@ export default class App extends Component<{}> {
               cellStyle="Basic"
               accessory="Detail"
               title="Pressable w/ accessory"
-              onPress={() => console.log('Heyho!')}
+              onPress={() => console.log("Heyho!")}
             />
           </Section>
           <Section header="Image" footer="A Footer">
@@ -419,7 +420,7 @@ export default class App extends Component<{}> {
                 <Image
                   style={{ borderRadius: 5 }}
                   source={{
-                    uri: 'https://facebook.github.io/react/img/logo_og.png',
+                    uri: "https://facebook.github.io/react/img/logo_og.png"
                   }}
                 />
               }
@@ -432,7 +433,7 @@ export default class App extends Component<{}> {
                 <Image
                   style={{ borderRadius: 5 }}
                   source={{
-                    uri: 'https://facebook.github.io/react/img/logo_og.png',
+                    uri: "https://facebook.github.io/react/img/logo_og.png"
                   }}
                 />
               }
@@ -445,7 +446,7 @@ export default class App extends Component<{}> {
                 <Image
                   style={{ borderRadius: 5 }}
                   source={{
-                    uri: 'https://facebook.github.io/react/img/logo_og.png',
+                    uri: "https://facebook.github.io/react/img/logo_og.png"
                   }}
                 />
               }
@@ -458,7 +459,7 @@ export default class App extends Component<{}> {
                 <Image
                   style={{ borderRadius: 5 }}
                   source={{
-                    uri: 'https://facebook.github.io/react/img/logo_og.png',
+                    uri: "https://facebook.github.io/react/img/logo_og.png"
                   }}
                 />
               }
@@ -467,12 +468,12 @@ export default class App extends Component<{}> {
               cellStyle="Basic"
               title="Pressable w/ accessory"
               accessory="DisclosureIndicator"
-              onPress={() => console.log('Heyho!')}
+              onPress={() => console.log("Heyho!")}
               image={
                 <Image
                   style={{ borderRadius: 5 }}
                   source={{
-                    uri: 'https://facebook.github.io/react/img/logo_og.png',
+                    uri: "https://facebook.github.io/react/img/logo_og.png"
                   }}
                 />
               }
@@ -485,7 +486,7 @@ export default class App extends Component<{}> {
                 <Image
                   style={{ height: 50, width: 50, borderRadius: 5 }}
                   source={{
-                    uri: 'https://facebook.github.io/react/img/logo_og.png',
+                    uri: "https://facebook.github.io/react/img/logo_og.png"
                   }}
                 />
               }
@@ -516,13 +517,18 @@ export default class App extends Component<{}> {
               cellAccessoryView={<ActivityIndicator />}
             />
             <Cell
-              cellContentView={<TextInput style={{fontSize: 16, flex: 1}} placeholder="TextInput"/>}
+              cellContentView={
+                <TextInput
+                  style={{ fontSize: 16, flex: 1 }}
+                  placeholder="TextInput"
+                />
+              }
             />
           </Section>
           <Section header="CUSTOMCELLS">
             <Cell
-              onPress={() => console.log('Heyho!')}
-              contentContainerStyle={{ alignItems: 'flex-start', height: 60 }}
+              onPress={() => console.log("Heyho!")}
+              contentContainerStyle={{ alignItems: "flex-start", height: 60 }}
               cellContentView={
                 <Text style={{ flex: 1, fontSize: 16 }}>
                   Custom height with Cell-Component
@@ -536,23 +542,23 @@ export default class App extends Component<{}> {
         </TableView>
         <View
           style={{
-            minHeight: Dimensions.get('window').height,
+            minHeight: Dimensions.get("window").height
           }}
         >
           <View
             style={{
-              backgroundColor: '#37474F',
+              backgroundColor: "#37474F",
               height: 500,
-              alignItems: 'center',
-              justifyContent: 'center',
+              alignItems: "center",
+              justifyContent: "center"
             }}
           >
             <View
               style={{
-                backgroundColor: '#ffc107',
+                backgroundColor: "#ffc107",
                 width: 80,
                 height: 80,
-                borderRadius: 10,
+                borderRadius: 10
               }}
             />
           </View>
@@ -561,12 +567,12 @@ export default class App extends Component<{}> {
               <Cell
                 title="Help / FAQ"
                 titleTextColor="#007AFF"
-                onPress={() => console.log('open Help/FAQ')}
+                onPress={() => console.log("open Help/FAQ")}
               />
               <Cell
                 title="Contact Us"
                 titleTextColor="#007AFF"
-                onPress={() => console.log('open Contact Us')}
+                onPress={() => console.log("open Contact Us")}
               />
             </Section>
           </TableView>
@@ -574,48 +580,50 @@ export default class App extends Component<{}> {
       </ScrollView>
     );
   }
-};
+}
 
 const styles = StyleSheet.create({
   stage: {
-    backgroundColor: '#EFEFF4',
+    backgroundColor: "#EFEFF4",
     paddingTop: 20,
-    paddingBottom: 20,
-  },
+    paddingBottom: 20
+  }
 });
 ```
 
 ### Render with `FlatList`
 
 ```javascript
-import React from 'react';
-import { FlatList } from 'react-native';
+import React from "react";
+import { FlatList } from "react-native";
 
-import { Cell, Separator, TableView } from 'react-native-tableview-simple';
+import { Cell, Separator, TableView } from "react-native-tableview-simple";
 
 const data = [
-  { id: 1, title: '1' },
-  { id: 2, title: '2' },
-  { id: 3, title: '3' },
-  { id: 4, title: '4' },
+  { id: 1, title: "1" },
+  { id: 2, title: "2" },
+  { id: 3, title: "3" },
+  { id: 4, title: "4" }
 ];
 
-export default (ExampleWithFlatList = () =>
+export default (ExampleWithFlatList = () => (
   <FlatList
     data={data}
     keyExtractor={(item, index) => item.id}
-    renderItem={({ item, separators }) =>
+    renderItem={({ item, separators }) => (
       <Cell
         title={item.title}
         onPress={console.log}
         onHighlightRow={separators.highlight}
         onUnHighlightRow={separators.unhighlight}
-      />}
-    ItemSeparatorComponent={({ highlighted }) =>
-      <Separator isHidden={highlighted} />}
-  />);
+      />
+    )}
+    ItemSeparatorComponent={({ highlighted }) => (
+      <Separator isHidden={highlighted} />
+    )}
+  />
+));
 ```
-
 
 # Try it out
 

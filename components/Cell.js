@@ -15,6 +15,7 @@ const Cell = props => {
   const {
     accessory,
     accessoryColor,
+    accessoryColorDisclosureIndicator,
     allowFontScaling,
     backgroundColor,
     cellStyle,
@@ -95,6 +96,10 @@ const Cell = props => {
     accessory_detailText: [
       styles.accessory_detailText,
       { color: accessoryColor },
+    ],
+    accessory_disclosureIndicator: [
+      styles.accessory_disclosureIndicator,
+      { borderColor: accessoryColorDisclosureIndicator },
     ],
   };
 
@@ -423,6 +428,7 @@ const styles = StyleSheet.create({
 Cell.propTypes = {
   accessory: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   accessoryColor: PropTypes.string.isRequired,
+  accessoryColorDisclosureIndicator: PropTypes.string.isRequired,
   allowFontScaling: PropTypes.bool,
   cellStyle: PropTypes.string,
   cellContentView: PropTypes.element,
@@ -458,6 +464,7 @@ Cell.propTypes = {
 Cell.defaultProps = {
   accessory: false,
   accessoryColor: '#007AFF',
+  accessoryColorDisclosureIndicator: '#C7C7CC',
   allowFontScaling: true,
   cellStyle: 'Basic',
   cellContentView: null,
