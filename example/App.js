@@ -205,6 +205,14 @@ export default class App extends Component<{}> {
             />
             <Cell
               cellStyle="Basic"
+              title="Colored DisclosureIndicator"
+              accessory="DetailDisclosure"
+              accessoryColor="green"
+              accessoryColorDisclosureIndicator="green"
+              onPress={() => console.log('Heyho!')}
+            />
+            <Cell
+              cellStyle="Basic"
               title="Switch"
               cellAccessoryView={<Switch />}
               contentContainerStyle={{ paddingVertical: 4 }}
