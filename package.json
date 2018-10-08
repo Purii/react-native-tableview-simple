@@ -63,9 +63,9 @@
     "jest": "23.6.0",
     "lint-staged": "^7.3.0",
     "prettier": "^1.14.3",
-    "react": "16.5.0",
+    "react": "16.5.2",
     "react-native": "^0.57.1",
-    "react-test-renderer": "16.5.0"
+    "react-test-renderer": "16.5.2"
   },
   "dependencies": {
     "prop-types": "^15.6.2"
