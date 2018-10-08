@@ -4,8 +4,9 @@
 [![npm version](http://img.shields.io/npm/v/react-native-tableview-simple.svg?style=flat)](https://www.npmjs.com/package/react-native-tableview-simple)
 [![npm](https://img.shields.io/npm/dm/react-native-tableview-simple.svg)](https://www.npmjs.com/package/react-native-tableview-simple)
 [![Package Quality](http://npm.packagequality.com/shield/react-native-tableview-simple.svg)](http://packagequality.com/#?package=react-native-tableview-simple)
+[![Greenkeeper badge](https://badges.greenkeeper.io/Purii/react-native-tableview-simple.svg)](https://greenkeeper.io/)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Purii/react-native-tableview-simple/master/LICENSE)
-[![Donate](https://img.shields.io/badge/Donate-Patreon-green.svg)](https://www.patreon.com/purii) [![Greenkeeper badge](https://badges.greenkeeper.io/Purii/react-native-tableview-simple.svg)](https://greenkeeper.io/)
+[![Donate](https://img.shields.io/badge/Donate-Patreon-green.svg)](https://www.patreon.com/purii)
 
 If you like my component and want to buy me a coffee, checkout my [Patreon page](https://www.patreon.com/purii) – Thanks!
 

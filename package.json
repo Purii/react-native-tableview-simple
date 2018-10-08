@@ -5,6 +5,7 @@
   "version": "0.18.1",
   "author": "Patrick Puritscher <hello@patrickpuritscher.com>",
   "scripts": {
+    "clean": "watchman watch-del-all && rm -rf node_modules/ && yarn cache clean && yarn",
     "format:src": "prettier --trailing-comma es5 --single-quote --write 'components/**/*.js'",
     "format:example": "prettier --trailing-comma es5 --single-quote --write 'example/*.js'",
     "format": "npm run format:src && npm run format:example",
@@ -59,13 +60,13 @@
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
-    "husky": "^1.0.1",
+    "husky": "^1.1.1",
     "jest": "23.6.0",
     "lint-staged": "^7.3.0",
     "prettier": "^1.14.3",
-    "react": "16.5.2",
-    "react-native": "^0.57.1",
-    "react-test-renderer": "16.5.2"
+    "react": "16.5.0",
+    "react-native": "^0.57.2",
+    "react-test-renderer": "16.5.0"
   },
   "dependencies": {
     "prop-types": "^15.6.2"
