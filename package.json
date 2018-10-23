@@ -43,7 +43,7 @@
     "android"
   ],
   "peerDependencies": {
-    "react": "*",
+    "react": ">=16.6.0",
     "react-native": ">=0.44 || 0.58.0-rc"
   },
   "bugs": {
