@@ -13,14 +13,13 @@
     "node": true
   },
   "globals": {
-    "__DEV__": true,
+    "__DEV__": true
   },
   "parserOptions": {
-    "ecmaVersion": 2016,
+    "ecmaVersion": 9,
     "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true,
-      "experimentalObjectRestSpread": true
+      "jsx": true
     }
   }
 }
