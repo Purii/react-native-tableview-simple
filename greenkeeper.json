@@ -2,9 +2,6 @@
   "groups": {
     "default": {
       "packages": ["package.json"]
-    },
-    "example": {
-      "packages": ["example/package.json"]
     }
   }
 }
