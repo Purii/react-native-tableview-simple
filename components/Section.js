@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 
 import PropTypes from 'prop-types';
 
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 
 import Separator from './Separator';
 
@@ -35,6 +35,7 @@ class Section extends PureComponent {
       separatorInsetLeft,
       separatorInsetRight,
       separatorTintColor,
+      withSafeAreaView,
     } = this.props;
 
     const header = this.props.header ? this.props.header : false;
@@ -123,6 +124,20 @@ class Section extends PureComponent {
      * @return {View} View with Text
      */
     const renderHeader = () => {
+      if (header && withSafeAreaView) {
+        return (
+          <View style={styles.sectionheader}>
+            <SafeAreaView>
+              <Text
+                allowFontScaling={allowFontScaling}
+                style={_styles.sectionheader__text}
+              >
+                {header}
+              </Text>
+            </SafeAreaView>
+          </View>
+        );
+      }
       if (header) {
         return (
           <View style={styles.sectionheader}>
@@ -143,6 +158,20 @@ class Section extends PureComponent {
      * @return {View} View with Text
      */
     const renderFooter = () => {
+      if (footer && withSafeAreaView) {
+        return (
+          <View style={styles.sectionfooter}>
+            <SafeAreaView>
+              <Text
+                allowFontScaling={allowFontScaling}
+                style={_styles.sectionfooter__text}
+              >
+                {footer}
+              </Text>
+            </SafeAreaView>
+          </View>
+        );
+      }
       if (footer) {
         return (
           <View style={styles.sectionfooter}>
@@ -208,6 +237,7 @@ Section.propTypes = {
   separatorInsetLeft: PropTypes.number,
   separatorInsetRight: PropTypes.number,
   separatorTintColor: PropTypes.string,
+  withSafeAreaView: PropTypes.bool,
 };
 
 Section.defaultProps = {
@@ -226,6 +256,7 @@ Section.defaultProps = {
   separatorInsetLeft: 15,
   separatorInsetRight: 0,
   separatorTintColor: '#C8C7CC',
+  withSafeAreaView: true,
 };
 
 export default Section;

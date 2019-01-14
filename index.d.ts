@@ -128,6 +128,15 @@ export interface SectionProps {
    * @memberof SectionProps
    */
   separatorTintColor?: string;
+
+  /**
+   * Render section header and footer with SafeAreaView
+   *
+   * @default true
+   * @type {bool}
+   * @memberof SectionProps
+   */
+  withSafeAreaView?: boolean;
 }
 
 export interface CellProps {
