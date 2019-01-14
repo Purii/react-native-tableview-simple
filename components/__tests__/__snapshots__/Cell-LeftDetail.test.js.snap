@@ -19,87 +19,105 @@ exports[`renders with accessory 1`] = `
       ]
     }
   >
-    <View
+    <RCTSafeAreaView
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-          "justifyContent": "center",
-          "paddingVertical": 10,
-        }
-      }
-    >
-      <Text
-        allowFontScaling={true}
-        numberOfLines={1}
-        style={
-          Array [
-            Object {
-              "alignSelf": "center",
-              "fontSize": 12,
-              "marginRight": 5,
-              "textAlign": "right",
-              "width": 75,
-            },
-            Object {
-              "color": "#007AFF",
-            },
-            Object {},
-          ]
-        }
-      >
-        Detail
-      </Text>
-      <Text
-        allowFontScaling={true}
-        numberOfLines={1}
-        style={
-          Array [
-            Object {
-              "flex": 1,
-              "fontSize": 12,
-            },
-            Object {
-              "color": "#000",
-            },
-          ]
-        }
-      >
-        LeftDetail
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "justifyContent": "center",
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "minHeight": 44,
+            "paddingLeft": 15,
+            "paddingRight": 20,
+          },
+          Object {
+            "backgroundColor": "#FFF",
+          },
+          Object {},
+        ]
       }
     >
       <View
         style={
-          Array [
-            Object {
-              "backgroundColor": "transparent",
-              "borderColor": "#c7c7cc",
-              "borderRightWidth": 1,
-              "borderTopWidth": 1,
-              "height": 10,
-              "marginLeft": 7,
-              "transform": Array [
-                Object {
-                  "rotate": "45deg",
-                },
-              ],
-              "width": 10,
-            },
-            Object {
-              "borderColor": "#C7C7CC",
-            },
-          ]
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "paddingVertical": 10,
+          }
         }
-      />
-    </View>
+      >
+        <Text
+          allowFontScaling={true}
+          numberOfLines={1}
+          style={
+            Array [
+              Object {
+                "alignSelf": "center",
+                "fontSize": 12,
+                "marginRight": 5,
+                "textAlign": "right",
+                "width": 75,
+              },
+              Object {
+                "color": "#007AFF",
+              },
+              Object {},
+            ]
+          }
+        >
+          Detail
+        </Text>
+        <Text
+          allowFontScaling={true}
+          numberOfLines={1}
+          style={
+            Array [
+              Object {
+                "flex": 1,
+                "fontSize": 12,
+              },
+              Object {
+                "color": "#000",
+              },
+            ]
+          }
+        >
+          LeftDetail
+        </Text>
+      </View>
+      <View
+        style={
+          Object {
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "borderColor": "#c7c7cc",
+                "borderRightWidth": 1,
+                "borderTopWidth": 1,
+                "height": 10,
+                "marginLeft": 7,
+                "transform": Array [
+                  Object {
+                    "rotate": "45deg",
+                  },
+                ],
+                "width": 10,
+              },
+              Object {
+                "borderColor": "#C7C7CC",
+              },
+            ]
+          }
+        />
+      </View>
+    </RCTSafeAreaView>
   </View>
 </View>
 `;
@@ -123,56 +141,74 @@ exports[`renders with left detail 1`] = `
       ]
     }
   >
-    <View
+    <RCTSafeAreaView
       style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-          "flexDirection": "row",
-          "justifyContent": "center",
-          "paddingVertical": 10,
-        }
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "minHeight": 44,
+            "paddingLeft": 15,
+            "paddingRight": 20,
+          },
+          Object {
+            "backgroundColor": "#FFF",
+          },
+          Object {},
+        ]
       }
     >
-      <Text
-        allowFontScaling={true}
-        numberOfLines={1}
+      <View
         style={
-          Array [
-            Object {
-              "alignSelf": "center",
-              "fontSize": 12,
-              "marginRight": 5,
-              "textAlign": "right",
-              "width": 75,
-            },
-            Object {
-              "color": "#007AFF",
-            },
-            Object {},
-          ]
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "paddingVertical": 10,
+          }
         }
       >
-        Detail
-      </Text>
-      <Text
-        allowFontScaling={true}
-        numberOfLines={1}
-        style={
-          Array [
-            Object {
-              "flex": 1,
-              "fontSize": 12,
-            },
-            Object {
-              "color": "#000",
-            },
-          ]
-        }
-      >
-        LeftDetail
-      </Text>
-    </View>
+        <Text
+          allowFontScaling={true}
+          numberOfLines={1}
+          style={
+            Array [
+              Object {
+                "alignSelf": "center",
+                "fontSize": 12,
+                "marginRight": 5,
+                "textAlign": "right",
+                "width": 75,
+              },
+              Object {
+                "color": "#007AFF",
+              },
+              Object {},
+            ]
+          }
+        >
+          Detail
+        </Text>
+        <Text
+          allowFontScaling={true}
+          numberOfLines={1}
+          style={
+            Array [
+              Object {
+                "flex": 1,
+                "fontSize": 12,
+              },
+              Object {
+                "color": "#000",
+              },
+            ]
+          }
+        >
+          LeftDetail
+        </Text>
+      </View>
+    </RCTSafeAreaView>
   </View>
 </View>
 `;

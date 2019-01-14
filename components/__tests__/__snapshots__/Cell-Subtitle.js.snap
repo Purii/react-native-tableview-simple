@@ -19,100 +19,118 @@ exports[`renders with accessory 1`] = `
       ]
     }
   >
-    <View
+    <RCTSafeAreaView
       style={
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
-            "justifyContent": "center",
-            "paddingVertical": 10,
+            "minHeight": 44,
+            "paddingLeft": 15,
+            "paddingRight": 20,
           },
           Object {
-            "paddingVertical": 4,
+            "backgroundColor": "#FFF",
           },
+          Object {},
         ]
-      }
-    >
-      <View
-        style={
-          Object {
-            "flex": 1,
-            "flexDirection": "column",
-          }
-        }
-      >
-        <Text
-          allowFontScaling={true}
-          numberOfLines={1}
-          style={
-            Array [
-              Object {
-                "flex": 1,
-                "fontSize": 16,
-                "letterSpacing": -0.32,
-              },
-              Object {
-                "color": "#000",
-              },
-              Object {},
-            ]
-          }
-        >
-          Subtitle
-        </Text>
-        <Text
-          allowFontScaling={true}
-          numberOfLines={1}
-          style={
-            Array [
-              Object {
-                "fontSize": 11,
-                "letterSpacing": 0.066,
-              },
-              Object {
-                "color": "#000",
-              },
-              Object {},
-            ]
-          }
-        >
-          No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-        </Text>
-      </View>
-    </View>
-    <View
-      style={
-        Object {
-          "justifyContent": "center",
-        }
       }
     >
       <View
         style={
           Array [
             Object {
-              "backgroundColor": "transparent",
-              "borderColor": "#c7c7cc",
-              "borderRightWidth": 1,
-              "borderTopWidth": 1,
-              "height": 10,
-              "marginLeft": 7,
-              "transform": Array [
-                Object {
-                  "rotate": "45deg",
-                },
-              ],
-              "width": 10,
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "paddingVertical": 10,
             },
             Object {
-              "borderColor": "#C7C7CC",
+              "paddingVertical": 4,
             },
           ]
         }
-      />
-    </View>
+      >
+        <View
+          style={
+            Object {
+              "flex": 1,
+              "flexDirection": "column",
+            }
+          }
+        >
+          <Text
+            allowFontScaling={true}
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "flex": 1,
+                  "fontSize": 16,
+                  "letterSpacing": -0.32,
+                },
+                Object {
+                  "color": "#000",
+                },
+                Object {},
+              ]
+            }
+          >
+            Subtitle
+          </Text>
+          <Text
+            allowFontScaling={true}
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "fontSize": 11,
+                  "letterSpacing": 0.066,
+                },
+                Object {
+                  "color": "#000",
+                },
+                Object {},
+              ]
+            }
+          >
+            No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "justifyContent": "center",
+          }
+        }
+      >
+        <View
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+                "borderColor": "#c7c7cc",
+                "borderRightWidth": 1,
+                "borderTopWidth": 1,
+                "height": 10,
+                "marginLeft": 7,
+                "transform": Array [
+                  Object {
+                    "rotate": "45deg",
+                  },
+                ],
+                "width": 10,
+              },
+              Object {
+                "borderColor": "#C7C7CC",
+              },
+            ]
+          }
+        />
+      </View>
+    </RCTSafeAreaView>
   </View>
 </View>
 `;
@@ -136,69 +154,87 @@ exports[`renders with subtitle 1`] = `
       ]
     }
   >
-    <View
+    <RCTSafeAreaView
       style={
         Array [
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
-            "justifyContent": "center",
-            "paddingVertical": 10,
+            "minHeight": 44,
+            "paddingLeft": 15,
+            "paddingRight": 20,
           },
           Object {
-            "paddingVertical": 4,
+            "backgroundColor": "#FFF",
           },
+          Object {},
         ]
       }
     >
       <View
         style={
-          Object {
-            "flex": 1,
-            "flexDirection": "column",
-          }
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "justifyContent": "center",
+              "paddingVertical": 10,
+            },
+            Object {
+              "paddingVertical": 4,
+            },
+          ]
         }
       >
-        <Text
-          allowFontScaling={true}
-          numberOfLines={1}
+        <View
           style={
-            Array [
-              Object {
-                "flex": 1,
-                "fontSize": 16,
-                "letterSpacing": -0.32,
-              },
-              Object {
-                "color": "#000",
-              },
-              Object {},
-            ]
+            Object {
+              "flex": 1,
+              "flexDirection": "column",
+            }
           }
         >
-          Subtitle
-        </Text>
-        <Text
-          allowFontScaling={true}
-          numberOfLines={1}
-          style={
-            Array [
-              Object {
-                "fontSize": 11,
-                "letterSpacing": 0.066,
-              },
-              Object {
-                "color": "#000",
-              },
-              Object {},
-            ]
-          }
-        >
-          No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
-        </Text>
+          <Text
+            allowFontScaling={true}
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "flex": 1,
+                  "fontSize": 16,
+                  "letterSpacing": -0.32,
+                },
+                Object {
+                  "color": "#000",
+                },
+                Object {},
+              ]
+            }
+          >
+            Subtitle
+          </Text>
+          <Text
+            allowFontScaling={true}
+            numberOfLines={1}
+            style={
+              Array [
+                Object {
+                  "fontSize": 11,
+                  "letterSpacing": 0.066,
+                },
+                Object {
+                  "color": "#000",
+                },
+                Object {},
+              ]
+            }
+          >
+            No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+          </Text>
+        </View>
       </View>
-    </View>
+    </RCTSafeAreaView>
   </View>
 </View>
 `;
