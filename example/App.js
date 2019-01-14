@@ -118,7 +118,7 @@ export default class App extends Component<{}> {
                 <Image
                   style={{ borderRadius: 5 }}
                   source={{
-                    uri: 'https://facebook.github.io/react/img/logo_og.png',
+                    uri: 'https://reactjs.org/favicon.ico',
                   }}
                 />
               }
@@ -131,7 +131,7 @@ export default class App extends Component<{}> {
                 <Image
                   style={{ borderRadius: 5 }}
                   source={{
-                    uri: 'https://facebook.github.io/react/img/logo_og.png',
+                    uri: 'https://reactjs.org/favicon.ico',
                   }}
                 />
               }
@@ -144,7 +144,7 @@ export default class App extends Component<{}> {
                 <Image
                   style={{ borderRadius: 5 }}
                   source={{
-                    uri: 'https://facebook.github.io/react/img/logo_og.png',
+                    uri: 'https://reactjs.org/favicon.ico',
                   }}
                 />
               }
@@ -157,7 +157,7 @@ export default class App extends Component<{}> {
                 <Image
                   style={{ borderRadius: 5 }}
                   source={{
-                    uri: 'https://facebook.github.io/react/img/logo_og.png',
+                    uri: 'https://reactjs.org/favicon.ico',
                   }}
                 />
               }
@@ -171,7 +171,7 @@ export default class App extends Component<{}> {
                 <Image
                   style={{ borderRadius: 5 }}
                   source={{
-                    uri: 'https://facebook.github.io/react/img/logo_og.png',
+                    uri: 'https://reactjs.org/favicon.ico',
                   }}
                 />
               }
@@ -184,7 +184,7 @@ export default class App extends Component<{}> {
                 <Image
                   style={{ height: 50, width: 50, borderRadius: 5 }}
                   source={{
-                    uri: 'https://facebook.github.io/react/img/logo_og.png',
+                    uri: 'https://reactjs.org/favicon.ico',
                   }}
                 />
               }
