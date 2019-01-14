@@ -4,12 +4,12 @@
 // TypeScript Version: 2.3
 
 import * as React from "react";
-import { ViewStyle, TextStyle, StyleProp } from 'react-native';
+import { ViewStyle, TextStyle, StyleProp } from "react-native";
 
 export interface SectionProps {
   /**
    * Respect Text Size accessibility setting on iOS
-   * 
+   *
    * @default true
    * @type {boolean}
    * @memberof SectionProps
@@ -18,7 +18,7 @@ export interface SectionProps {
 
   /**
    * Inject any component to replace original footer (optional)
-   * 
+   *
    * @type {JSX.Element}
    * @memberof SectionProps
    */
@@ -26,7 +26,7 @@ export interface SectionProps {
 
   /**
    * Inject any component to replace original header (optional)
-   * 
+   *
    * @type {JSX.Element}
    * @memberof SectionProps
    */
@@ -34,7 +34,7 @@ export interface SectionProps {
 
   /**
    * Footer value
-   * 
+   *
    * @type {string}
    * @memberof SectionProps
    */
@@ -42,7 +42,7 @@ export interface SectionProps {
 
   /**
    * Text color of footer
-   * 
+   *
    * @default #6d6d72
    * @type {string}
    * @memberof SectionProps
@@ -51,7 +51,7 @@ export interface SectionProps {
 
   /**
    * Header value
-   * 
+   *
    * @type {string}
    * @memberof SectionProps
    */
@@ -59,7 +59,7 @@ export interface SectionProps {
 
   /**
    * Text color of header
-   * 
+   *
    * @default #6d6d72
    * @type {string}
    * @memberof SectionProps
@@ -68,7 +68,7 @@ export interface SectionProps {
 
   /**
    * Hide separators
-   * 
+   *
    * @default false
    * @type {boolean}
    * @memberof SectionProps
@@ -77,7 +77,7 @@ export interface SectionProps {
 
   /**
    * Padding bottom of section
-   * 
+   *
    * @default 15
    * @type {number}
    * @memberof SectionProps
@@ -86,7 +86,7 @@ export interface SectionProps {
 
   /**
    * Padding top of section
-   * 
+   *
    * @default 15
    * @type {number}
    * @memberof SectionProps
@@ -95,7 +95,7 @@ export interface SectionProps {
 
   /**
    * Background color of section
-   * 
+   *
    * @default #EFEFF4
    * @type {string}
    * @memberof SectionProps
@@ -104,7 +104,7 @@ export interface SectionProps {
 
   /**
    * Left inset of separator
-   * 
+   *
    * @default 15
    * @type {number}
    * @memberof SectionProps
@@ -113,7 +113,7 @@ export interface SectionProps {
 
   /**
    * Right inset of separator
-   * 
+   *
    * @default 0
    * @type {number}
    * @memberof SectionProps
@@ -123,7 +123,7 @@ export interface SectionProps {
   /**
    * Color of separator
    *
-   * @default #C8C7CC	 
+   * @default #C8C7CC
    * @type {string}
    * @memberof SectionProps
    */
@@ -133,7 +133,7 @@ export interface SectionProps {
 export interface CellProps {
   /**
    * Predefined accessory
-   * 
+   *
    * @type {("DisclosureIndicator"
    *     | "Detail"
    *     | "DetailDisclosure"
@@ -148,16 +148,25 @@ export interface CellProps {
 
   /**
    * Color of accessory
-   * 
-   * @default #007AFF	
+   *
+   * @default #007AFF
    * @type {string}
    * @memberof CellProps
    */
   accessoryColor?: string;
 
   /**
+   * Color of accessory DisclosureIndicator
+   *
+   * @default #C7C7CC
+   * @type {string}
+   * @memberof CellProps
+   */
+  accessoryColorDisclosureIndicator?: string;
+
+  /**
    * Respect Text Size accessibility setting on iOS
-   * 
+   *
    * @default true
    * @type {boolean}
    * @memberof CellProps
@@ -166,7 +175,7 @@ export interface CellProps {
 
   /**
    * Background color of cell
-   * 
+   *
    * @default #FFF
    * @type {string}
    * @memberof CellProps
@@ -175,7 +184,7 @@ export interface CellProps {
 
   /**
    * Predefined cell style
-   * 
+   *
    * @default "Basic"
    * @type {("Basic" | "RightDetail" | "LeftDetail" | "Subtitle")}
    * @memberof CellProps
@@ -184,7 +193,7 @@ export interface CellProps {
 
   /**
    * Replace accessory view component (e.g.: add Switch or ActivityIndicator)
-   * 
+   *
    * @type {JSX.Element}
    * @memberof CellProps
    */
@@ -192,7 +201,7 @@ export interface CellProps {
 
   /**
    * Replace content view component
-   * 
+   *
    * @type {JSX.Element}
    * @memberof CellProps
    */
@@ -200,7 +209,7 @@ export interface CellProps {
 
   /**
    * Replace image view component
-   * 
+   *
    * @type {JSX.Element}
    * @memberof CellProps
    */
@@ -208,7 +217,7 @@ export interface CellProps {
 
   /**
    * These styles will be applied to the content container which wraps all of the child views. Overrides cellStyle (e.g.: Override paddingLeft and paddingRight or set fixed height)
-   * 
+   *
    * @type {StyleProp<ViewStyle>}
    * @memberof CellProps
    */
@@ -216,15 +225,15 @@ export interface CellProps {
 
   /**
    * Detail value
-   * 
+   *
    * @type {(string | number)}
    * @memberof CellProps
    */
   detail?: string | number;
-  
+
   /**
    * These styles will be applied to the (left- / right-) detail Text-Component.
-   * 
+   *
    * @type {StyleProp<TextStyle>}
    * @memberof CellProps
    */
@@ -232,7 +241,7 @@ export interface CellProps {
 
   /**
    * Disable resizing of image
-   * 
+   *
    * @default false
    * @type {boolean}
    * @memberof CellProps
@@ -241,7 +250,7 @@ export interface CellProps {
 
   /**
    * Opacity of cell when touch is active
-   * 
+   *
    * @default 0.8
    * @type {number}
    * @memberof CellProps
@@ -250,7 +259,7 @@ export interface CellProps {
 
   /**
    * Color of underlay that will show through when touch is active
-   * 
+   *
    * @default "black"
    * @type {string}
    * @memberof CellProps
@@ -259,7 +268,7 @@ export interface CellProps {
 
   /**
    * Cell is disabled. onPress will not get triggered
-   * 
+   *
    * @default false
    * @type {boolean}
    * @memberof CellProps
@@ -268,7 +277,7 @@ export interface CellProps {
 
   /**
    * Image component displayed on the left. Will resized automatically
-   * 
+   *
    * @type {JSX.Element}
    * @memberof CellProps
    */
@@ -276,7 +285,7 @@ export interface CellProps {
 
   /**
    * Text color of left detail
-   * 
+   *
    * @default #007AFF
    * @type {string}
    * @memberof CellProps
@@ -285,7 +294,7 @@ export interface CellProps {
 
   /**
    * Text color of right detail
-   * 
+   *
    * @default #8E8E93
    * @type {string}
    * @memberof CellProps
@@ -294,7 +303,7 @@ export interface CellProps {
 
   /**
    * Text color of subtitle
-   * 
+   *
    * @default #000
    * @type {string}
    * @memberof CellProps
@@ -303,7 +312,7 @@ export interface CellProps {
 
   /**
    * These styles will be applied to the subtitle Text-Component.
-   * 
+   *
    * @type {StyleProp<TextStyle>}
    * @memberof CellProps
    */
@@ -311,7 +320,7 @@ export interface CellProps {
 
   /**
    * Title value
-   * 
+   *
    * @type {(string | number | JSX.Element)}
    * @memberof CellProps
    */
@@ -319,7 +328,7 @@ export interface CellProps {
 
   /**
    * Text color of title
-   * 
+   *
    * @default #000
    * @type {string}
    * @memberof CellProps
@@ -328,7 +337,7 @@ export interface CellProps {
 
   /**
    * These styles will be applied to the title Text-Component (e.g.: update fontSize or fontFamily)
-   * 
+   *
    * @type {StyleProp<TextStyle>}
    * @memberof CellProps
    */
@@ -336,7 +345,7 @@ export interface CellProps {
 
   /**
    * These styles will be applied to the title Text-Component, when the cell is disabled
-   * 
+   *
    * @type {StyleProp<TextStyle>}
    * @memberof CellProps
    */
@@ -344,21 +353,21 @@ export interface CellProps {
 
   /**
    * Function called when row is highlighted
-   * 
+   *
    * @memberof CellProps
    */
   onHighlightRow?(): void;
-  
+
   /**
    * Function called when row is unhighlighted
-   * 
+   *
    * @memberof CellProps
    */
   onUnHighlightRow?(): void;
 
   /**
    * If set, cell will be automaticaly initialized with TouchableHighlight
-   * 
+   *
    * @memberof CellProps
    */
   onPress?: () => void | false;
@@ -367,7 +376,7 @@ export interface CellProps {
 export interface SeparatorProps {
   /**
    * Background color
-   * 
+   *
    * @default #EFEFF4
    * @type {string}
    * @memberof SeparatorProps
@@ -376,7 +385,7 @@ export interface SeparatorProps {
 
   /**
    * Left inset of separator
-   * 
+   *
    * @default 15
    * @type {number}
    * @memberof SeparatorProps
@@ -385,7 +394,7 @@ export interface SeparatorProps {
 
   /**
    * Right inset of separator
-   * 
+   *
    * @default 0
    * @type {number}
    * @memberof SeparatorProps
@@ -394,8 +403,8 @@ export interface SeparatorProps {
 
   /**
    * Hide separator but keeping its height
-   * 
-   * @default false 
+   *
+   * @default false
    * @type {boolean}
    * @memberof SeparatorProps
    */
@@ -403,7 +412,7 @@ export interface SeparatorProps {
 
   /**
    * Color of separator
-   * 
+   *
    * @default #C8C7CC
    * @type {string}
    * @memberof SeparatorProps
