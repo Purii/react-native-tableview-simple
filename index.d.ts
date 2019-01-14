@@ -371,6 +371,15 @@ export interface CellProps {
    * @memberof CellProps
    */
   onPress?: () => void | false;
+
+  /**
+   * Render cell with SafeAreaView
+   *
+   * @default true
+   * @type {bool}
+   * @memberof CellProps
+   */
+  withSafeAreaView?: boolean;
 }
 
 export interface SeparatorProps {
