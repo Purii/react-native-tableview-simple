@@ -64,7 +64,7 @@
     "jest": "23.6.0",
     "lint-staged": "^8.1.0",
     "prettier": "^1.15.3",
-    "react": "16.8.0",
+    "react": "16.8.2",
     "react-native": "^0.57.8",
     "react-test-renderer": "16.8.0"
   },
