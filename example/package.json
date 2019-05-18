@@ -10,7 +10,7 @@
   "dependencies": {
     "react": "16.8.6",
     "react-native": "0.59.8",
-    "react-native-tableview-simple": "^2.0.1"
+    "react-native-tableview-simple": "^2.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
