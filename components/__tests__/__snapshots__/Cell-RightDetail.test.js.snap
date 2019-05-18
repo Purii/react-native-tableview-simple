@@ -2,24 +2,19 @@
 
 exports[`renders with accessory 1`] = `
 <View>
-  <View
+  <RCTSafeAreaView
     style={
       Array [
         Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "minHeight": 44,
-          "paddingLeft": 15,
-          "paddingRight": 20,
+          "flex": 1,
         },
         Object {
           "backgroundColor": "#FFF",
         },
-        Object {},
       ]
     }
   >
-    <RCTSafeAreaView
+    <View
       style={
         Array [
           Object {
@@ -118,31 +113,26 @@ exports[`renders with accessory 1`] = `
           }
         />
       </View>
-    </RCTSafeAreaView>
-  </View>
+    </View>
+  </RCTSafeAreaView>
 </View>
 `;
 
 exports[`renders with right detail 1`] = `
 <View>
-  <View
+  <RCTSafeAreaView
     style={
       Array [
         Object {
-          "alignItems": "center",
-          "flexDirection": "row",
-          "minHeight": 44,
-          "paddingLeft": 15,
-          "paddingRight": 20,
+          "flex": 1,
         },
         Object {
           "backgroundColor": "#FFF",
         },
-        Object {},
       ]
     }
   >
-    <RCTSafeAreaView
+    <View
       style={
         Array [
           Object {
@@ -210,7 +200,7 @@ exports[`renders with right detail 1`] = `
           Detail
         </Text>
       </View>
-    </RCTSafeAreaView>
-  </View>
+    </View>
+  </RCTSafeAreaView>
 </View>
 `;
