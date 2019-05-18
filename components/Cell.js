@@ -60,6 +60,12 @@ const Cell = props => {
       },
       contentContainerStyle,
     ],
+    cellSafeAreaContainer: [
+      styles.cellSafeAreaContainer,
+      {
+        backgroundColor,
+      },
+    ],
     cell_title: isDisabled
       ? [styles.cell_title, styles.cell_text__disabled, titleTextStyleDisabled]
       : [styles.cell_title, { color: titleTextColor }, titleTextStyle],
@@ -304,13 +310,13 @@ const Cell = props => {
    * @return {View} Complete View with cell elements
    */
   const renderCellWithSafeAreaView = () => (
-    <View style={_styles.cell}>
-      <SafeAreaView style={_styles.cell}>
+    <SafeAreaView style={_styles.cellSafeAreaContainer}>
+      <View style={_styles.cell}>
         {cellImageView || renderImageView()}
         {cellContentView || renderCellContentView()}
         {cellAccessoryView || renderAccessoryView()}
-      </SafeAreaView>
-    </View>
+      </View>
+    </SafeAreaView>
   );
 
   if (isPressable && !isDisabled) {
@@ -340,6 +346,10 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     minHeight: 44,
     flexDirection: 'row',
+  },
+  // SafeAreaView only adds padding.
+  cellSafeAreaContainer: {
+    flex: 1,
   },
   cellContentView: {
     alignItems: 'center',
