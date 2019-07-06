@@ -36,6 +36,7 @@ const Cell = props => {
     rightDetailColor,
     subtitleColor,
     subtitleTextStyle,
+    testID,
     title,
     titleTextStyle,
     titleTextStyleDisabled,
@@ -317,13 +318,14 @@ const Cell = props => {
         onPress={onPress}
         underlayColor={highlightUnderlayColor}
         onPressIn={onHighlightRow}
-        onPressOut={onUnHighlightRow}>
+        onPressOut={onUnHighlightRow}
+        testID={testID}>
         {withSafeAreaView ? renderCellWithSafeAreaView() : renderCell()}
       </TouchableHighlight>
     );
   }
   return (
-    <View>
+    <View testID={testID}>
       {withSafeAreaView ? renderCellWithSafeAreaView() : renderCell()}
     </View>
   );
@@ -471,6 +473,7 @@ Cell.propTypes = {
   rightDetailColor: PropTypes.string,
   subtitleColor: PropTypes.string,
   subtitleTextStyle: Text.propTypes.style,
+  testID: PropTypes.string,
   title: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
@@ -509,6 +512,7 @@ Cell.defaultProps = {
   rightDetailColor: '#8E8E93',
   subtitleColor: '#000',
   subtitleTextStyle: {},
+  testID: undefined,
   title: '',
   titleTextColor: '#000',
   titleTextStyle: {},
