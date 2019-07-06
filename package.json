@@ -14,8 +14,12 @@
     "test": "npm run lint && npm run jest"
   },
   "lint-staged": {
-    "*.{js,md}": [
+    "{index,components/**/*}.js": [
       "eslint",
+      "prettier --trailing-comma es5 --single-quote --write",
+      "git add"
+    ],
+    "*.{js,md}": [
       "prettier --trailing-comma es5 --single-quote --write",
       "git add"
     ]
