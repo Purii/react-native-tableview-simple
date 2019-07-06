@@ -6,21 +6,17 @@
   "author": "Patrick Puritscher <hello@patrickpuritscher.com>",
   "scripts": {
     "clean": "watchman watch-del-all && rm -rf node_modules/ && yarn cache clean && yarn",
-    "format:src": "prettier --trailing-comma es5 --single-quote --write 'components/**/*.js'",
-    "format:example": "prettier --trailing-comma es5 --single-quote --write 'example/*.js'",
+    "format:src": "prettier --write 'components/**/*.js'",
+    "format:example": "prettier --write 'example/*.js'",
     "format": "npm run format:src && npm run format:example",
     "jest": "jest",
     "lint": "eslint index.js components/",
     "test": "npm run lint && npm run jest"
   },
   "lint-staged": {
-    "{index,components/**/*}.js": [
-      "eslint",
-      "prettier --trailing-comma es5 --single-quote --write",
-      "git add"
-    ],
     "*.{js,md}": [
-      "prettier --trailing-comma es5 --single-quote --write",
+      "eslint",
+      "prettier --write",
       "git add"
     ]
   },
@@ -63,16 +59,13 @@
     "url": "git@github.com:Purii/react-native-tableview-simple.git"
   },
   "devDependencies": {
+    "@react-native-community/eslint-config": "^0.0.5",
     "babel-jest": "24.8.0",
     "babel-preset-react-native": "4.0.1",
     "eslint": "^6.0.1",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.14.2",
     "husky": "^3.0.0",
     "jest": "24.8.0",
     "lint-staged": "^9.0.2",
-    "prettier": "^1.18.2",
     "react": "16.8.6",
     "react-native": "^0.60.0",
     "react-test-renderer": "16.8.6"

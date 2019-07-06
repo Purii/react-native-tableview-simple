@@ -19,7 +19,7 @@ it('renders with accessory', () => {
         title="LeftDetail"
         detail="Detail"
         accessory="DisclosureIndicator"
-      />
+      />,
     )
     .toJSON();
   expect(tree).toMatchSnapshot();

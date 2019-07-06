@@ -11,7 +11,7 @@ it('renders with subtitle', () => {
         cellStyle="Subtitle"
         title="Subtitle"
         detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
-      />
+      />,
     )
     .toJSON();
   expect(tree).toMatchSnapshot();
@@ -25,7 +25,7 @@ it('renders with accessory', () => {
         title="Subtitle"
         detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
         accessory="DisclosureIndicator"
-      />
+      />,
     )
     .toJSON();
   expect(tree).toMatchSnapshot();

@@ -14,7 +14,7 @@ it('renders basic', () => {
 it('renders with accessory', () => {
   const tree = renderer
     .create(
-      <Cell cellStyle="Basic" title="Basic" accessory="DisclosureIndicator" />
+      <Cell cellStyle="Basic" title="Basic" accessory="DisclosureIndicator" />,
     )
     .toJSON();
   expect(tree).toMatchSnapshot();

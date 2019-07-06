@@ -50,7 +50,6 @@ const Cell = props => {
   /**
    * Merge styles with props
    */
-  // eslint-disable-next-line no-underscore-dangle
   const _styles = {
     ...styles,
     cell: [
@@ -159,7 +158,9 @@ const Cell = props => {
    * @return {Image} Image component with updated props
    */
   const renderImageView = () => {
-    if (!image) return null;
+    if (!image) {
+      return null;
+    }
     const propsToAdd = {
       style: disableImageResize
         ? image.props.style
@@ -181,8 +182,7 @@ const Cell = props => {
       <Text
         allowFontScaling={allowFontScaling}
         numberOfLines={1}
-        style={_styles.cell_title}
-      >
+        style={_styles.cell_title}>
         {title}
       </Text>
     </View>
@@ -197,8 +197,7 @@ const Cell = props => {
       <Text
         allowFontScaling={allowFontScaling}
         numberOfLines={1}
-        style={_styles.cell_title}
-      >
+        style={_styles.cell_title}>
         {title}
       </Text>
       <Text
@@ -208,8 +207,7 @@ const Cell = props => {
           isDisabled
             ? [_styles.cell_rightDetail, _styles.cell_text__disabled]
             : _styles.cell_rightDetail
-        }
-      >
+        }>
         {detail}
       </Text>
     </View>
@@ -228,15 +226,13 @@ const Cell = props => {
           isDisabled
             ? [_styles.cell_leftDetail, _styles.cell_text__disabled]
             : _styles.cell_leftDetail
-        }
-      >
+        }>
         {detail}
       </Text>
       <Text
         allowFontScaling={allowFontScaling}
         numberOfLines={1}
-        style={_styles.cell_leftDetailTitle}
-      >
+        style={_styles.cell_leftDetailTitle}>
         {title}
       </Text>
     </View>
@@ -248,14 +244,12 @@ const Cell = props => {
    */
   const renderCellSubtitle = () => (
     <View
-      style={[_styles.cellContentView, _styles.cellContentView__type_subtitle]}
-    >
+      style={[_styles.cellContentView, _styles.cellContentView__type_subtitle]}>
       <View style={_styles.cellinner__subtitle}>
         <Text
           allowFontScaling={allowFontScaling}
           numberOfLines={1}
-          style={_styles.cell_title}
-        >
+          style={_styles.cell_title}>
           {title}
         </Text>
         <Text
@@ -265,8 +259,7 @@ const Cell = props => {
             isDisabled
               ? [_styles.cell_subtitle, _styles.cell_text__disabled]
               : _styles.cell_subtitle
-          }
-        >
+          }>
           {detail}
         </Text>
       </View>
@@ -326,8 +319,7 @@ const Cell = props => {
         onPress={onPress}
         underlayColor={highlightUnderlayColor}
         onPressIn={onHighlightRow}
-        onPressOut={onUnHighlightRow}
-      >
+        onPressOut={onUnHighlightRow}>
         {withSafeAreaView ? renderCellWithSafeAreaView() : renderCell()}
       </TouchableHighlight>
     );

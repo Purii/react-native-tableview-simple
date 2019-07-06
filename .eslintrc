@@ -1,23 +1,4 @@
 {
-  "extends": ["plugin:react/recommended", "prettier", "prettier/react"],
-  "plugins": ["react", "prettier"],
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
-  "env": {
-    "es6": true,
-    "node": true
-  },
-  "globals": {
-    "__DEV__": true
-  },
-  "parserOptions": {
-    "ecmaVersion": 9,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  }
+  "root": true,
+  "extends": ["@react-native-community"]
 }

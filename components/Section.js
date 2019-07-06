@@ -43,7 +43,6 @@ class Section extends PureComponent {
     /**
      * Merge styles with props
      */
-    // eslint-disable-next-line no-underscore-dangle
     const _styles = {
       ...styles,
       section: [
@@ -99,9 +98,11 @@ class Section extends PureComponent {
         this.state.highlightedRowIndex === index + 1;
 
       // Add margin, if Image is provided
+      let separatorInsetLeftWithImageInset = separatorInsetLeft;
       if (child.props.image) {
         // Only update if not manually updated
-        const insetLeft = separatorInsetLeft !== 15 ? separatorInsetLeft : 60;
+        separatorInsetLeftWithImageInset =
+          separatorInsetLeft !== 15 ? separatorInsetLeft : 60;
       }
 
       return (
@@ -111,7 +112,7 @@ class Section extends PureComponent {
             isHidden={invisibleSeparator}
             backgroundColor={child.props.backgroundColor}
             tintColor={separatorTintColor}
-            insetLeft={separatorInsetLeft}
+            insetLeft={separatorInsetLeftWithImageInset}
             insetRight={separatorInsetRight}
           />
         </View>
@@ -129,8 +130,7 @@ class Section extends PureComponent {
             <SafeAreaView>
               <Text
                 allowFontScaling={allowFontScaling}
-                style={_styles.sectionheader__text}
-              >
+                style={_styles.sectionheader__text}>
                 {header}
               </Text>
             </SafeAreaView>
@@ -142,8 +142,7 @@ class Section extends PureComponent {
           <View style={styles.sectionheader}>
             <Text
               allowFontScaling={allowFontScaling}
-              style={_styles.sectionheader__text}
-            >
+              style={_styles.sectionheader__text}>
               {header}
             </Text>
           </View>
@@ -163,8 +162,7 @@ class Section extends PureComponent {
             <SafeAreaView>
               <Text
                 allowFontScaling={allowFontScaling}
-                style={_styles.sectionfooter__text}
-              >
+                style={_styles.sectionfooter__text}>
                 {footer}
               </Text>
             </SafeAreaView>
@@ -176,8 +174,7 @@ class Section extends PureComponent {
           <View style={styles.sectionfooter}>
             <Text
               allowFontScaling={allowFontScaling}
-              style={_styles.sectionfooter__text}
-            >
+              style={_styles.sectionfooter__text}>
               {footer}
             </Text>
           </View>
