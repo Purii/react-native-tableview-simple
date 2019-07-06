@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import React from 'react';
 
 import PropTypes from 'prop-types';
@@ -347,7 +346,7 @@ const styles = StyleSheet.create({
     minHeight: 44,
     flexDirection: 'row',
   },
-  // SafeAreaView only adds padding.
+  // SafeAreaView only adds padding
   cellSafeAreaContainer: {
     flex: 1,
   },
