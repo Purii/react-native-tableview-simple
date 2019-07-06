@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 
 import PropTypes from 'prop-types';
 
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { Platform, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 
 import Separator from './Separator';
 
@@ -255,7 +255,12 @@ Section.defaultProps = {
   separatorInsetLeft: 15,
   separatorInsetRight: 0,
   separatorTintColor: '#C8C7CC',
-  withSafeAreaView: true,
+  withSafeAreaView:
+    Platform.OS === 'ios'
+      ? parseInt(Platform.Version, 10) <= 10
+        ? false
+        : true
+      : true,
 };
 
 export default Section;

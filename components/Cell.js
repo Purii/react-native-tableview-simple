@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {
+  Platform,
   SafeAreaView,
   StyleSheet,
   Text,
@@ -522,7 +523,12 @@ Cell.defaultProps = {
   titleTextColor: '#000',
   titleTextStyle: {},
   titleTextStyleDisabled: {},
-  withSafeAreaView: true,
+  withSafeAreaView:
+    Platform.OS === 'ios'
+      ? parseInt(Platform.Version, 10) <= 10
+        ? false
+        : true
+      : true,
 };
 
 export default Cell;
