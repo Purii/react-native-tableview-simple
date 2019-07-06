@@ -3,6 +3,7 @@
 exports[`renders with accessory 1`] = `
 <View>
   <RCTSafeAreaView
+    emulateUnlessSupported={true}
     style={
       Array [
         Object {
@@ -120,6 +121,7 @@ exports[`renders with accessory 1`] = `
 exports[`renders with left detail 1`] = `
 <View>
   <RCTSafeAreaView
+    emulateUnlessSupported={true}
     style={
       Array [
         Object {
