@@ -5104,10 +5104,10 @@ react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
-react-native-tableview-simple@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/react-native-tableview-simple/-/react-native-tableview-simple-2.1.0.tgz#c6b2d612c0a09d0ac567ae6a106474f77e10b00f"
-  integrity sha512-ok9qLkQ/5iNpXkiR94HSX/9ffSrpqGR88cBouuOT6+t8rZsi3hNYbYhA3HmGBDU+KSKachOKlvckxtTvPwviPg==
+react-native-tableview-simple@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-tableview-simple/-/react-native-tableview-simple-2.2.0.tgz#3fb7b791487b0932a7f71a03260d642a0caffe35"
+  integrity sha512-QKqpQSHZlAJRm0tPbCDMuirFJjViAhkFy+qgJ9GYOrkF6n+i18/NVHPpAEGVLPVt3j+bzvqeuqr94MlhZTrIrQ==
   dependencies:
     prop-types "^15.7.2"
 
