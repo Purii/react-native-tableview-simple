@@ -11,14 +11,19 @@
     "format": "npm run format:src && npm run format:example",
     "jest": "jest",
     "lint": "eslint index.js components/",
-    "precommit": "lint-staged",
     "test": "npm run lint && npm run jest"
   },
   "lint-staged": {
-    "*.js": [
+    "*.{js,md}": [
+      "eslint",
       "prettier --trailing-comma es5 --single-quote --write",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "jest": {
     "preset": "react-native",
