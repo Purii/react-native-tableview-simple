@@ -11,6 +11,13 @@ it('renders basic', () => {
   expect(tree).toMatchSnapshot();
 });
 
+it('renders with testID', () => {
+  const tree = renderer
+    .create(<Cell cellStyle="Basic" title="Basic" testID="testID" />)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
 it('renders with accessory', () => {
   const tree = renderer
     .create(
