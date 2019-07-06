@@ -3,23 +3,23 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start": "react-native start",
     "test": "jest",
     "lint": "eslint ."
   },
   "dependencies": {
     "react": "16.8.6",
-    "react-native": "0.59.8",
+    "react-native": "0.60.0",
     "react-native-tableview-simple": "^2.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.4",
-    "@babel/runtime": "^7.4.4",
+    "@babel/core": "^7.5.0",
+    "@babel/runtime": "^7.5.1",
     "@react-native-community/eslint-config": "^0.0.5",
     "babel-jest": "^24.8.0",
-    "eslint": "^5.16.0",
+    "eslint": "^6.0.1",
     "jest": "^24.8.0",
-    "metro-react-native-babel-preset": "^0.54.1",
+    "metro-react-native-babel-preset": "^0.55.0",
     "react-test-renderer": "16.8.6"
   },
   "jest": {
