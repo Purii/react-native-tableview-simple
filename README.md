@@ -181,13 +181,14 @@ In general the `Separator` component is used internally by the `Section` compone
 But additionally this component can be used together with `FlatList`.
 See the [example below](#render-with-flatlist).
 
-| Prop            |  Default  |   Type   | Description                           |
-| :-------------- | :-------: | :------: | ------------------------------------- |
-| backgroundColor | `#EFEFF4` | `string` | Background color                      |
-| insetLeft       |   `15`    | `number` | Left inset of separator               |
-| insetRight      |    `0`    | `number` | Right inset of separator              |
-| isHidden        |  `false`  |  `bool`  | Hide separator but keeping its height |
-| tintColor       | `#C8C7CC` | `string` | Color of separator                    |
+| Prop             |            Default            |   Type   | Description                           |
+| :--------------- | :---------------------------: | :------: | ------------------------------------- |
+| backgroundColor  |           `#EFEFF4`           | `string` | Background color                      |
+| insetLeft        |             `15`              | `number` | Left inset of separator               |
+| insetRight       |              `0`              | `number` | Right inset of separator              |
+| isHidden         |            `false`            |  `bool`  | Hide separator but keeping its height |
+| tintColor        |           `#C8C7CC`           | `string` | Color of separator                    |
+| withSafeAreaView | `true / false (on iOS <= 10)` |  `bool`  | Render separator with SafeAreaView    |
 
 ## Examples
 
@@ -264,8 +265,7 @@ export default class App extends Component<{}> {
             height: 500,
             alignItems: 'center',
             justifyContent: 'center',
-          }}
-        >
+          }}>
           <View
             style={{
               backgroundColor: '#ffc107',
@@ -544,16 +544,14 @@ export default class App extends Component<{}> {
         <View
           style={{
             minHeight: Dimensions.get('window').height,
-          }}
-        >
+          }}>
           <View
             style={{
               backgroundColor: '#37474F',
               height: 500,
               alignItems: 'center',
               justifyContent: 'center',
-            }}
-          >
+            }}>
             <View
               style={{
                 backgroundColor: '#ffc107',
@@ -607,7 +605,7 @@ const data = [
   { id: 4, title: '4' },
 ];
 
-export default ExampleWithFlatList = () => (
+export default (ExampleWithFlatList = () => (
   <FlatList
     data={data}
     keyExtractor={(item, index) => item.id}
@@ -623,7 +621,7 @@ export default ExampleWithFlatList = () => (
       <Separator isHidden={highlighted} />
     )}
   />
-);
+));
 ```
 
 # Try it out

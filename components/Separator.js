@@ -1,8 +1,6 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
-
-import { StyleSheet, View } from 'react-native';
+import { Platform, SafeAreaView, StyleSheet, View } from 'react-native';
 
 const Separator = props => {
   const localStyles = {
@@ -17,6 +15,13 @@ const Separator = props => {
     ],
   };
 
+  if (props.withSafeAreaView) {
+    return (
+      <SafeAreaView style={localStyles.separator}>
+        <View style={localStyles.separator_inner} />
+      </SafeAreaView>
+    );
+  }
   return (
     <View style={localStyles.separator}>
       <View style={localStyles.separator_inner} />
@@ -30,6 +35,7 @@ Separator.propTypes = {
   insetRight: PropTypes.number.isRequired,
   isHidden: PropTypes.bool,
   tintColor: PropTypes.string.isRequired,
+  withSafeAreaView: PropTypes.bool.isRequired,
 };
 
 Separator.defaultProps = {
@@ -38,6 +44,12 @@ Separator.defaultProps = {
   insetRight: 0,
   isHidden: false,
   tintColor: '#C8C7CC',
+  withSafeAreaView:
+    Platform.OS === 'ios'
+      ? parseInt(Platform.Version, 10) <= 10
+        ? false
+        : true
+      : true,
 };
 
 const styles = StyleSheet.create({

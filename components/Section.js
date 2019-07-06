@@ -1,7 +1,5 @@
 import React, { PureComponent } from 'react';
-
 import PropTypes from 'prop-types';
-
 import { Platform, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 
 import Separator from './Separator';
@@ -98,11 +96,10 @@ class Section extends PureComponent {
         this.state.highlightedRowIndex === index + 1;
 
       // Add margin, if Image is provided
-      let separatorInsetLeftWithImageInset = separatorInsetLeft;
-      if (child.props.image) {
-        // Only update if not manually updated
-        separatorInsetLeftWithImageInset =
-          separatorInsetLeft !== 15 ? separatorInsetLeft : 60;
+      let separatorInsetLeftSupportImage = separatorInsetLeft;
+      // only update if separatorInsetLeft is default
+      if (child.props.image && separatorInsetLeft === 15) {
+        separatorInsetLeftSupportImage = 60;
       }
 
       return (
@@ -112,7 +109,7 @@ class Section extends PureComponent {
             isHidden={invisibleSeparator}
             backgroundColor={child.props.backgroundColor}
             tintColor={separatorTintColor}
-            insetLeft={separatorInsetLeftWithImageInset}
+            insetLeft={separatorInsetLeftSupportImage}
             insetRight={separatorInsetRight}
           />
         </View>
@@ -186,9 +183,17 @@ class Section extends PureComponent {
     return (
       <View style={_styles.section}>
         {headerComponent || renderHeader()}
-        <Separator insetLeft={0} tintColor={separatorTintColor} />
+        <Separator
+          insetLeft={0}
+          tintColor={separatorTintColor}
+          withSafeAreaView={false}
+        />
         {childrenWithoutEmpty.map(renderChild)}
-        <Separator insetLeft={0} tintColor={separatorTintColor} />
+        <Separator
+          insetLeft={0}
+          tintColor={separatorTintColor}
+          withSafeAreaView={false}
+        />
         {footerComponent || renderFooter()}
       </View>
     );
