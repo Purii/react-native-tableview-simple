@@ -22,10 +22,12 @@ class Section extends PureComponent {
       allowFontScaling,
       children,
       footerComponent,
+      footerTextColor,
       headerComponent,
       headerTextColor,
       hideSeparator,
-      footerTextColor,
+      hideSurroundingSeparator,
+      roundedCorners,
       sectionPaddingBottom,
       sectionPaddingTop,
       sectionTintColor,
@@ -51,6 +53,11 @@ class Section extends PureComponent {
           paddingTop: sectionPaddingTop,
         },
       ],
+      section__children: [
+        styles.section__children,
+        roundedCorners && styles.section__children_roundedCorners,
+      ],
+
       sectionheader__text: [
         styles.sectionheader__text,
         { color: headerTextColor },
@@ -78,6 +85,9 @@ class Section extends PureComponent {
       const propsToAdd = {
         onHighlightRow: () => this.handleHighlightRow(index),
         onUnHighlightRow: this.handleUnHighlightRow,
+        sectionRoundedCorners: roundedCorners,
+        isFirstChild: index === 0,
+        isLastChild: index === sumOfChildren - 1,
       };
 
       // Skip rendering of separator
@@ -183,17 +193,23 @@ class Section extends PureComponent {
     return (
       <View style={_styles.section}>
         {headerComponent || renderHeader()}
-        <Separator
-          insetLeft={0}
-          tintColor={separatorTintColor}
-          withSafeAreaView={false}
-        />
-        {childrenWithoutEmpty.map(renderChild)}
-        <Separator
-          insetLeft={0}
-          tintColor={separatorTintColor}
-          withSafeAreaView={false}
-        />
+        {hideSurroundingSeparator || (
+          <Separator
+            insetLeft={0}
+            tintColor={separatorTintColor}
+            withSafeAreaView={false}
+          />
+        )}
+        <View style={_styles.section__children}>
+          {childrenWithoutEmpty.map(renderChild)}
+        </View>
+        {hideSurroundingSeparator || (
+          <Separator
+            insetLeft={0}
+            tintColor={separatorTintColor}
+            withSafeAreaView={false}
+          />
+        )}
         {footerComponent || renderFooter()}
       </View>
     );
@@ -202,6 +218,11 @@ class Section extends PureComponent {
 
 const styles = StyleSheet.create({
   section: {},
+  section__children: {},
+  section__children_roundedCorners: {
+    borderRadius: 10,
+    overflow: 'hidden',
+  },
   sectionheader: {
     paddingLeft: 15,
     paddingRight: 15,
@@ -232,6 +253,8 @@ Section.propTypes = {
   header: PropTypes.string,
   headerTextColor: PropTypes.string,
   hideSeparator: PropTypes.bool,
+  hideSurroundingSeparator: PropTypes.bool,
+  roundedCorners: PropTypes.bool,
   sectionPaddingBottom: PropTypes.number,
   sectionPaddingTop: PropTypes.number,
   sectionTintColor: PropTypes.string,
@@ -247,13 +270,15 @@ Section.defaultProps = {
   footerComponent: null,
   headerComponent: null,
   footer: null,
+  footerTextColor: '#6d6d72',
   header: null,
   headerTextColor: '#6D6D72',
   hideSeparator: false,
+  hideSurroundingSeparator: false,
+  roundedCorners: false,
   sectionPaddingBottom: 15,
   sectionPaddingTop: 15,
   sectionTintColor: '#EFEFF4',
-  footerTextColor: '#6d6d72',
   separatorInsetLeft: 15,
   separatorInsetRight: 0,
   separatorTintColor: '#C8C7CC',

@@ -31,7 +31,7 @@ const App = () => {
   return (
     <ScrollView contentContainerStyle={styles.stage}>
       <TableView>
-        <Section header="STANDARD" footer="A Footer">
+        <Section header="STANDARD" footer="A FOOTER">
           <Cell cellStyle="Basic" title="Basic" />
           <Cell cellStyle="RightDetail" title="RightDetail" detail="Detail" />
           <Cell cellStyle="LeftDetail" title="LeftDetail" detail="Detail" />
@@ -106,7 +106,7 @@ const App = () => {
             onPress={() => console.log('Heyho!')}
           />
         </Section>
-        <Section header="Image" footer="A Footer">
+        <Section header="IMAGE" footer="A FOOTER">
           <Cell
             cellStyle="Basic"
             title="Basic"
@@ -186,7 +186,10 @@ const App = () => {
             }
           />
         </Section>
-        <Section header="MISC">
+        <Section
+          header="MISC WITH ROUNDED CORNERS"
+          hideSurroundingSeparator
+          roundedCorners>
           <Cell
             cellStyle="RightDetail"
             title="RightDetail"
