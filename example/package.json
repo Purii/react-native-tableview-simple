@@ -9,12 +9,12 @@
   },
   "dependencies": {
     "react": "16.8.6",
-    "react-native": "0.60.0",
-    "react-native-tableview-simple": "^2.2.0"
+    "react-native": "0.60.3",
+    "react-native-tableview-simple": "^2.3.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.0",
-    "@babel/runtime": "^7.5.1",
+    "@babel/core": "^7.5.4",
+    "@babel/runtime": "^7.5.4",
     "@react-native-community/eslint-config": "^0.0.5",
     "babel-jest": "^24.8.0",
     "eslint": "^6.0.1",

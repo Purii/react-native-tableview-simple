@@ -188,7 +188,7 @@ const App = () => {
         </Section>
         <Section
           header="MISC WITH ROUNDED CORNERS"
-          hideSurroundingSeparator
+          hideSurroundingSeparators
           roundedCorners>
           <Cell
             cellStyle="RightDetail"
