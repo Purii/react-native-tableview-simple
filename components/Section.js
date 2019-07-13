@@ -26,7 +26,7 @@ class Section extends PureComponent {
       headerComponent,
       headerTextColor,
       hideSeparator,
-      hideSurroundingSeparator,
+      hideSurroundingSeparators,
       roundedCorners,
       sectionPaddingBottom,
       sectionPaddingTop,
@@ -193,7 +193,7 @@ class Section extends PureComponent {
     return (
       <View style={_styles.section}>
         {headerComponent || renderHeader()}
-        {hideSurroundingSeparator || (
+        {hideSurroundingSeparators || (
           <Separator
             insetLeft={0}
             tintColor={separatorTintColor}
@@ -203,7 +203,7 @@ class Section extends PureComponent {
         <View style={_styles.section__children}>
           {childrenWithoutEmpty.map(renderChild)}
         </View>
-        {hideSurroundingSeparator || (
+        {hideSurroundingSeparators || (
           <Separator
             insetLeft={0}
             tintColor={separatorTintColor}
@@ -253,7 +253,7 @@ Section.propTypes = {
   header: PropTypes.string,
   headerTextColor: PropTypes.string,
   hideSeparator: PropTypes.bool,
-  hideSurroundingSeparator: PropTypes.bool,
+  hideSurroundingSeparators: PropTypes.bool,
   roundedCorners: PropTypes.bool,
   sectionPaddingBottom: PropTypes.number,
   sectionPaddingTop: PropTypes.number,
@@ -274,7 +274,7 @@ Section.defaultProps = {
   header: null,
   headerTextColor: '#6D6D72',
   hideSeparator: false,
-  hideSurroundingSeparator: false,
+  hideSurroundingSeparators: false,
   roundedCorners: false,
   sectionPaddingBottom: 15,
   sectionPaddingTop: 15,

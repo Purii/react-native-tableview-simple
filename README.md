@@ -71,25 +71,25 @@ Currently `TableView` doesn't support any properties.
 The `Section` component is needed to render the `Cells` together with `Separators`.
 It's possible to use the `Flatlist` component instead ([Example](#render-with-flatlist)).
 
-| Prop                     |            Default            |       Type        | Description                                                         |
-| :----------------------- | :---------------------------: | :---------------: | ------------------------------------------------------------------- |
-| allowFontScaling         |            `true`             |      `bool`       | Respect Text Size accessibility setting on iOS                      |
-| footerComponent          |               -               | `React.Component` | Inject any component to replace original footer (optional)          |
-| headerComponent          |               -               | `React.Component` | Inject any component to replace original header (optional)          |
-| footer                   |               -               |     `string`      | Footer value                                                        |
-| footerTextColor          |           `#6d6d72`           |     `string`      | Text color of footer                                                |
-| header                   |               -               |     `string`      | Header value                                                        |
-| headerTextColor          |           `#6d6d72`           |     `string`      | Text color of header                                                |
-| hideSeparator            |            `false`            |      `bool`       | Hide separators                                                     |
-| hideSurroundingSeparator |            `false`            |      `bool`       | Hide surrounding separator, best combined with roundedCorners       |
-| roundedCorners           |            `false`            |      `bool`       | Enable rounded corners, best combined with hideSurroundingSeparator |
-| sectionPaddingBottom     |             `15`              |     `number`      | Padding bottom of section                                           |
-| sectionPaddingTop        |             `15`              |     `number`      | Padding top of section                                              |
-| sectionTintColor         |           `#EFEFF4`           |     `string`      | Background color of section                                         |
-| separatorInsetLeft       |             `15`              |     `number`      | Left inset of separator                                             |
-| separatorInsetRight      |              `0`              |     `number`      | Right inset of separator                                            |
-| separatorTintColor       |           `#C8C7CC`           |     `string`      | Color of separator                                                  |
-| withSafeAreaView         | `true / false (on iOS <= 10)` |      `bool`       | Render section header and footer with SafeAreaView                  |
+| Prop                       |            Default            |       Type        | Description                                                         |
+| :------------------------- | :---------------------------: | :---------------: | ------------------------------------------------------------------- |
+| allowFontScaling           |            `true`             |      `bool`       | Respect Text Size accessibility setting on iOS                      |
+| footerComponent            |               -               | `React.Component` | Inject any component to replace original footer (optional)          |
+| headerComponent            |               -               | `React.Component` | Inject any component to replace original header (optional)          |
+| footer                     |               -               |     `string`      | Footer value                                                        |
+| footerTextColor            |           `#6d6d72`           |     `string`      | Text color of footer                                                |
+| header                     |               -               |     `string`      | Header value                                                        |
+| headerTextColor            |           `#6d6d72`           |     `string`      | Text color of header                                                |
+| hideSeparator              |            `false`            |      `bool`       | Hide separators                                                     |
+| hideSurroundingSeparator s |            `false`            |      `bool`       | Hide surrounding separators, best combined with roundedCorners      |
+| roundedCorners             |            `false`            |      `bool`       | Enable rounded corners, best combined with hideSurroundingSeparator |
+| sectionPaddingBottom       |             `15`              |     `number`      | Padding bottom of section                                           |
+| sectionPaddingTop          |             `15`              |     `number`      | Padding top of section                                              |
+| sectionTintColor           |           `#EFEFF4`           |     `string`      | Background color of section                                         |
+| separatorInsetLeft         |             `15`              |     `number`      | Left inset of separator                                             |
+| separatorInsetRight        |              `0`              |     `number`      | Right inset of separator                                            |
+| separatorTintColor         |           `#C8C7CC`           |     `string`      | Color of separator                                                  |
+| withSafeAreaView           | `true / false (on iOS <= 10)` |      `bool`       | Render section header and footer with SafeAreaView                  |
 
 ### `Cell`
 
