@@ -3,8 +3,8 @@
 // Definitions by: Kyle Roach <https://github.com/iRoachie>
 // TypeScript Version: 2.3
 
-import * as React from "react";
-import { ViewStyle, TextStyle, StyleProp } from "react-native";
+import * as React from 'react';
+import { ViewStyle, TextStyle, StyleProp } from 'react-native';
 
 export interface SectionProps {
   /**
@@ -74,6 +74,15 @@ export interface SectionProps {
    * @memberof SectionProps
    */
   hideSeparator?: boolean;
+
+  /**
+   * Hide surrounding separators, best combined with roundedCorners
+   *
+   * @default false
+   * @type {boolean}
+   * @memberof SectionProps
+   */
+  hideSurroundingSeparators?: boolean;
 
   /**
    * Padding bottom of section
@@ -150,10 +159,10 @@ export interface CellProps {
    * @memberof CellProps
    */
   accessory?:
-    | "DisclosureIndicator"
-    | "Detail"
-    | "DetailDisclosure"
-    | "Checkmark";
+    | 'DisclosureIndicator'
+    | 'Detail'
+    | 'DetailDisclosure'
+    | 'Checkmark';
 
   /**
    * Color of accessory
@@ -198,7 +207,7 @@ export interface CellProps {
    * @type {("Basic" | "RightDetail" | "LeftDetail" | "Subtitle")}
    * @memberof CellProps
    */
-  cellStyle?: "Basic" | "RightDetail" | "LeftDetail" | "Subtitle";
+  cellStyle?: 'Basic' | 'RightDetail' | 'LeftDetail' | 'Subtitle';
 
   /**
    * Replace accessory view component (e.g.: add Switch or ActivityIndicator)
@@ -256,6 +265,15 @@ export interface CellProps {
    * @memberof CellProps
    */
   disableImageResize?: boolean;
+
+  /**
+   * Hide the following `Separator`-Component
+   *
+   * @default false
+   * @type {boolean}
+   * @memberof CellProps
+   */
+  hideSeparator?: boolean;
 
   /**
    * Opacity of cell when touch is active
@@ -436,6 +454,15 @@ export interface SeparatorProps {
    * @memberof SeparatorProps
    */
   tintColor?: string;
+
+  /**
+   * Render separator with SafeAreaView
+   *
+   * @default true
+   * @type {bool}
+   * @memberof CellProps
+   */
+  withSafeAreaView?: boolean;
 }
 
 export class TableView extends React.Component {}
