@@ -23,8 +23,10 @@ class Section extends PureComponent {
       children,
       footerComponent,
       footerTextColor,
+      footerTextFont,
       headerComponent,
       headerTextColor,
+      headerTextFont,
       hideSeparator,
       hideSurroundingSeparators,
       roundedCorners,
@@ -60,11 +62,11 @@ class Section extends PureComponent {
 
       sectionheader__text: [
         styles.sectionheader__text,
-        { color: headerTextColor },
+        { color: headerTextColor, fontFamily: headerTextFont },
       ],
       sectionfooter__text: [
         styles.sectionfooter__text,
-        { color: footerTextColor },
+        { color: footerTextColor, fontFamily: footerTextFont },
       ],
     };
 
@@ -250,8 +252,10 @@ Section.propTypes = {
   headerComponent: PropTypes.element,
   footer: PropTypes.string,
   footerTextColor: PropTypes.string,
+  footerTextFont: PropTypes.string,
   header: PropTypes.string,
   headerTextColor: PropTypes.string,
+  headerTextFont: PropTypes.string,
   hideSeparator: PropTypes.bool,
   hideSurroundingSeparators: PropTypes.bool,
   roundedCorners: PropTypes.bool,
@@ -271,8 +275,10 @@ Section.defaultProps = {
   headerComponent: null,
   footer: null,
   footerTextColor: '#6d6d72',
+  footerTextFont: 'system font',
   header: null,
   headerTextColor: '#6D6D72',
+  headerTextFont: 'system font',
   hideSeparator: false,
   hideSurroundingSeparators: false,
   roundedCorners: false,

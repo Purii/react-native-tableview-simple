@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Text,
   TouchableHighlight,
+  TouchableOpacity,
   View,
   ViewPropTypes,
 } from 'react-native';
@@ -30,6 +31,8 @@ const Cell = props => {
     image,
     isDisabled,
     onPress,
+    onPressDetail,
+    onPressDetailDisclosure,
     onHighlightRow,
     onUnHighlightRow,
     leftDetailColor,
@@ -125,20 +128,20 @@ const Cell = props => {
       case 'Detail':
         return (
           <View style={_styles.cellAccessoryView}>
-            <View style={_styles.accessory_detail}>
+            <TouchableOpacity style={_styles.accessory_detail} onPress={onPressDetail} activeOpacity={0.7} disabled={isDisabled}>
               <Text style={_styles.accessory_detailText}>i</Text>
-            </View>
+            </TouchableOpacity>
           </View>
         );
       case 'DetailDisclosure':
         return (
           <View style={_styles.cellAccessoryView}>
-            <View style={_styles.accessory_detailDisclosure}>
+            <TouchableOpacity style={_styles.accessory_detailDisclosure} onPress={onPressDetailDisclosure} activeOpacity={0.7} disabled={isDisabled}>
               <View style={_styles.accessory_detail}>
                 <Text style={_styles.accessory_detailText}>i</Text>
               </View>
               <View style={_styles.accessory_disclosureIndicator} />
-            </View>
+            </TouchableOpacity>
           </View>
         );
       case 'Checkmark':
@@ -483,6 +486,8 @@ Cell.propTypes = {
   titleTextStyle: Text.propTypes.style,
   titleTextStyleDisabled: Text.propTypes.style,
   onPress: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
+  onPressDetail: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
+  onPressDetailDisclosure: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
   withSafeAreaView: PropTypes.bool,
 };
 
@@ -509,6 +514,8 @@ Cell.defaultProps = {
   onHighlightRow: null,
   onUnHighlightRow: null,
   onPress: false,
+  onPressDetail: false,
+  onPressDetailDisclosure: false,
   rightDetailColor: '#8E8E93',
   subtitleColor: '#000',
   subtitleTextStyle: {},
