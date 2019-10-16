@@ -6,11 +6,11 @@
   "author": "Patrick Puritscher <hello@patrickpuritscher.com>",
   "scripts": {
     "clean": "watchman watch-del-all && rm -rf node_modules/ && yarn cache clean && yarn",
-    "format:src": "prettier --write 'components/**/*.js'",
+    "format:src": "prettier --write 'src/**/*.js'",
     "format:example": "prettier --write 'example/*.js'",
     "format": "npm run format:src && npm run format:example",
     "jest": "jest",
-    "lint": "eslint index.js components/",
+    "lint": "eslint index.js src/",
     "test": "npm run lint && npm run jest"
   },
   "lint-staged": {
@@ -40,7 +40,13 @@
     ]
   },
   "main": "index.js",
-  "types": "index.d.ts",
+  "files": [
+    "/src",
+    "/index.js",
+    "/README.md",
+    "/LICENSE"
+  ],
+  "types": "src/index.d.ts",
   "license": "MIT",
   "keywords": [
     "react-native",
