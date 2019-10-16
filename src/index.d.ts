@@ -50,6 +50,14 @@ export interface SectionProps {
   footerTextColor?: string;
 
   /**
+   * These styles will be applied to the footer Text-Component.
+   *
+   * @type {StyleProp<TextStyle>}
+   * @memberof CellProps
+   */
+  footerTextStyle?: StyleProp<TextStyle>;
+
+  /**
    * Header value
    *
    * @type {string}
@@ -65,6 +73,14 @@ export interface SectionProps {
    * @memberof SectionProps
    */
   headerTextColor?: string;
+
+  /**
+   * These styles will be applied to the header Text-Component.
+   *
+   * @type {StyleProp<TextStyle>}
+   * @memberof CellProps
+   */
+  headerTextStyle?: StyleProp<TextStyle>;
 
   /**
    * Hide separators

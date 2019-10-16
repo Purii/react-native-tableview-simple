@@ -181,7 +181,15 @@ const App = () => {
           />
         </Section>
         <Section
-          header="MISC WITH ROUNDED CORNERS"
+          header="Misc with rounded corners"
+          headerTextStyle={{
+            textTransform: 'uppercase',
+          }}
+          footer="And a custom styled footer text"
+          footerTextStyle={{
+            textTransform: 'uppercase',
+            color: '#37474F',
+          }}
           hideSurroundingSeparators
           roundedCorners>
           <Cell
