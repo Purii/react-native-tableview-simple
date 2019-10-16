@@ -1,11 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React from 'react';
 import {
   ActivityIndicator,
@@ -18,7 +10,7 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import { Cell, Section, TableView } from 'react-native-tableview-simple';
+import {Cell, Section, TableView} from 'react-native-tableview-simple';
 
 // Example component for section:headerComponent
 const CustomSectionHeader = () => (
@@ -112,7 +104,7 @@ const App = () => {
             title="Basic"
             image={
               <Image
-                style={{ borderRadius: 5 }}
+                style={{borderRadius: 5}}
                 source={{
                   uri: 'https://reactjs.org/favicon.ico',
                 }}
@@ -125,7 +117,7 @@ const App = () => {
             detail="Detail"
             image={
               <Image
-                style={{ borderRadius: 5 }}
+                style={{borderRadius: 5}}
                 source={{
                   uri: 'https://reactjs.org/favicon.ico',
                 }}
@@ -138,7 +130,7 @@ const App = () => {
             detail="Detail"
             image={
               <Image
-                style={{ borderRadius: 5 }}
+                style={{borderRadius: 5}}
                 source={{
                   uri: 'https://reactjs.org/favicon.ico',
                 }}
@@ -151,7 +143,7 @@ const App = () => {
             detail="No linebreakkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk"
             image={
               <Image
-                style={{ borderRadius: 5 }}
+                style={{borderRadius: 5}}
                 source={{
                   uri: 'https://reactjs.org/favicon.ico',
                 }}
@@ -165,7 +157,7 @@ const App = () => {
             onPress={() => console.log('Heyho!')}
             image={
               <Image
-                style={{ borderRadius: 5 }}
+                style={{borderRadius: 5}}
                 source={{
                   uri: 'https://reactjs.org/favicon.ico',
                 }}
@@ -178,7 +170,7 @@ const App = () => {
             disableImageResize
             image={
               <Image
-                style={{ height: 50, width: 50, borderRadius: 5 }}
+                style={{height: 50, width: 50, borderRadius: 5}}
                 source={{
                   uri: 'https://reactjs.org/favicon.ico',
                 }}
@@ -214,7 +206,7 @@ const App = () => {
             cellStyle="Basic"
             title="Switch"
             cellAccessoryView={<Switch />}
-            contentContainerStyle={{ paddingVertical: 4 }}
+            contentContainerStyle={{paddingVertical: 4}}
           />
           <Cell
             cellStyle="Basic"
@@ -224,7 +216,7 @@ const App = () => {
           <Cell
             cellContentView={
               <TextInput
-                style={{ fontSize: 16, flex: 1 }}
+                style={{fontSize: 16, flex: 1}}
                 placeholder="TextInput"
               />
             }
@@ -233,9 +225,9 @@ const App = () => {
         <Section header="CUSTOMCELLS">
           <Cell
             onPress={() => console.log('Heyho!')}
-            contentContainerStyle={{ alignItems: 'flex-start', height: 60 }}
+            contentContainerStyle={{alignItems: 'flex-start', height: 60}}
             cellContentView={
-              <Text style={{ flex: 1, fontSize: 16 }}>
+              <Text style={{flex: 1, fontSize: 16}}>
                 Custom height with Cell-Component
               </Text>
             }
