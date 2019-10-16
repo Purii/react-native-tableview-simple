@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Platform,
   SafeAreaView,
@@ -7,6 +8,7 @@ import {
   TouchableHighlight,
   TouchableOpacity,
   View,
+  ViewPropTypes,
 } from 'react-native';
 
 const Cell = props => {
@@ -461,6 +463,45 @@ const styles = StyleSheet.create({
     ],
   },
 });
+
+Cell.propTypes = {
+  accessory: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
+  accessoryColor: PropTypes.string.isRequired,
+  accessoryColorDisclosureIndicator: PropTypes.string.isRequired,
+  allowFontScaling: PropTypes.bool,
+  cellStyle: PropTypes.string,
+  cellContentView: PropTypes.element,
+  cellImageView: PropTypes.element,
+  cellAccessoryView: PropTypes.element,
+  contentContainerStyle: ViewPropTypes.style,
+  backgroundColor: PropTypes.string.isRequired,
+  detail: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  detailTextStyle: Text.propTypes.style,
+  disableImageResize: PropTypes.bool,
+  hideSeparator: PropTypes.bool,
+  highlightActiveOpacity: PropTypes.number,
+  highlightUnderlayColor: PropTypes.string,
+  image: PropTypes.element,
+  isDisabled: PropTypes.bool,
+  leftDetailColor: PropTypes.string,
+  onHighlightRow: PropTypes.func,
+  onUnHighlightRow: PropTypes.func,
+  rightDetailColor: PropTypes.string,
+  subtitleColor: PropTypes.string,
+  subtitleTextStyle: Text.propTypes.style,
+  testID: PropTypes.string,
+  title: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.element,
+  ]),
+  titleTextColor: PropTypes.string,
+  titleTextStyle: Text.propTypes.style,
+  titleTextStyleDisabled: Text.propTypes.style,
+  onPress: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
+  onPressDetailAccessory: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
+  withSafeAreaView: PropTypes.bool,
+};
 
 Cell.defaultProps = {
   accessory: false,
