@@ -400,6 +400,13 @@ export interface CellProps {
   onPress?: () => void | false;
 
   /**
+   * Listen to onPress event of detail accessory
+   *
+   * @memberof CellProps
+   */
+  onPressDetailAccessory?: () => void | false;
+
+  /**
    * Render cell with SafeAreaView
    *
    * @default true

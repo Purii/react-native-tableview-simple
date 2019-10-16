@@ -7,7 +7,6 @@ import {
   TouchableHighlight,
   TouchableOpacity,
   View,
-  ViewPropTypes,
 } from 'react-native';
 
 const Cell = props => {
@@ -30,6 +29,7 @@ const Cell = props => {
     image,
     isDisabled,
     onPress,
+    onPressDetailAccessory,
     onHighlightRow,
     onUnHighlightRow,
     leftDetailColor,
@@ -109,6 +109,24 @@ const Cell = props => {
     ],
   };
 
+  const renderAccessoryDetail = () => {
+    if (onPressDetailAccessory) {
+      return (
+        <TouchableOpacity
+          style={_styles.accessory_detail}
+          onPress={onPressDetailAccessory}
+          activeOpacity={0.7}
+          disabled={isDisabled}>
+          <Text style={_styles.accessory_detailText}>i</Text>
+        </TouchableOpacity>
+      );
+    }
+    return (
+      <View style={_styles.accessory_detail}>
+        <Text style={_styles.accessory_detailText}>i</Text>
+      </View>
+    );
+  };
   /**
    * Render accessoryView
    * Currently available
@@ -125,18 +143,14 @@ const Cell = props => {
       case 'Detail':
         return (
           <View style={_styles.cellAccessoryView}>
-            <View style={_styles.accessory_detail}>
-              <Text style={_styles.accessory_detailText}>i</Text>
-            </View>
+            {renderAccessoryDetail()}
           </View>
         );
       case 'DetailDisclosure':
         return (
           <View style={_styles.cellAccessoryView}>
             <View style={_styles.accessory_detailDisclosure}>
-              <View style={_styles.accessory_detail}>
-                <Text style={_styles.accessory_detailText}>i</Text>
-              </View>
+              {renderAccessoryDetail()}
               <View style={_styles.accessory_disclosureIndicator} />
             </View>
           </View>
@@ -471,6 +485,7 @@ Cell.defaultProps = {
   onHighlightRow: null,
   onUnHighlightRow: null,
   onPress: false,
+  onPressDetailAccessory: false,
   rightDetailColor: '#8E8E93',
   subtitleColor: '#000',
   subtitleTextStyle: {},

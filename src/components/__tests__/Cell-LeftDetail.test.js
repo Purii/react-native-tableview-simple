@@ -24,3 +24,18 @@ it('renders with accessory', () => {
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+it('renders with accessory and onPressDetailAccessory', () => {
+  const tree = renderer
+    .create(
+      <Cell
+        cellStyle="LeftDetail"
+        title="LeftDetail"
+        detail="Detail"
+        accessory="DisclosureIndicator"
+        onPressDetailAccessory={console.log}
+      />,
+    )
+    .toJSON();
+  expect(tree).toMatchSnapshot();
+});

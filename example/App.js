@@ -78,6 +78,7 @@ const App = () => {
             accessory="DetailDisclosure"
             title="RightDetail"
             detail="Detail"
+            onPressDetailAccessory={() => console.log('Some details')}
           />
           <Cell
             cellStyle="LeftDetail"
@@ -96,6 +97,7 @@ const App = () => {
             accessory="Detail"
             title="Pressable w/ accessory"
             onPress={() => console.log('Heyho!')}
+            onPressDetailAccessory={() => console.log('Some details')}
           />
         </Section>
         <Section header="IMAGE" footer="A FOOTER">
