@@ -598,6 +598,8 @@ const styles = StyleSheet.create({
 
 ### Render with `FlatList`
 
+Be aware of the prop [`keyboardShouldPersistTaps`](https://facebook.github.io/react-native/docs/scrollview#keyboardshouldpersisttaps) if using `ScrollView` or similar components. (See #85)
+
 ```javascript
 import React from 'react';
 import { FlatList } from 'react-native';
