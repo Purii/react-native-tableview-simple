@@ -8,7 +8,7 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Purii/react-native-tableview-simple/master/LICENSE)
 [![Donate](https://img.shields.io/badge/Donate-Patreon-green.svg)](https://www.patreon.com/purii)
 
-:point_right: This component is used in my production app [`Game ideas`](https://apps.apple.com/us/app/game-ideas-get-inspired/id1450078546). Make sure to check it out! :point_left:
+:point_right: _This component is used in my production app [**Game ideas**](https://apps.apple.com/us/app/game-ideas-get-inspired/id1450078546). Make sure to check it out!_ :point_left:
 
 This cross-platform component is inspired by the iOS-TableView. Made with pure CSS, the intention is to provide **a flexible and lightweight alternative to a bridged component**.
 
