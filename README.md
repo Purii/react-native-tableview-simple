@@ -1,12 +1,12 @@
 # react-native-tableview-simple
 
+[![Donate](https://img.shields.io/badge/Donate-Patreon-green.svg)](https://www.patreon.com/purii)
 [![Build Status](https://travis-ci.org/Purii/react-native-tableview-simple.svg?branch=master)](https://travis-ci.org/Purii/react-native-tableview-simple)
 [![npm version](http://img.shields.io/npm/v/react-native-tableview-simple.svg?style=flat)](https://www.npmjs.com/package/react-native-tableview-simple)
 [![npm](https://img.shields.io/npm/dm/react-native-tableview-simple.svg)](https://www.npmjs.com/package/react-native-tableview-simple)
 [![Package Quality](http://npm.packagequality.com/shield/react-native-tableview-simple.svg)](http://packagequality.com/#?package=react-native-tableview-simple)
-[![Greenkeeper badge](https://badges.greenkeeper.io/Purii/react-native-tableview-simple.svg)](https://greenkeeper.io/)
+[![Known Vulnerabilities](https://snyk.io/test/npm/react-native-tableview-simple/badge.svg)](https://snyk.io/test/npm/react-native-tableview-simple)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Purii/react-native-tableview-simple/master/LICENSE)
-[![Donate](https://img.shields.io/badge/Donate-Patreon-green.svg)](https://www.patreon.com/purii)
 
 :point_right: _This component is used in my production app [**Game ideas**](https://apps.apple.com/us/app/game-ideas-get-inspired/id1450078546). Make sure to check it out!_ :point_left:
 
