@@ -69,7 +69,7 @@
     "url": "git@github.com:Purii/react-native-tableview-simple.git"
   },
   "devDependencies": {
-    "@react-native-community/eslint-config": "^0.0.5",
+    "@react-native-community/eslint-config": "^0.0.7",
     "babel-jest": "24.9.0",
     "babel-preset-react-native": "4.0.1",
     "eslint": "^6.7.2",
