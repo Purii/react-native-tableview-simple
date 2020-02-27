@@ -200,7 +200,7 @@ const Cell = props => {
         allowFontScaling={allowFontScaling}
         numberOfLines={1}
         style={_styles.cell_title}
-        {...props.titleTextProps}>
+        {...(titleTextProps || {})}>
         {title}
       </Text>
     </View>
@@ -216,7 +216,7 @@ const Cell = props => {
         allowFontScaling={allowFontScaling}
         numberOfLines={1}
         style={_styles.cell_title}
-        {...props.titleTextProps}>
+        {...(titleTextProps || {})}>
         {title}
       </Text>
       <Text
@@ -227,7 +227,7 @@ const Cell = props => {
             ? [_styles.cell_rightDetail, _styles.cell_text__disabled]
             : _styles.cell_rightDetail
         }
-        {...props.detailTextProps}>
+        {...(detailTextProps || {})}>
         {detail}
       </Text>
     </View>
@@ -247,14 +247,14 @@ const Cell = props => {
             ? [_styles.cell_leftDetail, _styles.cell_text__disabled]
             : _styles.cell_leftDetail
         }
-        {...props.detailTextProps}>
+        {...(detailTextProps || {})}>
         {detail}
       </Text>
       <Text
         allowFontScaling={allowFontScaling}
         numberOfLines={1}
         style={_styles.cell_leftDetailTitle}
-        {...props.titleTextProps}>
+        {...(titleTextProps || {})}>
         {title}
       </Text>
     </View>
@@ -272,7 +272,7 @@ const Cell = props => {
           allowFontScaling={allowFontScaling}
           numberOfLines={1}
           style={_styles.cell_title}
-        {...props.titleTextProps}>
+        {...(titleTextProps || {})}>
           {title}
         </Text>
         <Text
@@ -283,7 +283,7 @@ const Cell = props => {
               ? [_styles.cell_subtitle, _styles.cell_text__disabled]
               : _styles.cell_subtitle
           }
-          {...props.detailTextProps}>
+        {...(detailTextProps || {})}>
           {detail}
         </Text>
       </View>
