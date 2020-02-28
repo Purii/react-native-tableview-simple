@@ -25,6 +25,7 @@ const Cell = props => {
     contentContainerStyle,
     detail,
     detailTextStyle,
+    detailTextProps,
     disableImageResize,
     highlightActiveOpacity,
     highlightUnderlayColor,
@@ -40,6 +41,7 @@ const Cell = props => {
     subtitleTextStyle,
     testID,
     title,
+    titleTextProps,
     titleTextStyle,
     titleTextStyleDisabled,
     titleTextColor,
@@ -197,7 +199,8 @@ const Cell = props => {
       <Text
         allowFontScaling={allowFontScaling}
         numberOfLines={1}
-        style={_styles.cell_title}>
+        style={_styles.cell_title}
+        {...titleTextProps}>
         {title}
       </Text>
     </View>
@@ -212,7 +215,8 @@ const Cell = props => {
       <Text
         allowFontScaling={allowFontScaling}
         numberOfLines={1}
-        style={_styles.cell_title}>
+        style={_styles.cell_title}
+        {...titleTextProps}>
         {title}
       </Text>
       <Text
@@ -222,7 +226,8 @@ const Cell = props => {
           isDisabled
             ? [_styles.cell_rightDetail, _styles.cell_text__disabled]
             : _styles.cell_rightDetail
-        }>
+        }
+        {...detailTextProps}>
         {detail}
       </Text>
     </View>
@@ -241,13 +246,15 @@ const Cell = props => {
           isDisabled
             ? [_styles.cell_leftDetail, _styles.cell_text__disabled]
             : _styles.cell_leftDetail
-        }>
+        }
+        {...detailTextProps}>
         {detail}
       </Text>
       <Text
         allowFontScaling={allowFontScaling}
         numberOfLines={1}
-        style={_styles.cell_leftDetailTitle}>
+        style={_styles.cell_leftDetailTitle}
+        {...titleTextProps}>
         {title}
       </Text>
     </View>
@@ -264,7 +271,8 @@ const Cell = props => {
         <Text
           allowFontScaling={allowFontScaling}
           numberOfLines={1}
-          style={_styles.cell_title}>
+          style={_styles.cell_title}
+          {...titleTextProps}>
           {title}
         </Text>
         <Text
@@ -274,7 +282,8 @@ const Cell = props => {
             isDisabled
               ? [_styles.cell_subtitle, _styles.cell_text__disabled]
               : _styles.cell_subtitle
-          }>
+          }
+          {...detailTextProps}>
           {detail}
         </Text>
       </View>
@@ -476,6 +485,7 @@ Cell.propTypes = {
   contentContainerStyle: ViewPropTypes.style,
   backgroundColor: PropTypes.string.isRequired,
   detail: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  detailTextProps: Text.propTypes,
   detailTextStyle: Text.propTypes.style,
   disableImageResize: PropTypes.bool,
   hideSeparator: PropTypes.bool,
@@ -496,6 +506,7 @@ Cell.propTypes = {
     PropTypes.element,
   ]),
   titleTextColor: PropTypes.string,
+  titleTextProps: Text.propTypes,
   titleTextStyle: Text.propTypes.style,
   titleTextStyleDisabled: Text.propTypes.style,
   onPress: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
@@ -515,6 +526,7 @@ Cell.defaultProps = {
   contentContainerStyle: {},
   backgroundColor: '#FFF',
   detail: '',
+  detailTextProps: {},
   detailTextStyle: {},
   disableImageResize: false,
   hideSeparator: false,
@@ -533,6 +545,7 @@ Cell.defaultProps = {
   testID: undefined,
   title: '',
   titleTextColor: '#000',
+  titleTextProps: {},
   titleTextStyle: {},
   titleTextStyleDisabled: {},
   withSafeAreaView:
