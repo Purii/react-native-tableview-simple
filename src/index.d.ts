@@ -4,7 +4,7 @@
 // TypeScript Version: 2.3
 
 import * as React from 'react';
-import { ViewStyle, TextStyle, StyleProp } from 'react-native';
+import { ViewStyle, TextProps, TextStyle, StyleProp } from 'react-native';
 
 export interface SectionProps {
   /**
@@ -266,6 +266,14 @@ export interface CellProps {
   detail?: string | number;
 
   /**
+   * These props will be applied to the (left- / right-) detail Text-Component
+   *
+   * @type {TextProps}
+   * @memberof CellProps
+   */
+  detailTextProps?: TextProps;
+
+  /**
    * These styles will be applied to the (left- / right-) detail Text-Component.
    *
    * @type {StyleProp<TextStyle>}
@@ -377,6 +385,14 @@ export interface CellProps {
    * @memberof CellProps
    */
   titleTextColor?: string;
+
+  /**
+   * These props will be applied to the title Text-Component
+   *
+   * @type {TextProps}
+   * @memberof CellProps
+   */
+  titleTextProps?: TextProps;
 
   /**
    * These styles will be applied to the title Text-Component (e.g.: update fontSize or fontFamily)
