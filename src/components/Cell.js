@@ -8,8 +8,8 @@ import {
   TouchableHighlight,
   TouchableOpacity,
   View,
-  ViewPropTypes,
 } from 'react-native';
+import ViewPropTypes from './ViewPropTypes';
 
 const Cell = props => {
   const {
