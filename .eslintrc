@@ -1,26 +1,4 @@
 {
-  "extends": [
-    "plugin:react/recommended",
-    "prettier",
-    "prettier/react"
-  ],
-  "plugins": [
-    "react",
-    "prettier"
-  ],
-  "env": {
-    "es6": true,
-    "node": true
-  },
-  "globals": {
-    "__DEV__": true,
-  },
-  "parserOptions": {
-    "ecmaVersion": 2016,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true,
-      "experimentalObjectRestSpread": true
-    }
-  }
+  "root": true,
+  "extends": ["@react-native-community"]
 }

@@ -35,3 +35,4 @@ screenshotAboutScreen.png
 .editorconfig
 .eslintrc
 .travis.yml
+.vscode

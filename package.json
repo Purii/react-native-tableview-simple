@@ -2,22 +2,32 @@
   "name": "react-native-tableview-simple",
   "description": "React Native component for TableView made with pure CSS",
   "homepage": "https://github.com/Purii/react-native-tableview-simple",
-  "version": "0.17.2",
+  "version": "2.4.1",
   "author": "Patrick Puritscher <hello@patrickpuritscher.com>",
   "scripts": {
-    "format:src": "prettier --trailing-comma es5 --single-quote --write 'components/**/*.js'",
-    "format:example": "prettier --trailing-comma es5 --single-quote --write 'example/*.js'",
+    "clean": "watchman watch-del-all && rm -rf node_modules/ && yarn cache clean && yarn",
+    "format:src": "prettier --write 'src/**/*.js'",
+    "format:example": "prettier --write 'example/*.js'",
     "format": "npm run format:src && npm run format:example",
     "jest": "jest",
-    "lint": "eslint index.js components/",
-    "precommit": "lint-staged",
+    "lint": "eslint index.js src/",
     "test": "npm run lint && npm run jest"
   },
   "lint-staged": {
+    "*.md": [
+      "prettier --write",
+      "git add"
+    ],
     "*.js": [
-      "prettier --trailing-comma es5 --single-quote --write",
+      "eslint",
+      "prettier --write",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "jest": {
     "preset": "react-native",
@@ -30,7 +40,13 @@
     ]
   },
   "main": "index.js",
-  "types": "index.d.ts",
+  "files": [
+    "/src",
+    "/index.js",
+    "/README.md",
+    "/LICENSE"
+  ],
+  "types": "src/index.d.ts",
   "license": "MIT",
   "keywords": [
     "react-native",
@@ -43,7 +59,7 @@
   ],
   "peerDependencies": {
     "react": "*",
-    "react-native": ">=0.44 || 0.53.0-rc"
+    "react-native": "^0.59"
   },
   "bugs": {
     "url": "https://github.com/Purii/react-native-tableview-simple/issues"
@@ -53,21 +69,19 @@
     "url": "git@github.com:Purii/react-native-tableview-simple.git"
   },
   "devDependencies": {
-    "babel-jest": "22.0.4",
-    "babel-preset-react-native": "4.0.0",
-    "eslint": "^4.14.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-prettier": "^2.4.0",
-    "eslint-plugin-react": "^7.5.1",
-    "husky": "^0.14.3",
-    "jest": "22.0.4",
-    "lint-staged": "^6.0.0",
-    "prettier": "^1.9.2",
-    "react": "^16.2.0",
-    "react-native": "^0.51.0",
-    "react-test-renderer": "16.2.0"
+    "@react-native-community/eslint-config": "^0.0.7",
+    "babel-jest": "25.1.0",
+    "babel-preset-react-native": "4.0.1",
+    "eslint": "^6.7.2",
+    "husky": "^4.0.0",
+    "jest": "25.1.0",
+    "lint-staged": "^10.0.0",
+    "react": "16.13.0",
+    "react-native": "^0.61.5",
+    "react-test-renderer": "16.13.0",
+    "typescript": "^3.7.3"
   },
   "dependencies": {
-    "prop-types": "^15.6.0"
+    "prop-types": "^15.7.2"
   }
 }
