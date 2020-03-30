@@ -70,7 +70,7 @@
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^0.0.7",
-    "babel-jest": "25.1.0",
+    "babel-jest": "25.2.4",
     "babel-preset-react-native": "4.0.1",
     "eslint": "^6.7.2",
     "husky": "^4.0.0",
