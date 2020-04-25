@@ -78,7 +78,7 @@
     "lint-staged": "^10.0.0",
     "react": "16.13.1",
     "react-native": "^0.61.5",
-    "react-test-renderer": "16.13.0",
+    "react-test-renderer": "16.13.1",
     "typescript": "^3.7.3"
   },
   "dependencies": {
