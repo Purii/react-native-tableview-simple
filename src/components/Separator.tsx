@@ -30,8 +30,8 @@ const Separator: React.FC<SeparatorInterface> = ({
 }) => {
   const localStyles = {
     separator: [styles.separator, { backgroundColor: backgroundColor }],
-    separator_inner: [
-      styles.separator_inner,
+    separatorInner: [
+      styles.separatorInner,
       {
         backgroundColor: isHidden ? 'transparent' : tintColor,
         marginLeft: insetLeft,
@@ -43,20 +43,20 @@ const Separator: React.FC<SeparatorInterface> = ({
   if (withSafeAreaView) {
     return (
       <SafeAreaView style={localStyles.separator}>
-        <View style={localStyles.separator_inner} />
+        <View style={localStyles.separatorInner} />
       </SafeAreaView>
     );
   }
   return (
     <View style={localStyles.separator}>
-      <View style={localStyles.separator_inner} />
+      <View style={localStyles.separatorInner} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   separator: {},
-  separator_inner: {
+  separatorInner: {
     height: StyleSheet.hairlineWidth,
   },
 });

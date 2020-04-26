@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
 export interface TableViewInterface {
-  children?: React.ReactChildren;
+  children?: React.ReactNode;
 }
 
 const TableView: React.FC<TableViewInterface> = ({

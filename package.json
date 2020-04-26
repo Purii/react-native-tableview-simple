@@ -7,9 +7,9 @@
   "scripts": {
     "clean": "watchman watch-del-all && rm -rf node_modules/ && yarn cache clean && yarn",
     "jest": "jest",
-    "eslint": "eslint index.js src/",
-    "eslint:fix": "eslint --fix index.js src/",
-    "test": "yarn eslint && yarn jest && yarn tsc --noEmit",
+    "eslint:ci": "eslint index.js ./src/ --ext .js,.jsx,.tsx,.ts -f table",
+    "eslint:fix": "eslint index.js ./src/ --fix --ext .js,.jsx,.tsx,.ts -f table",
+    "test": "yarn eslint:ci && yarn jest && yarn tsc --noEmit",
     "tsc": "tsc --skipLibCheck",
     "build:module": "yarn tsc --outDir ./lib/module  --sourceMap",
     "build:commonjs": "yarn tsc --module commonjs --outDir ./lib/commonjs --sourceMap",
@@ -72,8 +72,10 @@
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^1.1.0",
+    "@types/jest": "^25.2.1",
     "@types/react": "^16.9.34",
     "@types/react-native": "^0.62.4",
+    "@types/react-test-renderer": "^16.9.2",
     "@typescript-eslint/eslint-plugin": "^2.29.0",
     "@typescript-eslint/parser": "^2.29.0",
     "babel-jest": "25.4.0",

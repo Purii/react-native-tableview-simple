@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import {
   Platform,
   SafeAreaView,
@@ -25,9 +25,9 @@ export interface CellInterface {
   allowFontScaling?: boolean;
   backgroundColor?: ViewStyle['backgroundColor'];
   cellStyle?: 'Basic' | 'RightDetail' | 'LeftDetail' | 'Subtitle';
-  cellAccessoryView?: ReactElement | null;
-  cellContentView?: ReactElement | null;
-  cellImageView?: ReactElement | null;
+  cellAccessoryView?: React.ReactNode;
+  cellContentView?: React.ReactNode;
+  cellImageView?: React.ReactNode;
   contentContainerStyle?: StyleProp<ViewStyle>;
   detail?: string | number;
   detailTextStyle?: StyleProp<TextStyle>;
@@ -36,7 +36,7 @@ export interface CellInterface {
   hideSeparator?: boolean;
   highlightActiveOpacity?: number;
   highlightUnderlayColor?: ViewStyle['backgroundColor'];
-  image?: ReactElement | null;
+  image?: React.ReactElement;
   isDisabled?: boolean;
   onPress?: () => void | false;
   onPressDetailAccessory?: () => void | false;
@@ -47,7 +47,7 @@ export interface CellInterface {
   subtitleColor?: TextStyle['color'];
   subtitleTextStyle?: StyleProp<TextStyle>;
   testID?: string;
-  title?: string | number | ReactElement | null;
+  title?: React.ReactNode;
   titleTextProps?: TextProps;
   titleTextStyle?: StyleProp<TextStyle>;
   titleTextStyleDisabled?: StyleProp<TextStyle>;
@@ -156,7 +156,7 @@ const Cell: React.FC<CellInterface> = ({
     ],
   };
 
-  const renderAccessoryDetail = (): ReactElement => {
+  const renderAccessoryDetail = (): React.ReactNode => {
     if (onPressDetailAccessory) {
       return (
         <TouchableOpacity
@@ -179,7 +179,7 @@ const Cell: React.FC<CellInterface> = ({
    * Currently available
    * @return {View} View with accessory
    */
-  const renderAccessoryView = (): ReactElement | null => {
+  const renderAccessoryView = (): React.ReactNode => {
     switch (accessory) {
       case 'DisclosureIndicator':
         return (
@@ -217,7 +217,7 @@ const Cell: React.FC<CellInterface> = ({
    * Render imageView
    * @return {Image} Image component with updated props
    */
-  const renderImageView = (): ReactElement | null => {
+  const renderImageView = (): React.ReactNode => {
     if (!image) {
       return null;
     }
@@ -237,7 +237,7 @@ const Cell: React.FC<CellInterface> = ({
    * Render cell of type Basic
    * @return {View} View with Text and Accessory
    */
-  const renderCellBasic = (): ReactElement => (
+  const renderCellBasic = (): React.ReactNode => (
     <View style={_styles.cellContentView}>
       <Text
         allowFontScaling={allowFontScaling}
@@ -253,7 +253,7 @@ const Cell: React.FC<CellInterface> = ({
    * Render cell of type RightDetail
    * @return {View} View with Text, Text and Accessory
    */
-  const renderCellRightDetail = (): ReactElement => (
+  const renderCellRightDetail = (): React.ReactNode => (
     <View style={_styles.cellContentView}>
       <Text
         allowFontScaling={allowFontScaling}
@@ -280,7 +280,7 @@ const Cell: React.FC<CellInterface> = ({
    * Render cell of type LeftDetail
    * @return {View} View with Text, Text and Accessory
    */
-  const renderCellLeftDetail = (): ReactElement => (
+  const renderCellLeftDetail = (): React.ReactNode => (
     <View style={_styles.cellContentView}>
       <Text
         allowFontScaling={allowFontScaling}
@@ -307,7 +307,7 @@ const Cell: React.FC<CellInterface> = ({
    * Render cell of type Subtitle
    * @return {View} View with View, Text, Text and Accessory
    */
-  const renderCellSubtitle = (): ReactElement => (
+  const renderCellSubtitle = (): React.ReactNode => (
     <View
       style={[_styles.cellContentView, _styles.cellContentViewTypeSubtitle]}>
       <View style={_styles.cellInnerSubtitle}>
@@ -337,7 +337,7 @@ const Cell: React.FC<CellInterface> = ({
    * Renders correct contentView
    * @return {View} ContentView
    */
-  const renderCellContentView = (): ReactElement | null => {
+  const renderCellContentView = (): React.ReactNode => {
     switch (cellStyle) {
       case 'Basic':
         return renderCellBasic();
@@ -356,7 +356,7 @@ const Cell: React.FC<CellInterface> = ({
    * Render content of cell
    * @return {View} Complete View with cell elements
    */
-  const renderCell = (): ReactElement => (
+  const renderCell = (): React.ReactNode => (
     <View style={_styles.cell}>
       {cellImageView || renderImageView()}
       {cellContentView || renderCellContentView()}
@@ -369,7 +369,7 @@ const Cell: React.FC<CellInterface> = ({
    * Inside view to prevent overwriting styles
    * @return {View} Complete View with cell elements
    */
-  const renderCellWithSafeAreaView = (): ReactElement => (
+  const renderCellWithSafeAreaView = (): React.ReactNode => (
     <SafeAreaView style={_styles.cellSafeAreaContainer}>
       <View style={_styles.cell}>
         {cellImageView || renderImageView()}

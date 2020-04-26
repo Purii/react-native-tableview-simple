@@ -1,4 +1,4 @@
-import React, { useState, ReactElement } from 'react';
+import React, { useState } from 'react';
 import {
   Platform,
   SafeAreaView,
@@ -13,9 +13,9 @@ import Separator from './Separator';
 
 export interface SectionInterface {
   allowFontScaling?: boolean;
-  children?: React.ReactChildren;
-  footerComponent?: JSX.Element;
-  headerComponent?: JSX.Element;
+  children?: React.ReactNode;
+  footerComponent?: React.ReactNode;
+  headerComponent?: React.ReactNode;
   footer?: string;
   footerTextColor?: TextStyle['color'];
   footerTextStyle?: TextStyle;
@@ -85,17 +85,17 @@ const Section: React.FC<SectionInterface> = ({
       },
     ],
     sectionChildren: [
-      styles.section__children,
-      roundedCorners && styles.section__children_roundedCorners,
+      styles.sectionChildren,
+      roundedCorners && styles.sectionChildrenRoundedCorners,
     ],
 
     sectionheaderText: [
-      styles.sectionheader__text,
+      styles.sectionheaderText,
       { color: headerTextColor },
       headerTextStyle,
     ],
     sectionfooterText: [
-      styles.sectionfooter__text,
+      styles.sectionfooterText,
       { color: footerTextColor },
       footerTextStyle,
     ],
@@ -109,9 +109,9 @@ const Section: React.FC<SectionInterface> = ({
    * Render Cell and add Border
    */
   const renderChild = (
-    child: string | number | {} | ReactElement,
+    child: string | number | {} | React.ReactNode,
     index: number,
-  ): ReactElement | null => {
+  ): React.ReactNode => {
     if (!child) {
       return null;
     }
@@ -163,7 +163,7 @@ const Section: React.FC<SectionInterface> = ({
   /**
    * Render header if defined
    */
-  const renderHeader = (): ReactElement | null => {
+  const renderHeader = (): React.ReactNode | null => {
     if (header && withSafeAreaView) {
       return (
         <View style={styles.sectionheader}>
@@ -194,7 +194,7 @@ const Section: React.FC<SectionInterface> = ({
   /**
    * Render footer if defined
    */
-  const renderFooter = (): ReactElement | null => {
+  const renderFooter = (): React.ReactNode | null => {
     if (footer && withSafeAreaView) {
       return (
         <View style={styles.sectionfooter}>
@@ -249,8 +249,8 @@ const Section: React.FC<SectionInterface> = ({
 
 const styles = StyleSheet.create({
   section: {},
-  section__children: {},
-  section__children_roundedCorners: {
+  sectionChildren: {},
+  sectionChildrenRoundedCorners: {
     borderRadius: 10,
     overflow: 'hidden',
   },
@@ -259,7 +259,7 @@ const styles = StyleSheet.create({
     paddingRight: 15,
     paddingBottom: 5,
   },
-  sectionheader__text: {
+  sectionheaderText: {
     fontSize: 13,
     letterSpacing: -0.078,
   },
@@ -268,7 +268,7 @@ const styles = StyleSheet.create({
     paddingRight: 15,
     paddingTop: 10,
   },
-  sectionfooter__text: {
+  sectionfooterText: {
     fontSize: 13,
     letterSpacing: -0.078,
   },
