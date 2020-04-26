@@ -618,7 +618,7 @@ const data = [
   { id: 4, title: '4' },
 ];
 
-export default (ExampleWithFlatList = () => (
+export default ExampleWithFlatList = () => (
   <FlatList
     data={data}
     keyExtractor={(item, index) => item.id}
@@ -634,7 +634,7 @@ export default (ExampleWithFlatList = () => (
       <Separator isHidden={highlighted} />
     )}
   />
-));
+);
 ```
 
 # Try it out

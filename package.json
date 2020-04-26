@@ -9,7 +9,7 @@
     "jest": "jest",
     "eslint": "eslint index.js src/",
     "eslint:fix": "eslint --fix index.js src/",
-    "test": "npm run lint && npm run jest",
+    "test": "yarn eslint && yarn jest && yarn tsc --noEmit",
     "tsc": "tsc --skipLibCheck",
     "build:module": "yarn tsc --outDir ./lib/module  --sourceMap",
     "build:commonjs": "yarn tsc --module commonjs --outDir ./lib/commonjs --sourceMap",
