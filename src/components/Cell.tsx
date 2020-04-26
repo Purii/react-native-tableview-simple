@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ReactElement } from 'react';
 import {
   Platform,
   SafeAreaView,
@@ -8,46 +7,93 @@ import {
   TouchableHighlight,
   TouchableOpacity,
   View,
-  ViewPropTypes,
+  StyleProp,
+  ViewStyle,
+  TextProps,
+  TextStyle,
 } from 'react-native';
 
-const Cell = props => {
-  const {
-    accessory,
-    accessoryColor,
-    accessoryColorDisclosureIndicator,
-    allowFontScaling,
-    backgroundColor,
-    cellStyle,
-    cellContentView,
-    cellImageView,
-    cellAccessoryView,
-    contentContainerStyle,
-    detail,
-    detailTextStyle,
-    detailTextProps,
-    disableImageResize,
-    highlightActiveOpacity,
-    highlightUnderlayColor,
-    image,
-    isDisabled,
-    onPress,
-    onPressDetailAccessory,
-    onHighlightRow,
-    onUnHighlightRow,
-    leftDetailColor,
-    rightDetailColor,
-    subtitleColor,
-    subtitleTextStyle,
-    testID,
-    title,
-    titleTextProps,
-    titleTextStyle,
-    titleTextStyleDisabled,
-    titleTextColor,
-    withSafeAreaView,
-  } = props;
+export interface CellInterface {
+  accessory?:
+    | false
+    | 'DisclosureIndicator'
+    | 'Detail'
+    | 'DetailDisclosure'
+    | 'Checkmark';
+  accessoryColor?: ViewStyle['borderColor'] | TextStyle['color'];
+  accessoryColorDisclosureIndicator?: ViewStyle['borderColor'];
+  allowFontScaling?: boolean;
+  backgroundColor?: ViewStyle['backgroundColor'];
+  cellStyle?: 'Basic' | 'RightDetail' | 'LeftDetail' | 'Subtitle';
+  cellAccessoryView?: ReactElement | null;
+  cellContentView?: ReactElement | null;
+  cellImageView?: ReactElement | null;
+  contentContainerStyle?: StyleProp<ViewStyle>;
+  detail?: string | number;
+  detailTextStyle?: StyleProp<TextStyle>;
+  detailTextProps?: TextProps;
+  disableImageResize?: boolean;
+  hideSeparator?: boolean;
+  highlightActiveOpacity?: number;
+  highlightUnderlayColor?: ViewStyle['backgroundColor'];
+  image?: ReactElement | null;
+  isDisabled?: boolean;
+  onPress?: () => void | false;
+  onPressDetailAccessory?: () => void | false;
+  onUnHighlightRow?(): void;
+  onHighlightRow?(): void;
+  leftDetailColor?: TextStyle['color'];
+  rightDetailColor?: TextStyle['color'];
+  subtitleColor?: TextStyle['color'];
+  subtitleTextStyle?: StyleProp<TextStyle>;
+  testID?: string;
+  title?: string | number | ReactElement | null;
+  titleTextProps?: TextProps;
+  titleTextStyle?: StyleProp<TextStyle>;
+  titleTextStyleDisabled?: StyleProp<TextStyle>;
+  titleTextColor?: TextStyle['color'];
+  withSafeAreaView?: boolean;
+}
 
+const Cell: React.FC<CellInterface> = ({
+  accessory = false,
+  accessoryColor = '#007AFF',
+  accessoryColorDisclosureIndicator = '#C7C7CC',
+  allowFontScaling = true,
+  backgroundColor = '#FFF',
+  cellStyle = 'Basic',
+  cellContentView,
+  cellImageView,
+  cellAccessoryView,
+  contentContainerStyle = {},
+  detail,
+  detailTextStyle = {},
+  detailTextProps = {},
+  disableImageResize = false,
+  highlightActiveOpacity = 0.8,
+  highlightUnderlayColor = '#000',
+  image,
+  isDisabled = false,
+  onPress,
+  onPressDetailAccessory,
+  onHighlightRow,
+  onUnHighlightRow,
+  leftDetailColor = '#007AFF',
+  rightDetailColor = '#8E8E93',
+  subtitleColor = '#000',
+  subtitleTextStyle = {},
+  testID,
+  title,
+  titleTextProps = {},
+  titleTextStyle = {},
+  titleTextStyleDisabled = {},
+  titleTextColor = '#000',
+  withSafeAreaView = Platform.OS === 'ios'
+    ? parseInt(`${Platform.Version}`, 10) <= 10
+      ? false
+      : true
+    : true,
+}: CellInterface) => {
   const isPressable = !!onPress;
 
   /**
@@ -68,66 +114,63 @@ const Cell = props => {
         backgroundColor,
       },
     ],
-    cell_title: isDisabled
-      ? [styles.cell_title, styles.cell_text__disabled, titleTextStyleDisabled]
-      : [styles.cell_title, { color: titleTextColor }, titleTextStyle],
-    cell_leftDetail: [
-      styles.cell_leftDetail,
+    cellTitle: isDisabled
+      ? [styles.cellTitle, styles.cellTextDisabled, titleTextStyleDisabled]
+      : [styles.cellTitle, { color: titleTextColor }, titleTextStyle],
+    cellLeftDetail: [
+      styles.cellLeftDetail,
       {
         color: leftDetailColor,
       },
       detailTextStyle,
     ],
-    cell_leftDetailTitle: isDisabled
-      ? [styles.cell_leftDetailTitle, styles.cell_text__disabled]
-      : [styles.cell_leftDetailTitle, { color: titleTextColor }],
-    cell_rightDetail: [
-      styles.cell_rightDetail,
+    cellLeftDetailTitle: isDisabled
+      ? [styles.cellLeftDetailTitle, styles.cellTextDisabled]
+      : [styles.cellLeftDetailTitle, { color: titleTextColor }],
+    cellRightDetail: [
+      styles.cellRightDetail,
       {
         color: rightDetailColor,
       },
       detailTextStyle,
     ],
-    cell_subtitle: [
-      styles.cell_subtitle,
+    cellSubtitle: [
+      styles.cellSubtitle,
       {
         color: subtitleColor,
       },
       subtitleTextStyle,
     ],
-    accessory_checkmark: [
-      styles.accessory_checkmark,
+    accessoryCheckmark: [
+      styles.accessoryCheckmark,
       { borderColor: accessoryColor },
     ],
-    accessory_detail: [
-      styles.accessory_detail,
-      { borderColor: accessoryColor },
-    ],
-    accessory_detailText: [
-      styles.accessory_detailText,
+    accessoryDetail: [styles.accessoryDetail, { borderColor: accessoryColor }],
+    accessoryDetailText: [
+      styles.accessoryDetailText,
       { color: accessoryColor },
     ],
-    accessory_disclosureIndicator: [
-      styles.accessory_disclosureIndicator,
+    accessoryDisclosureIndicator: [
+      styles.accessoryDisclosureIndicator,
       { borderColor: accessoryColorDisclosureIndicator },
     ],
   };
 
-  const renderAccessoryDetail = () => {
+  const renderAccessoryDetail = (): ReactElement => {
     if (onPressDetailAccessory) {
       return (
         <TouchableOpacity
-          style={_styles.accessory_detail}
+          style={_styles.accessoryDetail}
           onPress={onPressDetailAccessory}
           activeOpacity={0.7}
           disabled={isDisabled}>
-          <Text style={_styles.accessory_detailText}>i</Text>
+          <Text style={_styles.accessoryDetailText}>i</Text>
         </TouchableOpacity>
       );
     }
     return (
-      <View style={_styles.accessory_detail}>
-        <Text style={_styles.accessory_detailText}>i</Text>
+      <View style={_styles.accessoryDetail}>
+        <Text style={_styles.accessoryDetailText}>i</Text>
       </View>
     );
   };
@@ -136,12 +179,12 @@ const Cell = props => {
    * Currently available
    * @return {View} View with accessory
    */
-  const renderAccessoryView = () => {
+  const renderAccessoryView = (): ReactElement | null => {
     switch (accessory) {
       case 'DisclosureIndicator':
         return (
           <View style={_styles.cellAccessoryView}>
-            <View style={_styles.accessory_disclosureIndicator} />
+            <View style={_styles.accessoryDisclosureIndicator} />
           </View>
         );
       case 'Detail':
@@ -153,16 +196,16 @@ const Cell = props => {
       case 'DetailDisclosure':
         return (
           <View style={_styles.cellAccessoryView}>
-            <View style={_styles.accessory_detailDisclosure}>
+            <View style={_styles.accessoryDetailDisclosure}>
               {renderAccessoryDetail()}
-              <View style={_styles.accessory_disclosureIndicator} />
+              <View style={_styles.accessoryDisclosureIndicator} />
             </View>
           </View>
         );
       case 'Checkmark':
         return (
           <View style={_styles.cellAccessoryView}>
-            <View style={_styles.accessory_checkmark} />
+            <View style={_styles.accessoryCheckmark} />
           </View>
         );
       default:
@@ -174,7 +217,7 @@ const Cell = props => {
    * Render imageView
    * @return {Image} Image component with updated props
    */
-  const renderImageView = () => {
+  const renderImageView = (): ReactElement | null => {
     if (!image) {
       return null;
     }
@@ -194,12 +237,12 @@ const Cell = props => {
    * Render cell of type Basic
    * @return {View} View with Text and Accessory
    */
-  const renderCellBasic = () => (
+  const renderCellBasic = (): ReactElement => (
     <View style={_styles.cellContentView}>
       <Text
         allowFontScaling={allowFontScaling}
         numberOfLines={1}
-        style={_styles.cell_title}
+        style={_styles.cellTitle}
         {...titleTextProps}>
         {title}
       </Text>
@@ -210,12 +253,12 @@ const Cell = props => {
    * Render cell of type RightDetail
    * @return {View} View with Text, Text and Accessory
    */
-  const renderCellRightDetail = () => (
+  const renderCellRightDetail = (): ReactElement => (
     <View style={_styles.cellContentView}>
       <Text
         allowFontScaling={allowFontScaling}
         numberOfLines={1}
-        style={_styles.cell_title}
+        style={_styles.cellTitle}
         {...titleTextProps}>
         {title}
       </Text>
@@ -224,8 +267,8 @@ const Cell = props => {
         numberOfLines={1}
         style={
           isDisabled
-            ? [_styles.cell_rightDetail, _styles.cell_text__disabled]
-            : _styles.cell_rightDetail
+            ? [_styles.cellRightDetail, _styles.cellTextDisabled]
+            : _styles.cellRightDetail
         }
         {...detailTextProps}>
         {detail}
@@ -237,15 +280,15 @@ const Cell = props => {
    * Render cell of type LeftDetail
    * @return {View} View with Text, Text and Accessory
    */
-  const renderCellLeftDetail = () => (
+  const renderCellLeftDetail = (): ReactElement => (
     <View style={_styles.cellContentView}>
       <Text
         allowFontScaling={allowFontScaling}
         numberOfLines={1}
         style={
           isDisabled
-            ? [_styles.cell_leftDetail, _styles.cell_text__disabled]
-            : _styles.cell_leftDetail
+            ? [_styles.cellLeftDetail, _styles.cellTextDisabled]
+            : _styles.cellLeftDetail
         }
         {...detailTextProps}>
         {detail}
@@ -253,7 +296,7 @@ const Cell = props => {
       <Text
         allowFontScaling={allowFontScaling}
         numberOfLines={1}
-        style={_styles.cell_leftDetailTitle}
+        style={_styles.cellLeftDetailTitle}
         {...titleTextProps}>
         {title}
       </Text>
@@ -264,14 +307,14 @@ const Cell = props => {
    * Render cell of type Subtitle
    * @return {View} View with View, Text, Text and Accessory
    */
-  const renderCellSubtitle = () => (
+  const renderCellSubtitle = (): ReactElement => (
     <View
-      style={[_styles.cellContentView, _styles.cellContentView__type_subtitle]}>
-      <View style={_styles.cellinner__subtitle}>
+      style={[_styles.cellContentView, _styles.cellContentViewTypeSubtitle]}>
+      <View style={_styles.cellInnerSubtitle}>
         <Text
           allowFontScaling={allowFontScaling}
           numberOfLines={1}
-          style={_styles.cell_title}
+          style={_styles.cellTitle}
           {...titleTextProps}>
           {title}
         </Text>
@@ -280,8 +323,8 @@ const Cell = props => {
           numberOfLines={1}
           style={
             isDisabled
-              ? [_styles.cell_subtitle, _styles.cell_text__disabled]
-              : _styles.cell_subtitle
+              ? [_styles.cellSubtitle, _styles.cellTextDisabled]
+              : _styles.cellSubtitle
           }
           {...detailTextProps}>
           {detail}
@@ -294,7 +337,7 @@ const Cell = props => {
    * Renders correct contentView
    * @return {View} ContentView
    */
-  const renderCellContentView = () => {
+  const renderCellContentView = (): ReactElement | null => {
     switch (cellStyle) {
       case 'Basic':
         return renderCellBasic();
@@ -313,7 +356,7 @@ const Cell = props => {
    * Render content of cell
    * @return {View} Complete View with cell elements
    */
-  const renderCell = () => (
+  const renderCell = (): ReactElement => (
     <View style={_styles.cell}>
       {cellImageView || renderImageView()}
       {cellContentView || renderCellContentView()}
@@ -326,7 +369,7 @@ const Cell = props => {
    * Inside view to prevent overwriting styles
    * @return {View} Complete View with cell elements
    */
-  const renderCellWithSafeAreaView = () => (
+  const renderCellWithSafeAreaView = (): ReactElement => (
     <SafeAreaView style={_styles.cellSafeAreaContainer}>
       <View style={_styles.cell}>
         {cellImageView || renderImageView()}
@@ -376,40 +419,40 @@ const styles = StyleSheet.create({
     // independent from other cellViews
     paddingVertical: 10,
   },
-  cellContentView__type_subtitle: {
+  cellContentViewTypeSubtitle: {
     paddingVertical: 4,
   },
-  cellinner__subtitle: {
+  cellInnerSubtitle: {
     flexDirection: 'column',
     flex: 1,
   },
-  cell_title: {
+  cellTitle: {
     fontSize: 16,
     letterSpacing: -0.32,
     flex: 1,
   },
-  cell_leftDetailTitle: {
+  cellLeftDetailTitle: {
     fontSize: 12,
     flex: 1,
   },
-  cell_leftDetail: {
+  cellLeftDetail: {
     fontSize: 12,
     alignSelf: 'center',
     textAlign: 'right',
     marginRight: 5,
     width: 75,
   },
-  cell_rightDetail: {
+  cellRightDetail: {
     fontSize: 16,
     letterSpacing: -0.32,
     alignSelf: 'center',
     color: '#8E8E93',
   },
-  cell_subtitle: {
+  cellSubtitle: {
     fontSize: 11,
     letterSpacing: 0.066,
   },
-  cell_text__disabled: {
+  cellTextDisabled: {
     color: 'gray',
   },
   cellImageView: {
@@ -423,7 +466,7 @@ const styles = StyleSheet.create({
   cellAccessoryView: {
     justifyContent: 'center',
   },
-  accessory_disclosureIndicator: {
+  accessoryDisclosureIndicator: {
     width: 10,
     height: 10,
     marginLeft: 7,
@@ -437,7 +480,7 @@ const styles = StyleSheet.create({
       },
     ],
   },
-  accessory_detail: {
+  accessoryDetail: {
     width: 20,
     height: 20,
     marginLeft: 10,
@@ -447,17 +490,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  accessory_detailText: {
+  accessoryDetailText: {
     fontSize: 15,
     fontWeight: '400',
     fontFamily: 'Georgia',
     letterSpacing: -0.24,
   },
-  accessory_detailDisclosure: {
+  accessoryDetailDisclosure: {
     flexDirection: 'row',
     alignItems: 'center',
   },
-  accessory_checkmark: {
+  accessoryCheckmark: {
     width: 13,
     height: 6,
     marginLeft: 7,
@@ -472,88 +515,5 @@ const styles = StyleSheet.create({
     ],
   },
 });
-
-Cell.propTypes = {
-  accessory: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-  accessoryColor: PropTypes.string.isRequired,
-  accessoryColorDisclosureIndicator: PropTypes.string.isRequired,
-  allowFontScaling: PropTypes.bool,
-  cellStyle: PropTypes.string,
-  cellContentView: PropTypes.element,
-  cellImageView: PropTypes.element,
-  cellAccessoryView: PropTypes.element,
-  contentContainerStyle: ViewPropTypes.style,
-  backgroundColor: PropTypes.string.isRequired,
-  detail: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  detailTextProps: Text.propTypes,
-  detailTextStyle: Text.propTypes.style,
-  disableImageResize: PropTypes.bool,
-  hideSeparator: PropTypes.bool,
-  highlightActiveOpacity: PropTypes.number,
-  highlightUnderlayColor: PropTypes.string,
-  image: PropTypes.element,
-  isDisabled: PropTypes.bool,
-  leftDetailColor: PropTypes.string,
-  onHighlightRow: PropTypes.func,
-  onUnHighlightRow: PropTypes.func,
-  rightDetailColor: PropTypes.string,
-  subtitleColor: PropTypes.string,
-  subtitleTextStyle: Text.propTypes.style,
-  testID: PropTypes.string,
-  title: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.element,
-  ]),
-  titleTextColor: PropTypes.string,
-  titleTextProps: Text.propTypes,
-  titleTextStyle: Text.propTypes.style,
-  titleTextStyleDisabled: Text.propTypes.style,
-  onPress: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
-  onPressDetailAccessory: PropTypes.oneOfType([PropTypes.bool, PropTypes.func]),
-  withSafeAreaView: PropTypes.bool,
-};
-
-Cell.defaultProps = {
-  accessory: false,
-  accessoryColor: '#007AFF',
-  accessoryColorDisclosureIndicator: '#C7C7CC',
-  allowFontScaling: true,
-  cellStyle: 'Basic',
-  cellContentView: null,
-  cellImageView: null,
-  cellAccessoryView: null,
-  contentContainerStyle: {},
-  backgroundColor: '#FFF',
-  detail: '',
-  detailTextProps: {},
-  detailTextStyle: {},
-  disableImageResize: false,
-  hideSeparator: false,
-  highlightActiveOpacity: 0.8,
-  highlightUnderlayColor: 'black',
-  image: null,
-  isDisabled: false,
-  leftDetailColor: '#007AFF',
-  onHighlightRow: null,
-  onUnHighlightRow: null,
-  onPress: false,
-  onPressDetailAccessory: false,
-  rightDetailColor: '#8E8E93',
-  subtitleColor: '#000',
-  subtitleTextStyle: {},
-  testID: undefined,
-  title: '',
-  titleTextColor: '#000',
-  titleTextProps: {},
-  titleTextStyle: {},
-  titleTextStyleDisabled: {},
-  withSafeAreaView:
-    Platform.OS === 'ios'
-      ? parseInt(Platform.Version, 10) <= 10
-        ? false
-        : true
-      : true,
-};
 
 export default Cell;

@@ -6,22 +6,32 @@
   "author": "Patrick Puritscher <hello@patrickpuritscher.com>",
   "scripts": {
     "clean": "watchman watch-del-all && rm -rf node_modules/ && yarn cache clean && yarn",
-    "format:src": "prettier --write 'src/**/*.js'",
-    "format:example": "prettier --write 'example/*.js'",
-    "format": "npm run format:src && npm run format:example",
     "jest": "jest",
-    "lint": "eslint index.js src/",
-    "test": "npm run lint && npm run jest"
+    "eslint": "eslint index.js src/",
+    "eslint:fix": "eslint --fix index.js src/",
+    "test": "npm run lint && npm run jest",
+    "tsc": "tsc --skipLibCheck",
+    "build:module": "yarn tsc --outDir ./lib/module  --sourceMap",
+    "build:commonjs": "yarn tsc --module commonjs --outDir ./lib/commonjs --sourceMap",
+    "build": "rimraf ./lib && yarn build:module && yarn build:commonjs"
   },
+  "main": "lib/commonjs/index.js",
+  "react-native": "src/index.ts",
+  "module": "lib/module/index.js",
+  "types": "lib/typescript/index.d.ts",
+  "files": [
+    "/src",
+    "/lib",
+    "/README.md",
+    "/LICENSE"
+  ],
   "lint-staged": {
     "*.md": [
       "prettier --write",
       "git add"
     ],
-    "*.js": [
-      "eslint",
-      "prettier --write",
-      "git add"
+    "*.(js,jsx,ts,tsx)": [
+      "eslint:fix"
     ]
   },
   "husky": {
@@ -39,14 +49,6 @@
       "<rootDir>/example/"
     ]
   },
-  "main": "index.js",
-  "files": [
-    "/src",
-    "/index.js",
-    "/README.md",
-    "/LICENSE"
-  ],
-  "types": "src/index.d.ts",
   "license": "MIT",
   "keywords": [
     "react-native",
@@ -69,19 +71,22 @@
     "url": "git@github.com:Purii/react-native-tableview-simple.git"
   },
   "devDependencies": {
-    "@react-native-community/eslint-config": "^0.0.7",
-    "babel-jest": "25.1.0",
+    "@react-native-community/eslint-config": "^1.1.0",
+    "@types/react": "^16.9.34",
+    "@types/react-native": "^0.62.4",
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/parser": "^2.29.0",
+    "babel-jest": "25.4.0",
     "babel-preset-react-native": "4.0.1",
     "eslint": "^6.7.2",
-    "husky": "^4.0.0",
-    "jest": "25.1.0",
-    "lint-staged": "^10.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "husky": "^4.2.5",
+    "jest": "25.4.0",
+    "lint-staged": "^10.1.7",
     "react": "16.13.1",
-    "react-native": "^0.61.5",
-    "react-test-renderer": "16.13.0",
+    "react-native": "^0.62.2",
+    "react-test-renderer": "16.13.1",
+    "rimraf": "^3.0.2",
     "typescript": "^3.7.3"
-  },
-  "dependencies": {
-    "prop-types": "^15.7.2"
   }
 }

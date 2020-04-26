@@ -31,4 +31,6 @@ project.xcworkspace
 node_modules/
 npm-debug.log
 
+lib/
+
 TODO.md
