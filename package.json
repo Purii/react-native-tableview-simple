@@ -83,7 +83,7 @@
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.11.0",
     "husky": "^4.2.5",
-    "jest": "25.4.0",
+    "jest": "25.5.2",
     "lint-staged": "^10.1.7",
     "react": "16.13.1",
     "react-native": "^0.62.2",
