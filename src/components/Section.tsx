@@ -63,11 +63,9 @@ const Section: React.FC<SectionInterface> = ({
   const [highlightedRowIndex, setHighlightedRowIndex] = useState<number>();
 
   const highlightRow = (index: number): void => {
-    if (highlightedRowIndex) return;
     setHighlightedRowIndex(index);
   };
   const unhighlightRow = (): void => {
-    if (highlightedRowIndex) return;
     setHighlightedRowIndex(undefined);
   };
 
