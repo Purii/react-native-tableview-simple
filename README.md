@@ -48,15 +48,37 @@ import { Cell, Section, TableView } from 'react-native-tableview-simple';
 ## Extensible
 
 `react-native-tableview-simple` provides you with some predefined CSS-styles, inspired by the native TableView.
-You can always mix the `Cell`-instances inside a `Section`, with other (React-Native)-Views.  
-Therefore the `Cell`-Component itself can't be manipulated heavily.
+You can always mix the `Cell`-instances inside a `Section`, with other (React-Native)-Views.
 
-_If you aren't satisfied with a component, feel free to create a PR or just create and use a custom component._
+### Override defaults of `Cell`-Component
 
-### Submit a Custom `Cell`-Component
+Don't repeat yourself.
+If you override the default props over and over again, just pass them as an object.
 
-Maybe you want to add your lovely designed `Cell`-Component to the project.
-Just move your component to the folder `components` and choose a meaningful name! :-)
+```jsx
+const cellPropsDarkTheme = {
+  cellStyle: 'Basic',
+  title: 'Basic Custom',
+  backgroundColor: 'black',
+};
+
+
+<Cell onPress={console.log} {...cellPropsDarkTheme} />
+<Cell onPress={console.log} {...cellPropsDarkTheme} />
+```
+
+### Separator BackgroundColor is derived from Cell BackgroundColor
+
+The `Separator`-Component is a line from the left end to the right end.
+According to the original iOS TableView there should be an insent on the left end.
+This is done by separating the `Separator`-Component in two parts: `SeparatorContainer` (full width) and `SeparatorInner` (width - inset). (See: [`Separator.tsx`](/src/components/Separator.tsx))
+The `SeparatorContainer` has the same color that the `Cell`-Component above.
+The `SeparatorInner` has the default Separator Color.
+Pressing a Cell Component will change the color of `SeparatorInner` to `transparent`.
+
+#### Why is that so complicated?
+
+Because just hiding the separator would make the height of the component jump.
 
 ## Props
 
