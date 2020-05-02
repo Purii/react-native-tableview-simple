@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [3.0.0](https://github.com/Purii/react-native-tableview-simple/compare/v0.17.0...v3.0.0) (2020-05-02)
 
-Migrated the whole component to `TypeScript` :rocket:!
+Migrated the whole component to `TypeScript`! :rocket:
 
 ### Features
 
