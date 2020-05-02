@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file. See [standa
 
 ## [3.0.0](https://github.com/Purii/react-native-tableview-simple/compare/v0.17.0...v3.0.0) (2020-05-02)
 
+Migrated the whole component to `TypeScript` :rocket:!
+
 ### Features
 
 - **cell:** add ts definitions for titleTextProps and detailTextProps ([815eed8](https://github.com/Purii/react-native-tableview-simple/commit/815eed8dc19f323356a3ea5b1e72728df8c05b59))
