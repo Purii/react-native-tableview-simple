@@ -2,7 +2,7 @@
   "name": "react-native-tableview-simple",
   "description": "React Native component for TableView made with pure CSS",
   "homepage": "https://github.com/Purii/react-native-tableview-simple",
-  "version": "2.4.1",
+  "version": "3.0.0",
   "author": "Patrick Puritscher <hello@patrickpuritscher.com>",
   "scripts": {
     "clean": "watchman watch-del-all && rm -rf node_modules/ && yarn cache clean && yarn",
@@ -14,7 +14,8 @@
     "build:module": "yarn tsc --outDir ./lib/module  --sourceMap",
     "build:commonjs": "yarn tsc --module commonjs --outDir ./lib/commonjs --sourceMap",
     "build": "rimraf ./lib && yarn build:module && yarn build:commonjs",
-    "release:prepare": "yarn build"
+    "release:prepare": "yarn build",
+    "release": "standard-version"
   },
   "main": "lib/commonjs/index.js",
   "react-native": "src/index.ts",
@@ -37,6 +38,7 @@
   },
   "husky": {
     "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "lint-staged"
     }
   },
@@ -72,6 +74,8 @@
     "url": "git@github.com:Purii/react-native-tableview-simple.git"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@react-native-community/eslint-config": "^1.1.0",
     "@types/jest": "^25.2.1",
     "@types/react": "^16.9.34",
@@ -90,6 +94,7 @@
     "react-native": "^0.62.2",
     "react-test-renderer": "16.13.1",
     "rimraf": "^3.0.2",
+    "standard-version": "^7.1.0",
     "typescript": "^3.7.3"
   }
 }
