@@ -16,7 +16,7 @@ This cross-platform component is inspired by the iOS-TableView. Made with pure C
 A possible use case might be an about- or a settings-screen with a few rows.
 For displaying long datalists it is recommended to use the `FlatList` Component together with `Cell` and `Separator` Components. ([see example](#render-with-flatlist))
 
-If you like my component and want to buy me a coffee, checkout my [Patreon page](https://www.patreon.com/purii) – Thanks!
+:rocket: If you like my component and want to buy me a coffee press the `Sponsor` Button and find out about GitHub Sponsors – Thanks! :point_left:
 
 ![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshotStandard.png)
 
