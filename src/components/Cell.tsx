@@ -11,6 +11,7 @@ import {
   ViewStyle,
   TextProps,
   TextStyle,
+  ImageProps,
 } from 'react-native';
 
 export interface CellInterface {
@@ -221,10 +222,11 @@ const Cell: React.FC<CellInterface> = ({
     if (!image) {
       return null;
     }
+    const imageStyleProp = (image?.props as ImageProps)?.style;
     const propsToAdd = {
       style: disableImageResize
-        ? image.props.style
-        : [image.props.style, _styles.image],
+        ? imageStyleProp
+        : [imageStyleProp, _styles.image],
     };
     return (
       <View style={_styles.cellImageView}>
@@ -409,12 +411,12 @@ const styles = StyleSheet.create({
   },
   // SafeAreaView only adds padding
   cellSafeAreaContainer: {
-    flex: 1,
+    flexGrow: 1,
   },
   cellContentView: {
     alignItems: 'center',
     flexDirection: 'row',
-    flex: 1,
+    flexGrow: 1,
     justifyContent: 'center',
     // independent from other cellViews
     paddingVertical: 10,
@@ -424,16 +426,16 @@ const styles = StyleSheet.create({
   },
   cellInnerSubtitle: {
     flexDirection: 'column',
-    flex: 1,
+    flexGrow: 1,
   },
   cellTitle: {
     fontSize: 16,
     letterSpacing: -0.32,
-    flex: 1,
+    flexGrow: 1,
   },
   cellLeftDetailTitle: {
     fontSize: 12,
-    flex: 1,
+    flexGrow: 1,
   },
   cellLeftDetail: {
     fontSize: 12,

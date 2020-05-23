@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 
 import Separator from './Separator';
+import { CellInterface } from './Cell';
 
 export interface SectionInterface {
   allowFontScaling?: boolean;
@@ -107,13 +108,15 @@ const Section: React.FC<SectionInterface> = ({
    * Render Cell and add Border
    */
   const renderChild = (
-    child: string | number | {} | React.ReactNode,
+    child: string | number | React.ReactNode,
     index: number,
   ): React.ReactNode => {
     if (!child) {
       return null;
     }
-    if (!React.isValidElement(child)) return null; // Breaking?
+    if (!React.isValidElement(child)) {
+      return null;
+    }
 
     const propsToAdd = {
       onHighlightRow: (): void => highlightRow(index),
@@ -123,13 +126,15 @@ const Section: React.FC<SectionInterface> = ({
       isLastChild: index === sumOfChildren - 1,
     };
 
+    const childProps = child?.props as CellInterface;
+
     // Skip rendering of separator
     if (
       hideSeparator ||
       !Array.isArray(children) ||
       sumOfChildren === 1 ||
       index === sumOfChildren - 1 ||
-      child?.props?.hideSeparator
+      childProps?.hideSeparator
     ) {
       return React.cloneElement(child, propsToAdd);
     }
@@ -140,7 +145,7 @@ const Section: React.FC<SectionInterface> = ({
     // Add margin, if Image is provided
     let separatorInsetLeftSupportImage = separatorInsetLeft;
     // only update if separatorInsetLeft is default
-    if (child.props.image && separatorInsetLeft === 15) {
+    if (childProps?.image && separatorInsetLeft === 15) {
       separatorInsetLeftSupportImage = 60;
     }
 
@@ -149,7 +154,7 @@ const Section: React.FC<SectionInterface> = ({
         {React.cloneElement(child, propsToAdd)}
         <Separator
           isHidden={invisibleSeparator}
-          backgroundColor={child.props.backgroundColor}
+          backgroundColor={childProps?.backgroundColor}
           tintColor={separatorTintColor}
           insetLeft={separatorInsetLeftSupportImage}
           insetRight={separatorInsetRight}
