@@ -7,7 +7,7 @@ exports[`renders basic 1`] = `
     style={
       Array [
         Object {
-          "flex": 1,
+          "flexGrow": 1,
         },
         Object {
           "backgroundColor": "#FFF",
@@ -36,8 +36,8 @@ exports[`renders basic 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
+            "flexGrow": 1,
             "justifyContent": "center",
             "paddingVertical": 10,
           }
@@ -49,7 +49,7 @@ exports[`renders basic 1`] = `
           style={
             Array [
               Object {
-                "flex": 1,
+                "flexGrow": 1,
                 "fontSize": 16,
                 "letterSpacing": -0.32,
               },
@@ -75,7 +75,7 @@ exports[`renders with accessory 1`] = `
     style={
       Array [
         Object {
-          "flex": 1,
+          "flexGrow": 1,
         },
         Object {
           "backgroundColor": "#FFF",
@@ -104,8 +104,8 @@ exports[`renders with accessory 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
+            "flexGrow": 1,
             "justifyContent": "center",
             "paddingVertical": 10,
           }
@@ -117,7 +117,7 @@ exports[`renders with accessory 1`] = `
           style={
             Array [
               Object {
-                "flex": 1,
+                "flexGrow": 1,
                 "fontSize": 16,
                 "letterSpacing": -0.32,
               },
@@ -176,7 +176,7 @@ exports[`renders with testID 1`] = `
     style={
       Array [
         Object {
-          "flex": 1,
+          "flexGrow": 1,
         },
         Object {
           "backgroundColor": "#FFF",
@@ -205,8 +205,8 @@ exports[`renders with testID 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
+            "flexGrow": 1,
             "justifyContent": "center",
             "paddingVertical": 10,
           }
@@ -218,7 +218,7 @@ exports[`renders with testID 1`] = `
           style={
             Array [
               Object {
-                "flex": 1,
+                "flexGrow": 1,
                 "fontSize": 16,
                 "letterSpacing": -0.32,
               },

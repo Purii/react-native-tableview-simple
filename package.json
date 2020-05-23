@@ -6,7 +6,7 @@
   "author": "Patrick Puritscher <hello@patrickpuritscher.com>",
   "scripts": {
     "clean": "watchman watch-del-all && rm -rf node_modules/ && yarn cache clean && yarn",
-    "jest": "jest",
+    "jest": "jest src",
     "eslint:ci": "eslint index.js ./src/ --ext .js,.jsx,.tsx,.ts -f table",
     "eslint:fix": "eslint index.js ./src/ --fix --ext .js,.jsx,.tsx,.ts -f table",
     "test": "yarn eslint:ci && yarn jest && yarn tsc --noEmit",

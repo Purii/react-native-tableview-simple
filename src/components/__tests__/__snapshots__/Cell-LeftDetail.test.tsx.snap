@@ -7,7 +7,7 @@ exports[`renders with accessory 1`] = `
     style={
       Array [
         Object {
-          "flex": 1,
+          "flexGrow": 1,
         },
         Object {
           "backgroundColor": "#FFF",
@@ -36,8 +36,8 @@ exports[`renders with accessory 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
+            "flexGrow": 1,
             "justifyContent": "center",
             "paddingVertical": 10,
           }
@@ -70,7 +70,7 @@ exports[`renders with accessory 1`] = `
           style={
             Array [
               Object {
-                "flex": 1,
+                "flexGrow": 1,
                 "fontSize": 12,
               },
               Object {
@@ -125,7 +125,7 @@ exports[`renders with accessory and onPressDetailAccessory 1`] = `
     style={
       Array [
         Object {
-          "flex": 1,
+          "flexGrow": 1,
         },
         Object {
           "backgroundColor": "#FFF",
@@ -154,8 +154,8 @@ exports[`renders with accessory and onPressDetailAccessory 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
+            "flexGrow": 1,
             "justifyContent": "center",
             "paddingVertical": 10,
           }
@@ -188,7 +188,7 @@ exports[`renders with accessory and onPressDetailAccessory 1`] = `
           style={
             Array [
               Object {
-                "flex": 1,
+                "flexGrow": 1,
                 "fontSize": 12,
               },
               Object {
@@ -243,7 +243,7 @@ exports[`renders with left detail 1`] = `
     style={
       Array [
         Object {
-          "flex": 1,
+          "flexGrow": 1,
         },
         Object {
           "backgroundColor": "#FFF",
@@ -272,8 +272,8 @@ exports[`renders with left detail 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "flex": 1,
             "flexDirection": "row",
+            "flexGrow": 1,
             "justifyContent": "center",
             "paddingVertical": 10,
           }
@@ -306,7 +306,7 @@ exports[`renders with left detail 1`] = `
           style={
             Array [
               Object {
-                "flex": 1,
+                "flexGrow": 1,
                 "fontSize": 12,
               },
               Object {
