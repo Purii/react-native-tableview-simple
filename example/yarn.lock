@@ -5495,10 +5495,10 @@ react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-native-tableview-simple@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-tableview-simple/-/react-native-tableview-simple-3.0.0.tgz#ba30fec0e604dc967b417d50d882e94c7fa82edd"
-  integrity sha512-/fLJU/iT6OO4GgXj30PDI+atljk7foCh/CiG4PXfB9tpYebrDe0yBb0w/C0LJ0eMzzuZMv3Zw4a0eddssCRaZQ==
+react-native-tableview-simple@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-tableview-simple/-/react-native-tableview-simple-3.2.0.tgz#5e306200962734fb9717ee1379d71d47056e578e"
+  integrity sha512-o1mMlhmy5fhTg6oQmQHnDC8+i+2cNFoh4PO3wdlS05biaPpC7lcWyRSXzdkG+ekIDkvlFU03/+kyOyWASQxV1A==
 
 react-native@0.62.2:
   version "0.62.2"
