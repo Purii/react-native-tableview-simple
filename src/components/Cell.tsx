@@ -417,6 +417,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     flexGrow: 1,
+    flexBasis: 0,
     justifyContent: 'center',
     // independent from other cellViews
     paddingVertical: 10,
