@@ -37,6 +37,7 @@ exports[`renders with accessory 1`] = `
           Array [
             Object {
               "alignItems": "center",
+              "flexBasis": 0,
               "flexDirection": "row",
               "flexGrow": 1,
               "justifyContent": "center",
@@ -168,6 +169,7 @@ exports[`renders with subtitle 1`] = `
           Array [
             Object {
               "alignItems": "center",
+              "flexBasis": 0,
               "flexDirection": "row",
               "flexGrow": 1,
               "justifyContent": "center",

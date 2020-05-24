@@ -36,6 +36,7 @@ exports[`renders with accessory 1`] = `
         style={
           Object {
             "alignItems": "center",
+            "flexBasis": 0,
             "flexDirection": "row",
             "flexGrow": 1,
             "justifyContent": "center",
@@ -154,6 +155,7 @@ exports[`renders with accessory and onPressDetailAccessory 1`] = `
         style={
           Object {
             "alignItems": "center",
+            "flexBasis": 0,
             "flexDirection": "row",
             "flexGrow": 1,
             "justifyContent": "center",
@@ -272,6 +274,7 @@ exports[`renders with left detail 1`] = `
         style={
           Object {
             "alignItems": "center",
+            "flexBasis": 0,
             "flexDirection": "row",
             "flexGrow": 1,
             "justifyContent": "center",
