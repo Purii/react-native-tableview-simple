@@ -13,7 +13,7 @@ exports[`renders basic 1`] = `
       Array [
         Object {},
         Object {
-          "backgroundColor": "#EFEFF4",
+          "backgroundColor": undefined,
           "paddingBottom": 15,
           "paddingTop": 15,
         },
@@ -280,7 +280,7 @@ exports[`renders basic 1`] = `
                 "letterSpacing": -0.078,
               },
               Object {
-                "color": "#6d6d72",
+                "color": "#8E8E93",
               },
               Object {},
             ]
