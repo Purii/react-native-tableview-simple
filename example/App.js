@@ -288,7 +288,7 @@ const App = () => {
 
 const styles = StyleSheet.create({
   stage: {
-    backgroundColor: '#EFEFF4',
+    backgroundColor: '#EFEFF4', // Change to #000 to preview Dark Mode/Appereance
     paddingTop: 20,
     paddingBottom: 20,
   },

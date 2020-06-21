@@ -344,11 +344,11 @@ const styles = StyleSheet.create({
 
 ### `react-native-tableview-simple` vs. Native iOS
 
-The left screen is build using `react-native-tableview-simple`. The right one is native.
+The left and middle screens are build using `react-native-tableview-simple`. The right one is native.
 
-|                            `react-native-tableview-simple`                            |                                         Native iOS                                          |
-| :-----------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------: |
-| ![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshot.png) | ![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshotNative.png) |
+|                     `react-native-tableview-simple` (Dark Appearance)                     |                            `react-native-tableview-simple`                            | Native iOS                                                                                  |
+| :---------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------------- |
+| ![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshotDark.png) | ![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshot.png) | ![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshotNative.png) |
 
 ```javascript
 /**
