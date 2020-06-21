@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0](https://github.com/Purii/react-native-tableview-simple/compare/v3.2.0...v4.0.0) (2020-06-21)
+
+### ⚠ BREAKING CHANGES
+
+- Default Apperance is derived by the system settings
+
+### Features
+
+- appearances incl. dark appearance ([3bf9329](https://github.com/Purii/react-native-tableview-simple/commit/3bf9329ce6d90936f7cce53533ab92c30777e69d))
+
 ## [3.2.0](https://github.com/Purii/react-native-tableview-simple/compare/v3.1.0...v3.2.0) (2020-05-24)
 
 ### Bug Fixes
