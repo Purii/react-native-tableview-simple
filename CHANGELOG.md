@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### ⚠ BREAKING CHANGES
 
-- Default apperance is derived by the system settings.
+- Default apperance is derived by the system settings. `TableView` depends on `useColorScheme` released with React-Native `0.62.0`
 
 ### Features
 
