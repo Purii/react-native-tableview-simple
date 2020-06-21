@@ -18,6 +18,7 @@ For displaying long datalists it is recommended to use the `FlatList` Component 
 
 :rocket: If you like my component and want to buy me a coffee press the `Sponsor` Button and find out about GitHub Sponsors – Thanks! :point_left:
 
+| | |
 | :---------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------: |
 | ![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshotStandard.png) | ![](https://raw.github.com/Purii/react-native-tableview-simple/master/screenshotDark.png) |
 
