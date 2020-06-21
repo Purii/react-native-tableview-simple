@@ -56,15 +56,15 @@ Don't repeat yourself.
 If you override the default props over and over again, just pass them as an object.
 
 ```jsx
-const cellPropsDarkTheme = {
+const cellPropsCustom = {
   cellStyle: 'Basic',
   title: 'Basic Custom',
   backgroundColor: 'black',
 };
 
 
-<Cell onPress={console.log} {...cellPropsDarkTheme} />
-<Cell onPress={console.log} {...cellPropsDarkTheme} />
+<Cell onPress={console.log} {...cellPropsCustom} />
+<Cell onPress={console.log} {...cellPropsCustom} />
 ```
 
 ### Separator BackgroundColor is derived from Cell BackgroundColor
@@ -89,7 +89,13 @@ Because just hiding the separator would make the height of the component jump.
 
 ### `TableView`
 
-Currently `TableView` doesn't support any properties.
+The `TableView` component controls the theme.
+
+| Prop              | Default |        Type        | Description                                                                                                                               |
+| :---------------- | :-----: | :----------------: | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| children          |    -    | `React.ReactNode`  | Children. Should be of type `Section`                                                                                                     |
+| appearance        | `auto`  |      `string`      | `auto`: System Appearance; `light`: Light Appearance; `dark`: Dark Appearance; `[string]`: Appearance defined through `customAppearances` |
+| customAppearances |    -    | `THEME_APPEARANCE` |                                                                                                                                           |
 
 ### `Section`
 

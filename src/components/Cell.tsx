@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   Platform,
   SafeAreaView,
@@ -13,6 +13,7 @@ import {
   TextStyle,
   ImageProps,
 } from 'react-native';
+import { ThemeContext } from './Theme';
 
 export interface CellInterface {
   accessory?:
@@ -58,10 +59,10 @@ export interface CellInterface {
 
 const Cell: React.FC<CellInterface> = ({
   accessory = false,
-  accessoryColor = '#007AFF',
-  accessoryColorDisclosureIndicator = '#C7C7CC',
+  accessoryColor,
+  accessoryColorDisclosureIndicator,
   allowFontScaling = true,
-  backgroundColor = '#FFF',
+  backgroundColor,
   cellStyle = 'Basic',
   cellContentView,
   cellImageView,
@@ -72,29 +73,31 @@ const Cell: React.FC<CellInterface> = ({
   detailTextProps = {},
   disableImageResize = false,
   highlightActiveOpacity = 0.8,
-  highlightUnderlayColor = '#000',
+  highlightUnderlayColor,
   image,
   isDisabled = false,
   onPress,
   onPressDetailAccessory,
   onHighlightRow,
   onUnHighlightRow,
-  leftDetailColor = '#007AFF',
-  rightDetailColor = '#8E8E93',
-  subtitleColor = '#000',
+  leftDetailColor,
+  rightDetailColor,
+  subtitleColor,
   subtitleTextStyle = {},
   testID,
   title,
   titleTextProps = {},
   titleTextStyle = {},
   titleTextStyleDisabled = {},
-  titleTextColor = '#000',
+  titleTextColor,
   withSafeAreaView = Platform.OS === 'ios'
     ? parseInt(`${Platform.Version}`, 10) <= 10
       ? false
       : true
     : true,
 }: CellInterface) => {
+  const theme = useContext(ThemeContext);
+
   const isPressable = !!onPress;
 
   /**
@@ -105,55 +108,65 @@ const Cell: React.FC<CellInterface> = ({
     cell: [
       styles.cell,
       {
-        backgroundColor,
+        backgroundColor: backgroundColor || theme.colors.background,
       },
       contentContainerStyle,
     ],
     cellSafeAreaContainer: [
       styles.cellSafeAreaContainer,
       {
-        backgroundColor,
+        backgroundColor: backgroundColor || theme.colors.background,
       },
     ],
     cellTitle: isDisabled
       ? [styles.cellTitle, styles.cellTextDisabled, titleTextStyleDisabled]
-      : [styles.cellTitle, { color: titleTextColor }, titleTextStyle],
+      : [
+          styles.cellTitle,
+          { color: titleTextColor || theme.colors.body },
+          titleTextStyle,
+        ],
     cellLeftDetail: [
       styles.cellLeftDetail,
       {
-        color: leftDetailColor,
+        color: leftDetailColor || theme.colors.primary,
       },
       detailTextStyle,
     ],
     cellLeftDetailTitle: isDisabled
       ? [styles.cellLeftDetailTitle, styles.cellTextDisabled]
-      : [styles.cellLeftDetailTitle, { color: titleTextColor }],
+      : [
+          styles.cellLeftDetailTitle,
+          { color: titleTextColor || theme.colors.body },
+        ],
     cellRightDetail: [
       styles.cellRightDetail,
       {
-        color: rightDetailColor,
+        color: rightDetailColor || theme.colors.secondary,
       },
       detailTextStyle,
     ],
     cellSubtitle: [
       styles.cellSubtitle,
       {
-        color: subtitleColor,
+        color: subtitleColor || theme.colors.body,
       },
       subtitleTextStyle,
     ],
     accessoryCheckmark: [
       styles.accessoryCheckmark,
-      { borderColor: accessoryColor },
+      { borderColor: accessoryColor || theme.colors.primary },
     ],
-    accessoryDetail: [styles.accessoryDetail, { borderColor: accessoryColor }],
+    accessoryDetail: [
+      styles.accessoryDetail,
+      { borderColor: accessoryColor || theme.colors.primary },
+    ],
     accessoryDetailText: [
       styles.accessoryDetailText,
-      { color: accessoryColor },
+      { color: accessoryColor || theme.colors.primary },
     ],
     accessoryDisclosureIndicator: [
       styles.accessoryDisclosureIndicator,
-      { borderColor: accessoryColorDisclosureIndicator },
+      { borderColor: accessoryColorDisclosureIndicator || theme.colors.muted },
     ],
   };
 
@@ -386,7 +399,7 @@ const Cell: React.FC<CellInterface> = ({
       <TouchableHighlight
         activeOpacity={highlightActiveOpacity}
         onPress={onPress}
-        underlayColor={highlightUnderlayColor}
+        underlayColor={highlightUnderlayColor || theme.colors.body}
         onPressIn={onHighlightRow}
         onPressOut={onUnHighlightRow}
         testID={testID}>

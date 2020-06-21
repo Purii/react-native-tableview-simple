@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   Platform,
   SafeAreaView,
@@ -11,6 +11,7 @@ import {
 
 import Separator from './Separator';
 import { CellInterface } from './Cell';
+import { ThemeContext } from './Theme';
 
 export interface SectionInterface {
   allowFontScaling?: boolean;
@@ -41,26 +42,27 @@ const Section: React.FC<SectionInterface> = ({
   footerComponent,
   headerComponent,
   footer,
-  footerTextColor = '#6d6d72',
+  footerTextColor,
   footerTextStyle = {},
   header,
-  headerTextColor = '#6D6D72',
+  headerTextColor,
   headerTextStyle = {},
   hideSeparator = false,
   hideSurroundingSeparators = false,
   roundedCorners = false,
   sectionPaddingBottom = 15,
   sectionPaddingTop = 15,
-  sectionTintColor = '#EFEFF4',
+  sectionTintColor,
   separatorInsetLeft = 15,
   separatorInsetRight = 0,
-  separatorTintColor = '#C8C7CC',
+  separatorTintColor,
   withSafeAreaView = Platform.OS === 'ios'
     ? parseInt(`${Platform.Version}`, 10) <= 10
       ? false
       : true
     : true,
 }: SectionInterface) => {
+  const theme = useContext(ThemeContext);
   const [highlightedRowIndex, setHighlightedRowIndex] = useState<number>();
 
   const highlightRow = (index: number): void => {
@@ -90,12 +92,12 @@ const Section: React.FC<SectionInterface> = ({
 
     sectionheaderText: [
       styles.sectionheaderText,
-      { color: headerTextColor },
+      { color: headerTextColor || theme.colors.secondary },
       headerTextStyle,
     ],
     sectionfooterText: [
       styles.sectionfooterText,
-      { color: footerTextColor },
+      { color: footerTextColor || theme.colors.secondary },
       footerTextStyle,
     ],
   };

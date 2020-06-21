@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   Platform,
   SafeAreaView,
@@ -6,6 +6,7 @@ import {
   View,
   ViewStyle,
 } from 'react-native';
+import { ThemeContext } from './Theme';
 
 export interface SeparatorInterface {
   backgroundColor?: ViewStyle['backgroundColor'];
@@ -17,8 +18,8 @@ export interface SeparatorInterface {
 }
 
 const Separator: React.FC<SeparatorInterface> = ({
-  backgroundColor = '#FFF',
-  tintColor = '#C8C7CC',
+  backgroundColor,
+  tintColor,
   isHidden = false,
   insetLeft = 15,
   insetRight = 0,
@@ -28,12 +29,18 @@ const Separator: React.FC<SeparatorInterface> = ({
       : true
     : true,
 }) => {
+  const theme = useContext(ThemeContext);
   const localStyles = {
-    separator: [styles.separator, { backgroundColor: backgroundColor }],
+    separator: [
+      styles.separator,
+      { backgroundColor: backgroundColor || theme.colors.background },
+    ],
     separatorInner: [
       styles.separatorInner,
       {
-        backgroundColor: isHidden ? 'transparent' : tintColor,
+        backgroundColor: isHidden
+          ? 'transparent'
+          : tintColor || theme.colors.separatorColor,
         marginLeft: insetLeft,
         marginRight: insetRight,
       },
