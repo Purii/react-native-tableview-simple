@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.1.0](https://github.com/Purii/react-native-tableview-simple/compare/v4.0.0...v4.1.0) (2020-06-21)
+
+### Features
+
+- **ts:** export interface THEME_APPEARANCE ([996efeb](https://github.com/Purii/react-native-tableview-simple/commit/996efeb939e5509231df5adbedec7769ee299035))
+
 ## [4.0.0](https://github.com/Purii/react-native-tableview-simple/compare/v3.2.0...v4.0.0) (2020-06-21)
 
 ### ⚠ BREAKING CHANGES
