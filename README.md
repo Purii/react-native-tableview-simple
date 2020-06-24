@@ -11,7 +11,7 @@
 <!-- prettier-ignore -->
 :point_right: _This component is used in my production app [**Game ideas**](https://apps.apple.com/us/app/game-ideas-get-inspired/id1450078546). Make sure to check it out!_ :point_left:
 
-This cross-platform component is inspired by the iOS-TableView. Made with pure CSS, the intention is to provide **a flexible and lightweight alternative to a bridged component**.
+This cross-platform component is inspired by the iOS-TableView. Made with pure CSS, the intention is to provide **a flexible and lightweight alternative to a bridged component**. Don't be scared of React-Native upgrades anymore!
 
 A possible use case might be an about- or a settings-screen with a few rows.
 For displaying long datalists it is recommended to use the `FlatList` Component together with `Cell` and `Separator` Components. ([see example](#render-with-flatlist))
