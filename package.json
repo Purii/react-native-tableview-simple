@@ -94,7 +94,7 @@
     "react-native": "^0.63.2",
     "react-test-renderer": "16.13.1",
     "rimraf": "^3.0.2",
-    "standard-version": "^8.0.0",
+    "standard-version": "^9.0.0",
     "typescript": "^3.9.5"
   }
 }
