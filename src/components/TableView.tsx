@@ -1,5 +1,11 @@
 import React from 'react';
-import { useColorScheme, StyleSheet, View } from 'react-native';
+import {
+  useColorScheme,
+  StyleSheet,
+  View,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 import { THEMES, ThemeContext, THEME_APPEARANCE } from './Theme';
 
 export interface TableViewInterface {
@@ -8,12 +14,14 @@ export interface TableViewInterface {
   customAppearances?: {
     [key: string]: THEME_APPEARANCE;
   };
+  style?: StyleProp<ViewStyle>;
 }
 
 const TableView: React.FC<TableViewInterface> = ({
   children,
   appearance = 'auto',
   customAppearances,
+  style,
 }: TableViewInterface) => {
   let themeMode: THEME_APPEARANCE = THEMES?.appearances?.['light'];
   const systemColorScheme = useColorScheme();
@@ -33,7 +41,7 @@ const TableView: React.FC<TableViewInterface> = ({
   }
   return (
     <ThemeContext.Provider value={themeMode}>
-      <View style={styles.tableView}>{children}</View>
+      <View style={[styles.tableView, style]}>{children}</View>
     </ThemeContext.Provider>
   );
 };
