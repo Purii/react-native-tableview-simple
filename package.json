@@ -6,10 +6,10 @@
   "author": "Patrick Puritscher <hello@patrickpuritscher.com>",
   "scripts": {
     "clean": "watchman watch-del-all && rm -rf node_modules/ && yarn cache clean && yarn",
-    "jest": "jest src",
+    "jest": "jest ./src/",
     "eslint:ci": "eslint index.js ./src/ --ext .js,.jsx,.tsx,.ts -f table",
     "eslint:fix": "eslint index.js ./src/ --fix --ext .js,.jsx,.tsx,.ts -f table",
-    "test": "yarn eslint:ci && yarn jest && yarn tsc --noEmit",
+    "test": "yarn run eslint:ci && yarn run jest && yarn tsc --noEmit",
     "tsc": "tsc --skipLibCheck",
     "build:module": "yarn tsc --outDir ./lib/module  --sourceMap",
     "build:commonjs": "yarn tsc --module commonjs --outDir ./lib/commonjs --sourceMap",

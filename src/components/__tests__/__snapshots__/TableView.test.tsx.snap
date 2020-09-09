@@ -3,9 +3,12 @@
 exports[`renders basic 1`] = `
 <View
   style={
-    Object {
-      "flexDirection": "column",
-    }
+    Array [
+      Object {
+        "flexDirection": "column",
+      },
+      undefined,
+    ]
   }
 >
   <View
