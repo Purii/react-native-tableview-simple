@@ -102,8 +102,13 @@ const Cell: React.FC<CellInterface> = ({
 
   /**
    * Merge styles with props
+   * Type is a Hotfix
    */
-  const _styles = {
+  const localStyles: {
+    [key: string]: {
+      [key: string]: any;
+    };
+  } = {
     ...styles,
     cell: [
       styles.cell,
@@ -174,17 +179,17 @@ const Cell: React.FC<CellInterface> = ({
     if (onPressDetailAccessory) {
       return (
         <TouchableOpacity
-          style={_styles.accessoryDetail}
+          style={localStyles.accessoryDetail}
           onPress={onPressDetailAccessory}
           activeOpacity={0.7}
           disabled={isDisabled}>
-          <Text style={_styles.accessoryDetailText}>i</Text>
+          <Text style={localStyles.accessoryDetailText}>i</Text>
         </TouchableOpacity>
       );
     }
     return (
-      <View style={_styles.accessoryDetail}>
-        <Text style={_styles.accessoryDetailText}>i</Text>
+      <View style={localStyles.accessoryDetail}>
+        <Text style={localStyles.accessoryDetailText}>i</Text>
       </View>
     );
   };
@@ -197,29 +202,29 @@ const Cell: React.FC<CellInterface> = ({
     switch (accessory) {
       case 'DisclosureIndicator':
         return (
-          <View style={_styles.cellAccessoryView}>
-            <View style={_styles.accessoryDisclosureIndicator} />
+          <View style={localStyles.cellAccessoryView}>
+            <View style={localStyles.accessoryDisclosureIndicator} />
           </View>
         );
       case 'Detail':
         return (
-          <View style={_styles.cellAccessoryView}>
+          <View style={localStyles.cellAccessoryView}>
             {renderAccessoryDetail()}
           </View>
         );
       case 'DetailDisclosure':
         return (
-          <View style={_styles.cellAccessoryView}>
-            <View style={_styles.accessoryDetailDisclosure}>
+          <View style={localStyles.cellAccessoryView}>
+            <View style={localStyles.accessoryDetailDisclosure}>
               {renderAccessoryDetail()}
-              <View style={_styles.accessoryDisclosureIndicator} />
+              <View style={localStyles.accessoryDisclosureIndicator} />
             </View>
           </View>
         );
       case 'Checkmark':
         return (
-          <View style={_styles.cellAccessoryView}>
-            <View style={_styles.accessoryCheckmark} />
+          <View style={localStyles.cellAccessoryView}>
+            <View style={localStyles.accessoryCheckmark} />
           </View>
         );
       default:
@@ -239,10 +244,10 @@ const Cell: React.FC<CellInterface> = ({
     const propsToAdd = {
       style: disableImageResize
         ? imageStyleProp
-        : [imageStyleProp, _styles.image],
+        : [imageStyleProp, localStyles.image],
     };
     return (
-      <View style={_styles.cellImageView}>
+      <View style={localStyles.cellImageView}>
         {React.cloneElement(image, propsToAdd)}
       </View>
     );
@@ -253,11 +258,11 @@ const Cell: React.FC<CellInterface> = ({
    * @return {View} View with Text and Accessory
    */
   const renderCellBasic = (): React.ReactNode => (
-    <View style={_styles.cellContentView}>
+    <View style={localStyles.cellContentView}>
       <Text
         allowFontScaling={allowFontScaling}
         numberOfLines={1}
-        style={_styles.cellTitle}
+        style={localStyles.cellTitle}
         {...titleTextProps}>
         {title}
       </Text>
@@ -269,11 +274,11 @@ const Cell: React.FC<CellInterface> = ({
    * @return {View} View with Text, Text and Accessory
    */
   const renderCellRightDetail = (): React.ReactNode => (
-    <View style={_styles.cellContentView}>
+    <View style={localStyles.cellContentView}>
       <Text
         allowFontScaling={allowFontScaling}
         numberOfLines={1}
-        style={_styles.cellTitle}
+        style={localStyles.cellTitle}
         {...titleTextProps}>
         {title}
       </Text>
@@ -282,8 +287,8 @@ const Cell: React.FC<CellInterface> = ({
         numberOfLines={1}
         style={
           isDisabled
-            ? [_styles.cellRightDetail, _styles.cellTextDisabled]
-            : _styles.cellRightDetail
+            ? [localStyles.cellRightDetail, localStyles.cellTextDisabled]
+            : localStyles.cellRightDetail
         }
         {...detailTextProps}>
         {detail}
@@ -296,14 +301,14 @@ const Cell: React.FC<CellInterface> = ({
    * @return {View} View with Text, Text and Accessory
    */
   const renderCellLeftDetail = (): React.ReactNode => (
-    <View style={_styles.cellContentView}>
+    <View style={localStyles.cellContentView}>
       <Text
         allowFontScaling={allowFontScaling}
         numberOfLines={1}
         style={
           isDisabled
-            ? [_styles.cellLeftDetail, _styles.cellTextDisabled]
-            : _styles.cellLeftDetail
+            ? [localStyles.cellLeftDetail, localStyles.cellTextDisabled]
+            : localStyles.cellLeftDetail
         }
         {...detailTextProps}>
         {detail}
@@ -311,7 +316,7 @@ const Cell: React.FC<CellInterface> = ({
       <Text
         allowFontScaling={allowFontScaling}
         numberOfLines={1}
-        style={_styles.cellLeftDetailTitle}
+        style={localStyles.cellLeftDetailTitle}
         {...titleTextProps}>
         {title}
       </Text>
@@ -324,12 +329,15 @@ const Cell: React.FC<CellInterface> = ({
    */
   const renderCellSubtitle = (): React.ReactNode => (
     <View
-      style={[_styles.cellContentView, _styles.cellContentViewTypeSubtitle]}>
-      <View style={_styles.cellInnerSubtitle}>
+      style={[
+        localStyles.cellContentView,
+        localStyles.cellContentViewTypeSubtitle,
+      ]}>
+      <View style={localStyles.cellInnerSubtitle}>
         <Text
           allowFontScaling={allowFontScaling}
           numberOfLines={1}
-          style={_styles.cellTitle}
+          style={localStyles.cellTitle}
           {...titleTextProps}>
           {title}
         </Text>
@@ -338,8 +346,8 @@ const Cell: React.FC<CellInterface> = ({
           numberOfLines={1}
           style={
             isDisabled
-              ? [_styles.cellSubtitle, _styles.cellTextDisabled]
-              : _styles.cellSubtitle
+              ? [localStyles.cellSubtitle, localStyles.cellTextDisabled]
+              : localStyles.cellSubtitle
           }
           {...detailTextProps}>
           {detail}
@@ -372,7 +380,7 @@ const Cell: React.FC<CellInterface> = ({
    * @return {View} Complete View with cell elements
    */
   const renderCell = (): React.ReactNode => (
-    <View style={_styles.cell}>
+    <View style={localStyles.cell}>
       {cellImageView || renderImageView()}
       {cellContentView || renderCellContentView()}
       {cellAccessoryView || renderAccessoryView()}
@@ -385,8 +393,8 @@ const Cell: React.FC<CellInterface> = ({
    * @return {View} Complete View with cell elements
    */
   const renderCellWithSafeAreaView = (): React.ReactNode => (
-    <SafeAreaView style={_styles.cellSafeAreaContainer}>
-      <View style={_styles.cell}>
+    <SafeAreaView style={localStyles.cellSafeAreaContainer}>
+      <View style={localStyles.cell}>
         {cellImageView || renderImageView()}
         {cellContentView || renderCellContentView()}
         {cellAccessoryView || renderAccessoryView()}

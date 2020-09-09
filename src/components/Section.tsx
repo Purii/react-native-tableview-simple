@@ -75,7 +75,11 @@ const Section: React.FC<SectionInterface> = ({
   /**
    * Merge styles with props
    */
-  const _styles = {
+  const localStyles: {
+    [key: string]: {
+      [key: string]: any;
+    };
+  } = {
     ...styles,
     section: [
       styles.section,
@@ -175,7 +179,7 @@ const Section: React.FC<SectionInterface> = ({
           <SafeAreaView>
             <Text
               allowFontScaling={allowFontScaling}
-              style={_styles.sectionheaderText}>
+              style={localStyles.sectionheaderText}>
               {header}
             </Text>
           </SafeAreaView>
@@ -187,7 +191,7 @@ const Section: React.FC<SectionInterface> = ({
         <View style={styles.sectionheader}>
           <Text
             allowFontScaling={allowFontScaling}
-            style={_styles.sectionheaderText}>
+            style={localStyles.sectionheaderText}>
             {header}
           </Text>
         </View>
@@ -206,7 +210,7 @@ const Section: React.FC<SectionInterface> = ({
           <SafeAreaView>
             <Text
               allowFontScaling={allowFontScaling}
-              style={_styles.sectionfooterText}>
+              style={localStyles.sectionfooterText}>
               {footer}
             </Text>
           </SafeAreaView>
@@ -218,7 +222,7 @@ const Section: React.FC<SectionInterface> = ({
         <View style={styles.sectionfooter}>
           <Text
             allowFontScaling={allowFontScaling}
-            style={_styles.sectionfooterText}>
+            style={localStyles.sectionfooterText}>
             {footer}
           </Text>
         </View>
@@ -228,7 +232,7 @@ const Section: React.FC<SectionInterface> = ({
   };
 
   return (
-    <View style={_styles.section}>
+    <View style={localStyles.section}>
       {headerComponent || renderHeader()}
       {hideSurroundingSeparators || (
         <Separator
@@ -237,7 +241,7 @@ const Section: React.FC<SectionInterface> = ({
           withSafeAreaView={false}
         />
       )}
-      <View style={_styles.sectionChildren}>
+      <View style={localStyles.sectionChildren}>
         {childrenWithoutEmpty.map(renderChild)}
       </View>
       {hideSurroundingSeparators || (
