@@ -23,7 +23,7 @@ const TableView: React.FC<TableViewInterface> = ({
   customAppearances,
   style,
 }: TableViewInterface) => {
-  let themeMode: THEME_APPEARANCE = THEMES?.appearances?.['light'];
+  let themeMode: THEME_APPEARANCE = THEMES?.appearances?.light;
   const systemColorScheme = useColorScheme();
   if (
     (appearance === 'auto' && systemColorScheme === 'dark') ||
