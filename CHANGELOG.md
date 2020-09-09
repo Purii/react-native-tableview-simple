@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.2.0](https://github.com/Purii/react-native-tableview-simple/compare/v4.1.0...v4.2.0) (2020-09-09)
+
+### Features
+
+- **tableview:** add style prop to tableview wrapper ([#315](https://github.com/Purii/react-native-tableview-simple/issues/315)) ([119a11f](https://github.com/Purii/react-native-tableview-simple/commit/119a11f27c19fd53015d531f759ad472429336e9))
+
+### Bug Fixes
+
+- **test:** update snapshots ([251e128](https://github.com/Purii/react-native-tableview-simple/commit/251e128e3f0ba4868748bb1988e658efb94b900a))
+- **types:** fix typings of local styles ([77928dc](https://github.com/Purii/react-native-tableview-simple/commit/77928dcb12236c8a1e53d4dfdfc5f2c043615c27))
+
 ## [4.1.0](https://github.com/Purii/react-native-tableview-simple/compare/v4.0.0...v4.1.0) (2020-06-21)
 
 ### Features
