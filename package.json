@@ -78,7 +78,7 @@
     "@commitlint/config-conventional": "^11.0.0",
     "@react-native-community/eslint-config": "^2.0.0",
     "@types/jest": "^26.0.13",
-    "@types/react": "^16.9.49",
+    "@types/react": "^17.0.0",
     "@types/react-native": "^0.63.17",
     "@types/react-test-renderer": "^16.9.2",
     "@typescript-eslint/eslint-plugin": "^4.1.0",
