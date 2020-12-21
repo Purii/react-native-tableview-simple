@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-- **tableview:** render correct appearance [#425](https://github.com/Purii/react-native-tableview-simple/issues/425) ([f7dcf49](https://github.com/Purii/react-native-tableview-simple/commit/f7dcf495f2165a1238807ffc1abe0b5e9a870a8f))
+- **tableview:** render correct appearance (fix [#425](https://github.com/Purii/react-native-tableview-simple/issues/425)) ([f7dcf49](https://github.com/Purii/react-native-tableview-simple/commit/f7dcf495f2165a1238807ffc1abe0b5e9a870a8f))
 
 ## [4.2.0](https://github.com/Purii/react-native-tableview-simple/compare/v4.1.0...v4.2.0) (2020-09-09)
 
