@@ -2,7 +2,7 @@
   "name": "react-native-tableview-simple",
   "description": "React Native component for TableView made with pure CSS",
   "homepage": "https://github.com/Purii/react-native-tableview-simple",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "author": "Patrick Puritscher <hello@patrickpuritscher.com>",
   "scripts": {
     "clean": "watchman watch-del-all && rm -rf node_modules/ && yarn cache clean && yarn",
