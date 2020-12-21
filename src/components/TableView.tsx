@@ -26,8 +26,8 @@ const TableView: React.FC<TableViewInterface> = ({
   let themeMode: THEME_APPEARANCE = THEMES?.appearances?.light;
   const systemColorScheme = useColorScheme();
   if (
-    (appearance === 'auto' && systemColorScheme === 'dark') ||
-    systemColorScheme === 'light'
+    appearance === 'auto' &&
+    (systemColorScheme === 'dark' || systemColorScheme === 'light')
   ) {
     themeMode = THEMES?.appearances?.[systemColorScheme];
   } else if (appearance === 'light' || appearance === 'dark') {

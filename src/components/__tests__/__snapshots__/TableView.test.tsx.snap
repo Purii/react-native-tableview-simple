@@ -296,3 +296,894 @@ exports[`renders basic 1`] = `
   </View>
 </View>
 `;
+
+exports[`renders with appearance auto 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "column",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {},
+        Object {
+          "backgroundColor": undefined,
+          "paddingBottom": 15,
+          "paddingTop": 15,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {},
+          Object {
+            "backgroundColor": "#FFF",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "height": 0.5,
+            },
+            Object {
+              "backgroundColor": "#C8C7CC",
+              "marginLeft": 0,
+              "marginRight": 0,
+            },
+          ]
+        }
+      />
+    </View>
+    <View
+      style={
+        Array [
+          Object {},
+          false,
+        ]
+      }
+    >
+      <View>
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+        >
+          <RCTSafeAreaView
+            emulateUnlessSupported={true}
+            style={
+              Array [
+                Object {
+                  "flexGrow": 1,
+                },
+                Object {
+                  "backgroundColor": "#FFF",
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "minHeight": 44,
+                    "paddingLeft": 15,
+                    "paddingRight": 20,
+                  },
+                  Object {
+                    "backgroundColor": "#FFF",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexBasis": 0,
+                    "flexDirection": "row",
+                    "flexGrow": 1,
+                    "justifyContent": "center",
+                    "paddingVertical": 10,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={true}
+                  numberOfLines={1}
+                  style={
+                    Array [
+                      Object {
+                        "flexGrow": 1,
+                        "fontSize": 16,
+                        "letterSpacing": -0.32,
+                      },
+                      Object {
+                        "color": "#007AFF",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  Help / FAQ
+                </Text>
+              </View>
+            </View>
+          </RCTSafeAreaView>
+        </View>
+        <RCTSafeAreaView
+          emulateUnlessSupported={true}
+          style={
+            Array [
+              Object {},
+              Object {
+                "backgroundColor": "#FFF",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 0.5,
+                },
+                Object {
+                  "backgroundColor": "#C8C7CC",
+                  "marginLeft": 15,
+                  "marginRight": 0,
+                },
+              ]
+            }
+          />
+        </RCTSafeAreaView>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+      >
+        <RCTSafeAreaView
+          emulateUnlessSupported={true}
+          style={
+            Array [
+              Object {
+                "flexGrow": 1,
+              },
+              Object {
+                "backgroundColor": "#FFF",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "minHeight": 44,
+                  "paddingLeft": 15,
+                  "paddingRight": 20,
+                },
+                Object {
+                  "backgroundColor": "#FFF",
+                },
+                Object {},
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexBasis": 0,
+                  "flexDirection": "row",
+                  "flexGrow": 1,
+                  "justifyContent": "center",
+                  "paddingVertical": 10,
+                }
+              }
+            >
+              <Text
+                allowFontScaling={true}
+                numberOfLines={1}
+                style={
+                  Array [
+                    Object {
+                      "flexGrow": 1,
+                      "fontSize": 16,
+                      "letterSpacing": -0.32,
+                    },
+                    Object {
+                      "color": "#007AFF",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                Contact Us
+              </Text>
+            </View>
+          </View>
+        </RCTSafeAreaView>
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {},
+          Object {
+            "backgroundColor": "#FFF",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "height": 0.5,
+            },
+            Object {
+              "backgroundColor": "#C8C7CC",
+              "marginLeft": 0,
+              "marginRight": 0,
+            },
+          ]
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "paddingLeft": 15,
+          "paddingRight": 15,
+          "paddingTop": 10,
+        }
+      }
+    >
+      <RCTSafeAreaView
+        emulateUnlessSupported={true}
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Array [
+              Object {
+                "fontSize": 13,
+                "letterSpacing": -0.078,
+              },
+              Object {
+                "color": "#8E8E93",
+              },
+              Object {},
+            ]
+          }
+        >
+          All rights reserved.
+        </Text>
+      </RCTSafeAreaView>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders with appearance dark 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "column",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {},
+        Object {
+          "backgroundColor": undefined,
+          "paddingBottom": 15,
+          "paddingTop": 15,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {},
+          Object {
+            "backgroundColor": "#121312",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "height": 0.5,
+            },
+            Object {
+              "backgroundColor": "#2b2b2d",
+              "marginLeft": 0,
+              "marginRight": 0,
+            },
+          ]
+        }
+      />
+    </View>
+    <View
+      style={
+        Array [
+          Object {},
+          false,
+        ]
+      }
+    >
+      <View>
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+        >
+          <RCTSafeAreaView
+            emulateUnlessSupported={true}
+            style={
+              Array [
+                Object {
+                  "flexGrow": 1,
+                },
+                Object {
+                  "backgroundColor": "#121312",
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "minHeight": 44,
+                    "paddingLeft": 15,
+                    "paddingRight": 20,
+                  },
+                  Object {
+                    "backgroundColor": "#121312",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexBasis": 0,
+                    "flexDirection": "row",
+                    "flexGrow": 1,
+                    "justifyContent": "center",
+                    "paddingVertical": 10,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={true}
+                  numberOfLines={1}
+                  style={
+                    Array [
+                      Object {
+                        "flexGrow": 1,
+                        "fontSize": 16,
+                        "letterSpacing": -0.32,
+                      },
+                      Object {
+                        "color": "#007AFF",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  Help / FAQ
+                </Text>
+              </View>
+            </View>
+          </RCTSafeAreaView>
+        </View>
+        <RCTSafeAreaView
+          emulateUnlessSupported={true}
+          style={
+            Array [
+              Object {},
+              Object {
+                "backgroundColor": "#121312",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 0.5,
+                },
+                Object {
+                  "backgroundColor": "#2b2b2d",
+                  "marginLeft": 15,
+                  "marginRight": 0,
+                },
+              ]
+            }
+          />
+        </RCTSafeAreaView>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+      >
+        <RCTSafeAreaView
+          emulateUnlessSupported={true}
+          style={
+            Array [
+              Object {
+                "flexGrow": 1,
+              },
+              Object {
+                "backgroundColor": "#121312",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "minHeight": 44,
+                  "paddingLeft": 15,
+                  "paddingRight": 20,
+                },
+                Object {
+                  "backgroundColor": "#121312",
+                },
+                Object {},
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexBasis": 0,
+                  "flexDirection": "row",
+                  "flexGrow": 1,
+                  "justifyContent": "center",
+                  "paddingVertical": 10,
+                }
+              }
+            >
+              <Text
+                allowFontScaling={true}
+                numberOfLines={1}
+                style={
+                  Array [
+                    Object {
+                      "flexGrow": 1,
+                      "fontSize": 16,
+                      "letterSpacing": -0.32,
+                    },
+                    Object {
+                      "color": "#007AFF",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                Contact Us
+              </Text>
+            </View>
+          </View>
+        </RCTSafeAreaView>
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {},
+          Object {
+            "backgroundColor": "#121312",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "height": 0.5,
+            },
+            Object {
+              "backgroundColor": "#2b2b2d",
+              "marginLeft": 0,
+              "marginRight": 0,
+            },
+          ]
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "paddingLeft": 15,
+          "paddingRight": 15,
+          "paddingTop": 10,
+        }
+      }
+    >
+      <RCTSafeAreaView
+        emulateUnlessSupported={true}
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Array [
+              Object {
+                "fontSize": 13,
+                "letterSpacing": -0.078,
+              },
+              Object {
+                "color": "#aeaeae",
+              },
+              Object {},
+            ]
+          }
+        >
+          All rights reserved.
+        </Text>
+      </RCTSafeAreaView>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`renders with appearance light 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "column",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {},
+        Object {
+          "backgroundColor": undefined,
+          "paddingBottom": 15,
+          "paddingTop": 15,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {},
+          Object {
+            "backgroundColor": "#FFF",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "height": 0.5,
+            },
+            Object {
+              "backgroundColor": "#C8C7CC",
+              "marginLeft": 0,
+              "marginRight": 0,
+            },
+          ]
+        }
+      />
+    </View>
+    <View
+      style={
+        Array [
+          Object {},
+          false,
+        ]
+      }
+    >
+      <View>
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+        >
+          <RCTSafeAreaView
+            emulateUnlessSupported={true}
+            style={
+              Array [
+                Object {
+                  "flexGrow": 1,
+                },
+                Object {
+                  "backgroundColor": "#FFF",
+                },
+              ]
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "minHeight": 44,
+                    "paddingLeft": 15,
+                    "paddingRight": 20,
+                  },
+                  Object {
+                    "backgroundColor": "#FFF",
+                  },
+                  Object {},
+                ]
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "flexBasis": 0,
+                    "flexDirection": "row",
+                    "flexGrow": 1,
+                    "justifyContent": "center",
+                    "paddingVertical": 10,
+                  }
+                }
+              >
+                <Text
+                  allowFontScaling={true}
+                  numberOfLines={1}
+                  style={
+                    Array [
+                      Object {
+                        "flexGrow": 1,
+                        "fontSize": 16,
+                        "letterSpacing": -0.32,
+                      },
+                      Object {
+                        "color": "#007AFF",
+                      },
+                      Object {},
+                    ]
+                  }
+                >
+                  Help / FAQ
+                </Text>
+              </View>
+            </View>
+          </RCTSafeAreaView>
+        </View>
+        <RCTSafeAreaView
+          emulateUnlessSupported={true}
+          style={
+            Array [
+              Object {},
+              Object {
+                "backgroundColor": "#FFF",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "height": 0.5,
+                },
+                Object {
+                  "backgroundColor": "#C8C7CC",
+                  "marginLeft": 15,
+                  "marginRight": 0,
+                },
+              ]
+            }
+          />
+        </RCTSafeAreaView>
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+      >
+        <RCTSafeAreaView
+          emulateUnlessSupported={true}
+          style={
+            Array [
+              Object {
+                "flexGrow": 1,
+              },
+              Object {
+                "backgroundColor": "#FFF",
+              },
+            ]
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "minHeight": 44,
+                  "paddingLeft": 15,
+                  "paddingRight": 20,
+                },
+                Object {
+                  "backgroundColor": "#FFF",
+                },
+                Object {},
+              ]
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignItems": "center",
+                  "flexBasis": 0,
+                  "flexDirection": "row",
+                  "flexGrow": 1,
+                  "justifyContent": "center",
+                  "paddingVertical": 10,
+                }
+              }
+            >
+              <Text
+                allowFontScaling={true}
+                numberOfLines={1}
+                style={
+                  Array [
+                    Object {
+                      "flexGrow": 1,
+                      "fontSize": 16,
+                      "letterSpacing": -0.32,
+                    },
+                    Object {
+                      "color": "#007AFF",
+                    },
+                    Object {},
+                  ]
+                }
+              >
+                Contact Us
+              </Text>
+            </View>
+          </View>
+        </RCTSafeAreaView>
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {},
+          Object {
+            "backgroundColor": "#FFF",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Array [
+            Object {
+              "height": 0.5,
+            },
+            Object {
+              "backgroundColor": "#C8C7CC",
+              "marginLeft": 0,
+              "marginRight": 0,
+            },
+          ]
+        }
+      />
+    </View>
+    <View
+      style={
+        Object {
+          "paddingLeft": 15,
+          "paddingRight": 15,
+          "paddingTop": 10,
+        }
+      }
+    >
+      <RCTSafeAreaView
+        emulateUnlessSupported={true}
+      >
+        <Text
+          allowFontScaling={true}
+          style={
+            Array [
+              Object {
+                "fontSize": 13,
+                "letterSpacing": -0.078,
+              },
+              Object {
+                "color": "#8E8E93",
+              },
+              Object {},
+            ]
+          }
+        >
+          All rights reserved.
+        </Text>
+      </RCTSafeAreaView>
+    </View>
+  </View>
+</View>
+`;
