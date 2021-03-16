@@ -73,10 +73,10 @@ exports[`renders basic 1`] = `
             style={
               Array [
                 Object {
-                  "flexGrow": 1,
+                  "backgroundColor": "#FFF",
                 },
                 Object {
-                  "backgroundColor": "#FFF",
+                  "flexGrow": 1,
                 },
               ]
             }
@@ -90,9 +90,6 @@ exports[`renders basic 1`] = `
                     "minHeight": 44,
                     "paddingLeft": 15,
                     "paddingRight": 20,
-                  },
-                  Object {
-                    "backgroundColor": "#FFF",
                   },
                   Object {},
                 ]
@@ -176,10 +173,10 @@ exports[`renders basic 1`] = `
           style={
             Array [
               Object {
-                "flexGrow": 1,
+                "backgroundColor": "#FFF",
               },
               Object {
-                "backgroundColor": "#FFF",
+                "flexGrow": 1,
               },
             ]
           }
@@ -193,9 +190,6 @@ exports[`renders basic 1`] = `
                   "minHeight": 44,
                   "paddingLeft": 15,
                   "paddingRight": 20,
-                },
-                Object {
-                  "backgroundColor": "#FFF",
                 },
                 Object {},
               ]
@@ -370,10 +364,10 @@ exports[`renders with appearance auto 1`] = `
             style={
               Array [
                 Object {
-                  "flexGrow": 1,
+                  "backgroundColor": "#FFF",
                 },
                 Object {
-                  "backgroundColor": "#FFF",
+                  "flexGrow": 1,
                 },
               ]
             }
@@ -387,9 +381,6 @@ exports[`renders with appearance auto 1`] = `
                     "minHeight": 44,
                     "paddingLeft": 15,
                     "paddingRight": 20,
-                  },
-                  Object {
-                    "backgroundColor": "#FFF",
                   },
                   Object {},
                 ]
@@ -473,10 +464,10 @@ exports[`renders with appearance auto 1`] = `
           style={
             Array [
               Object {
-                "flexGrow": 1,
+                "backgroundColor": "#FFF",
               },
               Object {
-                "backgroundColor": "#FFF",
+                "flexGrow": 1,
               },
             ]
           }
@@ -490,9 +481,6 @@ exports[`renders with appearance auto 1`] = `
                   "minHeight": 44,
                   "paddingLeft": 15,
                   "paddingRight": 20,
-                },
-                Object {
-                  "backgroundColor": "#FFF",
                 },
                 Object {},
               ]
@@ -667,10 +655,10 @@ exports[`renders with appearance dark 1`] = `
             style={
               Array [
                 Object {
-                  "flexGrow": 1,
+                  "backgroundColor": "#121312",
                 },
                 Object {
-                  "backgroundColor": "#121312",
+                  "flexGrow": 1,
                 },
               ]
             }
@@ -684,9 +672,6 @@ exports[`renders with appearance dark 1`] = `
                     "minHeight": 44,
                     "paddingLeft": 15,
                     "paddingRight": 20,
-                  },
-                  Object {
-                    "backgroundColor": "#121312",
                   },
                   Object {},
                 ]
@@ -770,10 +755,10 @@ exports[`renders with appearance dark 1`] = `
           style={
             Array [
               Object {
-                "flexGrow": 1,
+                "backgroundColor": "#121312",
               },
               Object {
-                "backgroundColor": "#121312",
+                "flexGrow": 1,
               },
             ]
           }
@@ -787,9 +772,6 @@ exports[`renders with appearance dark 1`] = `
                   "minHeight": 44,
                   "paddingLeft": 15,
                   "paddingRight": 20,
-                },
-                Object {
-                  "backgroundColor": "#121312",
                 },
                 Object {},
               ]
@@ -964,10 +946,10 @@ exports[`renders with appearance light 1`] = `
             style={
               Array [
                 Object {
-                  "flexGrow": 1,
+                  "backgroundColor": "#FFF",
                 },
                 Object {
-                  "backgroundColor": "#FFF",
+                  "flexGrow": 1,
                 },
               ]
             }
@@ -981,9 +963,6 @@ exports[`renders with appearance light 1`] = `
                     "minHeight": 44,
                     "paddingLeft": 15,
                     "paddingRight": 20,
-                  },
-                  Object {
-                    "backgroundColor": "#FFF",
                   },
                   Object {},
                 ]
@@ -1067,10 +1046,10 @@ exports[`renders with appearance light 1`] = `
           style={
             Array [
               Object {
-                "flexGrow": 1,
+                "backgroundColor": "#FFF",
               },
               Object {
-                "backgroundColor": "#FFF",
+                "flexGrow": 1,
               },
             ]
           }
@@ -1084,9 +1063,6 @@ exports[`renders with appearance light 1`] = `
                   "minHeight": 44,
                   "paddingLeft": 15,
                   "paddingRight": 20,
-                },
-                Object {
-                  "backgroundColor": "#FFF",
                 },
                 Object {},
               ]

@@ -7,10 +7,10 @@ exports[`renders with accessory 1`] = `
     style={
       Array [
         Object {
-          "flexGrow": 1,
+          "backgroundColor": "#FFF",
         },
         Object {
-          "backgroundColor": "#FFF",
+          "flexGrow": 1,
         },
       ]
     }
@@ -24,9 +24,6 @@ exports[`renders with accessory 1`] = `
             "minHeight": 44,
             "paddingLeft": 15,
             "paddingRight": 20,
-          },
-          Object {
-            "backgroundColor": "#FFF",
           },
           Object {},
         ]
@@ -126,10 +123,10 @@ exports[`renders with accessory and onPressDetailAccessory 1`] = `
     style={
       Array [
         Object {
-          "flexGrow": 1,
+          "backgroundColor": "#FFF",
         },
         Object {
-          "backgroundColor": "#FFF",
+          "flexGrow": 1,
         },
       ]
     }
@@ -143,9 +140,6 @@ exports[`renders with accessory and onPressDetailAccessory 1`] = `
             "minHeight": 44,
             "paddingLeft": 15,
             "paddingRight": 20,
-          },
-          Object {
-            "backgroundColor": "#FFF",
           },
           Object {},
         ]
@@ -245,10 +239,10 @@ exports[`renders with left detail 1`] = `
     style={
       Array [
         Object {
-          "flexGrow": 1,
+          "backgroundColor": "#FFF",
         },
         Object {
-          "backgroundColor": "#FFF",
+          "flexGrow": 1,
         },
       ]
     }
@@ -262,9 +256,6 @@ exports[`renders with left detail 1`] = `
             "minHeight": 44,
             "paddingLeft": 15,
             "paddingRight": 20,
-          },
-          Object {
-            "backgroundColor": "#FFF",
           },
           Object {},
         ]
