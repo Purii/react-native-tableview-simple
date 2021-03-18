@@ -26,3 +26,8 @@ it('renders with accessory', () => {
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+it('renders as invalid', () => {
+  const tree = renderer.create(<Cell title="Basic" isInvalid />).toJSON();
+  expect(tree).toMatchSnapshot();
+});

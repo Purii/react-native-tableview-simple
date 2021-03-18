@@ -40,6 +40,7 @@ export interface CellInterface {
   highlightUnderlayColor?: ViewStyle['backgroundColor'];
   image?: React.ReactElement;
   isDisabled?: boolean;
+  isInvalid?: boolean;
   onPress?: () => void | false;
   onPressDetailAccessory?: () => void | false;
   onUnHighlightRow?(): void;
@@ -76,6 +77,7 @@ const Cell: React.FC<CellInterface> = ({
   highlightUnderlayColor,
   image,
   isDisabled = false,
+  isInvalid = false,
   onPress,
   onPressDetailAccessory,
   onHighlightRow,
@@ -127,7 +129,11 @@ const Cell: React.FC<CellInterface> = ({
       ? [styles.cellTitle, styles.cellTextDisabled, titleTextStyleDisabled]
       : [
           styles.cellTitle,
-          { color: titleTextColor || theme.colors.body },
+          {
+            color: isInvalid
+              ? theme.colors.error
+              : titleTextColor || theme.colors.body,
+          },
           titleTextStyle,
         ],
     cellLeftDetail: [

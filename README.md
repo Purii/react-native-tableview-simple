@@ -155,6 +155,7 @@ To get an idea what you can modify via `props`, have a look at the [examples bel
 | highlightActiveOpacity            |             `0.8`             |                 `number`                  | Opacity of cell when touch is active                                                                                                                                                |
 | highlightUnderlayColor            |            `black`            |                 `string`                  | Color of underlay that will show through when touch is active                                                                                                                       |
 | isDisabled                        |            `false`            |                  `bool`                   | Cell is disabled. `onPress` will not get triggered                                                                                                                                  |
+| isInvalid                         |            `false`            |                  `bool`                   | Cell is invalid.                                                                                                                                                                    |
 | image                             |               -               |         `React.Component (Image)`         | Image component displayed on the left. Will resized automatically                                                                                                                   |
 | leftDetailColor                   |           `#007AFF`           |                 `string`                  | Text color of left detail                                                                                                                                                           |
 | rightDetailColor                  |           `#8E8E93`           |                 `string`                  | Text color of right detail                                                                                                                                                          |
@@ -234,7 +235,7 @@ See the [example below](#render-with-flatlist).
 
 ## Examples
 
-The following examples can be found in the folder `example`.  
+The following examples can be found in the folder `example`.
 To run the example project, follow these steps:
 
 1.  `git clone https://github.com/Purii/react-native-tableview-simple`

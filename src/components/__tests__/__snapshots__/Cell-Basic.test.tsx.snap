@@ -1,5 +1,78 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renders as invalid 1`] = `
+<View>
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
+    style={
+      Array [
+        Object {
+          "flexGrow": 1,
+        },
+        Object {
+          "backgroundColor": "#FFF",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "flexDirection": "row",
+            "minHeight": 44,
+            "paddingLeft": 15,
+            "paddingRight": 20,
+          },
+          Object {
+            "backgroundColor": "#FFF",
+          },
+          Object {},
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flexBasis": 0,
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "justifyContent": "center",
+            "paddingVertical": 10,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={true}
+          numberOfLines={1}
+          style={
+            Array [
+              Object {
+                "flexGrow": 1,
+                "fontSize": 16,
+                "letterSpacing": -0.32,
+              },
+              Object {
+                "color": Object {
+                  "semantic": Array [
+                    "systemRed",
+                  ],
+                },
+              },
+              Object {},
+            ]
+          }
+        >
+          Basic
+        </Text>
+      </View>
+    </View>
+  </RCTSafeAreaView>
+</View>
+`;
+
 exports[`renders basic 1`] = `
 <View>
   <RCTSafeAreaView

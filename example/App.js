@@ -39,6 +39,9 @@ const App = () => {
             onPress={() => console.log('Heyho!')}
           />
         </Section>
+        <Section header="Validations" footer="Example of an invalid cell">
+          <Cell title="Invalid cell" isInvalid />
+        </Section>
         <Section header="DISABLED">
           <Cell cellStyle="Basic" isDisabled title="Basic" />
           <Cell

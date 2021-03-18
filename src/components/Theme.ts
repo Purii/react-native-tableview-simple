@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextStyle, ViewStyle } from 'react-native';
+import { PlatformColor, TextStyle, ViewStyle } from 'react-native';
 
 export interface THEME_APPEARANCE {
   colors: {
@@ -9,6 +9,7 @@ export interface THEME_APPEARANCE {
     body: ViewStyle['backgroundColor'] | TextStyle['color'];
     primary: ViewStyle['backgroundColor'] | TextStyle['color'];
     secondary: ViewStyle['backgroundColor'] | TextStyle['color'];
+    error: ViewStyle['backgroundColor'] | TextStyle['color'];
   };
 }
 
@@ -26,6 +27,7 @@ export const THEMES: {
         body: '#000',
         primary: '#007AFF',
         secondary: '#8E8E93',
+        error: PlatformColor('systemRed'),
       },
     },
     dark: {
@@ -36,6 +38,7 @@ export const THEMES: {
         body: '#FFF',
         primary: '#0f64ee',
         secondary: '#aeaeae',
+        error: PlatformColor('systemRed'),
       },
     },
   },
