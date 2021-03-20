@@ -9,10 +9,6 @@ module.exports = {
     '@react-native-community',
     // Disable rules conflicting with prettier
     require.resolve('eslint-config-prettier'),
-    // Disable ts rules conflicting with prettier
-    require.resolve('eslint-config-prettier/@typescript-eslint'),
-    // Disable rules conflicting with prettier
-    require.resolve('eslint-config-prettier/react'),
   ],
   env: {
     browser: true,
