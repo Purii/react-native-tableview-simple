@@ -14,7 +14,7 @@
 This cross-platform component is inspired by the iOS-TableView. Made with pure CSS, the intention is to provide **a flexible and lightweight alternative to a bridged component**. Don't be scared of React-Native upgrades anymore!
 
 A possible use case might be an about- or a settings-screen with a few rows.
-For displaying long datalists it is recommended to use the `FlatList` Component together with `Cell` and `Separator` Components. ([see example](#render-with-flatlist))
+For displaying long datalists it is recommended to use the `FlatList` Component together with `Cell` and `Separator` Components. ([see example](#render-with-flatlist) or [live demo with expo](https://snack.expo.io/@purii/react-native-tableview-simple))
 
 :rocket: If you like my component and want to buy me a coffee press the `Sponsor` Button and find out about GitHub Sponsors – Thanks! :point_left:
 
