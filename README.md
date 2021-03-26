@@ -146,6 +146,7 @@ To get an idea what you can modify via `props`, have a look at the [examples bel
 | cellAccessoryView                 |               -               |             `React.Component`             | Replace accessory view component (_e.g.: add Switch or ActivityIndicator_)                                                                                                          |
 | cellContentView                   |               -               |             `React.Component`             | Replace content view component                                                                                                                                                      |
 | cellImageView                     |               -               |             `React.Component`             | Replace image view component                                                                                                                                                        |
+children                            |               -               |             `React.Component`             | Additional content to be displayed below the cell. (_e.g: Add Picker or DateTimePicker_)
 | contentContainerStyle             |             `{}`              |          `View.propTypes.style`           | These styles will be applied to the content container which wraps all of the child views. Overrides `cellStyle` (_e.g.: Override paddingLeft and paddingRight or set fixed height_) |
 | detail                            |               -               |           `string` or `number`            | Detail value                                                                                                                                                                        |
 | detailTextProps                   |             `{}`              |             `Text.propTypes`              | These props will be applied to the (left- / right-) detail `Text`-Component.                                                                                                        |
@@ -234,7 +235,7 @@ See the [example below](#render-with-flatlist).
 
 ## Examples
 
-The following examples can be found in the folder `example`.  
+The following examples can be found in the folder `example`.
 To run the example project, follow these steps:
 
 1.  `git clone https://github.com/Purii/react-native-tableview-simple`

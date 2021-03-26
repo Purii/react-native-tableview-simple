@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   ActivityIndicator,
   Dimensions,
@@ -11,6 +11,7 @@ import {
   View,
 } from 'react-native';
 import {Cell, Section, TableView} from 'react-native-tableview-simple';
+import {Picker} from '@react-native-community/picker';
 
 // Example component for section:headerComponent
 const CustomSectionHeader = () => (
@@ -20,6 +21,8 @@ const CustomSectionHeader = () => (
 );
 
 const App = () => {
+  const [showPicker, setShowPicker] = useState(false);
+
   return (
     <ScrollView contentContainerStyle={styles.stage}>
       <TableView>
@@ -38,6 +41,24 @@ const App = () => {
             accessory="DisclosureIndicator"
             onPress={() => console.log('Heyho!')}
           />
+          <Cell
+            cellStyle="Basic"
+            title="Favorite programming language"
+            onPress={() => setShowPicker((prevValue) => !prevValue)}>
+            {showPicker && (
+              // onStartShouldSetResponderCapture is to disable the Touchable highlight when scrolling over the picker
+              <View onStartShouldSetResponderCapture={() => true}>
+                <Picker>
+                  <Picker.Item label="Java" />
+                  <Picker.Item label="JavaScript" />
+                  <Picker.Item label="C++" />
+                  <Picker.Item label="Ruby" />
+                  <Picker.Item label="Elixir" />
+                  <Picker.Item label="Python" />
+                </Picker>
+              </View>
+            )}
+          </Cell>
         </Section>
         <Section header="DISABLED">
           <Cell cellStyle="Basic" isDisabled title="Basic" />

@@ -30,6 +30,7 @@ export interface CellInterface {
   cellAccessoryView?: React.ReactNode;
   cellContentView?: React.ReactNode;
   cellImageView?: React.ReactNode;
+  children?: React.ReactNode;
   contentContainerStyle?: StyleProp<ViewStyle>;
   detail?: string | number;
   detailTextStyle?: StyleProp<TextStyle>;
@@ -67,6 +68,7 @@ const Cell: React.FC<CellInterface> = ({
   cellContentView,
   cellImageView,
   cellAccessoryView,
+  children,
   contentContainerStyle = {},
   detail,
   detailTextStyle = {},
@@ -110,19 +112,11 @@ const Cell: React.FC<CellInterface> = ({
     };
   } = {
     ...styles,
-    cell: [
-      styles.cell,
-      {
-        backgroundColor: backgroundColor || theme.colors.background,
-      },
-      contentContainerStyle,
-    ],
-    cellSafeAreaContainer: [
-      styles.cellSafeAreaContainer,
-      {
-        backgroundColor: backgroundColor || theme.colors.background,
-      },
-    ],
+    cellBackgroundColor: {
+      backgroundColor: backgroundColor || theme.colors.background,
+    },
+    cell: [styles.cell, contentContainerStyle],
+    cellSafeAreaContainer: styles.cellSafeAreaContainer,
     cellTitle: isDisabled
       ? [styles.cellTitle, styles.cellTextDisabled, titleTextStyleDisabled]
       : [
@@ -379,13 +373,18 @@ const Cell: React.FC<CellInterface> = ({
    * Render content of cell
    * @return {View} Complete View with cell elements
    */
-  const renderCell = (): React.ReactNode => (
-    <View style={localStyles.cell}>
-      {cellImageView || renderImageView()}
-      {cellContentView || renderCellContentView()}
-      {cellAccessoryView || renderAccessoryView()}
-    </View>
-  );
+  const renderCell = (): React.ReactNode => {
+    return (
+      <View style={localStyles.cellBackgroundColor}>
+        <View style={localStyles.cell}>
+          {cellImageView || renderImageView()}
+          {cellContentView || renderCellContentView()}
+          {cellAccessoryView || renderAccessoryView()}
+        </View>
+        {children}
+      </View>
+    );
+  };
 
   /**
    * Render content of cell with SafeAreaView
@@ -393,12 +392,17 @@ const Cell: React.FC<CellInterface> = ({
    * @return {View} Complete View with cell elements
    */
   const renderCellWithSafeAreaView = (): React.ReactNode => (
-    <SafeAreaView style={localStyles.cellSafeAreaContainer}>
+    <SafeAreaView
+      style={[
+        localStyles.cellBackgroundColor,
+        localStyles.cellSafeAreaContainer,
+      ]}>
       <View style={localStyles.cell}>
         {cellImageView || renderImageView()}
         {cellContentView || renderCellContentView()}
         {cellAccessoryView || renderAccessoryView()}
       </View>
+      {children}
     </SafeAreaView>
   );
 
