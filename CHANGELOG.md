@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* add prop children in cell component ([#497](https://github.com/Purii/react-native-tableview-simple/issues/497)) ([4bd400e](https://github.com/Purii/react-native-tableview-simple/commit/4bd400e121a350f6f2cc710c5dea749e998d373d))
+* add prop children in cell component ([#497](https://github.com/Purii/react-native-tableview-simple/issues/497)) ([4bd400e](https://github.com/Purii/react-native-tableview-simple/commit/4bd400e121a350f6f2cc710c5dea749e998d373d)) (Thanks @brunohkbx!)
 
 ### [4.2.1](https://github.com/Purii/react-native-tableview-simple/compare/v4.2.0...v4.2.1) (2020-12-21)
 
