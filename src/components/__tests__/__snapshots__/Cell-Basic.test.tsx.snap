@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders basic 1`] = `
-<View>
+<View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+>
   <RCTSafeAreaView
     emulateUnlessSupported={true}
     style={
@@ -67,7 +74,14 @@ exports[`renders basic 1`] = `
 `;
 
 exports[`renders with accessory 1`] = `
-<View>
+<View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
+>
   <RCTSafeAreaView
     emulateUnlessSupported={true}
     style={
@@ -165,6 +179,12 @@ exports[`renders with accessory 1`] = `
 
 exports[`renders with testID 1`] = `
 <View
+  accessibilityState={
+    Object {
+      "disabled": false,
+    }
+  }
+  accessible={true}
   testID="testID"
 >
   <RCTSafeAreaView

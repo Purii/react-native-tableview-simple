@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import {
+  AccessibilityRole,
   Platform,
   SafeAreaView,
   StyleSheet,
@@ -16,6 +17,8 @@ import {
 import { ThemeContext } from './Theme';
 
 export interface CellInterface {
+  accessibilityHint?: string;
+  accessibilityRole?: AccessibilityRole;
   accessory?:
     | false
     | 'DisclosureIndicator'
@@ -59,6 +62,8 @@ export interface CellInterface {
 }
 
 const Cell: React.FC<CellInterface> = ({
+  accessibilityHint,
+  accessibilityRole,
   accessory = false,
   accessoryColor,
   accessoryColorDisclosureIndicator,
@@ -414,13 +419,20 @@ const Cell: React.FC<CellInterface> = ({
         underlayColor={highlightUnderlayColor || theme.colors.body}
         onPressIn={onHighlightRow}
         onPressOut={onUnHighlightRow}
-        testID={testID}>
+        testID={testID}
+        accessibilityHint={accessibilityHint}
+        accessibilityRole="button">
         {withSafeAreaView ? renderCellWithSafeAreaView() : renderCell()}
       </TouchableHighlight>
     );
   }
   return (
-    <View testID={testID}>
+    <View
+      accessible
+      accessibilityHint={accessibilityHint}
+      accessibilityRole={accessibilityRole}
+      accessibilityState={{ disabled: isDisabled }}
+      testID={testID}>
       {withSafeAreaView ? renderCellWithSafeAreaView() : renderCell()}
     </View>
   );
