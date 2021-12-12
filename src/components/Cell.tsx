@@ -106,11 +106,7 @@ const Cell: React.FC<CellInterface> = ({
    * Merge styles with props
    * Type is a Hotfix
    */
-  const localStyles: {
-    [key: string]: {
-      [key: string]: any;
-    };
-  } = {
+  const localStyles = {
     ...styles,
     cellBackgroundColor: {
       backgroundColor: backgroundColor || theme.colors.background,

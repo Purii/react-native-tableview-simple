@@ -1,12 +1,12 @@
 module.exports = {
+  root: true,
   extends: [
+    'plugin:react/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     // TS specific recommended
     'plugin:@typescript-eslint/recommended',
     //
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
-    // React Native
-    '@react-native-community',
     // Disable rules conflicting with prettier
     require.resolve('eslint-config-prettier'),
   ],
@@ -27,8 +27,12 @@ module.exports = {
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 2018,
     sourceType: 'module',
     project: './tsconfig.json',
   },
+  settings: {
+    "react": {
+      "version": "detect"
+    }
+  }
 };

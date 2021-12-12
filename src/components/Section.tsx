@@ -75,11 +75,7 @@ const Section: React.FC<SectionInterface> = ({
   /**
    * Merge styles with props
    */
-  const localStyles: {
-    [key: string]: {
-      [key: string]: any;
-    };
-  } = {
+  const localStyles = {
     ...styles,
     section: [
       styles.section,

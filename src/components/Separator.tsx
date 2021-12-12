@@ -30,11 +30,7 @@ const Separator: React.FC<SeparatorInterface> = ({
     : true,
 }) => {
   const theme = useContext(ThemeContext);
-  const localStyles: {
-    [key: string]: {
-      [key: string]: any;
-    };
-  } = {
+  const localStyles = {
     separator: [
       styles.separator,
       { backgroundColor: backgroundColor || theme.colors.background },
