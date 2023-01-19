@@ -49,6 +49,7 @@ const TableView: React.FC<TableViewInterface> = ({
 const styles = StyleSheet.create({
   tableView: {
     flexDirection: 'column',
+    marginHorizontal: 15,
   },
 });
 
