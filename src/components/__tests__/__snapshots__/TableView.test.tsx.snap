@@ -3,8 +3,8 @@
 exports[`renders basic 1`] = `
 <View
   style={
-    Array [
-      Object {
+    [
+      {
         "flexDirection": "column",
       },
       undefined,
@@ -13,9 +13,9 @@ exports[`renders basic 1`] = `
 >
   <View
     style={
-      Array [
-        Object {},
-        Object {
+      [
+        {},
+        {
           "backgroundColor": undefined,
           "paddingBottom": 15,
           "paddingTop": 15,
@@ -25,9 +25,9 @@ exports[`renders basic 1`] = `
   >
     <View
       style={
-        Array [
-          Object {},
-          Object {
+        [
+          {},
+          {
             "backgroundColor": "#FFF",
           },
         ]
@@ -35,11 +35,11 @@ exports[`renders basic 1`] = `
     >
       <View
         style={
-          Array [
-            Object {
+          [
+            {
               "height": 0.5,
             },
-            Object {
+            {
               "backgroundColor": "#C8C7CC",
               "marginLeft": 0,
               "marginRight": 0,
@@ -50,14 +50,22 @@ exports[`renders basic 1`] = `
     </View>
     <View
       style={
-        Array [
-          Object {},
+        [
+          {},
           false,
         ]
       }
     >
       <View>
         <View
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
           accessible={true}
           focusable={true}
           onClick={[Function]}
@@ -69,13 +77,12 @@ exports[`renders basic 1`] = `
           onStartShouldSetResponder={[Function]}
         >
           <RCTSafeAreaView
-            emulateUnlessSupported={true}
             style={
-              Array [
-                Object {
+              [
+                {
                   "backgroundColor": "#FFF",
                 },
-                Object {
+                {
                   "flexGrow": 1,
                 },
               ]
@@ -83,21 +90,21 @@ exports[`renders basic 1`] = `
           >
             <View
               style={
-                Array [
-                  Object {
+                [
+                  {
                     "alignItems": "center",
                     "flexDirection": "row",
                     "minHeight": 44,
                     "paddingLeft": 15,
                     "paddingRight": 20,
                   },
-                  Object {},
+                  {},
                 ]
               }
             >
               <View
                 style={
-                  Object {
+                  {
                     "alignItems": "center",
                     "flexBasis": 0,
                     "flexDirection": "row",
@@ -111,16 +118,16 @@ exports[`renders basic 1`] = `
                   allowFontScaling={true}
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
+                    [
+                      {
                         "flexGrow": 1,
                         "fontSize": 16,
                         "letterSpacing": -0.32,
                       },
-                      Object {
+                      {
                         "color": "#007AFF",
                       },
-                      Object {},
+                      {},
                     ]
                   }
                 >
@@ -131,11 +138,10 @@ exports[`renders basic 1`] = `
           </RCTSafeAreaView>
         </View>
         <RCTSafeAreaView
-          emulateUnlessSupported={true}
           style={
-            Array [
-              Object {},
-              Object {
+            [
+              {},
+              {
                 "backgroundColor": "#FFF",
               },
             ]
@@ -143,11 +149,11 @@ exports[`renders basic 1`] = `
         >
           <View
             style={
-              Array [
-                Object {
+              [
+                {
                   "height": 0.5,
                 },
-                Object {
+                {
                   "backgroundColor": "#C8C7CC",
                   "marginLeft": 15,
                   "marginRight": 0,
@@ -158,6 +164,14 @@ exports[`renders basic 1`] = `
         </RCTSafeAreaView>
       </View>
       <View
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
         accessible={true}
         focusable={true}
         onClick={[Function]}
@@ -169,13 +183,12 @@ exports[`renders basic 1`] = `
         onStartShouldSetResponder={[Function]}
       >
         <RCTSafeAreaView
-          emulateUnlessSupported={true}
           style={
-            Array [
-              Object {
+            [
+              {
                 "backgroundColor": "#FFF",
               },
-              Object {
+              {
                 "flexGrow": 1,
               },
             ]
@@ -183,21 +196,21 @@ exports[`renders basic 1`] = `
         >
           <View
             style={
-              Array [
-                Object {
+              [
+                {
                   "alignItems": "center",
                   "flexDirection": "row",
                   "minHeight": 44,
                   "paddingLeft": 15,
                   "paddingRight": 20,
                 },
-                Object {},
+                {},
               ]
             }
           >
             <View
               style={
-                Object {
+                {
                   "alignItems": "center",
                   "flexBasis": 0,
                   "flexDirection": "row",
@@ -211,16 +224,16 @@ exports[`renders basic 1`] = `
                 allowFontScaling={true}
                 numberOfLines={1}
                 style={
-                  Array [
-                    Object {
+                  [
+                    {
                       "flexGrow": 1,
                       "fontSize": 16,
                       "letterSpacing": -0.32,
                     },
-                    Object {
+                    {
                       "color": "#007AFF",
                     },
-                    Object {},
+                    {},
                   ]
                 }
               >
@@ -233,9 +246,9 @@ exports[`renders basic 1`] = `
     </View>
     <View
       style={
-        Array [
-          Object {},
-          Object {
+        [
+          {},
+          {
             "backgroundColor": "#FFF",
           },
         ]
@@ -243,11 +256,11 @@ exports[`renders basic 1`] = `
     >
       <View
         style={
-          Array [
-            Object {
+          [
+            {
               "height": 0.5,
             },
-            Object {
+            {
               "backgroundColor": "#C8C7CC",
               "marginLeft": 0,
               "marginRight": 0,
@@ -258,28 +271,26 @@ exports[`renders basic 1`] = `
     </View>
     <View
       style={
-        Object {
+        {
           "paddingLeft": 15,
           "paddingRight": 15,
           "paddingTop": 10,
         }
       }
     >
-      <RCTSafeAreaView
-        emulateUnlessSupported={true}
-      >
+      <RCTSafeAreaView>
         <Text
           allowFontScaling={true}
           style={
-            Array [
-              Object {
+            [
+              {
                 "fontSize": 13,
                 "letterSpacing": -0.078,
               },
-              Object {
+              {
                 "color": "#8E8E93",
               },
-              Object {},
+              {},
             ]
           }
         >
@@ -294,8 +305,8 @@ exports[`renders basic 1`] = `
 exports[`renders with appearance auto 1`] = `
 <View
   style={
-    Array [
-      Object {
+    [
+      {
         "flexDirection": "column",
       },
       undefined,
@@ -304,9 +315,9 @@ exports[`renders with appearance auto 1`] = `
 >
   <View
     style={
-      Array [
-        Object {},
-        Object {
+      [
+        {},
+        {
           "backgroundColor": undefined,
           "paddingBottom": 15,
           "paddingTop": 15,
@@ -316,9 +327,9 @@ exports[`renders with appearance auto 1`] = `
   >
     <View
       style={
-        Array [
-          Object {},
-          Object {
+        [
+          {},
+          {
             "backgroundColor": "#FFF",
           },
         ]
@@ -326,11 +337,11 @@ exports[`renders with appearance auto 1`] = `
     >
       <View
         style={
-          Array [
-            Object {
+          [
+            {
               "height": 0.5,
             },
-            Object {
+            {
               "backgroundColor": "#C8C7CC",
               "marginLeft": 0,
               "marginRight": 0,
@@ -341,14 +352,22 @@ exports[`renders with appearance auto 1`] = `
     </View>
     <View
       style={
-        Array [
-          Object {},
+        [
+          {},
           false,
         ]
       }
     >
       <View>
         <View
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
           accessible={true}
           focusable={true}
           onClick={[Function]}
@@ -360,13 +379,12 @@ exports[`renders with appearance auto 1`] = `
           onStartShouldSetResponder={[Function]}
         >
           <RCTSafeAreaView
-            emulateUnlessSupported={true}
             style={
-              Array [
-                Object {
+              [
+                {
                   "backgroundColor": "#FFF",
                 },
-                Object {
+                {
                   "flexGrow": 1,
                 },
               ]
@@ -374,21 +392,21 @@ exports[`renders with appearance auto 1`] = `
           >
             <View
               style={
-                Array [
-                  Object {
+                [
+                  {
                     "alignItems": "center",
                     "flexDirection": "row",
                     "minHeight": 44,
                     "paddingLeft": 15,
                     "paddingRight": 20,
                   },
-                  Object {},
+                  {},
                 ]
               }
             >
               <View
                 style={
-                  Object {
+                  {
                     "alignItems": "center",
                     "flexBasis": 0,
                     "flexDirection": "row",
@@ -402,16 +420,16 @@ exports[`renders with appearance auto 1`] = `
                   allowFontScaling={true}
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
+                    [
+                      {
                         "flexGrow": 1,
                         "fontSize": 16,
                         "letterSpacing": -0.32,
                       },
-                      Object {
+                      {
                         "color": "#007AFF",
                       },
-                      Object {},
+                      {},
                     ]
                   }
                 >
@@ -422,11 +440,10 @@ exports[`renders with appearance auto 1`] = `
           </RCTSafeAreaView>
         </View>
         <RCTSafeAreaView
-          emulateUnlessSupported={true}
           style={
-            Array [
-              Object {},
-              Object {
+            [
+              {},
+              {
                 "backgroundColor": "#FFF",
               },
             ]
@@ -434,11 +451,11 @@ exports[`renders with appearance auto 1`] = `
         >
           <View
             style={
-              Array [
-                Object {
+              [
+                {
                   "height": 0.5,
                 },
-                Object {
+                {
                   "backgroundColor": "#C8C7CC",
                   "marginLeft": 15,
                   "marginRight": 0,
@@ -449,6 +466,14 @@ exports[`renders with appearance auto 1`] = `
         </RCTSafeAreaView>
       </View>
       <View
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
         accessible={true}
         focusable={true}
         onClick={[Function]}
@@ -460,13 +485,12 @@ exports[`renders with appearance auto 1`] = `
         onStartShouldSetResponder={[Function]}
       >
         <RCTSafeAreaView
-          emulateUnlessSupported={true}
           style={
-            Array [
-              Object {
+            [
+              {
                 "backgroundColor": "#FFF",
               },
-              Object {
+              {
                 "flexGrow": 1,
               },
             ]
@@ -474,21 +498,21 @@ exports[`renders with appearance auto 1`] = `
         >
           <View
             style={
-              Array [
-                Object {
+              [
+                {
                   "alignItems": "center",
                   "flexDirection": "row",
                   "minHeight": 44,
                   "paddingLeft": 15,
                   "paddingRight": 20,
                 },
-                Object {},
+                {},
               ]
             }
           >
             <View
               style={
-                Object {
+                {
                   "alignItems": "center",
                   "flexBasis": 0,
                   "flexDirection": "row",
@@ -502,16 +526,16 @@ exports[`renders with appearance auto 1`] = `
                 allowFontScaling={true}
                 numberOfLines={1}
                 style={
-                  Array [
-                    Object {
+                  [
+                    {
                       "flexGrow": 1,
                       "fontSize": 16,
                       "letterSpacing": -0.32,
                     },
-                    Object {
+                    {
                       "color": "#007AFF",
                     },
-                    Object {},
+                    {},
                   ]
                 }
               >
@@ -524,9 +548,9 @@ exports[`renders with appearance auto 1`] = `
     </View>
     <View
       style={
-        Array [
-          Object {},
-          Object {
+        [
+          {},
+          {
             "backgroundColor": "#FFF",
           },
         ]
@@ -534,11 +558,11 @@ exports[`renders with appearance auto 1`] = `
     >
       <View
         style={
-          Array [
-            Object {
+          [
+            {
               "height": 0.5,
             },
-            Object {
+            {
               "backgroundColor": "#C8C7CC",
               "marginLeft": 0,
               "marginRight": 0,
@@ -549,28 +573,26 @@ exports[`renders with appearance auto 1`] = `
     </View>
     <View
       style={
-        Object {
+        {
           "paddingLeft": 15,
           "paddingRight": 15,
           "paddingTop": 10,
         }
       }
     >
-      <RCTSafeAreaView
-        emulateUnlessSupported={true}
-      >
+      <RCTSafeAreaView>
         <Text
           allowFontScaling={true}
           style={
-            Array [
-              Object {
+            [
+              {
                 "fontSize": 13,
                 "letterSpacing": -0.078,
               },
-              Object {
+              {
                 "color": "#8E8E93",
               },
-              Object {},
+              {},
             ]
           }
         >
@@ -585,8 +607,8 @@ exports[`renders with appearance auto 1`] = `
 exports[`renders with appearance dark 1`] = `
 <View
   style={
-    Array [
-      Object {
+    [
+      {
         "flexDirection": "column",
       },
       undefined,
@@ -595,9 +617,9 @@ exports[`renders with appearance dark 1`] = `
 >
   <View
     style={
-      Array [
-        Object {},
-        Object {
+      [
+        {},
+        {
           "backgroundColor": undefined,
           "paddingBottom": 15,
           "paddingTop": 15,
@@ -607,9 +629,9 @@ exports[`renders with appearance dark 1`] = `
   >
     <View
       style={
-        Array [
-          Object {},
-          Object {
+        [
+          {},
+          {
             "backgroundColor": "#121312",
           },
         ]
@@ -617,11 +639,11 @@ exports[`renders with appearance dark 1`] = `
     >
       <View
         style={
-          Array [
-            Object {
+          [
+            {
               "height": 0.5,
             },
-            Object {
+            {
               "backgroundColor": "#2b2b2d",
               "marginLeft": 0,
               "marginRight": 0,
@@ -632,14 +654,22 @@ exports[`renders with appearance dark 1`] = `
     </View>
     <View
       style={
-        Array [
-          Object {},
+        [
+          {},
           false,
         ]
       }
     >
       <View>
         <View
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
           accessible={true}
           focusable={true}
           onClick={[Function]}
@@ -651,13 +681,12 @@ exports[`renders with appearance dark 1`] = `
           onStartShouldSetResponder={[Function]}
         >
           <RCTSafeAreaView
-            emulateUnlessSupported={true}
             style={
-              Array [
-                Object {
+              [
+                {
                   "backgroundColor": "#121312",
                 },
-                Object {
+                {
                   "flexGrow": 1,
                 },
               ]
@@ -665,21 +694,21 @@ exports[`renders with appearance dark 1`] = `
           >
             <View
               style={
-                Array [
-                  Object {
+                [
+                  {
                     "alignItems": "center",
                     "flexDirection": "row",
                     "minHeight": 44,
                     "paddingLeft": 15,
                     "paddingRight": 20,
                   },
-                  Object {},
+                  {},
                 ]
               }
             >
               <View
                 style={
-                  Object {
+                  {
                     "alignItems": "center",
                     "flexBasis": 0,
                     "flexDirection": "row",
@@ -693,16 +722,16 @@ exports[`renders with appearance dark 1`] = `
                   allowFontScaling={true}
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
+                    [
+                      {
                         "flexGrow": 1,
                         "fontSize": 16,
                         "letterSpacing": -0.32,
                       },
-                      Object {
+                      {
                         "color": "#007AFF",
                       },
-                      Object {},
+                      {},
                     ]
                   }
                 >
@@ -713,11 +742,10 @@ exports[`renders with appearance dark 1`] = `
           </RCTSafeAreaView>
         </View>
         <RCTSafeAreaView
-          emulateUnlessSupported={true}
           style={
-            Array [
-              Object {},
-              Object {
+            [
+              {},
+              {
                 "backgroundColor": "#121312",
               },
             ]
@@ -725,11 +753,11 @@ exports[`renders with appearance dark 1`] = `
         >
           <View
             style={
-              Array [
-                Object {
+              [
+                {
                   "height": 0.5,
                 },
-                Object {
+                {
                   "backgroundColor": "#2b2b2d",
                   "marginLeft": 15,
                   "marginRight": 0,
@@ -740,6 +768,14 @@ exports[`renders with appearance dark 1`] = `
         </RCTSafeAreaView>
       </View>
       <View
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
         accessible={true}
         focusable={true}
         onClick={[Function]}
@@ -751,13 +787,12 @@ exports[`renders with appearance dark 1`] = `
         onStartShouldSetResponder={[Function]}
       >
         <RCTSafeAreaView
-          emulateUnlessSupported={true}
           style={
-            Array [
-              Object {
+            [
+              {
                 "backgroundColor": "#121312",
               },
-              Object {
+              {
                 "flexGrow": 1,
               },
             ]
@@ -765,21 +800,21 @@ exports[`renders with appearance dark 1`] = `
         >
           <View
             style={
-              Array [
-                Object {
+              [
+                {
                   "alignItems": "center",
                   "flexDirection": "row",
                   "minHeight": 44,
                   "paddingLeft": 15,
                   "paddingRight": 20,
                 },
-                Object {},
+                {},
               ]
             }
           >
             <View
               style={
-                Object {
+                {
                   "alignItems": "center",
                   "flexBasis": 0,
                   "flexDirection": "row",
@@ -793,16 +828,16 @@ exports[`renders with appearance dark 1`] = `
                 allowFontScaling={true}
                 numberOfLines={1}
                 style={
-                  Array [
-                    Object {
+                  [
+                    {
                       "flexGrow": 1,
                       "fontSize": 16,
                       "letterSpacing": -0.32,
                     },
-                    Object {
+                    {
                       "color": "#007AFF",
                     },
-                    Object {},
+                    {},
                   ]
                 }
               >
@@ -815,9 +850,9 @@ exports[`renders with appearance dark 1`] = `
     </View>
     <View
       style={
-        Array [
-          Object {},
-          Object {
+        [
+          {},
+          {
             "backgroundColor": "#121312",
           },
         ]
@@ -825,11 +860,11 @@ exports[`renders with appearance dark 1`] = `
     >
       <View
         style={
-          Array [
-            Object {
+          [
+            {
               "height": 0.5,
             },
-            Object {
+            {
               "backgroundColor": "#2b2b2d",
               "marginLeft": 0,
               "marginRight": 0,
@@ -840,28 +875,26 @@ exports[`renders with appearance dark 1`] = `
     </View>
     <View
       style={
-        Object {
+        {
           "paddingLeft": 15,
           "paddingRight": 15,
           "paddingTop": 10,
         }
       }
     >
-      <RCTSafeAreaView
-        emulateUnlessSupported={true}
-      >
+      <RCTSafeAreaView>
         <Text
           allowFontScaling={true}
           style={
-            Array [
-              Object {
+            [
+              {
                 "fontSize": 13,
                 "letterSpacing": -0.078,
               },
-              Object {
+              {
                 "color": "#aeaeae",
               },
-              Object {},
+              {},
             ]
           }
         >
@@ -876,8 +909,8 @@ exports[`renders with appearance dark 1`] = `
 exports[`renders with appearance light 1`] = `
 <View
   style={
-    Array [
-      Object {
+    [
+      {
         "flexDirection": "column",
       },
       undefined,
@@ -886,9 +919,9 @@ exports[`renders with appearance light 1`] = `
 >
   <View
     style={
-      Array [
-        Object {},
-        Object {
+      [
+        {},
+        {
           "backgroundColor": undefined,
           "paddingBottom": 15,
           "paddingTop": 15,
@@ -898,9 +931,9 @@ exports[`renders with appearance light 1`] = `
   >
     <View
       style={
-        Array [
-          Object {},
-          Object {
+        [
+          {},
+          {
             "backgroundColor": "#FFF",
           },
         ]
@@ -908,11 +941,11 @@ exports[`renders with appearance light 1`] = `
     >
       <View
         style={
-          Array [
-            Object {
+          [
+            {
               "height": 0.5,
             },
-            Object {
+            {
               "backgroundColor": "#C8C7CC",
               "marginLeft": 0,
               "marginRight": 0,
@@ -923,14 +956,22 @@ exports[`renders with appearance light 1`] = `
     </View>
     <View
       style={
-        Array [
-          Object {},
+        [
+          {},
           false,
         ]
       }
     >
       <View>
         <View
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
           accessible={true}
           focusable={true}
           onClick={[Function]}
@@ -942,13 +983,12 @@ exports[`renders with appearance light 1`] = `
           onStartShouldSetResponder={[Function]}
         >
           <RCTSafeAreaView
-            emulateUnlessSupported={true}
             style={
-              Array [
-                Object {
+              [
+                {
                   "backgroundColor": "#FFF",
                 },
-                Object {
+                {
                   "flexGrow": 1,
                 },
               ]
@@ -956,21 +996,21 @@ exports[`renders with appearance light 1`] = `
           >
             <View
               style={
-                Array [
-                  Object {
+                [
+                  {
                     "alignItems": "center",
                     "flexDirection": "row",
                     "minHeight": 44,
                     "paddingLeft": 15,
                     "paddingRight": 20,
                   },
-                  Object {},
+                  {},
                 ]
               }
             >
               <View
                 style={
-                  Object {
+                  {
                     "alignItems": "center",
                     "flexBasis": 0,
                     "flexDirection": "row",
@@ -984,16 +1024,16 @@ exports[`renders with appearance light 1`] = `
                   allowFontScaling={true}
                   numberOfLines={1}
                   style={
-                    Array [
-                      Object {
+                    [
+                      {
                         "flexGrow": 1,
                         "fontSize": 16,
                         "letterSpacing": -0.32,
                       },
-                      Object {
+                      {
                         "color": "#007AFF",
                       },
-                      Object {},
+                      {},
                     ]
                   }
                 >
@@ -1004,11 +1044,10 @@ exports[`renders with appearance light 1`] = `
           </RCTSafeAreaView>
         </View>
         <RCTSafeAreaView
-          emulateUnlessSupported={true}
           style={
-            Array [
-              Object {},
-              Object {
+            [
+              {},
+              {
                 "backgroundColor": "#FFF",
               },
             ]
@@ -1016,11 +1055,11 @@ exports[`renders with appearance light 1`] = `
         >
           <View
             style={
-              Array [
-                Object {
+              [
+                {
                   "height": 0.5,
                 },
-                Object {
+                {
                   "backgroundColor": "#C8C7CC",
                   "marginLeft": 15,
                   "marginRight": 0,
@@ -1031,6 +1070,14 @@ exports[`renders with appearance light 1`] = `
         </RCTSafeAreaView>
       </View>
       <View
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
         accessible={true}
         focusable={true}
         onClick={[Function]}
@@ -1042,13 +1089,12 @@ exports[`renders with appearance light 1`] = `
         onStartShouldSetResponder={[Function]}
       >
         <RCTSafeAreaView
-          emulateUnlessSupported={true}
           style={
-            Array [
-              Object {
+            [
+              {
                 "backgroundColor": "#FFF",
               },
-              Object {
+              {
                 "flexGrow": 1,
               },
             ]
@@ -1056,21 +1102,21 @@ exports[`renders with appearance light 1`] = `
         >
           <View
             style={
-              Array [
-                Object {
+              [
+                {
                   "alignItems": "center",
                   "flexDirection": "row",
                   "minHeight": 44,
                   "paddingLeft": 15,
                   "paddingRight": 20,
                 },
-                Object {},
+                {},
               ]
             }
           >
             <View
               style={
-                Object {
+                {
                   "alignItems": "center",
                   "flexBasis": 0,
                   "flexDirection": "row",
@@ -1084,16 +1130,16 @@ exports[`renders with appearance light 1`] = `
                 allowFontScaling={true}
                 numberOfLines={1}
                 style={
-                  Array [
-                    Object {
+                  [
+                    {
                       "flexGrow": 1,
                       "fontSize": 16,
                       "letterSpacing": -0.32,
                     },
-                    Object {
+                    {
                       "color": "#007AFF",
                     },
-                    Object {},
+                    {},
                   ]
                 }
               >
@@ -1106,9 +1152,9 @@ exports[`renders with appearance light 1`] = `
     </View>
     <View
       style={
-        Array [
-          Object {},
-          Object {
+        [
+          {},
+          {
             "backgroundColor": "#FFF",
           },
         ]
@@ -1116,11 +1162,11 @@ exports[`renders with appearance light 1`] = `
     >
       <View
         style={
-          Array [
-            Object {
+          [
+            {
               "height": 0.5,
             },
-            Object {
+            {
               "backgroundColor": "#C8C7CC",
               "marginLeft": 0,
               "marginRight": 0,
@@ -1131,28 +1177,26 @@ exports[`renders with appearance light 1`] = `
     </View>
     <View
       style={
-        Object {
+        {
           "paddingLeft": 15,
           "paddingRight": 15,
           "paddingTop": 10,
         }
       }
     >
-      <RCTSafeAreaView
-        emulateUnlessSupported={true}
-      >
+      <RCTSafeAreaView>
         <Text
           allowFontScaling={true}
           style={
-            Array [
-              Object {
+            [
+              {
                 "fontSize": 13,
                 "letterSpacing": -0.078,
               },
-              Object {
+              {
                 "color": "#8E8E93",
               },
-              Object {},
+              {},
             ]
           }
         >
