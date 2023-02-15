@@ -2150,12 +2150,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-native@npm:0.71.2":
-  version: 0.71.2
-  resolution: "@types/react-native@npm:0.71.2"
+"@types/react-native@npm:0.71.3":
+  version: 0.71.3
+  resolution: "@types/react-native@npm:0.71.3"
   dependencies:
     "@types/react": "*"
-  checksum: 42dc06ae47a7db7ecd41ce66625cdb6f975bfc610127bf3fb36fedc894ac1aa2698b215984750de79369627f270260bd94a376ff37455589c55454d25b4d32b9
+  checksum: 5ee02f9c780c630e145c1887c80d1739d59e01d45ff9e862b475538376ddd17fc605a1245fea04813593c1c0153b5f4a41247283036adcdfbf4779555f956d93
   languageName: node
   linkType: hard
 
@@ -7301,10 +7301,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsc-android@npm:^250230.2.1":
-  version: 250230.2.1
-  resolution: "jsc-android@npm:250230.2.1"
-  checksum: 11b7c41a0a9192ea4697e61f72a65341afd143550159bbc951cfe8e08eaee4fb119a7f4b9241de15b7156a873f0faef677f6ee72c243ace013e537bfc819dd6d
+"jsc-android@npm:^250231.0.0":
+  version: 250231.0.0
+  resolution: "jsc-android@npm:250231.0.0"
+  checksum: 6c3f0f6f02fa37a19935b2fbe651e9d6ecc370eb30f2ecee76379337bbf084abb568a1ef1133fe622c5b76f43cf54bb7716f92a94dca010985da38edc48841e2
   languageName: node
   linkType: hard
 
@@ -9407,22 +9407,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-codegen@npm:^0.71.3":
-  version: 0.71.3
-  resolution: "react-native-codegen@npm:0.71.3"
+"react-native-codegen@npm:^0.71.5":
+  version: 0.71.5
+  resolution: "react-native-codegen@npm:0.71.5"
   dependencies:
     "@babel/parser": ^7.14.0
     flow-parser: ^0.185.0
     jscodeshift: ^0.13.1
     nullthrows: ^1.1.1
-  checksum: 3cb65d0ed56b8b01e97ad202061a50ee3c5bd0deb5af19c99d3207eaca237c1316bbaec47299e220db7396724175dadb87f7573d1630b6d93c81d64c4884948c
+  checksum: d3a40b557d4b3a0d51664070eb8388b0dde247a0518025ff5a815d3573c98ff16f616df8236e827ee16625f685169931db5c966dd144d860ad5aed437b65b28c
   languageName: node
   linkType: hard
 
-"react-native-gradle-plugin@npm:^0.71.14":
-  version: 0.71.14
-  resolution: "react-native-gradle-plugin@npm:0.71.14"
-  checksum: fc2599cdc6b64f09cdd1ad9b0aa6b45265b5905d13ab69174f46134d7a42b324459e169b0aaef67e075b5b65fe93704980718fd2c26245ef2b1d5fd29e391813
+"react-native-gradle-plugin@npm:^0.71.15":
+  version: 0.71.15
+  resolution: "react-native-gradle-plugin@npm:0.71.15"
+  checksum: e1c1714568324405fbca4ca841a0ab62cd8b90c65b3320183825161358f2bdb5226c8b22153b3007c2455dc7535d839d07d43148e6cba7952ae948636154f2b6
   languageName: node
   linkType: hard
 
@@ -9434,7 +9434,7 @@ __metadata:
     "@commitlint/config-conventional": 17.4.2
     "@types/jest": 29.4.0
     "@types/react": 18.0.28
-    "@types/react-native": 0.71.2
+    "@types/react-native": 0.71.3
     "@types/react-test-renderer": 18.0.0
     "@typescript-eslint/eslint-plugin": 5.51.0
     "@typescript-eslint/parser": 5.51.0
@@ -9449,7 +9449,7 @@ __metadata:
     lint-staged: 13.1.1
     prettier: 2.8.4
     react: 18.2.0
-    react-native: 0.71.2
+    react-native: 0.71.3
     react-test-renderer: 18.2.0
     rimraf: 4.1.2
     standard-version: 9.5.0
@@ -9460,9 +9460,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"react-native@npm:0.71.2":
-  version: 0.71.2
-  resolution: "react-native@npm:0.71.2"
+"react-native@npm:0.71.3":
+  version: 0.71.3
+  resolution: "react-native@npm:0.71.3"
   dependencies:
     "@jest/create-cache-key-function": ^29.2.1
     "@react-native-community/cli": 10.1.3
@@ -9478,7 +9478,7 @@ __metadata:
     event-target-shim: ^5.0.1
     invariant: ^2.2.4
     jest-environment-node: ^29.2.1
-    jsc-android: ^250230.2.1
+    jsc-android: ^250231.0.0
     memoize-one: ^5.0.0
     metro-react-native-babel-transformer: 0.73.7
     metro-runtime: 0.73.7
@@ -9488,8 +9488,8 @@ __metadata:
     pretty-format: ^26.5.2
     promise: ^8.3.0
     react-devtools-core: ^4.26.1
-    react-native-codegen: ^0.71.3
-    react-native-gradle-plugin: ^0.71.14
+    react-native-codegen: ^0.71.5
+    react-native-gradle-plugin: ^0.71.15
     react-refresh: ^0.4.0
     react-shallow-renderer: ^16.15.0
     regenerator-runtime: ^0.13.2
@@ -9502,7 +9502,7 @@ __metadata:
     react: 18.2.0
   bin:
     react-native: cli.js
-  checksum: c95bceaf75875aa612591b4de4f53918296aa8af1097ad8a75409fcae5292059db1a2da2dd97d791f02aa4397ad4da3ac21d91e2e3cc529c6a7de17a14358fe3
+  checksum: 1f6cee37352db4981eadee3e07b04f19d4ad3eeebf2ede7e8d98d42c87ea6041ec3e5703038349c650148fadb1bfab3db0c52121620fd946d9cf4a47b130b715
   languageName: node
   linkType: hard
 
