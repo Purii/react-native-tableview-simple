@@ -1070,12 +1070,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:17.4.2":
-  version: 17.4.2
-  resolution: "@commitlint/config-conventional@npm:17.4.2"
+"@commitlint/config-conventional@npm:17.4.4":
+  version: 17.4.4
+  resolution: "@commitlint/config-conventional@npm:17.4.4"
   dependencies:
     conventional-changelog-conventionalcommits: ^5.0.0
-  checksum: 517dd3b3395774084503606b5c5f9acb0e92db6cd5dd237716993b9858eb9e7e10da981e2a68f99aa2f48afb4d3597b04449c9e2bfde8af2690a0b40ea40115e
+  checksum: 679d92509fe6e53ee0cc4202f8069d88360c4f9dbd7ab74114bb28278a196da517ef711dfe69893033a66e54ffc29e8df2ccf63cfd746a89c82a053949473c4b
   languageName: node
   linkType: hard
 
@@ -9431,7 +9431,7 @@ __metadata:
   resolution: "react-native-tableview-simple@workspace:."
   dependencies:
     "@commitlint/cli": 17.4.2
-    "@commitlint/config-conventional": 17.4.2
+    "@commitlint/config-conventional": 17.4.4
     "@types/jest": 29.4.0
     "@types/react": 18.0.28
     "@types/react-native": 0.71.2
