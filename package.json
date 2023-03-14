@@ -65,7 +65,7 @@
     "@types/react": "18.0.28",
     "@types/react-native": "0.71.2",
     "@types/react-test-renderer": "18.0.0",
-    "@typescript-eslint/eslint-plugin": "5.51.0",
+    "@typescript-eslint/eslint-plugin": "5.55.0",
     "@typescript-eslint/parser": "5.51.0",
     "babel-jest": "29.4.2",
     "babel-preset-react-native": "4.0.1",
