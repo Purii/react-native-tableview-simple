@@ -69,7 +69,7 @@
     "@typescript-eslint/parser": "5.51.0",
     "babel-jest": "29.4.2",
     "babel-preset-react-native": "4.0.1",
-    "eslint": "8.34.0",
+    "eslint": "8.39.0",
     "eslint-config-prettier": "8.6.0",
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-react": "7.32.2",
