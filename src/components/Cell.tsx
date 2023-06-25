@@ -41,9 +41,9 @@ export interface CellInterface {
   highlightUnderlayColor?: ViewStyle['backgroundColor'];
   image?: React.ReactElement;
   isDisabled?: boolean;
-  onPress?: () => void | false;
-  onLongPress?: () => void | false;
-  onPressDetailAccessory?: () => void | false;
+  onPress?: () => void | Promise<void> | false;
+  onLongPress?: () => void | Promise<void> | false;
+  onPressDetailAccessory?: () => void | Promise<void> | false;
   onUnHighlightRow?(): void;
   onHighlightRow?(): void;
   leftDetailColor?: TextStyle['color'];
