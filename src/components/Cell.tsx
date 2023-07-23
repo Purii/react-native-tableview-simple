@@ -41,8 +41,9 @@ export interface CellInterface {
   highlightUnderlayColor?: ViewStyle['backgroundColor'];
   image?: React.ReactElement;
   isDisabled?: boolean;
-  onPress?: () => void | false;
-  onPressDetailAccessory?: () => void | false;
+  onPress?: () => void | Promise<void> | false;
+  onLongPress?: () => void | Promise<void> | false;
+  onPressDetailAccessory?: () => void | Promise<void> | false;
   onUnHighlightRow?(): void;
   onHighlightRow?(): void;
   leftDetailColor?: TextStyle['color'];
@@ -79,6 +80,7 @@ const Cell: React.FC<CellInterface> = ({
   image,
   isDisabled = false,
   onPress,
+  onLongPress,
   onPressDetailAccessory,
   onHighlightRow,
   onUnHighlightRow,
@@ -100,7 +102,7 @@ const Cell: React.FC<CellInterface> = ({
 }: CellInterface) => {
   const theme = useContext(ThemeContext);
 
-  const isPressable = !!onPress;
+  const isPressable = !!onPress || !!onLongPress;
 
   /**
    * Merge styles with props
@@ -407,6 +409,7 @@ const Cell: React.FC<CellInterface> = ({
       <TouchableHighlight
         activeOpacity={highlightActiveOpacity}
         onPress={onPress}
+        onLongPress={onLongPress}
         underlayColor={highlightUnderlayColor || theme.colors.body}
         onPressIn={onHighlightRow}
         onPressOut={onUnHighlightRow}

@@ -3,13 +3,12 @@
 exports[`renders with accessory 1`] = `
 <View>
   <RCTSafeAreaView
-    emulateUnlessSupported={true}
     style={
-      Array [
-        Object {
+      [
+        {
           "backgroundColor": "#FFF",
         },
-        Object {
+        {
           "flexGrow": 1,
         },
       ]
@@ -17,22 +16,22 @@ exports[`renders with accessory 1`] = `
   >
     <View
       style={
-        Array [
-          Object {
+        [
+          {
             "alignItems": "center",
             "flexDirection": "row",
             "minHeight": 44,
             "paddingLeft": 15,
             "paddingRight": 20,
           },
-          Object {},
+          {},
         ]
       }
     >
       <View
         style={
-          Array [
-            Object {
+          [
+            {
               "alignItems": "center",
               "flexBasis": 0,
               "flexDirection": "row",
@@ -40,7 +39,7 @@ exports[`renders with accessory 1`] = `
               "justifyContent": "center",
               "paddingVertical": 10,
             },
-            Object {
+            {
               "paddingVertical": 4,
             },
           ]
@@ -48,7 +47,7 @@ exports[`renders with accessory 1`] = `
       >
         <View
           style={
-            Object {
+            {
               "flexDirection": "column",
               "flexGrow": 1,
             }
@@ -58,16 +57,16 @@ exports[`renders with accessory 1`] = `
             allowFontScaling={true}
             numberOfLines={1}
             style={
-              Array [
-                Object {
+              [
+                {
                   "flexGrow": 1,
                   "fontSize": 16,
                   "letterSpacing": -0.32,
                 },
-                Object {
+                {
                   "color": "#000",
                 },
-                Object {},
+                {},
               ]
             }
           >
@@ -77,15 +76,15 @@ exports[`renders with accessory 1`] = `
             allowFontScaling={true}
             numberOfLines={1}
             style={
-              Array [
-                Object {
+              [
+                {
                   "fontSize": 11,
                   "letterSpacing": 0.066,
                 },
-                Object {
+                {
                   "color": "#000",
                 },
-                Object {},
+                {},
               ]
             }
           >
@@ -95,29 +94,29 @@ exports[`renders with accessory 1`] = `
       </View>
       <View
         style={
-          Object {
+          {
             "justifyContent": "center",
           }
         }
       >
         <View
           style={
-            Array [
-              Object {
+            [
+              {
                 "backgroundColor": "transparent",
                 "borderColor": "#c7c7cc",
                 "borderRightWidth": 1,
                 "borderTopWidth": 1,
                 "height": 10,
                 "marginLeft": 7,
-                "transform": Array [
-                  Object {
+                "transform": [
+                  {
                     "rotate": "45deg",
                   },
                 ],
                 "width": 10,
               },
-              Object {
+              {
                 "borderColor": "#C7C7CC",
               },
             ]
@@ -132,13 +131,12 @@ exports[`renders with accessory 1`] = `
 exports[`renders with subtitle 1`] = `
 <View>
   <RCTSafeAreaView
-    emulateUnlessSupported={true}
     style={
-      Array [
-        Object {
+      [
+        {
           "backgroundColor": "#FFF",
         },
-        Object {
+        {
           "flexGrow": 1,
         },
       ]
@@ -146,22 +144,22 @@ exports[`renders with subtitle 1`] = `
   >
     <View
       style={
-        Array [
-          Object {
+        [
+          {
             "alignItems": "center",
             "flexDirection": "row",
             "minHeight": 44,
             "paddingLeft": 15,
             "paddingRight": 20,
           },
-          Object {},
+          {},
         ]
       }
     >
       <View
         style={
-          Array [
-            Object {
+          [
+            {
               "alignItems": "center",
               "flexBasis": 0,
               "flexDirection": "row",
@@ -169,7 +167,7 @@ exports[`renders with subtitle 1`] = `
               "justifyContent": "center",
               "paddingVertical": 10,
             },
-            Object {
+            {
               "paddingVertical": 4,
             },
           ]
@@ -177,7 +175,7 @@ exports[`renders with subtitle 1`] = `
       >
         <View
           style={
-            Object {
+            {
               "flexDirection": "column",
               "flexGrow": 1,
             }
@@ -187,16 +185,16 @@ exports[`renders with subtitle 1`] = `
             allowFontScaling={true}
             numberOfLines={1}
             style={
-              Array [
-                Object {
+              [
+                {
                   "flexGrow": 1,
                   "fontSize": 16,
                   "letterSpacing": -0.32,
                 },
-                Object {
+                {
                   "color": "#000",
                 },
-                Object {},
+                {},
               ]
             }
           >
@@ -206,15 +204,15 @@ exports[`renders with subtitle 1`] = `
             allowFontScaling={true}
             numberOfLines={1}
             style={
-              Array [
-                Object {
+              [
+                {
                   "fontSize": 11,
                   "letterSpacing": 0.066,
                 },
-                Object {
+                {
                   "color": "#000",
                 },
-                Object {},
+                {},
               ]
             }
           >

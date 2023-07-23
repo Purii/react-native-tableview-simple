@@ -2,14 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.4.0](https://github.com/Purii/react-native-tableview-simple/compare/v4.3.1...v4.4.0) (2023-02-11)
+
+### Features
+
+- Cell longPress ([#713](https://github.com/Purii/react-native-tableview-simple/issues/713)) ([50c6e83](https://github.com/Purii/react-native-tableview-simple/commit/50c6e83401a56e0a18c58277b332703a89522851)) (Thanks @cixio!)
+
 ### [4.3.1](https://github.com/Purii/react-native-tableview-simple/compare/v4.3.0...v4.3.1) (2021-12-12)
 
 ## [4.3.0](https://github.com/Purii/react-native-tableview-simple/compare/v4.2.1...v4.3.0) (2021-03-26)
 
-
 ### Features
 
-* add prop children in cell component ([#497](https://github.com/Purii/react-native-tableview-simple/issues/497)) ([4bd400e](https://github.com/Purii/react-native-tableview-simple/commit/4bd400e121a350f6f2cc710c5dea749e998d373d)) (Thanks @brunohkbx!)
+- add prop children in cell component ([#497](https://github.com/Purii/react-native-tableview-simple/issues/497)) ([4bd400e](https://github.com/Purii/react-native-tableview-simple/commit/4bd400e121a350f6f2cc710c5dea749e998d373d)) (Thanks @brunohkbx!)
 
 ### [4.2.1](https://github.com/Purii/react-native-tableview-simple/compare/v4.2.0...v4.2.1) (2020-12-21)
 
