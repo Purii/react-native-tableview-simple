@@ -125,6 +125,7 @@ It's possible to use the `Flatlist` component instead ([Example](#render-with-fl
 | separatorInsetLeft        |             `15`              |        `number`        | Left inset of separator                                             |
 | separatorInsetRight       |              `0`              |        `number`        | Right inset of separator                                            |
 | separatorTintColor        |           `#C8C7CC`           |        `string`        | Color of separator                                                  |
+| separatorBackgroundColor  |           `#FFF`              |        `string`        | Background color of separator                                       |
 | withSafeAreaView          | `true / false (on iOS <= 10)` |         `bool`         | Render section header and footer with SafeAreaView                  |
 
 ### `Cell`
