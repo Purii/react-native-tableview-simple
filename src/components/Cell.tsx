@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import {
+  PixelRatio,
   Platform,
   SafeAreaView,
   StyleSheet,
@@ -430,7 +431,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingLeft: 15,
     paddingRight: 20,
-    minHeight: 44,
+    minHeight: PixelRatio.roundToNearestPixel(44),
     flexDirection: 'row',
   },
   // SafeAreaView only adds padding
