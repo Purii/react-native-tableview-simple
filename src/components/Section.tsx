@@ -157,7 +157,7 @@ const Section: React.FC<SectionInterface> = ({
         {React.cloneElement(child, propsToAdd)}
         <Separator
           isHidden={invisibleSeparator}
-          backgroundColor={separatorBackgroundColor}
+          backgroundColor={separatorBackgroundColor || childProps?.backgroundColor}
           tintColor={separatorTintColor}
           insetLeft={separatorInsetLeftSupportImage}
           insetRight={separatorInsetRight}
