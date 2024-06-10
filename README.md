@@ -174,11 +174,13 @@ children                            |               -               |           
 #### Wrap `Cell`
 
 Sometimes custom `Cell` components are needed.
-By creating new component, which is based on `Cell`, its only necessary to set the props once.
+By creating a new component, which is based on `Cell`, its only necessary to set the props once.
+However, this comes with certain downsides. In order to keep the API as easy to use as possible, I implemented some automations for the `Sections` component.
+For example, the `Cell.backgroundColor` prop will also decide on the `backgroundColor` of the `Separator` component.
+
+Given the following pattern:
 
 ```javascript
-...
-
 import {
   Cell,
   Section,
@@ -204,7 +206,7 @@ const CellVariant = (props) => (
   />
 );
 
-...
+// ...
 
 <TableView>
   <Section>
@@ -214,9 +216,58 @@ const CellVariant = (props) => (
     <CellVariant title="Element 4" />
   </Section>
 </TableView>
+````
 
-...
-```
+This pattern introduces an additional layer between `Section` and `Cell`: `Section` -> `CellVariant` -> `Cell`.
+The `Section` component is expecting a `Cell` component as a child and therefor tries to [access the props as defined for the `Cell` component](https://github.com/Purii/react-native-tableview-simple/blob/5e81f61993eea32784cd9b20fa6e73d1240d77e5/src/components/Section.tsx#L131).
+If following the mentioned pattern, this would fail, because `CellVariant.props` only contains the prop `title`.
+Instead, I recommend to insert your new default props as description in this section: [Override defaults of `Cell`-Component](##override-defaults-of-cell-component).
+
+If this is not enough for you, and you still need to have a custom cell component, consider merging both approaches:
+
+```javascript
+import {
+  Cell,
+  Section,
+  TableView,
+} from 'react-native-tableview-simple';
+
+
+const cellPropsVariant = {
+  hideSeparator: true,
+  backgroundColor: 'black',
+};
+
+const CellVariant = (props) => (
+  <Cell
+    {...props}
+    cellContentView={
+      <View
+        style={{ alignItems: 'center', flexDirection: 'row', flex: 1, paddingVertical: 10 }}
+      >
+        <Text
+          allowFontScaling
+          numberOfLines={1}
+          style={{ flex: 1, fontSize: 20 }}
+        >
+          {props.title}
+        </Text>
+      </View>
+    }
+  />
+);
+
+// ...
+
+<TableView>
+  <Section>
+    <CellVariant title="Element 1" {...cellPropsVariant} />
+    <CellVariant title="Element 2" {...cellPropsVariant} />
+    <CellVariant title="Element 3" {...cellPropsVariant} />
+    <CellVariant title="Element 4" {...cellPropsVariant} />
+  </Section>
+</TableView>
+````
 
 ### `Separator`
 
