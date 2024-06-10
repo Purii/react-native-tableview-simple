@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.4.1](https://github.com/Purii/react-native-tableview-simple/compare/v4.4.0...v4.4.1) (2024-06-10)
+
+- Fix on-integer device scaling causing issues with <Separator> hairline widths ([#786](https://github.com/Purii/react-native-tableview-simple/pull/786)) ([40d77e5](https://github.com/Purii/react-native-tableview-simple/commit/5e81f61993eea32784cd9b20fa6e73d1240d77e5)) (Thanks @cixio!)
+
 ## [4.4.0](https://github.com/Purii/react-native-tableview-simple/compare/v4.3.1...v4.4.0) (2023-02-11)
 
 ### Features
