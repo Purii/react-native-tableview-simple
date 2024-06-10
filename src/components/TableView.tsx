@@ -7,10 +7,11 @@ import {
   ViewStyle,
 } from 'react-native';
 import { THEMES, ThemeContext, THEME_APPEARANCE } from './Theme';
+import { StringWithAutocomplete } from '../../CustomTypes';
 
 export interface TableViewInterface {
   children?: React.ReactNode;
-  appearance?: 'auto' | 'dark' | 'light' | string;
+  appearance?: StringWithAutocomplete<'auto' | 'dark' | 'light'>;
   customAppearances?: {
     [key: string]: THEME_APPEARANCE;
   };

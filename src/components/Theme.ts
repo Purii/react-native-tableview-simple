@@ -3,12 +3,12 @@ import { TextStyle, ViewStyle } from 'react-native';
 
 export interface THEME_APPEARANCE {
   colors: {
-    background: ViewStyle['backgroundColor'] | TextStyle['color'];
-    muted: ViewStyle['backgroundColor'] | TextStyle['color'];
-    separatorColor: ViewStyle['backgroundColor'] | TextStyle['color'];
-    body: ViewStyle['backgroundColor'] | TextStyle['color'];
-    primary: ViewStyle['backgroundColor'] | TextStyle['color'];
-    secondary: ViewStyle['backgroundColor'] | TextStyle['color'];
+    background: ViewStyle['backgroundColor'];
+    muted: ViewStyle['backgroundColor'];
+    separatorColor: ViewStyle['backgroundColor'];
+    body: TextStyle['color'];
+    primary: TextStyle['color'];
+    secondary: TextStyle['color'];
   };
 }
 

@@ -23,7 +23,7 @@ export interface CellInterface {
     | 'Detail'
     | 'DetailDisclosure'
     | 'Checkmark';
-  accessoryColor?: ViewStyle['borderColor'] | TextStyle['color'];
+  accessoryColor?: ViewStyle['borderColor'];
   accessoryColorDisclosureIndicator?: ViewStyle['borderColor'];
   allowFontScaling?: boolean;
   backgroundColor?: ViewStyle['backgroundColor'];
@@ -42,9 +42,9 @@ export interface CellInterface {
   highlightUnderlayColor?: ViewStyle['backgroundColor'];
   image?: React.ReactElement;
   isDisabled?: boolean;
-  onPress?: () => void | Promise<void> | false;
-  onLongPress?: () => void | Promise<void> | false;
-  onPressDetailAccessory?: () => void | Promise<void> | false;
+  onPress?: () => void | false;
+  onLongPress?: () => void | false;
+  onPressDetailAccessory?: () => void | false;
   onUnHighlightRow?(): void;
   onHighlightRow?(): void;
   leftDetailColor?: TextStyle['color'];
