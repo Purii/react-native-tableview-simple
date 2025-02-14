@@ -56,6 +56,7 @@ const Section: React.FC<SectionInterface> = ({
   separatorInsetLeft = 15,
   separatorInsetRight = 0,
   separatorTintColor,
+  separatorBackgroundColor,
   withSafeAreaView = Platform.OS === 'ios'
     ? parseInt(`${Platform.Version}`, 10) <= 10
       ? false
@@ -156,7 +157,7 @@ const Section: React.FC<SectionInterface> = ({
         {React.cloneElement(child, propsToAdd)}
         <Separator
           isHidden={invisibleSeparator}
-          backgroundColor={childProps?.backgroundColor}
+          backgroundColor={separatorBackgroundColor || childProps?.backgroundColor}
           tintColor={separatorTintColor}
           insetLeft={separatorInsetLeftSupportImage}
           insetRight={separatorInsetRight}
